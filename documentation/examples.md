@@ -839,6 +839,9 @@ Redis を使用した階層的キャッシュ:
 
 ## 参考資料
 
+プロジェクトに応じて、以下のような参考資料へのリンクを追加できます：
+
+```markdown
 - [システム要件定義書](requirements.md)
 - [API 仕様書](api-spec.md)
 - [運用手順書](operations.md)
