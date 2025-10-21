@@ -155,9 +155,31 @@ Contributions are welcome! Please follow these guidelines:
 
 ## Available Skills
 
-<!-- Skills will be listed here as they are added -->
+### Skill Creator
 
-*This repository is currently being established. Skills will be added soon.*
+**Location**: `skill-creator/`
+
+A meta-skill that helps you create new Claude Code skills following best practices and proper structure.
+
+**Features**:
+- Generates complete skill directory structure
+- Creates SKILL.md with proper YAML frontmatter
+- Includes validation and best practices guidance
+- Provides basic and advanced templates
+- Comprehensive reference documentation
+
+**Usage**: Ask Claude to "create a new skill" or "build a skill for [purpose]"
+
+**Installation**:
+```bash
+cp -r skill-creator ~/.claude/skills/
+```
+
+**Files**:
+- `SKILL.md` - Main skill definition and creation process
+- `reference.md` - Detailed technical reference and specifications
+- `templates/basic-skill-template.md` - Simple skill template
+- `templates/advanced-skill-template.md` - Complex skill template
 
 ## Debugging Common Issues
 
