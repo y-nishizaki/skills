@@ -1,88 +1,88 @@
-# Research Skill - Extended Examples
+# リサーチスキル - 拡張例
 
-This document provides detailed, real-world examples of using the research skill in various scenarios.
+このドキュメントは、さまざまなシナリオでリサーチスキルを使用する詳細な実世界の例を提供します。
 
-## Example 1: Technical Implementation Research
+## 例1: 技術実装リサーチ
 
-### User Request
-"Research how to implement server-side rendering with React in 2025"
+### ユーザーリクエスト
+「2025年のReactでのサーバーサイドレンダリングの実装方法をリサーチして」
 
-### Research Process
+### リサーチプロセス
 
-**Step 1: Define Objectives**
-- Research question: What are the current methods and best practices for implementing SSR with React?
-- Scope: Modern approaches, popular frameworks, implementation patterns
-- Success criteria: Understanding of options, implementation guidance, code examples
+**ステップ1: 目標の定義**
+- リサーチクエスチョン: ReactでSSRを実装するための現在の方法とベストプラクティスは何ですか?
+- スコープ: 最新のアプローチ、人気のあるフレームワーク、実装パターン
+- 成功基準: オプションの理解、実装ガイダンス、コード例
 
-**Step 2: Plan Sources**
-- React official documentation
-- Next.js documentation (popular SSR framework)
-- Recent articles on SSR best practices
-- Community discussions and comparisons
-- Code examples and tutorials
+**ステップ2: 情報源の計画**
+- React公式ドキュメント
+- Next.jsドキュメント(人気のあるSSRフレームワーク)
+- SSRベストプラクティスに関する最近の記事
+- コミュニティディスカッションと比較
+- コード例とチュートリアル
 
-**Step 3: Information Gathering**
+**ステップ3: 情報収集**
 
-*Query 1: WebSearch "React server-side rendering 2025 best practices"*
-- Results show Next.js as dominant solution
-- React 18+ features (Server Components, Suspense)
-- Alternative frameworks (Remix, Astro)
-- Performance considerations
+*クエリ1: WebSearch「React サーバーサイドレンダリング 2025 ベストプラクティス」*
+- 結果はNext.jsが支配的なソリューションであることを示す
+- React 18+の機能(Server Components、Suspense)
+- 代替フレームワーク(Remix、Astro)
+- パフォーマンスに関する考慮事項
 
-*Query 2: WebFetch React official documentation*
-- Server Components introduced in React 18
-- Streaming SSR capabilities
-- Hydration best practices
-- Integration patterns
+*クエリ2: WebFetch React公式ドキュメント*
+- React 18で導入されたServer Components
+- ストリーミングSSR機能
+- ハイドレーションのベストプラクティス
+- 統合パターン
 
-*Query 3: WebFetch Next.js documentation*
-- App Router (current recommended approach)
-- Pages Router (legacy but stable)
-- Automatic SSR/SSG/ISR handling
-- Performance optimization features
+*クエリ3: WebFetch Next.jsドキュメント*
+- App Router(現在推奨されるアプローチ)
+- Pages Router(レガシーだが安定)
+- 自動SSR/SSG/ISR処理
+- パフォーマンス最適化機能
 
-**Step 4: Verification**
-- Cross-check React Server Components info across official docs and multiple sources
-- Verify Next.js is current recommended approach (multiple authoritative sources agree)
-- Confirm React 18+ features are stable and production-ready
-- Check recent migration guides and version compatibility
+**ステップ4: 検証**
+- 公式ドキュメントと複数の情報源でReact Server Componentsの情報を相互確認
+- Next.jsが現在推奨されるアプローチであることを検証(複数の権威ある情報源が同意)
+- React 18+の機能が安定し本番環境対応であることを確認
+- 最近の移行ガイドとバージョンの互換性を確認
 
-**Step 5: Synthesis**
+**ステップ5: 統合**
 
-### Research Findings
+### リサーチ調査結果
 
-**Overview**
-Server-side rendering (SSR) with React in 2025 has evolved significantly with React 18+ features and mature frameworks.
+**概要**
+2025年のReactでのサーバーサイドレンダリング(SSR)は、React 18+の機能と成熟したフレームワークにより大きく進化しました。
 
-**Current Approaches**
+**現在のアプローチ**
 
-1. **Next.js (Recommended for most projects)**
-   - Most popular and mature SSR framework
-   - App Router (React Server Components) - current approach
-   - Built-in optimization and routing
-   - Strong community and ecosystem
+1. **Next.js(ほとんどのプロジェクトに推奨)**
+   - 最も人気があり成熟したSSRフレームワーク
+   - App Router(React Server Components) - 現在のアプローチ
+   - 組み込みの最適化とルーティング
+   - 強力なコミュニティとエコシステム
 
-   Source: Next.js official documentation, Vercel blog posts
+   情報源: Next.js公式ドキュメント、Vercelブログ投稿
 
-2. **React Server Components (Native)**
-   - Built into React 18+
-   - Requires build tool integration
-   - More control but more setup
-   - Good for custom solutions
+2. **React Server Components(ネイティブ)**
+   - React 18+に組み込まれている
+   - ビルドツール統合が必要
+   - より多くの制御だがより多くのセットアップ
+   - カスタムソリューションに適している
 
-   Source: React official documentation
+   情報源: React公式ドキュメント
 
 3. **Remix**
-   - Full-stack framework
-   - Focus on web fundamentals
-   - Progressive enhancement
-   - Growing adoption
+   - フルスタックフレームワーク
+   - Web基礎に焦点を当てる
+   - プログレッシブエンハンスメント
+   - 採用が増加
 
-   Source: Remix documentation, community comparisons
+   情報源: Remixドキュメント、コミュニティ比較
 
-**Implementation Example (Next.js App Router)**
+**実装例(Next.js App Router)**
 ```javascript
-// app/page.tsx - Server Component by default
+// app/page.tsx - デフォルトでServer Component
 async function getData() {
   const res = await fetch('https://api.example.com/data')
   return res.json()
@@ -94,94 +94,94 @@ export default async function Page() {
 }
 ```
 
-**Best Practices**
-- Use React Server Components for data fetching
-- Implement streaming for improved performance
-- Minimize client-side JavaScript
-- Use Suspense boundaries for loading states
-- Consider static generation (SSG) when possible
+**ベストプラクティス**
+- データ取得にはReact Server Componentsを使用する
+- パフォーマンス向上のためにストリーミングを実装する
+- クライアントサイドJavaScriptを最小限に抑える
+- ローディング状態にSuspense境界を使用する
+- 可能な場合は静的生成(SSG)を検討する
 
-**Key Considerations**
-- React 18+ required for modern features
-- Build tool setup more complex for native approach
-- Next.js simplifies many SSR challenges
-- Consider hosting requirements (Node.js server needed)
+**主要な考慮事項**
+- 最新機能にはReact 18+が必要
+- ネイティブアプローチのビルドツールセットアップがより複雑
+- Next.jsは多くのSSRの課題を簡素化
+- ホスティング要件を考慮する(Node.jsサーバーが必要)
 
-**Sources**
-- React Documentation: https://react.dev/reference/react/
-- Next.js Documentation: https://nextjs.org/docs
-- "React Server Components" (React team blog)
-- Community comparisons on SSR frameworks (2024-2025)
+**情報源**
+- Reactドキュメント: https://react.dev/reference/react/
+- Next.jsドキュメント: https://nextjs.org/docs
+- 「React Server Components」(Reactチームブログ)
+- SSRフレームワークに関するコミュニティ比較(2024-2025)
 
 ---
 
-## Example 2: Comparative Analysis Research
+## 例2: 比較分析リサーチ
 
-### User Request
-"Compare Redux and Zustand for state management"
+### ユーザーリクエスト
+「状態管理のためにReduxとZustandを比較して」
 
-### Research Process
+### リサーチプロセス
 
-**Step 1: Define Objectives**
-- Compare two state management libraries
-- Understand key differences
-- Identify use cases for each
-- Provide recommendation guidance
+**ステップ1: 目標の定義**
+- 2つの状態管理ライブラリを比較する
+- 主要な違いを理解する
+- 各自の使用例を特定する
+- 推奨ガイダンスを提供する
 
-**Step 2: Plan Sources**
-- Official documentation for both
-- Community comparisons and discussions
-- GitHub repositories (stars, activity)
-- Migration guides or comparison articles
-- Code examples for both
+**ステップ2: 情報源の計画**
+- 両方の公式ドキュメント
+- コミュニティの比較とディスカッション
+- GitHubリポジトリ(スター、アクティビティ)
+- 移行ガイドまたは比較記事
+- 両方のコード例
 
-**Step 3: Information Gathering**
+**ステップ3: 情報収集**
 
-*Research Redux*
-- WebFetch: Official Redux Toolkit documentation
-- WebSearch: "Redux best practices 2025"
-- Gather: Core concepts, ecosystem, learning curve
+*Reduxをリサーチ*
+- WebFetch: 公式Redux Toolkitドキュメント
+- WebSearch: 「Redux ベストプラクティス 2025」
+- 収集: 核となる概念、エコシステム、学習曲線
 
-*Research Zustand*
-- WebFetch: Zustand GitHub repository and docs
-- WebSearch: "Zustand state management advantages"
-- Gather: Core concepts, simplicity factors, use cases
+*Zustandをリサーチ*
+- WebFetch: Zustand GitHubリポジトリとドキュメント
+- WebSearch: 「Zustand 状態管理 利点」
+- 収集: 核となる概念、シンプルさの要因、使用例
 
-*Compare*
-- WebSearch: "Redux vs Zustand 2025"
-- Look for: Migration experiences, performance comparisons, community opinions
+*比較*
+- WebSearch: 「Redux vs Zustand 2025」
+- 探す: 移行経験、パフォーマンス比較、コミュニティの意見
 
-**Step 4: Verification**
-- Verify popularity metrics from multiple sources (GitHub, npm trends)
-- Cross-check performance claims with benchmarks
-- Confirm ecosystem maturity from official sources
-- Validate code examples work with current versions
+**ステップ4: 検証**
+- 複数の情報源から人気度メトリクスを検証(GitHub、npmトレンド)
+- ベンチマークでパフォーマンスの主張を相互確認
+- 公式情報源からエコシステムの成熟度を確認
+- コード例が現在のバージョンで動作することを検証
 
-**Step 5: Synthesis**
+**ステップ5: 統合**
 
-### Research Findings
+### リサーチ調査結果
 
-**Overview**
-Redux and Zustand are both popular state management solutions for React, but serve different needs and philosophies.
+**概要**
+ReduxとZustandはどちらもReactの人気のある状態管理ソリューションですが、異なるニーズと哲学に対応しています。
 
-**Redux (with Redux Toolkit)**
+**Redux(Redux Toolkit付き)**
 
-*Strengths:*
-- Mature ecosystem with extensive tooling
-- DevTools with time-travel debugging
-- Well-established patterns and conventions
-- Large community and resources
-- Middleware ecosystem for complex async logic
-- Excellent for large applications with complex state
+*強み:*
+- 広範なツールを備えた成熟したエコシステム
+- タイムトラベルデバッグ付きのDevTools
+- 確立されたパターンと規約
+- 大規模なコミュニティとリソース
+- 複雑な非同期ロジックのためのミドルウェアエコシステム
+- 複雑な状態を持つ大規模アプリケーションに最適
 
-*Considerations:*
-- More boilerplate (even with Redux Toolkit)
-- Steeper learning curve
-- Can be overkill for simple applications
+*考慮事項:*
+- より多くのボイラープレート(Redux Toolkitでも)
+- より急な学習曲線
+- シンプルなアプリケーションには過剰になる可能性がある
 
-*Example:*
+*例:*
 ```javascript
-// Redux Toolkit approach
+// Redux Toolkitアプローチ
 import { createSlice } from '@reduxjs/toolkit'
 
 const counterSlice = createSlice({
@@ -196,23 +196,23 @@ const counterSlice = createSlice({
 
 **Zustand**
 
-*Strengths:*
-- Minimal boilerplate and simple API
-- No provider wrapper needed
-- Smaller bundle size (~1KB)
-- Easy to learn and use
-- Flexible - works outside React too
-- Excellent for small to medium applications
+*強み:*
+- 最小限のボイラープレートとシンプルなAPI
+- プロバイダーラッパーが不要
+- より小さいバンドルサイズ(~1KB)
+- 学習と使用が簡単
+- 柔軟 - React外でも動作する
+- 小中規模のアプリケーションに最適
 
-*Considerations:*
-- Smaller ecosystem and less tooling
-- Fewer established patterns
-- Less middleware options
-- DevTools less mature than Redux
+*考慮事項:*
+- より小さいエコシステムとより少ないツール
+- 確立されたパターンが少ない
+- より少ないミドルウェアオプション
+- DevToolsがReduxほど成熟していない
 
-*Example:*
+*例:*
 ```javascript
-// Zustand approach
+// Zustandアプローチ
 import create from 'zustand'
 
 const useStore = create((set) => ({
@@ -222,140 +222,140 @@ const useStore = create((set) => ({
 }))
 ```
 
-**Key Differences**
+**主要な違い**
 
-| Aspect | Redux | Zustand |
+| 側面 | Redux | Zustand |
 |--------|-------|---------|
-| Learning Curve | Moderate-Steep | Minimal |
-| Boilerplate | More (even with RTK) | Very minimal |
-| Bundle Size | ~12KB (RTK) | ~1KB |
-| Ecosystem | Extensive | Growing |
-| DevTools | Excellent | Good |
-| Best For | Large, complex apps | Small-medium apps |
+| 学習曲線 | 中〜急 | 最小限 |
+| ボイラープレート | より多い(RTKでも) | 非常に最小限 |
+| バンドルサイズ | ~12KB(RTK) | ~1KB |
+| エコシステム | 広範 | 成長中 |
+| DevTools | 優れている | 良い |
+| 最適な用途 | 大規模で複雑なアプリ | 小中規模アプリ |
 
-**Recommendations**
+**推奨事項**
 
-*Choose Redux when:*
-- Building large, complex applications
-- Need extensive middleware (sagas, observables)
-- Want mature DevTools and time-travel debugging
-- Team familiar with Redux patterns
-- Need established best practices and conventions
+*Reduxを選択する場合:*
+- 大規模で複雑なアプリケーションを構築する
+- 広範なミドルウェアが必要(saga、observable)
+- 成熟したDevToolsとタイムトラベルデバッグが欲しい
+- チームがReduxパターンに精通している
+- 確立されたベストプラクティスと規約が必要
 
-*Choose Zustand when:*
-- Building small to medium applications
-- Want minimal setup and boilerplate
-- Prefer simple, flexible API
-- Bundle size is a concern
-- New project starting fresh
+*Zustandを選択する場合:*
+- 小中規模のアプリケーションを構築する
+- 最小限のセットアップとボイラープレートが欲しい
+- シンプルで柔軟なAPIを好む
+- バンドルサイズが懸念事項
+- 新しいプロジェクトを新規に開始する
 
-**Migration Considerations**
-- Zustand → Redux: May need middleware for complex async
-- Redux → Zustand: Can simplify significantly but lose some tooling
+**移行に関する考慮事項**
+- Zustand → Redux: 複雑な非同期にミドルウェアが必要になる可能性がある
+- Redux → Zustand: 大幅に簡素化できるが、一部のツールを失う
 
-**Sources**
-- Redux Toolkit Documentation: https://redux-toolkit.js.org/
+**情報源**
+- Redux Toolkitドキュメント: https://redux-toolkit.js.org/
 - Zustand GitHub: https://github.com/pmndrs/zustand
-- npm trends comparison (January 2025)
-- "Redux vs Zustand" community discussions (2024-2025)
-- Performance benchmarks from js-framework-benchmark
+- npmトレンド比較(2025年1月)
+- 「Redux vs Zustand」コミュニティディスカッション(2024-2025)
+- js-framework-benchmarkからのパフォーマンスベンチマーク
 
 ---
 
-## Example 3: Fact Verification Research
+## 例3: 事実検証リサーチ
 
-### User Request
-"Verify if it's true that React Server Components eliminate the need for useEffect"
+### ユーザーリクエスト
+「React Server ComponentsがuseEffectの必要性を排除するというのは本当ですか検証して」
 
-### Research Process
+### リサーチプロセス
 
-**Step 1: Define Objectives**
-- Verify specific claim about React Server Components and useEffect
-- Understand the relationship between these concepts
-- Provide accurate, nuanced answer
+**ステップ1: 目標の定義**
+- React Server ComponentsとuseEffectに関する特定の主張を検証する
+- これらの概念間の関係を理解する
+- 正確でニュアンスのある回答を提供する
 
-**Step 2: Plan Sources**
-- React official documentation (primary authority)
-- React team blog posts and announcements
-- Technical articles explaining Server Components
-- Examples showing both scenarios
+**ステップ2: 情報源の計画**
+- React公式ドキュメント(主要な権威)
+- Reactチームのブログ投稿と発表
+- Server Componentsを説明する技術記事
+- 両方のシナリオを示す例
 
-**Step 3: Information Gathering**
+**ステップ3: 情報収集**
 
-*Query 1: React Official Documentation on Server Components*
-- Server Components run only on server
-- Don't have access to browser APIs
-- Can't use hooks like useEffect, useState
+*クエリ1: Server Componentsに関するReact公式ドキュメント*
+- Server Componentsはサーバー上でのみ実行される
+- ブラウザAPIにアクセスできない
+- useEffect、useStateなどのフックを使用できない
 
-*Query 2: React Documentation on useEffect*
-- useEffect is for synchronizing with external systems
-- Only works in Client Components
-- Still needed for browser interactions
+*クエリ2: useEffectに関するReactドキュメント*
+- useEffectは外部システムとの同期用
+- Client Componentsでのみ動作する
+- ブラウザの相互作用にはまだ必要
 
-*Query 3: Articles and Examples*
-- Server vs Client Component patterns
-- When each is appropriate
-- Real-world usage examples
+*クエリ3: 記事と例*
+- ServerとClient Componentのパターン
+- それぞれが適切な場合
+- 実世界の使用例
 
-**Step 4: Verification**
-- Cross-reference across official React docs
-- Confirm in multiple technical articles
-- Find code examples demonstrating the nuance
-- Check React team's official statements
+**ステップ4: 検証**
+- 公式Reactドキュメント全体で相互参照
+- 複数の技術記事で確認
+- ニュアンスを示すコード例を見つける
+- Reactチームの公式声明を確認
 
-**Step 5: Synthesis**
+**ステップ5: 統合**
 
-### Research Findings
+### リサーチ調査結果
 
-**Verification Result: Partially True (Requires Important Context)**
+**検証結果: 部分的に真実(重要なコンテキストが必要)**
 
-**Accurate Aspects:**
-- Server Components cannot use useEffect (they run on server only)
-- Many use cases previously requiring useEffect (like data fetching) can be replaced with Server Components
-- Server Components can eliminate useEffect for server-side data fetching
+**正確な側面:**
+- Server ComponentsはuseEffectを使用できない(サーバー上でのみ実行される)
+- 以前useEffectを必要としていた多くの使用例(データ取得など)は、Server Componentsで置き換えることができる
+- Server Componentsはサーバーサイドのデータ取得に対するuseEffectを排除できる
 
-**Important Nuances:**
+**重要なニュアンス:**
 
-1. **Server Components CAN'T use useEffect**
-   - Server Components run only on the server
-   - They don't have access to client-side APIs
-   - Hooks like useEffect, useState are not available
+1. **Server ComponentsはuseEffectを使用できない**
+   - Server Componentsはサーバー上でのみ実行される
+   - クライアントサイドAPIにアクセスできない
+   - useEffect、useStateなどのフックは使用できない
 
-   Source: React Documentation - Server Components
+   情報源: Reactドキュメント - Server Components
 
-2. **Client Components STILL need useEffect**
-   - Browser interactions (event listeners, etc.)
-   - Client-side state synchronization
-   - Working with browser APIs
-   - Third-party library integration
+2. **Client ComponentsはまだuseEffectが必要**
+   - ブラウザの相互作用(イベントリスナーなど)
+   - クライアントサイドの状態同期
+   - ブラウザAPIとの連携
+   - サードパーティライブラリの統合
 
-   Source: React Documentation - useEffect
+   情報源: Reactドキュメント - useEffect
 
-3. **Use Case Shift, Not Elimination**
-   - Data fetching: Server Components (async/await)
-   - Browser interactions: Client Components (useEffect)
-   - You use the right tool for each context
+3. **使用例のシフト、排除ではない**
+   - データ取得: Server Components(async/await)
+   - ブラウザの相互作用: Client Components(useEffect)
+   - 各コンテキストに適したツールを使用する
 
-   Source: React team blog posts on Server Components
+   情報源: Server Componentsに関するReactチームブログ投稿
 
-**Example Demonstrating the Difference**
+**違いを示す例**
 
 ```javascript
-// ❌ Server Component - Cannot use useEffect
+// ❌ Server Component - useEffectを使用できない
 async function ServerComponent() {
-  // This works - async data fetching
+  // これは動作する - 非同期データ取得
   const data = await fetchData()
 
-  // This would ERROR - useEffect not available
+  // これはエラーになる - useEffectは使用できない
   // useEffect(() => { ... }, [])
 
   return <div>{data}</div>
 }
 
-// ✅ Client Component - Can use useEffect
+// ✅ Client Component - useEffectを使用できる
 'use client'
 function ClientComponent() {
-  // This works - client-side effects
+  // これは動作する - クライアントサイドのエフェクト
   useEffect(() => {
     const handleResize = () => console.log(window.innerWidth)
     window.addEventListener('resize', handleResize)
@@ -366,87 +366,87 @@ function ClientComponent() {
 }
 ```
 
-**Accurate Statement Would Be:**
-"React Server Components replace the need for useEffect for server-side operations like data fetching, but useEffect is still essential for client-side interactions and remains necessary in Client Components."
+**正確な声明は以下のようになります:**
+「React Server Componentsは、データ取得などのサーバーサイド操作に対するuseEffectの必要性を置き換えますが、useEffectはクライアントサイドの相互作用にとって依然として不可欠であり、Client Componentsでは引き続き必要です。」
 
-**Why This Matters:**
-- Understanding prevents misuse of Server Components
-- Clarifies the complementary nature of Server and Client Components
-- Helps developers choose the right component type
+**これが重要な理由:**
+- Server Componentsの誤用を防ぐ理解
+- ServerとClient Componentsの補完的な性質を明確にする
+- 開発者が適切なコンポーネントタイプを選択するのに役立つ
 
-**Sources:**
-- React Documentation: "Server Components"
-- React Documentation: "useEffect"
-- React team blog: "Introducing Server Components"
-- Next.js documentation on component boundaries
+**情報源:**
+- Reactドキュメント: 「Server Components」
+- Reactドキュメント: 「useEffect」
+- Reactチームブログ: 「Server Componentsの紹介」
+- コンポーネント境界に関するNext.jsドキュメント
 
-**Confidence Level:** High - verified through official React documentation and team statements.
+**信頼度レベル:** 高 - 公式Reactドキュメントとチームの声明を通じて検証済み。
 
 ---
 
-## Example 4: Codebase-Specific Research
+## 例4: コードベース固有のリサーチ
 
-### User Request
-"Research how we handle API errors in this codebase"
+### ユーザーリクエスト
+「このコードベースでAPIエラーをどのように処理しているかリサーチして」
 
-### Research Process
+### リサーチプロセス
 
-**Step 1: Define Objectives**
-- Understand current error handling patterns
-- Identify where API errors are caught
-- Document the approach for team reference
+**ステップ1: 目標の定義**
+- 現在のエラー処理パターンを理解する
+- APIエラーがキャッチされる場所を特定する
+- チーム参照用にアプローチを文書化する
 
-**Step 2: Plan Sources**
-- Grep for error handling patterns
-- Read API client code
-- Examine error handling utilities
-- Check middleware or interceptors
-- Look for error logging
+**ステップ2: 情報源の計画**
+- エラー処理パターンをGrepする
+- APIクライアントコードを読む
+- エラー処理ユーティリティを調査する
+- ミドルウェアまたはインターセプターを確認する
+- エラーログを探す
 
-**Step 3: Information Gathering**
+**ステップ3: 情報収集**
 
-*Search 1: Find API client code*
+*検索1: APIクライアントコードを見つける*
 ```bash
 Glob: "**/*api*.{ts,js,tsx,jsx}"
 ```
 
-*Search 2: Look for error handling*
+*検索2: エラー処理を探す*
 ```bash
 Grep: "catch|try|Error" in API files
 ```
 
-*Search 3: Find error utilities*
+*検索3: エラーユーティリティを見つける*
 ```bash
 Grep: "handleError|errorHandler"
 ```
 
-*Search 4: Examine configuration*
+*検索4: 設定を調査*
 ```bash
-Read: axios configuration, fetch wrappers
+Read: axios設定、fetchラッパー
 ```
 
-**Step 4: Analysis**
-- Read identified files to understand patterns
-- Trace error flow from API call to user display
-- Note consistency across codebase
-- Identify any gaps or inconsistencies
+**ステップ4: 分析**
+- 特定されたファイルを読んでパターンを理解する
+- API呼び出しからユーザー表示までのエラーフローをトレースする
+- コードベース全体の一貫性に注意する
+- ギャップまたは不整合を特定する
 
-**Step 5: Synthesis**
+**ステップ5: 統合**
 
-### Research Findings
+### リサーチ調査結果
 
-**Overview**
-The codebase uses a centralized error handling approach with Axios interceptors and custom error utilities.
+**概要**
+コードベースは、Axiosインターセプターとカスタムエラーユーティリティを使用した集中型エラー処理アプローチを使用しています。
 
-**Error Handling Architecture**
+**エラー処理アーキテクチャ**
 
-1. **API Client Setup** (src/api/client.ts:15-45)
-   - Axios instance with interceptors
-   - Response interceptor catches all API errors
-   - Transforms API errors to consistent format
+1. **APIクライアントセットアップ**(src/api/client.ts:15-45)
+   - インターセプター付きのAxiosインスタンス
+   - レスポンスインターセプターがすべてのAPIエラーをキャッチ
+   - APIエラーを一貫した形式に変換
 
 ```javascript
-// Simplified example
+// 簡略化された例
 axios.interceptors.response.use(
   response => response,
   error => {
@@ -457,327 +457,327 @@ axios.interceptors.response.use(
 )
 ```
 
-2. **Error Transformation** (src/utils/errors.ts:10-35)
-   - Standardizes different error types
-   - Extracts error messages from various formats
-   - Adds error codes and metadata
+2. **エラー変換**(src/utils/errors.ts:10-35)
+   - 異なるエラータイプを標準化
+   - さまざまな形式からエラーメッセージを抽出
+   - エラーコードとメタデータを追加
 
-3. **Error Display** (src/components/ErrorBoundary.tsx:20-50)
-   - React Error Boundary for unhandled errors
-   - Toast notifications for API errors
-   - User-friendly error messages
+3. **エラー表示**(src/components/ErrorBoundary.tsx:20-50)
+   - 未処理エラー用のReact Error Boundary
+   - APIエラー用のトースト通知
+   - ユーザーフレンドリーなエラーメッセージ
 
-4. **Logging** (src/utils/logger.ts:25-40)
-   - Errors logged to console in development
-   - Sent to error tracking service in production
-   - Includes stack traces and context
+4. **ログ**(src/utils/logger.ts:25-40)
+   - 開発環境ではコンソールにログを記録
+   - 本番環境ではエラートラッキングサービスに送信
+   - スタックトレースとコンテキストを含む
 
-**Key Files**
-- `src/api/client.ts:15-45` - Axios interceptor setup
-- `src/utils/errors.ts:10-35` - Error transformation logic
-- `src/components/ErrorBoundary.tsx:20-50` - UI error handling
-- `src/utils/logger.ts:25-40` - Error logging
-- `src/hooks/useApiCall.ts:30-60` - Hook for API calls with error handling
+**主要なファイル**
+- `src/api/client.ts:15-45` - Axiosインターセプターセットアップ
+- `src/utils/errors.ts:10-35` - エラー変換ロジック
+- `src/components/ErrorBoundary.tsx:20-50` - UIエラー処理
+- `src/utils/logger.ts:25-40` - エラーログ
+- `src/hooks/useApiCall.ts:30-60` - エラー処理付きAPI呼び出し用フック
 
-**Error Types Handled**
-- Network errors (no connection)
-- HTTP errors (4xx, 5xx status codes)
-- Timeout errors
-- Validation errors (from API)
-- Authentication errors (redirects to login)
+**処理されるエラータイプ**
+- ネットワークエラー(接続なし)
+- HTTPエラー(4xx、5xxステータスコード)
+- タイムアウトエラー
+- 検証エラー(APIから)
+- 認証エラー(ログインにリダイレクト)
 
-**Best Practices Observed**
-✅ Centralized error handling
-✅ Consistent error format
-✅ User-friendly error messages
-✅ Error logging for debugging
-✅ Graceful degradation
+**観察されたベストプラクティス**
+✅ 集中型エラー処理
+✅ 一貫したエラー形式
+✅ ユーザーフレンドリーなエラーメッセージ
+✅ デバッグ用のエラーログ
+✅ グレースフルデグラデーション
 
-**Areas for Improvement**
-- Some components bypass the error handling hook
-- Error messages could be more specific in some cases
-- Retry logic not implemented for transient failures
+**改善の余地がある領域**
+- 一部のコンポーネントがエラー処理フックをバイパスしている
+- 一部のケースでエラーメッセージがより具体的になる可能性がある
+- 一時的な障害に対する再試行ロジックが実装されていない
 
-**Usage Pattern**
+**使用パターン**
 ```javascript
-// Recommended approach (using custom hook)
+// 推奨アプローチ(カスタムフックを使用)
 const { data, error, loading } = useApiCall('/endpoint')
 
-// Errors automatically handled by interceptor
-// Toast notification shown to user
-// Error logged for debugging
+// エラーは自動的にインターセプターによって処理される
+// ユーザーにトースト通知が表示される
+// デバッグ用にエラーがログに記録される
 ```
 
-**Sources**
-- src/api/client.ts (Axios configuration)
-- src/utils/errors.ts (Error utilities)
-- src/components/ErrorBoundary.tsx (Error UI)
-- src/hooks/useApiCall.ts (API hook)
-- src/utils/logger.ts (Logging)
+**情報源**
+- src/api/client.ts(Axios設定)
+- src/utils/errors.ts(エラーユーティリティ)
+- src/components/ErrorBoundary.tsx(エラーUI)
+- src/hooks/useApiCall.ts(APIフック)
+- src/utils/logger.ts(ログ)
 
 ---
 
-## Example 5: Current Events/Trends Research
+## 例5: 時事/トレンドリサーチ
 
-### User Request
-"What's the current state of AI coding assistants in 2025?"
+### ユーザーリクエスト
+「2025年のAIコーディングアシスタントの現状は?」
 
-### Research Process
+### リサーチプロセス
 
-**Step 1: Define Objectives**
-- Understand current landscape of AI coding tools
-- Identify major players and their capabilities
-- Note recent developments and trends
+**ステップ1: 目標の定義**
+- AIコーディングツールの現在の状況を理解する
+- 主要プレーヤーとその機能を特定する
+- 最近の開発とトレンドに注意する
 
-**Step 2: Plan Sources**
-- Recent news and articles (last 6 months)
-- Official announcements from AI companies
-- Developer community discussions
-- Comparison articles and reviews
+**ステップ2: 情報源の計画**
+- 最近のニュースと記事(過去6ヶ月)
+- AI企業からの公式発表
+- 開発者コミュニティのディスカッション
+- 比較記事とレビュー
 
-**Step 3: Information Gathering**
+**ステップ3: 情報収集**
 
-*WebSearch: "AI coding assistants 2025"*
-- Latest tools and features
-- Recent announcements
-- Market leaders
+*WebSearch: 「AIコーディングアシスタント 2025」*
+- 最新のツールと機能
+- 最近の発表
+- マーケットリーダー
 
-*WebSearch: "GitHub Copilot vs Claude Code vs Cursor 2025"*
-- Comparative information
-- Feature differences
-- User preferences
+*WebSearch: 「GitHub Copilot vs Claude Code vs Cursor 2025」*
+- 比較情報
+- 機能の違い
+- ユーザーの好み
 
-*WebFetch: Official product pages*
-- Current capabilities
-- Pricing and availability
-- Latest updates
+*WebFetch: 公式製品ページ*
+- 現在の機能
+- 価格と利用可能性
+- 最新の更新
 
-**Step 4: Verification**
-- Cross-check features from official sources
-- Verify adoption numbers from multiple sources
-- Confirm recent updates with official announcements
-- Check publication dates (ensure recency)
+**ステップ4: 検証**
+- 公式情報源から機能を相互確認
+- 複数の情報源から採用数を検証
+- 公式発表で最近の更新を確認
+- 公開日を確認(最新性を確保)
 
-**Step 5: Synthesis**
+**ステップ5: 統合**
 
-### Research Findings
+### リサーチ調査結果
 
-**Overview**
-As of early 2025, AI coding assistants have matured significantly, with several strong offerings serving different developer needs.
+**概要**
+2025年初頭の時点で、AIコーディングアシスタントは大幅に成熟し、異なる開発者のニーズに対応するいくつかの強力な提供があります。
 
-**Major Players**
+**主要プレーヤー**
 
 1. **GitHub Copilot**
-   - One of the most widely adopted
-   - Integrated directly into VS Code, IDEs
-   - Strong code completion and generation
-   - Enterprise version with customization
+   - 最も広く採用されている1つ
+   - VS Code、IDEに直接統合
+   - 強力なコード補完と生成
+   - カスタマイズ付きのエンタープライズバージョン
 
-2. **Claude Code (Anthropic)**
-   - Command-line interface approach
-   - Strong at complex refactoring and understanding
-   - Conversational workflow
-   - Skill system for customization
+2. **Claude Code(Anthropic)**
+   - コマンドラインインターフェースアプローチ
+   - 複雑なリファクタリングと理解に強い
+   - 会話型ワークフロー
+   - カスタマイズ用のスキルシステム
 
 3. **Cursor**
-   - AI-native code editor
-   - Chat and inline editing
-   - Codebase-aware assistance
-   - Growing developer base
+   - AIネイティブコードエディタ
+   - チャットとインライン編集
+   - コードベース認識アシスタンス
+   - 増加する開発者ベース
 
 4. **Amazon CodeWhisperer**
-   - AWS integrated
-   - Security scanning included
-   - Good for AWS services
-   - Free tier available
+   - AWS統合
+   - セキュリティスキャンが含まれる
+   - AWSサービスに適している
+   - 無料ティアが利用可能
 
-**Current Trends (Early 2025)**
+**現在のトレンド(2025年初頭)**
 
-1. **Codebase Awareness**
-   - Tools increasingly understand entire projects
-   - Context from multiple files
-   - Better architecture suggestions
+1. **コードベース認識**
+   - ツールがプロジェクト全体を理解するようになっている
+   - 複数のファイルからのコンテキスト
+   - より良いアーキテクチャの提案
 
-2. **Agentic Capabilities**
-   - AI performing multi-step tasks autonomously
-   - Planning and executing complex refactors
-   - Running tests and fixing issues
+2. **エージェント機能**
+   - AIがマルチステップタスクを自律的に実行
+   - 複雑なリファクタリングの計画と実行
+   - テストの実行と問題の修正
 
-3. **Specialization**
-   - Tools optimizing for specific workflows
-   - Command-line vs IDE integration
-   - Different strengths emerging
+3. **専門化**
+   - 特定のワークフロー用に最適化するツール
+   - コマンドライン vs IDE統合
+   - 異なる強みが現れる
 
-4. **Security Focus**
-   - Code scanning and security analysis
-   - License compliance checking
-   - Vulnerability detection
+4. **セキュリティフォーカス**
+   - コードスキャンとセキュリティ分析
+   - ライセンスコンプライアンスチェック
+   - 脆弱性検出
 
-**Adoption Status**
-- ~40-50% of professional developers use AI coding tools regularly (various surveys)
-- Most common use: code completion and generation
-- Growing use: refactoring, documentation, testing
+**採用状況**
+- プロフェッショナル開発者の約40〜50%が定期的にAIコーディングツールを使用(各種調査)
+- 最も一般的な用途: コード補完と生成
+- 増加する用途: リファクタリング、ドキュメント、テスト
 
-**Key Considerations**
+**主要な考慮事項**
 
-*Choosing a Tool:*
-- IDE vs command-line preference
-- Existing tool integration
-- Budget (free vs paid tiers)
-- Use case (quick suggestions vs complex tasks)
-- Privacy/security requirements
+*ツールの選択:*
+- IDEとコマンドラインの好み
+- 既存のツール統合
+- 予算(無料と有料ティア)
+- 使用例(クイック提案と複雑なタスク)
+- プライバシー/セキュリティ要件
 
-*Current Limitations:*
-- Still require developer oversight
-- Can suggest incorrect or insecure code
-- Variable quality across different languages/frameworks
-- Context window limitations
+*現在の制限事項:*
+- 依然として開発者の監視が必要
+- 不正確または安全でないコードを提案する可能性がある
+- 異なる言語/フレームワーク間で品質が変動
+- コンテキストウィンドウの制限
 
-**Recent Developments (Last 3 Months)**
-- Expanded context windows
-- Better multi-file editing
-- Improved test generation
-- Enhanced debugging capabilities
+**最近の開発(過去3ヶ月)**
+- 拡張されたコンテキストウィンドウ
+- より良いマルチファイル編集
+- 改善されたテスト生成
+- 強化されたデバッグ機能
 
-**Looking Forward**
-- Continued improvement in accuracy
-- Better understanding of complex codebases
-- More specialized tools for specific domains
-- Integration with development workflows
+**今後の展望**
+- 精度の継続的な改善
+- 複雑なコードベースのより良い理解
+- 特定のドメイン用のより専門化されたツール
+- 開発ワークフローとの統合
 
-**Sources**
-- GitHub Copilot official documentation (January 2025)
-- Anthropic Claude Code release (2025)
-- Developer surveys from Stack Overflow, JetBrains (2024-2025)
-- Tech news coverage from Verge, Ars Technica (December 2024 - January 2025)
-- Official product announcements
+**情報源**
+- GitHub Copilot公式ドキュメント(2025年1月)
+- Anthropic Claude Codeリリース(2025)
+- Stack Overflow、JetBrainsからの開発者調査(2024-2025)
+- Verge、Ars Technicaからのテクノロジーニュースカバレッジ(2024年12月 - 2025年1月)
+- 公式製品発表
 
-**Last Updated:** January 2025
+**最終更新:** 2025年1月
 
-**Note:** This is a rapidly evolving field. Information may change quickly with new releases and updates.
+**注意:** これは急速に進化している分野です。新しいリリースと更新により、情報はすぐに変更される可能性があります。
 
 ---
 
-## Example 6: Quick Definition Research
+## 例6: クイック定義リサーチ
 
-### User Request
-"What is tree-shaking in JavaScript?"
+### ユーザーリクエスト
+「JavaScriptのツリーシェイキングとは何ですか?」
 
-### Research Process
+### リサーチプロセス
 
-**Step 1: Define Objectives**
-- Provide clear definition
-- Explain how it works
-- Give practical context
+**ステップ1: 目標の定義**
+- 明確な定義を提供する
+- どのように機能するかを説明する
+- 実用的なコンテキストを提供する
 
-**Step 2: Quick Source Strategy**
-- Official bundler documentation
-- Authoritative JavaScript resources
-- Clear examples
+**ステップ2: クイック情報源戦略**
+- 公式バンドラードキュメント
+- 権威あるJavaScriptリソース
+- 明確な例
 
-**Step 3: Information Gathering**
-- WebSearch: "tree-shaking JavaScript definition"
-- WebFetch: webpack or Rollup documentation
-- Look for clear examples
+**ステップ3: 情報収集**
+- WebSearch: 「ツリーシェイキング JavaScript 定義」
+- WebFetch: webpackまたはRollupドキュメント
+- 明確な例を探す
 
-**Step 4: Quick Verification**
-- Confirm definition across sources
-- Verify technical accuracy
+**ステップ4: クイック検証**
+- 情報源間で定義を確認
+- 技術的正確性を検証
 
-**Step 5: Concise Synthesis**
+**ステップ5: 簡潔な統合**
 
-### Research Findings
+### リサーチ調査結果
 
-**Definition**
-Tree-shaking is a dead code elimination technique used in JavaScript bundlers to remove unused exports from the final bundle.
+**定義**
+ツリーシェイキングは、JavaScriptバンドラーで使用されるデッドコード削除技術で、最終バンドルから未使用のエクスポートを削除します。
 
-**How It Works**
-1. Bundler analyzes ES6 module imports/exports
-2. Identifies which exports are actually used
-3. Eliminates unused code from final bundle
-4. Results in smaller bundle size
+**どのように機能するか**
+1. バンドラーがES6モジュールのインポート/エクスポートを分析
+2. 実際に使用されているエクスポートを特定
+3. 最終バンドルから未使用のコードを削除
+4. より小さいバンドルサイズになる
 
-**Example**
+**例**
 ```javascript
 // utils.js
 export function usedFunction() { /* ... */ }
-export function unusedFunction() { /* ... */ }  // Will be tree-shaken
+export function unusedFunction() { /* ... */ }  // ツリーシェイキングされる
 
 // app.js
 import { usedFunction } from './utils'
-usedFunction()  // Only this is included in bundle
+usedFunction()  // これだけがバンドルに含まれる
 ```
 
-**Requirements**
-- ES6 modules (import/export)
-- Module bundler that supports it (webpack, Rollup, etc.)
-- Side-effect-free code
+**要件**
+- ES6モジュール(import/export)
+- それをサポートするモジュールバンドラー(webpack、Rollupなど)
+- 副作用のないコード
 
-**Benefits**
-- Smaller bundle sizes
-- Faster load times
-- Better performance
+**利点**
+- より小さいバンドルサイズ
+- より速いロード時間
+- より良いパフォーマンス
 
-**Sources**
-- Webpack documentation: "Tree Shaking"
-- Rollup documentation
+**情報源**
+- Webpackドキュメント: 「Tree Shaking」
+- Rollupドキュメント
 - MDN Web Docs
 
 ---
 
-## Common Research Patterns Summary
+## 一般的なリサーチパターンの概要
 
-### Pattern 1: Breadth-First (Overview)
-1. Get high-level understanding
-2. Identify major concepts
-3. Provide concise summary
-4. Reference sources for depth
+### パターン1: 幅優先(概要)
+1. 高レベルの理解を得る
+2. 主要な概念を特定する
+3. 簡潔な要約を提供する
+4. 深さのために情報源を参照する
 
-**Use for:** Quick definitions, overviews, initial exploration
+**使用目的:** クイック定義、概要、初期探索
 
-### Pattern 2: Depth-First (Comprehensive)
-1. Thorough investigation of topic
-2. Multiple authoritative sources
-3. Detailed examples and explanations
-4. Comprehensive coverage
+### パターン2: 深さ優先(包括的)
+1. トピックの徹底的な調査
+2. 複数の権威ある情報源
+3. 詳細な例と説明
+4. 包括的なカバレッジ
 
-**Use for:** Complex topics, implementation guides, thorough analysis
+**使用目的:** 複雑なトピック、実装ガイド、徹底的な分析
 
-### Pattern 3: Comparative (Analysis)
-1. Research each option independently
-2. Identify comparison criteria
-3. Evaluate based on same criteria
-4. Provide context-specific recommendations
+### パターン3: 比較(分析)
+1. 各オプションを独立してリサーチ
+2. 比較基準を特定
+3. 同じ基準で評価
+4. コンテキスト固有の推奨事項を提供
 
-**Use for:** Technology comparisons, solution evaluation, decision support
+**使用目的:** 技術比較、ソリューション評価、意思決定サポート
 
-### Pattern 4: Verification (Fact-Checking)
-1. Identify specific claim
-2. Find authoritative sources
-3. Look for confirming and contradicting evidence
-4. Provide nuanced, accurate conclusion
+### パターン4: 検証(ファクトチェック)
+1. 特定の主張を特定
+2. 権威ある情報源を見つける
+3. 確認証拠と矛盾証拠を探す
+4. ニュアンスのある正確な結論を提供
 
-**Use for:** Fact-checking, claim verification, accuracy validation
+**使用目的:** ファクトチェック、主張検証、正確性検証
 
-### Pattern 5: Discovery (Codebase)
-1. Search for relevant code patterns
-2. Read and analyze findings
-3. Trace through implementation
-4. Document patterns and locations
+### パターン5: 発見(コードベース)
+1. 関連するコードパターンを検索
+2. 調査結果を読んで分析
+3. 実装をトレース
+4. パターンと場所を文書化
 
-**Use for:** Understanding existing code, finding implementations, analyzing architecture
+**使用目的:** 既存のコードを理解、実装を見つける、アーキテクチャを分析
 
 ---
 
-## Tips for Effective Research
+## 効果的なリサーチのためのヒント
 
-1. **Match depth to need** - Quick question = concise answer
-2. **Start authoritative** - Official docs first, community second
-3. **Verify claims** - Cross-check important facts
-4. **Note limitations** - Be honest about gaps and uncertainties
-5. **Provide context** - Help users understand nuances
-6. **Cite sources** - Enable verification and further reading
-7. **Stay current** - Check dates for time-sensitive topics
-8. **Organize clearly** - Structure makes information accessible
-9. **Include examples** - Concrete examples clarify concepts
-10. **Be objective** - Present facts and perspectives fairly
+1. **ニーズに深さを合わせる** - クイック質問 = 簡潔な回答
+2. **権威から始める** - 公式ドキュメント優先、コミュニティ次
+3. **主張を検証する** - 重要な事実を相互確認
+4. **制限に注意する** - ギャップと不確実性について正直に
+5. **コンテキストを提供する** - ユーザーがニュアンスを理解するのを助ける
+6. **情報源を引用する** - 検証とさらなる読書を可能にする
+7. **最新を保つ** - 時間的制約のあるトピックの日付を確認
+8. **明確に整理する** - 構造が情報をアクセシブルにする
+9. **例を含める** - 具体的な例が概念を明確にする
+10. **客観的に** - 事実と視点を公平に提示する

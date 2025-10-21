@@ -1,601 +1,601 @@
-# Research Skill - Technical Reference
-
-## Research Methodology Framework
-
-This reference document provides detailed technical specifications, methodological guidelines, and advanced research techniques to supplement the main SKILL.md.
-
-## Research Quality Dimensions
-
-### 1. Rigor
-
-**Definition**: The systematic and thorough application of research methods.
-
-**Key Principles**:
-- Follow established methodologies consistently
-- Apply appropriate validation techniques
-- Maintain objectivity throughout the process
-- Document methods and decisions transparently
-
-**Implementation**:
-- Use structured information gathering protocols
-- Apply consistent evaluation criteria across sources
-- Maintain audit trail of research decisions
-- Validate findings through multiple methods
-
-### 2. Credibility
-
-**Definition**: The trustworthiness and believability of research findings.
-
-**Source Credibility Hierarchy**:
-
-**Tier 1 - Highest Credibility**:
-- Official technical documentation
-- Peer-reviewed academic publications
-- Standards organizations (W3C, IEEE, ISO, etc.)
-- Official government sources (for relevant topics)
-- Original research data
-
-**Tier 2 - High Credibility**:
-- Established industry publications
-- Well-known technical books
-- Recognized expert blogs/articles
-- Conference proceedings
-- Reputable news organizations (for current events)
-
-**Tier 3 - Moderate Credibility**:
-- Community documentation (well-maintained)
-- Technical forums (Stack Overflow, with high votes)
-- Corporate blogs (from relevant companies)
-- Tutorial sites (established platforms)
-
-**Tier 4 - Lower Credibility** (use with caution):
-- Personal blogs (unknown authors)
-- Unverified community posts
-- Social media comments
-- Undated or very old content
-
-**Credibility Assessment Criteria**:
-- Author expertise and credentials
-- Publication or platform reputation
-- Peer review or editorial process
-- Citation of sources
-- Transparency about methodology
-- Recency and maintenance
-- Potential conflicts of interest
-
-### 3. Impact
-
-**Definition**: The usefulness and applicability of research findings.
-
-**Maximizing Impact**:
-- Align research depth with user needs
-- Provide actionable insights
-- Include practical examples
-- Explain real-world applications
-- Highlight key takeaways clearly
-
-## Information Source Evaluation
-
-### CRAAP Test (Adapted for Technical Research)
-
-**Currency**:
-- When was information published/updated?
-- Is it current enough for the topic?
-- Have practices/technologies changed since publication?
-- Are links and references still working?
-
-**Relevance**:
-- Does it address the research question?
-- Is it at the appropriate technical level?
-- Is it specific enough to be useful?
-- Is it too general or too specific?
-
-**Authority**:
-- Who is the author/publisher?
-- What are their credentials/expertise?
-- Is it from an official or recognized source?
-- Is there editorial oversight?
-
-**Accuracy**:
-- Is information verifiable?
-- Can you confirm it from other sources?
-- Are there citations/references?
-- Is it free from obvious errors?
-
-**Purpose**:
-- Why was this information created?
-- Is it educational, commercial, persuasive?
-- Are there potential biases?
-- Is the perspective balanced?
-
-## Research Patterns and Anti-Patterns
-
-### Patterns (Good Practices)
-
-**1. Triangulation**
-- Gather information from multiple independent sources
-- Use different types of sources (official docs, community, examples)
-- Verify key facts across sources
-- Investigate discrepancies thoroughly
-
-**2. Progressive Refinement**
-- Start with broad overview
-- Identify key concepts and terminology
-- Drill down into specific areas
-- Revisit broader context if needed
-
-**3. Source Documentation**
-- Track which source provided which information
-- Note publication dates and authors
-- Maintain citations for key claims
-- Enable traceability of findings
-
-**4. Critical Evaluation**
-- Question extraordinary claims
-- Look for supporting evidence
-- Consider alternative explanations
-- Assess source credibility systematically
-
-**5. Iterative Validation**
-- Cross-check facts as you gather them
-- Update findings as new information emerges
-- Revisit earlier conclusions if needed
-- Maintain flexibility in interpretation
-
-### Anti-Patterns (Avoid These)
-
-**1. Single Source Dependency**
-- ❌ Relying on only one source
-- ✅ Verify from multiple independent sources
-
-**2. Confirmation Bias**
-- ❌ Only seeking information that confirms initial assumptions
-- ✅ Actively seek diverse perspectives and contrary evidence
-
-**3. Outdated Information**
-- ❌ Using old sources without checking for updates
-- ✅ Verify information is current for the topic
-
-**4. Authority Worship**
-- ❌ Accepting claims uncritically from "expert" sources
-- ✅ Verify even expert claims when possible
-
-**5. Scope Creep**
-- ❌ Expanding research beyond original question indefinitely
-- ✅ Maintain focus on defined objectives, note related topics separately
-
-**6. Analysis Paralysis**
-- ❌ Gathering information indefinitely without synthesis
-- ✅ Set reasonable completion criteria and synthesize findings
-
-**7. Citation-Free Presentation**
-- ❌ Presenting facts without sources
-- ✅ Provide references for key claims and findings
-
-## Research Strategies by Context
-
-### Time-Constrained Research
-
-When speed is important:
-
-1. **Prioritize High-Quality Sources**:
-   - Start with official documentation
-   - Use recognized authoritative sources
-   - Skip lower-quality sources unless necessary
-
-2. **Focus Scope Tightly**:
-   - Answer specific question only
-   - Don't explore tangential topics
-   - Provide focused, concise findings
-
-3. **Use Efficient Tools**:
-   - WebSearch for quick overview
-   - Direct WebFetch to known authoritative sources
-   - Grep/Glob for quick code searches
-
-4. **Set Clear Stopping Point**:
-   - Define "good enough" criteria
-   - Stop when core question is answered
-   - Note areas for deeper research if needed
-
-### Comprehensive Research
-
-When depth is important:
-
-1. **Systematic Coverage**:
-   - Cover all major aspects of topic
-   - Explore related concepts and context
-   - Investigate alternative approaches
-
-2. **Deep Source Analysis**:
-   - Read complete articles/documentation
-   - Follow references and citations
-   - Examine original sources when possible
-
-3. **Thorough Verification**:
-   - Cross-check all major claims
-   - Investigate discrepancies fully
-   - Verify understanding through examples
-
-4. **Rich Documentation**:
-   - Detailed citations and references
-   - Explanation of reasoning and decisions
-   - Comprehensive coverage of caveats and limitations
-
-### Uncertainty Resolution
-
-When information is conflicting or unclear:
-
-1. **Identify Nature of Conflict**:
-   - Are sources talking about different things?
-   - Has information changed over time?
-   - Are there legitimate different approaches?
-
-2. **Seek Authoritative Arbitration**:
-   - Check official standards or documentation
-   - Look for expert consensus
-   - Examine recent authoritative sources
-
-3. **Experimental Verification**:
-   - For code/technical topics, test if possible
-   - Verify through actual implementation
-   - Document results of testing
-
-4. **Transparent Presentation**:
-   - Explain the conflict clearly
-   - Present multiple perspectives
-   - Recommend most likely accurate information
-   - Acknowledge remaining uncertainty
-
-## Tool-Specific Research Techniques
-
-### WebSearch Best Practices
-
-**Effective Query Construction**:
-- Include relevant technical terms
-- Add year (e.g., "2025") for current information
-- Use "best practices" for methodology questions
-- Add "official" or "documentation" for authoritative sources
-- Use "vs" or "comparison" to understand options
-
-**Result Evaluation**:
-- Prioritize official documentation in results
-- Check publication dates prominently
-- Look for recognized authority sources
-- Cross-reference multiple search results
-- Note consensus across results
-
-**Common Uses**:
-- Getting overview of topics
-- Finding current best practices
-- Discovering recent developments
-- Identifying authoritative sources
-- Understanding landscape of solutions
-
-### WebFetch Best Practices
-
-**When to Use**:
-- Reading specific known documentation
-- Accessing complete articles
-- Getting detailed content from URLs
-- Following up on WebSearch results
-
-**Effective Usage**:
-- Use specific prompts to extract needed information
-- Request summaries for long content
-- Ask for specific sections or aspects
-- Verify source credibility (check URL, author, date)
-
-**Common Uses**:
-- Reading official documentation pages
-- Accessing specific blog posts or articles
-- Getting detailed technical specifications
-- Following references from other sources
-
-### Code Research (Grep/Glob/Read)
-
-**Discovery Process**:
-1. **Pattern Finding** (Glob):
-   - Find files by name patterns
-   - Locate configuration files
-   - Discover module structure
-
-2. **Content Search** (Grep):
-   - Search for function/class names
-   - Find specific patterns in code
-   - Locate error messages or constants
-   - Discover usage examples
-
-3. **Deep Reading** (Read):
-   - Understand implementation details
-   - Analyze code flow
-   - Read documentation/comments
-   - Examine configuration
-
-**Best Practices**:
-- Start broad, narrow down progressively
-- Follow code references and imports
-- Understand context before conclusions
-- Note file locations (file:line) in findings
-- Verify code is current/active (not deprecated)
-
-## Information Organization Techniques
-
-### Structured Note-Taking
-
-**During Research**:
+# リサーチスキル - 技術リファレンス
+
+## リサーチ方法論フレームワーク
+
+このリファレンスドキュメントは、メインのSKILL.mdを補完するための詳細な技術仕様、方法論ガイドライン、および高度なリサーチ技術を提供します。
+
+## リサーチ品質の次元
+
+### 1. 厳密性
+
+**定義**: リサーチ方法の体系的かつ徹底的な適用。
+
+**主要原則**:
+- 確立された方法論を一貫して従う
+- 適切な検証技術を適用する
+- プロセス全体を通じて客観性を維持する
+- 方法と決定を透明に文書化する
+
+**実装**:
+- 構造化された情報収集プロトコルを使用する
+- 情報源全体に一貫した評価基準を適用する
+- リサーチ決定の監査証跡を維持する
+- 複数の方法を通じて調査結果を検証する
+
+### 2. 信頼性
+
+**定義**: リサーチ調査結果の信頼性と信憑性。
+
+**情報源の信頼性階層**:
+
+**ティア1 - 最高の信頼性**:
+- 公式技術ドキュメント
+- 査読済み学術出版物
+- 標準化組織(W3C、IEEE、ISOなど)
+- 公式政府情報源(関連トピック用)
+- 元の研究データ
+
+**ティア2 - 高い信頼性**:
+- 確立された業界出版物
+- 有名な技術書籍
+- 認められた専門家のブログ/記事
+- 会議議事録
+- 評判の良いニュース組織(時事問題用)
+
+**ティア3 - 中程度の信頼性**:
+- コミュニティドキュメント(よく維持されている)
+- 技術フォーラム(Stack Overflow、高投票数のもの)
+- 企業ブログ(関連企業から)
+- チュートリアルサイト(確立されたプラットフォーム)
+
+**ティア4 - 低い信頼性**(注意して使用):
+- 個人ブログ(未知の著者)
+- 未検証のコミュニティ投稿
+- ソーシャルメディアコメント
+- 日付がないまたは非常に古いコンテンツ
+
+**信頼性評価基準**:
+- 著者の専門知識と資格
+- 出版物またはプラットフォームの評判
+- 査読または編集プロセス
+- 情報源の引用
+- 方法論の透明性
+- 最新性とメンテナンス
+- 潜在的な利益相反
+
+### 3. インパクト
+
+**定義**: リサーチ調査結果の有用性と適用可能性。
+
+**インパクトの最大化**:
+- リサーチの深さをユーザーのニーズに合わせる
+- 実用的な洞察を提供する
+- 実用的な例を含める
+- 実世界のアプリケーションを説明する
+- 主要な要点を明確に強調する
+
+## 情報源評価
+
+### CRAAPテスト(技術リサーチ用に適応)
+
+**最新性(Currency)**:
+- 情報はいつ公開/更新されましたか?
+- トピックに対して十分に最新ですか?
+- 公開以降、実践/技術は変更されましたか?
+- リンクと参照はまだ機能していますか?
+
+**関連性(Relevance)**:
+- リサーチクエスチョンに対処していますか?
+- 適切な技術レベルですか?
+- 有用であるために十分に具体的ですか?
+- 一般的すぎるか、または具体的すぎますか?
+
+**権威(Authority)**:
+- 著者/出版社は誰ですか?
+- 彼らの資格/専門知識は何ですか?
+- 公式または認められた情報源からですか?
+- 編集上の監視はありますか?
+
+**正確性(Accuracy)**:
+- 情報は検証可能ですか?
+- 他の情報源から確認できますか?
+- 引用/参照はありますか?
+- 明らかなエラーがありませんか?
+
+**目的(Purpose)**:
+- この情報はなぜ作成されましたか?
+- 教育的、商業的、説得的ですか?
+- 潜在的なバイアスはありますか?
+- 視点はバランスが取れていますか?
+
+## リサーチパターンとアンチパターン
+
+### パターン(良い実践)
+
+**1. トライアンギュレーション**
+- 複数の独立した情報源から情報を収集する
+- 異なるタイプの情報源を使用する(公式ドキュメント、コミュニティ、例)
+- 情報源間で主要な事実を検証する
+- 矛盾を徹底的に調査する
+
+**2. 段階的な洗練**
+- 広範な概要から始める
+- 主要な概念と用語を特定する
+- 特定の領域を掘り下げる
+- 必要に応じてより広いコンテキストを再訪する
+
+**3. 情報源の文書化**
+- どの情報源がどの情報を提供したかを追跡する
+- 公開日と著者に注意する
+- 主要な主張の引用を維持する
+- 調査結果のトレーサビリティを有効にする
+
+**4. 批判的評価**
+- 異常な主張に疑問を持つ
+- 裏付け証拠を探す
+- 代替説明を考慮する
+- 情報源の信頼性を体系的に評価する
+
+**5. 反復検証**
+- 情報を収集しながら事実を相互確認する
+- 新しい情報が出現したら調査結果を更新する
+- 必要に応じて以前の結論を再検討する
+- 解釈の柔軟性を維持する
+
+### アンチパターン(これらを避ける)
+
+**1. 単一情報源依存**
+- ❌ 1つの情報源のみに依存する
+- ✅ 複数の独立した情報源から検証する
+
+**2. 確証バイアス**
+- ❌ 初期の仮定を確認する情報のみを求める
+- ✅ 積極的に多様な視点と反対の証拠を求める
+
+**3. 古い情報**
+- ❌ 更新を確認せずに古い情報源を使用する
+- ✅ トピックに対して情報が最新であることを確認する
+
+**4. 権威崇拝**
+- ❌ 「専門家」情報源からの主張を無批判に受け入れる
+- ✅ 可能な場合は専門家の主張も検証する
+
+**5. スコープクリープ**
+- ❌ 元の質問を超えてリサーチを無期限に拡大する
+- ✅ 定義された目標に焦点を維持し、関連トピックを別途記録する
+
+**6. 分析麻痺**
+- ❌ 統合せずに無期限に情報を収集する
+- ✅ 合理的な完了基準を設定し、調査結果を統合する
+
+**7. 引用のない提示**
+- ❌ 情報源なしで事実を提示する
+- ✅ 主要な主張と調査結果の参照を提供する
+
+## コンテキスト別のリサーチ戦略
+
+### 時間制約のあるリサーチ
+
+速度が重要な場合:
+
+1. **高品質の情報源を優先する**:
+   - 公式ドキュメントから始める
+   - 認められた権威ある情報源を使用する
+   - 必要でない限り低品質の情報源をスキップする
+
+2. **スコープを厳密に焦点を合わせる**:
+   - 特定の質問にのみ答える
+   - 接線的なトピックを探索しない
+   - 焦点を絞った簡潔な調査結果を提供する
+
+3. **効率的なツールを使用する**:
+   - 迅速な概要のためにWebSearchを使用する
+   - 既知の権威ある情報源への直接WebFetchを使用する
+   - 迅速なコード検索のためにGrep/Globを使用する
+
+4. **明確な停止ポイントを設定する**:
+   - 「十分」の基準を定義する
+   - コア質問に答えたら停止する
+   - 必要に応じてより深いリサーチのための領域に注意する
+
+### 包括的なリサーチ
+
+深さが重要な場合:
+
+1. **体系的なカバレッジ**:
+   - トピックのすべての主要な側面をカバーする
+   - 関連する概念とコンテキストを探索する
+   - 代替アプローチを調査する
+
+2. **深い情報源分析**:
+   - 完全な記事/ドキュメントを読む
+   - 参照と引用をフォローする
+   - 可能な場合は元の情報源を調査する
+
+3. **徹底的な検証**:
+   - すべての主要な主張を相互確認する
+   - 矛盾を完全に調査する
+   - 例を通じて理解を検証する
+
+4. **豊富なドキュメント**:
+   - 詳細な引用と参照
+   - 推論と決定の説明
+   - 注意事項と制限事項の包括的なカバレッジ
+
+### 不確実性の解決
+
+情報が矛盾しているか不明確な場合:
+
+1. **矛盾の性質を特定する**:
+   - 情報源は異なることについて話していますか?
+   - 情報は時間とともに変化しましたか?
+   - 正当な異なるアプローチがありますか?
+
+2. **権威ある調停を求める**:
+   - 公式標準またはドキュメントを確認する
+   - 専門家のコンセンサスを探す
+   - 最近の権威ある情報源を調査する
+
+3. **実験的検証**:
+   - コード/技術的なトピックの場合、可能であればテストする
+   - 実際の実装を通じて検証する
+   - テスト結果を文書化する
+
+4. **透明な提示**:
+   - 矛盾を明確に説明する
+   - 複数の視点を提示する
+   - 最も正確である可能性が高い情報を推奨する
+   - 残りの不確実性を認める
+
+## ツール固有のリサーチ技術
+
+### WebSearchのベストプラクティス
+
+**効果的なクエリ構築**:
+- 関連する技術用語を含める
+- 現在の情報のために年(例:「2025」)を追加する
+- 方法論の質問には「ベストプラクティス」を使用する
+- 権威ある情報源には「公式」または「ドキュメント」を追加する
+- オプションを理解するために「vs」または「比較」を使用する
+
+**結果評価**:
+- 結果内の公式ドキュメントを優先する
+- 公開日を目立つように確認する
+- 認められた権威情報源を探す
+- 複数の検索結果を相互参照する
+- 結果間のコンセンサスに注意する
+
+**一般的な用途**:
+- トピックの概要を取得する
+- 現在のベストプラクティスを見つける
+- 最近の開発を発見する
+- 権威ある情報源を特定する
+- ソリューションの状況を理解する
+
+### WebFetchのベストプラクティス
+
+**使用する場合**:
+- 特定の既知のドキュメントを読む
+- 完全な記事にアクセスする
+- URLから詳細なコンテンツを取得する
+- WebSearch結果をフォローアップする
+
+**効果的な使用法**:
+- 必要な情報を抽出するために特定のプロンプトを使用する
+- 長いコンテンツの要約をリクエストする
+- 特定のセクションまたは側面を求める
+- 情報源の信頼性を確認する(URL、著者、日付を確認)
+
+**一般的な用途**:
+- 公式ドキュメントページを読む
+- 特定のブログ投稿または記事にアクセスする
+- 詳細な技術仕様を取得する
+- 他の情報源からの参照をフォローする
+
+### コードリサーチ(Grep/Glob/Read)
+
+**発見プロセス**:
+1. **パターン検索**(Glob):
+   - 名前パターンでファイルを見つける
+   - 設定ファイルを見つける
+   - モジュール構造を発見する
+
+2. **コンテンツ検索**(Grep):
+   - 関数/クラス名を検索する
+   - コード内の特定のパターンを見つける
+   - エラーメッセージまたは定数を見つける
+   - 使用例を発見する
+
+3. **深い読み取り**(Read):
+   - 実装の詳細を理解する
+   - コードフローを分析する
+   - ドキュメント/コメントを読む
+   - 設定を調査する
+
+**ベストプラクティス**:
+- 広く始めて、段階的に絞り込む
+- コードの参照とインポートをフォローする
+- 結論を出す前にコンテキストを理解する
+- 調査結果にファイルの場所(ファイル:行)を記録する
+- コードが現在/アクティブ(非推奨ではない)であることを確認する
+
+## 情報組織化技術
+
+### 構造化されたノート取り
+
+**リサーチ中**:
 ```
-Topic: [Research Question]
+トピック: [リサーチクエスチョン]
 
-Key Findings:
-- [Finding 1] [Source]
-- [Finding 2] [Source]
-- [Finding 3] [Source]
+主要な調査結果:
+- [調査結果1] [情報源]
+- [調査結果2] [情報源]
+- [調査結果3] [情報源]
 
-Important Details:
-- [Detail 1]
-- [Detail 2]
+重要な詳細:
+- [詳細1]
+- [詳細2]
 
-Questions/Gaps:
-- [What's still unclear]
-- [Conflicting information]
+質問/ギャップ:
+- [まだ不明なこと]
+- [矛盾する情報]
 
-Sources Consulted:
-1. [Source 1 - URL/Reference]
-2. [Source 2 - URL/Reference]
+参照した情報源:
+1. [情報源1 - URL/参照]
+2. [情報源2 - URL/参照]
 ```
 
-### Synthesis Framework
+### 統合フレームワーク
 
-**Organizing Findings**:
+**調査結果の整理**:
 
-1. **Main Answer**: Direct response to research question
-2. **Supporting Details**: Evidence and explanations
-3. **Context**: Background or related information
-4. **Caveats**: Limitations, exceptions, or conditions
-5. **Sources**: References and citations
-6. **Further Reading**: Related topics or deeper resources
+1. **主な回答**: リサーチクエスチョンへの直接的な回答
+2. **裏付け詳細**: 証拠と説明
+3. **コンテキスト**: 背景または関連情報
+4. **注意事項**: 制限、例外、または条件
+5. **情報源**: 参照と引用
+6. **さらなる読書**: 関連トピックまたはより深いリソース
 
-## Domain-Specific Research Guidelines
+## ドメイン固有のリサーチガイドライン
 
-### Technical Documentation Research
+### 技術ドキュメントリサーチ
 
-**Priorities**:
-1. Official documentation (primary source)
-2. Version-specific information
-3. Working code examples
-4. Known issues/limitations
-5. Migration guides (if relevant)
+**優先事項**:
+1. 公式ドキュメント(一次情報源)
+2. バージョン固有の情報
+3. 動作するコード例
+4. 既知の問題/制限事項
+5. 移行ガイド(該当する場合)
 
-**Common Pitfalls**:
-- Using outdated version documentation
-- Missing breaking changes in updates
-- Not checking compatibility requirements
-- Ignoring deprecation warnings
+**一般的な落とし穴**:
+- 古いバージョンのドキュメントを使用する
+- 更新での破壊的変更を見逃す
+- 互換性要件を確認しない
+- 非推奨警告を無視する
 
-### Best Practices Research
+### ベストプラクティスリサーチ
 
-**Approach**:
-1. Look for established standards/frameworks
-2. Find expert consensus (multiple authorities)
-3. Check recent discussions (practices evolve)
-4. Understand context and tradeoffs
-5. Identify when rules can be broken
+**アプローチ**:
+1. 確立された標準/フレームワークを探す
+2. 専門家のコンセンサスを見つける(複数の権威)
+3. 最近のディスカッションを確認する(実践は進化する)
+4. コンテキストとトレードオフを理解する
+5. ルールを破ることができる場合を特定する
 
-**Sources to Prioritize**:
-- Industry standards organizations
-- Well-known technical books
-- Recognized expert publications
-- Official style guides
-- Conference talks by experts
+**優先すべき情報源**:
+- 業界標準化組織
+- 有名な技術書籍
+- 認められた専門家の出版物
+- 公式スタイルガイド
+- 専門家による会議講演
 
-### Comparative Research
+### 比較リサーチ
 
-**Framework**:
-1. Identify comparison criteria
-2. Research each option independently
-3. Gather information on same criteria for each
-4. Note relative strengths/weaknesses
-5. Consider context dependencies
+**フレームワーク**:
+1. 比較基準を特定する
+2. 各オプションを独立してリサーチする
+3. 各オプションについて同じ基準で情報を収集する
+4. 相対的な強み/弱みに注意する
+5. コンテキスト依存性を考慮する
 
-**Presentation**:
-- Clear comparison structure
-- Fair representation of each option
-- Context for when to choose each
-- Acknowledgment of tradeoffs
-- Citations for each option's claims
+**提示**:
+- 明確な比較構造
+- 各オプションの公平な表現
+- いつ各オプションを選択するかのコンテキスト
+- トレードオフの承認
+- 各オプションの主張の引用
 
-### Troubleshooting Research
+### トラブルシューティングリサーチ
 
-**Process**:
-1. Understand the problem clearly
-2. Search for exact error messages
-3. Look for common causes
-4. Check version-specific issues
-5. Verify with official documentation
-6. Consider workarounds if needed
+**プロセス**:
+1. 問題を明確に理解する
+2. 正確なエラーメッセージを検索する
+3. 一般的な原因を探す
+4. バージョン固有の問題を確認する
+5. 公式ドキュメントで検証する
+6. 必要に応じて回避策を検討する
 
-**Sources**:
-- Official issue trackers
-- Stack Overflow (verified answers)
-- GitHub issues/discussions
-- Official documentation (known issues)
-- Community forums (recognized experts)
+**情報源**:
+- 公式問題トラッカー
+- Stack Overflow(検証済みの回答)
+- GitHub問題/ディスカッション
+- 公式ドキュメント(既知の問題)
+- コミュニティフォーラム(認められた専門家)
 
-## Research Validation Checklist
+## リサーチ検証チェックリスト
 
-### Before Presenting Findings
+### 調査結果を提示する前に
 
-**Completeness**:
-- [ ] Research question fully answered
-- [ ] All major aspects covered
-- [ ] Context provided where needed
-- [ ] Examples included for clarity
+**完全性**:
+- [ ] リサーチクエスチョンに完全に答えている
+- [ ] すべての主要な側面がカバーされている
+- [ ] 必要に応じてコンテキストが提供されている
+- [ ] 明確化のために例が含まれている
 
-**Accuracy**:
-- [ ] Key facts verified from multiple sources
-- [ ] Conflicting information investigated
-- [ ] Recency confirmed for time-sensitive topics
-- [ ] Technical details validated
+**正確性**:
+- [ ] 主要な事実が複数の情報源から検証されている
+- [ ] 矛盾する情報が調査されている
+- [ ] 時間的制約のあるトピックの最新性が確認されている
+- [ ] 技術的詳細が検証されている
 
-**Credibility**:
-- [ ] Sources are authoritative and appropriate
-- [ ] Citations provided for major claims
-- [ ] Source quality evaluated
-- [ ] Bias or limitations acknowledged
+**信頼性**:
+- [ ] 情報源が権威があり適切である
+- [ ] 主要な主張に引用が提供されている
+- [ ] 情報源の品質が評価されている
+- [ ] バイアスまたは制限が認められている
 
-**Clarity**:
-- [ ] Information clearly organized
-- [ ] Technical terms explained
-- [ ] Logical flow maintained
-- [ ] Key takeaways highlighted
+**明確性**:
+- [ ] 情報が明確に整理されている
+- [ ] 技術用語が説明されている
+- [ ] 論理的な流れが維持されている
+- [ ] 主要な要点が強調されている
 
-**Usefulness**:
-- [ ] Actionable for user's needs
-- [ ] Appropriate depth for context
-- [ ] Practical examples included
-- [ ] Next steps or recommendations clear
+**有用性**:
+- [ ] ユーザーのニーズに対して実用的である
+- [ ] コンテキストに適した深さである
+- [ ] 実用的な例が含まれている
+- [ ] 次のステップまたは推奨事項が明確である
 
-## Common Research Scenarios
+## 一般的なリサーチシナリオ
 
-### Scenario 1: "What is [Technology/Concept]?"
+### シナリオ1: 「[技術/概念]とは何ですか?」
 
-**Research Approach**:
-1. Find authoritative definition
-2. Understand core concepts/principles
-3. Learn typical use cases
-4. Identify key benefits/tradeoffs
-5. Gather practical examples
-6. Note current status/adoption
+**リサーチアプローチ**:
+1. 権威ある定義を見つける
+2. 核となる概念/原則を理解する
+3. 典型的な使用例を学ぶ
+4. 主要な利点/トレードオフを特定する
+5. 実用的な例を収集する
+6. 現在のステータス/採用に注意する
 
-**Key Elements to Include**:
-- Clear definition
-- Core concepts explained
-- When/why to use it
-- How it works (high-level)
-- Practical examples
-- Current relevance
+**含めるべき主要要素**:
+- 明確な定義
+- 説明された核となる概念
+- いつ/なぜ使用するか
+- どのように機能するか(高レベル)
+- 実用的な例
+- 現在の関連性
 
-### Scenario 2: "How do I [Accomplish Task]?"
+### シナリオ2: 「[タスクを達成]するにはどうすればよいですか?」
 
-**Research Approach**:
-1. Find official/authoritative guidance
-2. Look for step-by-step instructions
-3. Gather working examples
-4. Identify prerequisites/requirements
-5. Note common pitfalls
-6. Find troubleshooting resources
+**リサーチアプローチ**:
+1. 公式/権威あるガイダンスを見つける
+2. ステップバイステップの指示を探す
+3. 動作する例を収集する
+4. 前提条件/要件を特定する
+5. 一般的な落とし穴に注意する
+6. トラブルシューティングリソースを見つける
 
-**Key Elements to Include**:
-- Step-by-step instructions
-- Prerequisites clearly stated
-- Working code examples (if applicable)
-- Common issues and solutions
-- Best practices
-- References to detailed docs
+**含めるべき主要要素**:
+- ステップバイステップの指示
+- 明確に述べられた前提条件
+- 動作するコード例(該当する場合)
+- 一般的な問題と解決策
+- ベストプラクティス
+- 詳細なドキュメントへの参照
 
-### Scenario 3: "[Technology A] vs [Technology B]?"
+### シナリオ3: 「[技術A] vs [技術B]?」
 
-**Research Approach**:
-1. Research each independently first
-2. Identify comparison criteria
-3. Find comparative analyses
-4. Understand use case differences
-5. Check community preferences
-6. Note context dependencies
+**リサーチアプローチ**:
+1. まず各自を独立してリサーチする
+2. 比較基準を特定する
+3. 比較分析を見つける
+4. 使用例の違いを理解する
+5. コミュニティの好みを確認する
+6. コンテキスト依存性に注意する
 
-**Key Elements to Include**:
-- Fair description of each
-- Key differences highlighted
-- Use case recommendations
-- Tradeoffs clearly stated
-- Community adoption/support
-- Decision guidance
+**含めるべき主要要素**:
+- 各自の公平な説明
+- 主要な違いが強調されている
+- 使用例の推奨事項
+- 明確に述べられたトレードオフ
+- コミュニティの採用/サポート
+- 意思決定のガイダンス
 
-### Scenario 4: "Is [Claim] true/accurate?"
+### シナリオ4: 「[主張]は真実/正確ですか?」
 
-**Research Approach**:
-1. Understand claim precisely
-2. Find authoritative sources on topic
-3. Look for confirming evidence
-4. Seek contradicting evidence
-5. Evaluate source quality
-6. Consider context/conditions
+**リサーチアプローチ**:
+1. 主張を正確に理解する
+2. トピックに関する権威ある情報源を見つける
+3. 確認証拠を探す
+4. 矛盾する証拠を求める
+5. 情報源の品質を評価する
+6. コンテキスト/条件を考慮する
 
-**Key Elements to Include**:
-- Verification result (true/false/partial/conditional)
-- Supporting evidence with sources
-- Any important nuances or conditions
-- Context that affects accuracy
-- Confidence level in conclusion
+**含めるべき主要要素**:
+- 検証結果(真/偽/部分的/条件付き)
+- 情報源付きの裏付け証拠
+- 重要なニュアンスまたは条件
+- 正確性に影響を与えるコンテキスト
+- 結論の信頼度レベル
 
-## Advanced Techniques
+## 高度な技術
 
-### Meta-Research
+### メタリサーチ
 
-Sometimes research requires researching how to research:
-- "What are the authoritative sources for [topic]?"
-- "What organizations set standards for [domain]?"
-- "Who are recognized experts in [field]?"
+時々、リサーチにはリサーチ方法のリサーチが必要です:
+- 「[トピック]の権威ある情報源は何ですか?」
+- 「[ドメイン]の標準を設定する組織は何ですか?」
+- 「[分野]で認められた専門家は誰ですか?」
 
-### Temporal Analysis
+### 時間的分析
 
-For evolving topics:
-- Compare current vs. previous best practices
-- Note when practices changed and why
-- Identify trends and future directions
-- Distinguish stable vs. evolving knowledge
+進化するトピックの場合:
+- 現在と以前のベストプラクティスを比較する
+- 実践がいつ、なぜ変更されたかに注意する
+- トレンドと将来の方向性を特定する
+- 安定した知識と進化する知識を区別する
 
-### Gap Analysis
+### ギャップ分析
 
-When information is incomplete:
-- Identify what's unknown or unclear
-- Determine if gaps are critical
-- Suggest experiments or tests to fill gaps
-- Provide best available information with caveats
+情報が不完全な場合:
+- 不明または不明確なものを特定する
+- ギャップが重要かどうかを判断する
+- ギャップを埋めるための実験またはテストを提案する
+- 注意事項付きで利用可能な最良の情報を提供する
 
-### Synthesis Research
+### 統合リサーチ
 
-Combining information from multiple domains:
-- Gather information from each relevant domain
-- Identify connections and relationships
-- Synthesize unified understanding
-- Note domain-specific considerations
+複数のドメインからの情報を組み合わせる:
+- 関連する各ドメインから情報を収集する
+- 接続と関係を特定する
+- 統一された理解を統合する
+- ドメイン固有の考慮事項に注意する
 
-## Continuous Improvement
+## 継続的改善
 
-### Learning from Research Sessions
+### リサーチセッションから学ぶ
 
-After completing research:
-- Note what worked well
-- Identify what could be improved
-- Learn new authoritative sources
-- Recognize patterns in topics
-- Build knowledge for future research
+リサーチを完了した後:
+- うまくいったことに注意する
+- 改善できることを特定する
+- 新しい権威ある情報源を学ぶ
+- トピックのパターンを認識する
+- 将来のリサーチのために知識を構築する
 
-### Staying Current
+### 最新の状態を維持する
 
-For rapidly evolving fields:
-- Monitor official blogs/announcements
-- Track version releases and changelogs
-- Follow recognized experts
-- Check for deprecations or changes
-- Update understanding regularly
+急速に進化する分野の場合:
+- 公式ブログ/発表を監視する
+- バージョンリリースと変更ログを追跡する
+- 認められた専門家をフォローする
+- 非推奨または変更を確認する
+- 定期的に理解を更新する
 
-## References
+## 参照
 
-This research skill is based on established research methodology principles:
+このリサーチスキルは、確立されたリサーチ方法論の原則に基づいています:
 
-- Research methodology best practices for rigorous, credible, and impactful research
-- Information literacy and evaluation frameworks (CRAAP test)
-- Evidence-based research techniques
-- Cross-verification and validation methods
-- Systematic information gathering protocols
+- 厳密で信頼性が高く、影響力のあるリサーチのためのリサーチ方法論のベストプラクティス
+- 情報リテラシーと評価フレームワーク(CRAAPテスト)
+- エビデンスベースのリサーチ技術
+- 相互検証と検証方法
+- 体系的な情報収集プロトコル
 
-## Notes
+## 注意事項
 
-- Research is both art and science - apply principles flexibly based on context
-- Quality matters more than quantity - one authoritative source beats ten unreliable ones
-- Be honest about limitations - acknowledging gaps is better than speculation
-- Keep learning - research techniques evolve, especially for technical topics
-- Stay objective - present facts and perspectives, not just confirmation
+- リサーチは芸術であり科学でもあります - コンテキストに基づいて原則を柔軟に適用してください
+- 量よりも質が重要です - 1つの権威ある情報源は10の信頼できない情報源に勝ります
+- 制限について正直に - ギャップを認めることは推測よりも優れています
+- 学び続けてください - リサーチ技術は進化します、特に技術的なトピックについて
+- 客観性を保つ - 確認だけでなく事実と視点を提示してください

@@ -1,111 +1,111 @@
-# Skill Creator Reference Documentation
+# スキル作成リファレンスドキュメント
 
-## Table of Contents
+## 目次
 
-1. [YAML Frontmatter Specification](#yaml-frontmatter-specification)
-2. [File Structure Patterns](#file-structure-patterns)
-3. [Description Writing Guide](#description-writing-guide)
-4. [Instruction Writing Best Practices](#instruction-writing-best-practices)
-5. [Tool Usage Guidelines](#tool-usage-guidelines)
-6. [Testing and Validation](#testing-and-validation)
-7. [Common Pitfalls](#common-pitfalls)
-8. [Advanced Patterns](#advanced-patterns)
+1. [YAMLフロントマター仕様](#yamlフロントマター仕様)
+2. [ファイル構造パターン](#ファイル構造パターン)
+3. [説明の書き方ガイド](#説明の書き方ガイド)
+4. [指示の書き方ベストプラクティス](#指示の書き方ベストプラクティス)
+5. [ツール使用ガイドライン](#ツール使用ガイドライン)
+6. [テストと検証](#テストと検証)
+7. [よくある落とし穴](#よくある落とし穴)
+8. [高度なパターン](#高度なパターン)
 
 ---
 
-## YAML Frontmatter Specification
+## YAMLフロントマター仕様
 
-### Required Fields
+### 必須フィールド
 
 #### name
-- **Type**: String
-- **Max Length**: 64 characters
-- **Format**: Lowercase with hyphens (kebab-case)
-- **Example**: `skill-creator`, `code-reviewer`, `api-tester`
-- **Validation**: Must be unique, alphanumeric with hyphens only
+- **型**: 文字列
+- **最大長**: 64文字
+- **形式**: ハイフン区切りの小文字（ケバブケース）
+- **例**: `skill-creator`、`code-reviewer`、`api-tester`
+- **検証**: ユニークで、英数字とハイフンのみ
 
 #### description
-- **Type**: String
-- **Max Length**: 200 characters
-- **Purpose**: Helps Claude decide when to activate the skill
-- **Must Include**:
-  - What the skill does
-  - When to use it
-  - Trigger keywords
-- **Example**: "Create new Claude Code skills with proper structure and best practices. Use when building skills, generating capabilities, or creating custom tools."
+- **型**: 文字列
+- **最大長**: 200文字
+- **目的**: Claudeがスキルを起動するタイミングを決定するのを支援
+- **必須内容**:
+  - スキルが何をするか
+  - いつ使用するか
+  - トリガーキーワード
+- **例**: "適切な構造とベストプラクティスで新しいClaude Codeスキルを作成します。スキル構築、機能生成、カスタムツール作成時に使用します。"
 
-### Optional Fields
+### 任意フィールド
 
 #### version
-- **Type**: String (Semantic Versioning)
-- **Format**: `MAJOR.MINOR.PATCH`
-- **Example**: `1.0.0`, `2.1.3`
-- **Purpose**: Track skill iterations and changes
+- **型**: 文字列（セマンティックバージョニング）
+- **形式**: `MAJOR.MINOR.PATCH`
+- **例**: `1.0.0`、`2.1.3`
+- **目的**: スキルの反復と変更を追跡
 
 #### dependencies
-- **Type**: String or Array
-- **Format**: Package specifications
-- **Example**:
-  - Single: `python>=3.8`
-  - Multiple: `python>=3.8, node>=18, docker`
-- **Purpose**: Document required software/tools
+- **型**: 文字列または配列
+- **形式**: パッケージ仕様
+- **例**:
+  - 単一: `python>=3.8`
+  - 複数: `python>=3.8, node>=18, docker`
+- **目的**: 必要なソフトウェア/ツールを文書化
 
-### YAML Syntax Rules
+### YAML構文ルール
 
-1. **Delimiters**: Must start and end with `---` on separate lines
-2. **Spacing**: Use spaces only, never tabs
-3. **Indentation**: 2 spaces per level
-4. **Quotes**: Use quotes for values containing special characters
-5. **Lists**: Use `-` prefix with space for array items
+1. **区切り文字**: 別の行に`---`で開始と終了が必要
+2. **スペーシング**: スペースのみ使用、タブは不可
+3. **インデント**: レベルごとに2スペース
+4. **引用符**: 特殊文字を含む値には引用符を使用
+5. **リスト**: 配列項目にはスペース付き`-`プレフィックスを使用
 
-### Valid YAML Example
+### 有効なYAML例
 
 ```yaml
 ---
 name: example-skill
-description: This is an example skill that demonstrates proper YAML formatting and required fields.
+description: これは適切なYAMLフォーマットと必須フィールドを示すサンプルスキルです。
 version: 1.0.0
 dependencies: python>=3.8
 ---
 ```
 
-### Invalid YAML Examples
+### 無効なYAML例
 
 ```yaml
-# Missing closing delimiter
+# 終了区切り文字がない
 ---
 name: example-skill
-description: Missing closing delimiter
+description: 終了区切り文字がありません
 
-# Using tabs (invisible here but causes errors)
+# タブの使用（ここでは見えませんがエラーの原因になります）
 ---
 name:→example-skill
-description:→Bad formatting
+description:→不適切なフォーマット
 
-# Name too long
+# 名前が長すぎる
 ---
 name: this-is-an-extremely-long-skill-name-that-exceeds-sixty-four-characters-limit
-description: This will fail validation
+description: これは検証に失敗します
 ```
 
 ---
 
-## File Structure Patterns
+## ファイル構造パターン
 
-### Minimal Skill (Simple Task)
+### 最小スキル（シンプルなタスク）
 
 ```
 skill-name/
 └── SKILL.md
 ```
 
-**Use When**:
-- Simple, straightforward functionality
-- No external dependencies
-- Minimal documentation needed
-- Examples fit in main file
+**使用タイミング**:
+- シンプルで直接的な機能
+- 外部依存関係なし
+- 最小限のドキュメントが必要
+- 例がメインファイルに収まる
 
-### Standard Skill (Most Common)
+### 標準スキル（最も一般的）
 
 ```
 skill-name/
@@ -114,13 +114,13 @@ skill-name/
 └── examples.md
 ```
 
-**Use When**:
-- Moderate complexity
-- Needs extended examples
-- Technical specifications beneficial
-- API or format references needed
+**使用タイミング**:
+- 中程度の複雑さ
+- 拡張例が必要
+- 技術仕様が有益
+- APIまたはフォーマットリファレンスが必要
 
-### Complex Skill (Advanced Workflows)
+### 複雑なスキル（高度なワークフロー）
 
 ```
 skill-name/
@@ -135,14 +135,14 @@ skill-name/
     └── validator.sh
 ```
 
-**Use When**:
-- Complex multi-step processes
-- Generates files from templates
-- Requires helper scripts
-- Multiple configuration options
-- Domain-specific knowledge
+**使用タイミング**:
+- 複雑な複数ステップのプロセス
+- テンプレートからファイルを生成
+- ヘルパースクリプトが必要
+- 複数の設定オプション
+- ドメイン固有の知識
 
-### Template-Focused Skill
+### テンプレート重視のスキル
 
 ```
 skill-name/
@@ -153,299 +153,299 @@ skill-name/
     └── config.yaml
 ```
 
-**Use When**:
-- Primary function is generating files
-- Multiple template variations
-- Scaffolding or boilerplate generation
-- Project initialization
+**使用タイミング**:
+- 主な機能がファイル生成
+- 複数のテンプレートバリエーション
+- スキャフォールディングまたはボイラープレート生成
+- プロジェクト初期化
 
 ---
 
-## Description Writing Guide
+## 説明の書き方ガイド
 
-### Purpose of Description
+### 説明の目的
 
-The description field serves two critical functions:
-1. Helps Claude determine when to activate the skill
-2. Provides context about the skill's capabilities
+説明フィールドは2つの重要な機能を果たします：
+1. Claudeがスキルを起動するタイミングを決定するのを支援
+2. スキルの機能に関するコンテキストを提供
 
-### Description Formula
+### 説明の公式
 
 ```
-[What it does] + [When to use] + [Trigger keywords]
+[何をするか] + [いつ使用するか] + [トリガーキーワード]
 ```
 
-### Good Description Examples
+### 良い説明の例
 
 ```yaml
-description: "Review code for bugs, performance issues, and best practices. Use when reviewing code, checking quality, or analyzing patterns. Keywords: code review, check code, review PR."
+description: "バグ、パフォーマンス問題、ベストプラクティスについてコードをレビューします。コードレビュー、品質チェック、パターン分析時に使用します。キーワード: コードレビュー、コード確認、PRレビュー。"
 ```
 
-**Why it's good**:
-- Clear functionality
-- Specific use cases
-- Explicit trigger keywords
-- Under 200 characters
+**良い理由**:
+- 明確な機能
+- 具体的なユースケース
+- 明示的なトリガーキーワード
+- 200文字以下
 
 ```yaml
-description: "Generate API documentation from code comments and type definitions. Use when documenting APIs, creating references, or updating docs. Keywords: API docs, documentation, generate docs."
+description: "コードコメントと型定義からAPIドキュメントを生成します。API文書化、リファレンス作成、ドキュメント更新時に使用します。キーワード: APIドキュメント、ドキュメント化、ドキュメント生成。"
 ```
 
-**Why it's good**:
-- Precise action
-- Context for activation
-- User-language keywords
+**良い理由**:
+- 正確なアクション
+- アクティベーションのコンテキスト
+- ユーザー言語のキーワード
 
-### Bad Description Examples
+### 悪い説明の例
 
 ```yaml
-description: "A skill for code"
+description: "コード用の便利なスキル"
 ```
 
-**Problems**:
-- Too vague
-- No trigger keywords
-- Unclear when to use
-- Minimal context
+**問題点**:
+- 曖昧すぎる
+- トリガーキーワードなし
+- 使用タイミングが不明確
+- 最小限のコンテキスト
 
 ```yaml
-description: "This incredibly comprehensive skill handles all aspects of code review including syntax checking, semantic analysis, performance optimization suggestions, security vulnerability detection, and best practices enforcement."
+description: "この非常に包括的なスキルは、構文チェック、セマンティック分析、パフォーマンス最適化提案、セキュリティ脆弱性検出、ベストプラクティス適用を含むコードレビューのすべての側面を処理します。"
 ```
 
-**Problems**:
-- Too long
-- Overly complex
-- Tries to do too much
-- Should be split into multiple skills
+**問題点**:
+- 長すぎる
+- 過度に複雑
+- 多くのことをやろうとしすぎ
+- 複数のスキルに分割すべき
 
-### Trigger Keyword Strategy
+### トリガーキーワード戦略
 
-**Include These Types**:
-1. **Action verbs**: create, build, generate, review, analyze, test
-2. **Domain terms**: API, database, frontend, backend, DevOps
-3. **User phrases**: "help me...", "create a...", "review my..."
-4. **Abbreviations**: PR, CI/CD, API, DB
+**以下のタイプを含める**:
+1. **動作動詞**: 作成、構築、生成、レビュー、分析、テスト
+2. **ドメイン用語**: API、データベース、フロントエンド、バックエンド、DevOps
+3. **ユーザーフレーズ**: "〜を手伝って"、"〜を作成"、"〜をレビュー"
+4. **略語**: PR、CI/CD、API、DB
 
-**Example Keyword Lists**:
+**キーワードリストの例**:
 ```yaml
-# Code Review Skill
-Keywords: review, check, analyze, PR, pull request, code quality
+# コードレビュースキル
+キーワード: レビュー、チェック、分析、PR、プルリクエスト、コード品質
 
-# Database Migration Skill
-Keywords: migrate, migration, database, schema, DB
+# データベースマイグレーションスキル
+キーワード: マイグレート、マイグレーション、データベース、スキーマ、DB
 
-# Component Generator Skill
-Keywords: component, generate, create, scaffold, boilerplate
-```
-
----
-
-## Instruction Writing Best Practices
-
-### Structure Your Instructions
-
-Use a hierarchical structure:
-
-```markdown
-## Instructions
-
-### Phase 1: Preparation
-#### Step 1.1: Analyze Request
-- Substep details
-- What to check
-- How to validate
-
-#### Step 1.2: Gather Resources
-- What resources
-- Where to find them
-- How to verify
-
-### Phase 2: Execution
-[Continue pattern...]
-```
-
-### Be Specific and Actionable
-
-**Bad**:
-```markdown
-## Instructions
-Review the code and provide feedback.
-```
-
-**Good**:
-```markdown
-## Instructions
-
-### Step 1: Code Analysis
-1. Read the entire file using the Read tool
-2. Identify the primary language and framework
-3. Check for:
-   - Syntax errors
-   - Unused variables
-   - Potential null pointer exceptions
-   - Performance anti-patterns
-
-### Step 2: Generate Feedback
-1. Create a structured report with:
-   - Critical issues (must fix)
-   - Warnings (should fix)
-   - Suggestions (nice to have)
-2. For each issue, provide:
-   - Line number
-   - Issue description
-   - Suggested fix
-   - Code example
-```
-
-### Use Conditional Logic
-
-```markdown
-### Step 3: Language-Specific Checks
-
-**If Python**:
-- Check PEP 8 compliance
-- Verify type hints
-- Check for common pitfalls (mutable defaults, etc.)
-
-**If JavaScript/TypeScript**:
-- Check ESLint rules
-- Verify async/await usage
-- Check for promise handling
-
-**If Go**:
-- Check gofmt compliance
-- Verify error handling
-- Check for goroutine leaks
-```
-
-### Include Edge Cases
-
-```markdown
-### Error Handling
-
-**If file is empty**:
-- Alert user
-- Ask if they want to create template content
-- Provide options
-
-**If file is too large** (>10,000 lines):
-- Ask user to specify sections to review
-- Offer to review in chunks
-- Suggest automated tools
-
-**If language is not recognized**:
-- Ask user to specify language
-- Attempt generic review
-- Focus on structural patterns
+# コンポーネント生成スキル
+キーワード: コンポーネント、生成、作成、スキャフォールド、ボイラープレート
 ```
 
 ---
 
-## Tool Usage Guidelines
+## 指示の書き方ベストプラクティス
 
-### Preferred Tools by Task
+### 指示を構造化する
 
-| Task | Preferred Tool | Avoid |
+階層構造を使用します：
+
+```markdown
+## 指示
+
+### フェーズ1: 準備
+#### ステップ1.1: リクエストを分析
+- サブステップの詳細
+- 確認すべきこと
+- 検証方法
+
+#### ステップ1.2: リソースを収集
+- どのようなリソース
+- どこで見つけるか
+- 検証方法
+
+### フェーズ2: 実行
+[パターンを続ける...]
+```
+
+### 具体的で実行可能にする
+
+**悪い**:
+```markdown
+## 指示
+コードをレビューしてフィードバックを提供します。
+```
+
+**良い**:
+```markdown
+## 指示
+
+### ステップ1: コード分析
+1. Readツールを使用してファイル全体を読む
+2. 主要言語とフレームワークを特定
+3. 以下を確認:
+   - 構文エラー
+   - 未使用の変数
+   - 潜在的なヌルポインタ例外
+   - パフォーマンスのアンチパターン
+
+### ステップ2: フィードバックを生成
+1. 以下を含む構造化されたレポートを作成:
+   - 重大な問題（修正必須）
+   - 警告（修正すべき）
+   - 提案（あると良い）
+2. 各問題について以下を提供:
+   - 行番号
+   - 問題の説明
+   - 修正の提案
+   - コード例
+```
+
+### 条件ロジックを使用
+
+```markdown
+### ステップ3: 言語固有のチェック
+
+**Pythonの場合**:
+- PEP 8準拠を確認
+- 型ヒントを検証
+- 一般的な落とし穴を確認（可変デフォルトなど）
+
+**JavaScript/TypeScriptの場合**:
+- ESLintルールを確認
+- async/await使用を検証
+- プロミス処理を確認
+
+**Goの場合**:
+- gofmt準拠を確認
+- エラー処理を検証
+- ゴルーチンリークを確認
+```
+
+### エッジケースを含める
+
+```markdown
+### エラー処理
+
+**ファイルが空の場合**:
+- ユーザーに警告
+- テンプレートコンテンツを作成するか尋ねる
+- オプションを提供
+
+**ファイルが大きすぎる場合**（10,000行以上）:
+- レビューするセクションを指定するよう依頼
+- チャンクでレビューすることを提案
+- 自動化ツールを提案
+
+**言語が認識できない場合**:
+- 言語を指定するよう依頼
+- 一般的なレビューを試みる
+- 構造パターンに焦点を当てる
+```
+
+---
+
+## ツール使用ガイドライン
+
+### タスク別の推奨ツール
+
+| タスク | 推奨ツール | 避けるべき |
 |------|---------------|-------|
-| Read files | `Read` | `cat`, `head`, `tail` |
-| Search content | `Grep` | `grep`, `rg` |
-| Find files | `Glob` | `find`, `ls` |
-| Edit files | `Edit` | `sed`, `awk` |
-| Create files | `Write` | `echo >`, `cat > EOF` |
-| Run commands | `Bash` | (appropriate use) |
-| Web requests | `WebFetch` | `curl`, `wget` |
+| ファイル読み取り | `Read` | `cat`、`head`、`tail` |
+| コンテンツ検索 | `Grep` | `grep`、`rg` |
+| ファイル検索 | `Glob` | `find`、`ls` |
+| ファイル編集 | `Edit` | `sed`、`awk` |
+| ファイル作成 | `Write` | `echo >`、`cat > EOF` |
+| コマンド実行 | `Bash` | （適切な使用） |
+| Webリクエスト | `WebFetch` | `curl`、`wget` |
 
-### Tool Usage in Skills
+### スキルでのツール使用
 
-**Specify tools explicitly**:
+**ツールを明示的に指定**:
 ```markdown
-## Instructions
+## 指示
 
-### Step 1: Find Configuration Files
-Use the **Glob** tool to search for config files:
-- Pattern: `**/*.config.js`
-- Look in project root
-- Check for common locations
+### ステップ1: 設定ファイルを見つける
+**Glob**ツールを使用して設定ファイルを検索:
+- パターン: `**/*.config.js`
+- プロジェクトルートで検索
+- 一般的な場所を確認
 
-### Step 2: Read Configuration
-Use the **Read** tool to examine each config:
-- Read entire file
-- Parse JSON/YAML structure
-- Extract relevant settings
+### ステップ2: 設定を読む
+**Read**ツールを使用して各設定を調べる:
+- ファイル全体を読む
+- JSON/YAML構造を解析
+- 関連する設定を抽出
 ```
 
-**Explain why to use specific tools**:
+**特定のツールを使用する理由を説明**:
 ```markdown
-### Tool Selection
+### ツール選択
 
-Use **Grep** instead of manual file reading when:
-- Searching across many files
-- Pattern matching needed
-- Only need to find occurrences
+以下の場合に**Grep**を使用:
+- 多くのファイルを検索する
+- パターンマッチングが必要
+- 出現箇所を見つけるだけで良い
 
-Use **Read** instead of Grep when:
-- Need full context
-- Analyzing structure
-- Understanding relationships
+以下の場合に**Read**を使用:
+- 完全なコンテキストが必要
+- 構造を分析する
+- 関係を理解する
 ```
 
 ---
 
-## Testing and Validation
+## テストと検証
 
-### Pre-Creation Validation Checklist
+### 作成前の検証チェックリスト
 
-Before creating a skill, verify:
+スキルを作成する前に、以下を確認：
 
-- [ ] Skill name is unique and descriptive
-- [ ] Name follows kebab-case convention
-- [ ] Name is under 64 characters
-- [ ] Description is clear and specific
-- [ ] Description includes trigger keywords
-- [ ] Description is under 200 characters
-- [ ] Skill has single, focused purpose
-- [ ] Instructions are actionable
-- [ ] Examples are realistic
-- [ ] All paths use forward slashes
-- [ ] YAML syntax is valid
-- [ ] No tabs in YAML (spaces only)
+- [ ] スキル名がユニークで説明的
+- [ ] 名前がケバブケース規則に従っている
+- [ ] 名前が64文字以下
+- [ ] 説明が明確で具体的
+- [ ] 説明にトリガーキーワードが含まれている
+- [ ] 説明が200文字以下
+- [ ] スキルが単一の焦点を絞った目的を持つ
+- [ ] 指示が実行可能
+- [ ] 例が現実的
+- [ ] すべてのパスでフォワードスラッシュを使用
+- [ ] YAML構文が有効
+- [ ] YAMLにタブがない（スペースのみ）
 
-### Post-Creation Testing
+### 作成後のテスト
 
-**1. YAML Validation**
+**1. YAML検証**
 ```bash
-# Use a YAML linter
+# YAMLリンターを使用
 yamllint SKILL.md
 
-# Or Python
+# またはPython
 python -c "import yaml; yaml.safe_load(open('SKILL.md').read().split('---')[1])"
 ```
 
-**2. Installation Test**
+**2. インストールテスト**
 ```bash
-# Copy to personal skills directory
+# 個人用スキルディレクトリにコピー
 cp -r skill-name ~/.claude/skills/
 
-# Verify file structure
+# ファイル構造を確認
 ls -la ~/.claude/skills/skill-name/
 ```
 
-**3. Activation Test**
+**3. アクティベーションテスト**
 
-Try requests that should trigger the skill:
-- Use exact trigger keywords
-- Use natural language variations
-- Test edge cases
+スキルをトリガーすべきリクエストを試す：
+- 正確なトリガーキーワードを使用
+- 自然言語のバリエーションを使用
+- エッジケースをテスト
 
-**4. Functionality Test**
+**4. 機能テスト**
 
-Verify the skill:
-- Produces expected output
-- Handles errors gracefully
-- Works with various inputs
-- Completes successfully
+スキルが以下を行うことを確認：
+- 期待される出力を生成
+- エラーを適切に処理
+- 様々な入力で動作
+- 正常に完了
 
-### Validation Script Template
+### 検証スクリプトテンプレート
 
 ```bash
 #!/bin/bash
@@ -453,15 +453,15 @@ Verify the skill:
 
 SKILL_DIR=$1
 
-echo "Validating skill: $SKILL_DIR"
+echo "スキルを検証中: $SKILL_DIR"
 
-# Check required files
+# 必須ファイルを確認
 if [ ! -f "$SKILL_DIR/SKILL.md" ]; then
-    echo "ERROR: SKILL.md not found"
+    echo "エラー: SKILL.mdが見つかりません"
     exit 1
 fi
 
-# Check YAML syntax
+# YAML構文を確認
 python3 -c "
 import yaml
 import sys
@@ -470,17 +470,17 @@ with open('$SKILL_DIR/SKILL.md') as f:
     content = f.read()
     parts = content.split('---')
     if len(parts) < 3:
-        print('ERROR: Invalid YAML frontmatter format')
+        print('エラー: 無効なYAMLフロントマター形式')
         sys.exit(1)
     try:
         yaml.safe_load(parts[1])
-        print('✓ YAML syntax valid')
+        print('✓ YAML構文が有効')
     except Exception as e:
-        print(f'ERROR: YAML parsing failed: {e}')
+        print(f'エラー: YAMLパースに失敗: {e}')
         sys.exit(1)
 "
 
-# Check required fields
+# 必須フィールドを確認
 python3 -c "
 import yaml
 
@@ -489,373 +489,373 @@ with open('$SKILL_DIR/SKILL.md') as f:
     frontmatter = yaml.safe_load(content.split('---')[1])
 
     if 'name' not in frontmatter:
-        print('ERROR: Missing required field: name')
+        print('エラー: 必須フィールドが不足: name')
         exit(1)
 
     if 'description' not in frontmatter:
-        print('ERROR: Missing required field: description')
+        print('エラー: 必須フィールドが不足: description')
         exit(1)
 
     if len(frontmatter['name']) > 64:
-        print('ERROR: Name exceeds 64 characters')
+        print('エラー: 名前が64文字を超えています')
         exit(1)
 
     if len(frontmatter['description']) > 200:
-        print('ERROR: Description exceeds 200 characters')
+        print('エラー: 説明が200文字を超えています')
         exit(1)
 
-    print('✓ Required fields present and valid')
+    print('✓ 必須フィールドが存在し、有効です')
 "
 
-echo "✓ Validation complete"
+echo "✓ 検証完了"
 ```
 
 ---
 
-## Common Pitfalls
+## よくある落とし穴
 
-### 1. Overly Broad Skills
+### 1. 過度に広範なスキル
 
-**Problem**: Skill tries to do too many things
+**問題**: スキルが多くのことをやろうとしすぎ
 
-**Example**:
+**例**:
 ```yaml
 name: web-development
-description: Handle all web development tasks including frontend, backend, database, DevOps, testing, and deployment
+description: フロントエンド、バックエンド、データベース、DevOps、テスト、デプロイを含むすべてのWeb開発タスクを処理
 ```
 
-**Solution**: Split into focused skills
+**解決策**: 焦点を絞ったスキルに分割
 ```yaml
-# Better approach
+# より良いアプローチ
 name: frontend-component-generator
-description: Generate React/Vue components with tests. Use when creating UI components.
+description: テスト付きReact/Vueコンポーネントを生成します。UIコンポーネント作成時に使用します。
 
 name: api-endpoint-creator
-description: Create REST API endpoints with validation. Use when building APIs.
+description: 検証付きREST APIエンドポイントを作成します。API構築時に使用します。
 ```
 
-### 2. Vague Descriptions
+### 2. 曖昧な説明
 
-**Problem**: Description doesn't help Claude know when to activate
+**問題**: 説明がCl audeが起動タイミングを知るのに役立たない
 
-**Example**:
+**例**:
 ```yaml
-description: A helpful skill for developers
+description: 開発者のための便利なスキル
 ```
 
-**Solution**: Be specific
+**解決策**: 具体的にする
 ```yaml
-description: Review Pull Requests for code quality, best practices, and potential bugs. Use for PR review, code review, or quality checks. Keywords: review PR, check code.
+description: コード品質、ベストプラクティス、潜在的なバグについてプルリクエストをレビューします。PRレビュー、コードレビュー、品質チェックに使用します。キーワード: PRレビュー、コード確認。
 ```
 
-### 3. Incorrect YAML Formatting
+### 3. 不適切なYAMLフォーマット
 
-**Problem**: Tabs instead of spaces, missing delimiters
+**問題**: スペースの代わりにタブ、区切り文字の欠落
 
-**Example**:
+**例**:
 ```yaml
 ---
 name:	skill-name
-	description: Bad formatting
+	description: 不適切なフォーマット
 ```
 
-**Solution**: Use spaces, proper structure
+**解決策**: スペースを使用し、適切な構造にする
 ```yaml
 ---
 name: skill-name
-description: Good formatting with spaces
+description: スペースを使った適切なフォーマット
 ---
 ```
 
-### 4. Platform-Specific Paths
+### 4. プラットフォーム固有のパス
 
-**Problem**: Using backslashes or platform-specific paths
+**問題**: バックスラッシュやプラットフォーム固有のパスを使用
 
-**Example**:
+**例**:
 ```markdown
-Check files in: C:\Users\Project\src\
+以下のファイルを確認: C:\Users\Project\src\
 ```
 
-**Solution**: Use forward slashes
+**解決策**: フォワードスラッシュを使用
 ```markdown
-Check files in: /project/src/
-Use relative paths: ./src/
+以下のファイルを確認: /project/src/
+相対パスを使用: ./src/
 ```
 
-### 5. Unclear Instructions
+### 5. 不明確な指示
 
-**Problem**: Instructions are too high-level
+**問題**: 指示が高レベルすぎる
 
-**Example**:
+**例**:
 ```markdown
-## Instructions
-Analyze the code and make it better.
+## 指示
+コードを分析してより良くします。
 ```
 
-**Solution**: Provide specific steps
+**解決策**: 具体的なステップを提供
 ```markdown
-## Instructions
+## 指示
 
-### Step 1: Analyze Code Structure
-1. Read the file using Read tool
-2. Identify language and framework
-3. Map out function/class structure
-4. Note dependencies
+### ステップ1: コード構造を分析
+1. Readツールを使用してファイルを読む
+2. 言語とフレームワークを特定
+3. 関数/クラス構造をマッピング
+4. 依存関係に注目
 
-### Step 2: Check for Issues
-1. Syntax errors
-2. Unused variables
-3. Potential bugs
-4. Performance issues
+### ステップ2: 問題を確認
+1. 構文エラー
+2. 未使用の変数
+3. 潜在的なバグ
+4. パフォーマンス問題
 
-### Step 3: Generate Report
-1. List issues by severity
-2. Provide line numbers
-3. Suggest specific fixes
-4. Include code examples
+### ステップ3: レポートを生成
+1. 重要度別に問題をリスト
+2. 行番号を提供
+3. 具体的な修正を提案
+4. コード例を含める
 ```
 
-### 6. Missing Examples
+### 6. 例の欠落
 
-**Problem**: No concrete usage examples
+**問題**: 具体的な使用例がない
 
-**Solution**: Always include realistic examples
+**解決策**: 常に現実的な例を含める
 ```markdown
-## Examples
+## 例
 
-### Example 1: Basic Code Review
+### 例1: 基本的なコードレビュー
 
-**User Request**: "Please review this Python file"
+**ユーザーリクエスト**: "このPythonファイルをレビューしてください"
 
-**Expected Process**:
-1. Read the file
-2. Check for PEP 8 compliance
-3. Look for common Python pitfalls
-4. Generate structured feedback
+**期待されるプロセス**:
+1. ファイルを読む
+2. PEP 8準拠を確認
+3. 一般的なPythonの落とし穴を探す
+4. 構造化されたフィードバックを生成
 
-**Expected Output**:
+**期待される出力**:
 ```
-Code Review for file.py:
+file.pyのコードレビュー:
 
-CRITICAL:
-- Line 23: Potential division by zero
-- Line 45: SQL injection vulnerability
+重大:
+- 行23: ゼロ除算の可能性
+- 行45: SQLインジェクション脆弱性
 
-WARNINGS:
-- Line 12: Unused import 'sys'
-- Line 34: Variable name doesn't follow PEP 8
+警告:
+- 行12: 未使用のインポート 'sys'
+- 行34: 変数名がPEP 8に従っていない
 
-SUGGESTIONS:
-- Consider using type hints
-- Add docstrings to functions
+提案:
+- 型ヒントの使用を検討
+- 関数にdocstringを追加
 ```
-```
-
----
-
-## Advanced Patterns
-
-### Multi-Stage Skills
-
-For complex workflows with distinct phases:
-
-```markdown
-## Instructions
-
-### Stage 1: Discovery
-[Discovery steps]
-
-**Checkpoint**: Before proceeding, verify:
-- [ ] All files found
-- [ ] Dependencies identified
-- [ ] Configuration valid
-
-### Stage 2: Analysis
-[Analysis steps]
-
-**Checkpoint**: Validate analysis:
-- [ ] Data structured correctly
-- [ ] Edge cases identified
-- [ ] Requirements clear
-
-### Stage 3: Execution
-[Execution steps]
-
-**Final Validation**:
-- [ ] Output meets requirements
-- [ ] No errors occurred
-- [ ] User confirmation received
-```
-
-### Conditional Skills
-
-Skills that branch based on context:
-
-```markdown
-## Instructions
-
-### Step 1: Detect Context
-
-**If in Git repository**:
-- Check git status
-- Identify current branch
-- Follow git-aware workflow
-
-**If not in Git repository**:
-- Use file system operations
-- Follow standalone workflow
-
-### Step 2: Process Based on Language
-
-Use Grep to detect language, then:
-
-**For compiled languages** (Java, C++, Rust):
-1. Check for build files
-2. Run compilation checks
-3. Execute type checking
-
-**For interpreted languages** (Python, JavaScript):
-1. Check for syntax validity
-2. Run linters
-3. Execute tests
-
-**For markup languages** (HTML, Markdown):
-1. Validate structure
-2. Check links
-3. Verify formatting
-```
-
-### Iterative Skills
-
-Skills that work in loops:
-
-```markdown
-## Instructions
-
-### Iterative Processing
-
-For each file in the target directory:
-
-1. **Read** the file
-2. **Analyze** according to criteria
-3. **Collect** results
-4. **Continue** to next file
-
-After all files processed:
-
-1. **Aggregate** results
-2. **Sort** by priority
-3. **Generate** summary report
-4. **Present** to user
-
-### Loop Controls
-
-- Maximum iterations: 100 files
-- Skip if: file size > 1MB
-- Break if: critical error found
-- Continue if: file type unsupported
-```
-
-### Meta-Skills
-
-Skills that work with other skills:
-
-```markdown
-## Instructions
-
-### Skill Coordination
-
-This meta-skill coordinates multiple specialized skills:
-
-1. **Identify** which skills are needed
-2. **Sequence** skill execution order
-3. **Pass** context between skills
-4. **Aggregate** results
-5. **Present** unified output
-
-### Example Workflow
-
-For "Analyze and improve codebase":
-
-1. Activate `code-analyzer` skill
-2. Collect analysis results
-3. Activate `code-improver` skill with analysis
-4. Verify improvements with `code-tester` skill
-5. Generate final report
-
-### Inter-Skill Communication
-
-- Use consistent data formats
-- Document expected inputs/outputs
-- Handle skill failures gracefully
-- Provide rollback if needed
 ```
 
 ---
 
-## Skill Naming Conventions
+## 高度なパターン
 
-### Recommended Patterns
+### 複数ステージスキル
 
-| Pattern | Example | Use Case |
+明確なフェーズを持つ複雑なワークフロー用：
+
+```markdown
+## 指示
+
+### ステージ1: 発見
+[発見ステップ]
+
+**チェックポイント**: 続行前に以下を確認:
+- [ ] すべてのファイルが見つかった
+- [ ] 依存関係が特定された
+- [ ] 設定が有効
+
+### ステージ2: 分析
+[分析ステップ]
+
+**チェックポイント**: 分析を検証:
+- [ ] データが正しく構造化されている
+- [ ] エッジケースが特定された
+- [ ] 要件が明確
+
+### ステージ3: 実行
+[実行ステップ]
+
+**最終検証**:
+- [ ] 出力が要件を満たす
+- [ ] エラーが発生していない
+- [ ] ユーザー確認を受けた
+```
+
+### 条件付きスキル
+
+コンテキストに基づいて分岐するスキル：
+
+```markdown
+## 指示
+
+### ステップ1: コンテキストを検出
+
+**Gitリポジトリ内の場合**:
+- git statusを確認
+- 現在のブランチを特定
+- Git対応ワークフローに従う
+
+**Gitリポジトリでない場合**:
+- ファイルシステム操作を使用
+- スタンドアロンワークフローに従う
+
+### ステップ2: 言語に基づいて処理
+
+Grepを使用して言語を検出し、その後:
+
+**コンパイル言語**（Java、C++、Rust）の場合:
+1. ビルドファイルを確認
+2. コンパイルチェックを実行
+3. 型チェックを実行
+
+**インタープリタ言語**（Python、JavaScript）の場合:
+1. 構文の有効性を確認
+2. リンターを実行
+3. テストを実行
+
+**マークアップ言語**（HTML、Markdown）の場合:
+1. 構造を検証
+2. リンクを確認
+3. フォーマットを検証
+```
+
+### 反復スキル
+
+ループで動作するスキル：
+
+```markdown
+## 指示
+
+### 反復処理
+
+対象ディレクトリの各ファイルについて:
+
+1. **読み取る** ファイルを
+2. **分析する** 基準に従って
+3. **収集する** 結果を
+4. **続ける** 次のファイルへ
+
+すべてのファイルが処理された後:
+
+1. **集約する** 結果を
+2. **ソートする** 優先度で
+3. **生成する** サマリーレポート
+4. **提示する** ユーザーに
+
+### ループ制御
+
+- 最大反復: 100ファイル
+- スキップ条件: ファイルサイズ > 1MB
+- 中断条件: 重大なエラーが見つかった
+- 継続条件: ファイルタイプがサポートされていない
+```
+
+### メタスキル
+
+他のスキルと連携するスキル：
+
+```markdown
+## 指示
+
+### スキル調整
+
+このメタスキルは複数の専門スキルを調整します:
+
+1. **特定する** どのスキルが必要か
+2. **順序付ける** スキル実行順序
+3. **渡す** スキル間でコンテキストを
+4. **集約する** 結果を
+5. **提示する** 統一された出力を
+
+### ワークフロー例
+
+"コードベースを分析して改善"の場合:
+
+1. `code-analyzer`スキルをアクティベート
+2. 分析結果を収集
+3. 分析を使って`code-improver`スキルをアクティベート
+4. `code-tester`スキルで改善を検証
+5. 最終レポートを生成
+
+### スキル間通信
+
+- 一貫したデータ形式を使用
+- 期待される入力/出力を文書化
+- スキルの失敗を適切に処理
+- 必要に応じてロールバックを提供
+```
+
+---
+
+## スキル命名規則
+
+### 推奨パターン
+
+| パターン | 例 | ユースケース |
 |---------|---------|----------|
-| `[action]-[target]` | `review-code`, `test-api` | Action-focused skills |
-| `[domain]-[role]` | `frontend-developer`, `devops-engineer` | Role-based skills |
-| `[tool]-[integration]` | `docker-compose`, `git-workflow` | Tool-specific skills |
-| `[format]-[converter]` | `json-to-yaml`, `markdown-to-pdf` | Conversion skills |
+| `[action]-[target]` | `review-code`、`test-api` | アクション重視のスキル |
+| `[domain]-[role]` | `frontend-developer`、`devops-engineer` | ロールベースのスキル |
+| `[tool]-[integration]` | `docker-compose`、`git-workflow` | ツール固有のスキル |
+| `[format]-[converter]` | `json-to-yaml`、`markdown-to-pdf` | 変換スキル |
 
-### Names to Avoid
+### 避けるべき名前
 
-- Too generic: `helper`, `utils`, `tools`
-- Too long: `comprehensive-full-stack-development-assistant`
-- With numbers: `skill-v2`, `helper-2024`
-- With special chars: `skill_name`, `skill.helper`
+- 一般的すぎる: `helper`、`utils`、`tools`
+- 長すぎる: `comprehensive-full-stack-development-assistant`
+- 数字付き: `skill-v2`、`helper-2024`
+- 特殊文字付き: `skill_name`、`skill.helper`
 
 ---
 
-## Version Management
+## バージョン管理
 
-### Semantic Versioning Guidelines
+### セマンティックバージョニングガイドライン
 
-**MAJOR version** (1.0.0 → 2.0.0):
-- Breaking changes to instruction flow
-- Incompatible changes to expected inputs/outputs
-- Removal of features
+**メジャーバージョン**（1.0.0 → 2.0.0）:
+- 指示フローへの破壊的変更
+- 期待される入力/出力への互換性のない変更
+- 機能の削除
 
-**MINOR version** (1.0.0 → 1.1.0):
-- New features added
-- New optional steps
-- Enhanced functionality
+**マイナーバージョン**（1.0.0 → 1.1.0）:
+- 新機能の追加
+- 新しい任意ステップ
+- 機能の拡張
 
-**PATCH version** (1.0.0 → 1.0.1):
-- Bug fixes
-- Documentation updates
-- Small improvements
+**パッチバージョン**（1.0.0 → 1.0.1）:
+- バグ修正
+- ドキュメント更新
+- 小さな改善
 
-### Changelog Format
+### 変更履歴形式
 
 ```markdown
-## Versioning
+## バージョン管理
 
-### Version 1.2.1 (2025-10-21)
-- Fixed: YAML parsing error on multi-line descriptions
-- Updated: Examples with latest API patterns
-- Improved: Error messages for missing dependencies
+### バージョン1.2.1（2025-10-21）
+- 修正: 複数行説明のYAMLパースエラー
+- 更新: 最新のAPIパターンを使った例
+- 改善: 不足している依存関係のエラーメッセージ
 
-### Version 1.2.0 (2025-10-15)
-- Added: Support for TypeScript projects
-- Added: Integration with ESLint
-- Enhanced: Performance for large codebases
+### バージョン1.2.0（2025-10-15）
+- 追加: TypeScriptプロジェクトサポート
+- 追加: ESLint統合
+- 拡張: 大規模コードベースのパフォーマンス
 
-### Version 1.1.0 (2025-10-01)
-- Added: Python type hint checking
-- Improved: Error reporting format
+### バージョン1.1.0（2025-10-01）
+- 追加: Python型ヒントチェック
+- 改善: エラーレポート形式
 
-### Version 1.0.0 (2025-09-15)
-- Initial release
-- Core code review functionality
+### バージョン1.0.0（2025-09-15）
+- 初回リリース
+- コアコードレビュー機能
 ```
 
 ---
 
-This reference documentation provides comprehensive technical details for creating robust, well-structured Claude Code skills. Refer to SKILL.md for the step-by-step creation process and templates for ready-to-use starting points.
+このリファレンスドキュメントは、堅牢で適切に構造化されたClaude Codeスキルを作成するための包括的な技術詳細を提供します。ステップバイステップの作成プロセスについてはSKILL.mdを、すぐに使えるスタートポイントについてはtemplatesを参照してください。

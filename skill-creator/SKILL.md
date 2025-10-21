@@ -1,232 +1,232 @@
 ---
 name: skill-creator
-description: Create new Claude Code skills. Use this when the user wants to create a new skill, build a custom skill, generate a skill, or asks about skill creation. Keywords - skill creation, new skill, create skill, build skill, generate skill.
+description: 新しいClaude Codeスキルを作成します。ユーザーが新しいスキルを作成したい、カスタムスキルを構築したい、スキルを生成したい、またはスキルの作成について質問した時に使用します。キーワード - スキル作成、新規スキル、スキル作成、スキル構築、スキル生成。
 version: 1.0.0
 ---
 
-# Skill Creator
+# スキル作成ツール
 
-## Purpose
+## 目的
 
-This skill helps users create new Claude Code skills by generating the proper directory structure, SKILL.md file with YAML frontmatter, and supporting documentation files following best practices.
+このスキルは、ユーザーが適切なディレクトリ構造、YAMLフロントマター付きのSKILL.mdファイル、およびベストプラクティスに従ったサポートドキュメントファイルを生成することで、新しいClaude Codeスキルを作成するのを支援します。
 
-## When to Use This Skill
+## このスキルを使用するタイミング
 
-Use this skill when:
-- User requests to create a new skill
-- User asks "create a skill for..."
-- User mentions "skill creation" or "build a skill"
-- User wants to generate a custom Claude Code capability
+以下の場合にこのスキルを使用します：
+- ユーザーが新しいスキルの作成を依頼する
+- ユーザーが「〜のスキルを作成」と言う
+- ユーザーが「スキル作成」または「スキルを構築」と言及する
+- ユーザーがカスタムClaude Code機能を生成したい
 
-## Skill Creation Process
+## スキル作成プロセス
 
-### Step 1: Gather Requirements
+### ステップ1: 要件を収集
 
-Ask the user for the following information if not already provided:
+まだ提供されていない場合、ユーザーに以下の情報を尋ねます：
 
-1. **Skill Name**:
-   - Use lowercase with hyphens (e.g., "code-reviewer", "api-tester")
-   - Must be descriptive and unique
-   - Maximum 64 characters
+1. **スキル名**:
+   - ハイフン区切りの小文字を使用（例: "code-reviewer", "api-tester"）
+   - 説明的でユニークでなければなりません
+   - 最大64文字
 
-2. **Skill Description**:
-   - Explain what the skill does
-   - Include trigger keywords that users might mention
-   - Specify when Claude should activate this skill
-   - Maximum 200 characters
-   - Example: "Review code for best practices and potential issues. Use when reviewing code, checking code quality, or analyzing code patterns."
+2. **スキル説明**:
+   - スキルが何をするかを説明
+   - ユーザーが言及する可能性のあるトリガーキーワードを含める
+   - Claudeがこのスキルを起動すべきタイミングを指定
+   - 最大200文字
+   - 例: "コードをベストプラクティスと潜在的な問題についてレビューします。コードレビュー、コード品質チェック、コードパターン分析時に使用します。"
 
-3. **Skill Purpose**:
-   - Detailed explanation of the skill's functionality
-   - What problems does it solve?
-   - What are the expected outcomes?
+3. **スキルの目的**:
+   - スキルの機能の詳細な説明
+   - どのような問題を解決しますか？
+   - 期待される成果は何ですか？
 
-4. **Instructions**:
-   - Step-by-step process Claude should follow
-   - Specific tools or approaches to use
-   - Edge cases to handle
+4. **指示**:
+   - Claudeが従うべきステップバイステップのプロセス
+   - 使用する特定のツールまたはアプローチ
+   - 対処すべきエッジケース
 
-5. **Examples** (optional but recommended):
-   - Real-world usage scenarios
-   - Input/output examples
-   - Common use cases
+5. **例**（任意だが推奨）:
+   - 実際の使用シナリオ
+   - 入力/出力例
+   - 一般的なユースケース
 
-6. **Dependencies** (optional):
-   - Required software packages (e.g., "python>=3.8", "node>=18")
-   - External tools needed
+6. **依存関係**（任意）:
+   - 必要なソフトウェアパッケージ（例: "python>=3.8", "node>=18"）
+   - 必要な外部ツール
 
-### Step 2: Create Directory Structure
+### ステップ2: ディレクトリ構造を作成
 
-Create the skill directory with this structure:
+以下の構造でスキルディレクトリを作成します：
 
 ```
 [skill-name]/
-├── SKILL.md          # Required: Main skill definition
-├── reference.md      # Optional: Detailed reference documentation
-├── examples.md       # Optional: Extended examples
-├── templates/        # Optional: Template files
-└── scripts/          # Optional: Helper scripts
+├── SKILL.md          # 必須: メインスキル定義
+├── reference.md      # 任意: 詳細なリファレンスドキュメント
+├── examples.md       # 任意: 拡張例
+├── templates/        # 任意: テンプレートファイル
+└── scripts/          # 任意: ヘルパースクリプト
 ```
 
-### Step 3: Generate SKILL.md
+### ステップ3: SKILL.mdを生成
 
-Create the SKILL.md file with the following structure:
+以下の構造でSKILL.mdファイルを作成します：
 
 ```yaml
 ---
 name: [skill-name]
-description: [Brief description with trigger keywords]
+description: [トリガーキーワードを含む簡単な説明]
 version: 1.0.0
-dependencies: [Optional: list dependencies]
+dependencies: [任意: 依存関係をリスト]
 ---
 
-# [Skill Name]
+# [スキル名]
 
-## Purpose
-[Detailed explanation of what this skill does and when to use it]
+## 目的
+[このスキルが何をするか、いつ使用するかの詳細な説明]
 
-## Instructions
+## 指示
 
-### [Step 1 Title]
-[Detailed instructions for this step]
+### [ステップ1のタイトル]
+[このステップの詳細な指示]
 
-### [Step 2 Title]
-[Detailed instructions for this step]
+### [ステップ2のタイトル]
+[このステップの詳細な指示]
 
-[Continue with additional steps as needed]
+[必要に応じて追加のステップを続ける]
 
-## Examples
+## 例
 
-### Example 1: [Scenario Name]
-**User Request**: "[Example user input]"
+### 例1: [シナリオ名]
+**ユーザーリクエスト**: "[ユーザー入力例]"
 
-**Expected Behavior**:
-[What Claude should do]
+**期待される動作**:
+[Claudeが行うべきこと]
 
-### Example 2: [Another Scenario]
-[Additional examples]
+### 例2: [別のシナリオ]
+[追加の例]
 
-## Best Practices
-- [Best practice 1]
-- [Best practice 2]
-[etc.]
+## ベストプラクティス
+- [ベストプラクティス1]
+- [ベストプラクティス2]
+[など]
 
-## Error Handling
-- [How to handle common errors]
-- [Edge cases to consider]
+## エラー処理
+- [一般的なエラーの処理方法]
+- [考慮すべきエッジケース]
 ```
 
-### Step 4: Create Supporting Files (if needed)
+### ステップ4: サポートファイルを作成（必要な場合）
 
-**reference.md**: For detailed technical specifications, API references, or extensive documentation that doesn't belong in the main SKILL.md.
+**reference.md**: メインのSKILL.mdに含めるべきでない詳細な技術仕様、APIリファレンス、または広範なドキュメント用。
 
-**examples.md**: For extended examples, tutorials, or demonstration scenarios.
+**examples.md**: 拡張例、チュートリアル、またはデモンストレーションシナリオ用。
 
-**templates/**: For file templates the skill might use to generate code or documentation.
+**templates/**: スキルがコードやドキュメントを生成する際に使用する可能性のあるファイルテンプレート用。
 
-**scripts/**: For helper scripts that support the skill's functionality.
+**scripts/**: スキルの機能をサポートするヘルパースクリプト用。
 
-### Step 5: Validate the Skill
+### ステップ5: スキルを検証
 
-Before finalizing, check:
+完成前に以下を確認します：
 
-1. **YAML Frontmatter Validation**:
-   - Verify opening and closing `---` markers
-   - Check for proper indentation (spaces only, no tabs)
-   - Ensure required fields (name, description) are present
-   - Validate field values are within limits
+1. **YAMLフロントマターの検証**:
+   - 開始と終了の`---`マーカーを確認
+   - 適切なインデント（スペースのみ、タブなし）を確認
+   - 必須フィールド（name、description）が存在することを確認
+   - フィールド値が制限内であることを検証
 
-2. **Description Quality**:
-   - Contains specific trigger keywords
-   - Clearly explains when to use the skill
-   - Under 200 characters
+2. **説明の品質**:
+   - 特定のトリガーキーワードを含む
+   - スキルを使用するタイミングを明確に説明
+   - 200文字以下
 
-3. **Instruction Clarity**:
-   - Steps are clear and actionable
-   - Includes concrete examples
-   - Covers edge cases
+3. **指示の明確さ**:
+   - ステップが明確で実行可能
+   - 具体的な例を含む
+   - エッジケースをカバー
 
-4. **Path Formatting**:
-   - All file paths use forward slashes (/)
-   - No platform-specific paths
+4. **パスのフォーマット**:
+   - すべてのファイルパスでフォワードスラッシュ（/）を使用
+   - プラットフォーム固有のパスを使用しない
 
-### Step 6: Output Location
+### ステップ6: 出力先
 
-By default, create the skill in the current directory. If the user wants to install it:
+デフォルトでは、現在のディレクトリにスキルを作成します。ユーザーがインストールを希望する場合：
 
-- **Personal use**: `~/.claude/skills/[skill-name]/`
-- **Project use**: `./.claude/skills/[skill-name]/`
+- **個人用**: `~/.claude/skills/[skill-name]/`
+- **プロジェクト用**: `./.claude/skills/[skill-name]/`
 
-Ask the user where they want to create the skill if unclear.
+不明な場合は、ユーザーにスキルを作成する場所を尋ねます。
 
-## Tool Restrictions
+## ツールの制限
 
-When creating skills, prefer using:
-- **Write** for creating new files
-- **Bash** only for directory creation (mkdir)
-- **Read** to verify created files
+スキルを作成する際は、以下を優先的に使用します：
+- **Write** 新しいファイルの作成用
+- **Bash** ディレクトリ作成のみ（mkdir）
+- **Read** 作成されたファイルの確認用
 
-## Important Notes
+## 重要な注意事項
 
-1. **Keep Skills Focused**: One skill should do one thing well. Complex workflows should be split into multiple complementary skills.
+1. **スキルを焦点を絞ったものにする**: 1つのスキルは1つのことをうまく行うべきです。複雑なワークフローは、複数の補完的なスキルに分割すべきです。
 
-2. **Progressive Documentation**: Start with essential information in SKILL.md. Move detailed reference material to separate files.
+2. **段階的なドキュメント**: SKILL.mdで重要な情報から始めます。詳細なリファレンス資料は別のファイルに移動します。
 
-3. **Test Recommendations**: Suggest the user test the skill by:
-   - Placing it in `~/.claude/skills/`
-   - Making requests that match the trigger keywords
-   - Verifying Claude activates the skill appropriately
+3. **テストの推奨**: 以下の方法でスキルをテストすることをユーザーに提案します：
+   - `~/.claude/skills/`に配置
+   - トリガーキーワードに一致するリクエストを行う
+   - Claudeが適切にスキルを起動することを確認
 
-4. **Avoid Conflicts**: Check if the skill name might conflict with existing skills or be too similar to built-in capabilities.
+4. **競合を避ける**: スキル名が既存のスキルと競合したり、組み込み機能に似すぎていないか確認します。
 
-## Common Patterns
+## 一般的なパターン
 
-### Simple Skill
-For straightforward tasks, just SKILL.md is sufficient.
+### シンプルなスキル
+単純なタスクの場合、SKILL.mdだけで十分です。
 
-### Complex Skill
-For complex workflows, include:
-- SKILL.md (core instructions)
-- reference.md (technical details)
-- examples.md (extended examples)
+### 複雑なスキル
+複雑なワークフローの場合、以下を含めます：
+- SKILL.md（コア指示）
+- reference.md（技術的詳細）
+- examples.md（拡張例）
 
-### Template-Based Skill
-For skills that generate files:
-- SKILL.md (instructions)
-- templates/ directory (file templates)
+### テンプレートベースのスキル
+ファイルを生成するスキルの場合：
+- SKILL.md（指示）
+- templates/ディレクトリ（ファイルテンプレート）
 
-## Error Handling
+## エラー処理
 
-If the user's requirements are unclear:
-1. Ask specific questions to clarify
-2. Provide examples of similar skills
-3. Suggest simplifications if the skill seems too broad
+ユーザーの要件が不明確な場合：
+1. 明確化のための具体的な質問をする
+2. 類似スキルの例を提供
+3. スキルが広範すぎる場合は簡素化を提案
 
-If the skill name already exists:
-1. Alert the user
-2. Suggest an alternative name
-3. Ask if they want to overwrite
+スキル名が既に存在する場合：
+1. ユーザーに警告
+2. 代替名を提案
+3. 上書きするか尋ねる
 
-## Output Format
+## 出力形式
 
-After creating the skill, provide:
-1. Summary of what was created
-2. File locations
-3. Next steps for testing
-4. Installation instructions
+スキルを作成した後、以下を提供します：
+1. 作成内容の概要
+2. ファイルの場所
+3. テストの次のステップ
+4. インストール手順
 
-Example output:
+出力例：
 ```
-Created skill: code-reviewer
-Location: ./code-reviewer/
+作成されたスキル: code-reviewer
+場所: ./code-reviewer/
 
-Files created:
-- SKILL.md (main definition)
-- reference.md (coding standards reference)
-- examples.md (review examples)
+作成されたファイル:
+- SKILL.md（メイン定義）
+- reference.md（コーディング標準リファレンス）
+- examples.md（レビュー例）
 
-Next steps:
-1. Review the generated files
-2. Test the skill: cp -r code-reviewer ~/.claude/skills/
-3. Try it: "Please review this code file"
+次のステップ:
+1. 生成されたファイルを確認
+2. スキルをテスト: cp -r code-reviewer ~/.claude/skills/
+3. 試してみる: "このコードファイルをレビューしてください"
 ```

@@ -1,239 +1,239 @@
 ---
 name: your-advanced-skill
-description: Comprehensive description with multiple trigger keywords, use cases, and context about when to activate. Include domain-specific terms and user language patterns.
+description: 複数のトリガーキーワード、ユースケース、起動時のコンテキストを含む包括的な説明。ドメイン固有の用語とユーザー言語パターンを含めます。
 version: 1.0.0
 dependencies: python>=3.8, node>=18
 ---
 
-# Your Advanced Skill Name
+# あなたの高度なスキル名
 
-## Purpose
+## 目的
 
-Provide a detailed explanation of this skill's functionality, including:
-- Primary use cases
-- Target audience or scenarios
-- Expected outcomes
-- Integration with other tools or workflows
+このスキルの機能の詳細な説明を提供します：
+- 主なユースケース
+- 対象となるオーディエンスまたはシナリオ
+- 期待される成果
+- 他のツールやワークフローとの統合
 
-## Prerequisites
+## 前提条件
 
-List any requirements before this skill can be used:
-- Required software or tools
-- Environment setup
-- Access permissions
-- Configuration needs
+このスキルを使用する前に必要な要件をリストします：
+- 必要なソフトウェアまたはツール
+- 環境のセットアップ
+- アクセス権限
+- 設定の必要性
 
-## Instructions
+## 指示
 
-### Phase 1: Preparation
+### フェーズ1: 準備
 
-#### Step 1.1: Initial Assessment
-- Analyze the user's request
-- Identify key requirements
-- Check prerequisites
-- Validate input parameters
+#### ステップ1.1: 初期評価
+- ユーザーのリクエストを分析
+- 主要な要件を特定
+- 前提条件を確認
+- 入力パラメータを検証
 
-#### Step 1.2: Environment Setup
-- Prepare necessary resources
-- Load required dependencies
-- Initialize configuration
+#### ステップ1.2: 環境のセットアップ
+- 必要なリソースを準備
+- 必要な依存関係をロード
+- 設定を初期化
 
-### Phase 2: Execution
+### フェーズ2: 実行
 
-#### Step 2.1: Core Processing
-- Main logic and operations
-- Data transformation
-- Algorithm implementation
+#### ステップ2.1: コア処理
+- メインロジックと操作
+- データ変換
+- アルゴリズムの実装
 
-#### Step 2.2: Validation
-- Verify intermediate results
-- Check for errors
-- Handle edge cases
+#### ステップ2.2: 検証
+- 中間結果を確認
+- エラーをチェック
+- エッジケースを処理
 
-#### Step 2.3: Optimization
-- Apply best practices
-- Optimize performance
-- Ensure quality standards
+#### ステップ2.3: 最適化
+- ベストプラクティスを適用
+- パフォーマンスを最適化
+- 品質基準を確保
 
-### Phase 3: Completion
+### フェーズ3: 完了
 
-#### Step 3.1: Output Generation
-- Format results
-- Create deliverables
-- Generate documentation
+#### ステップ3.1: 出力生成
+- 結果をフォーマット
+- 成果物を作成
+- ドキュメントを生成
 
-#### Step 3.2: Verification
-- Validate final output
-- Run quality checks
-- Confirm success criteria
+#### ステップ3.2: 検証
+- 最終出力を検証
+- 品質チェックを実行
+- 成功基準を確認
 
-## Configuration Options
+## 設定オプション
 
-### Option 1: [Configuration Name]
-- **Purpose**: What this configures
-- **Default**: Default value
-- **Values**: Acceptable values
-- **Example**: `key: value`
+### オプション1: [設定名]
+- **目的**: これが何を設定するか
+- **デフォルト**: デフォルト値
+- **値**: 許容される値
+- **例**: `key: value`
 
-### Option 2: [Another Configuration]
-- **Purpose**: What this configures
-- **Default**: Default value
-- **Values**: Acceptable values
-- **Example**: `key: value`
+### オプション2: [別の設定]
+- **目的**: これが何を設定するか
+- **デフォルト**: デフォルト値
+- **値**: 許容される値
+- **例**: `key: value`
 
-## Examples
+## 例
 
-### Example 1: Simple Scenario
+### 例1: シンプルなシナリオ
 
-**Context**: Describe the situation
+**コンテキスト**: 状況を説明
 
-**User Request**:
+**ユーザーリクエスト**:
 ```
-"Exact user input example"
-```
-
-**Expected Process**:
-1. Claude analyzes the request
-2. Identifies key parameters
-3. Executes steps A, B, C
-4. Produces output X
-
-**Expected Output**:
-```
-Show what the output should look like
+"正確なユーザー入力例"
 ```
 
-### Example 2: Complex Scenario
+**期待されるプロセス**:
+1. Claudeがリクエストを分析
+2. 主要なパラメータを特定
+3. ステップA、B、Cを実行
+4. 出力Xを生成
 
-**Context**: More advanced situation
-
-**User Request**:
+**期待される出力**:
 ```
-"More complex user input"
-```
-
-**Expected Process**:
-1. Detailed step-by-step breakdown
-2. With conditional logic
-3. Error handling
-4. Multiple possible outcomes
-
-**Expected Output**:
-```
-Comprehensive output example
+出力がどのようになるべきかを示す
 ```
 
-### Example 3: Edge Case
+### 例2: 複雑なシナリオ
 
-**Context**: Unusual or challenging scenario
+**コンテキスト**: より高度な状況
 
-**User Request**:
+**ユーザーリクエスト**:
 ```
-"Edge case input"
+"より複雑なユーザー入力"
 ```
 
-**Expected Handling**:
-- How to detect this is an edge case
-- Special processing required
-- Appropriate error messages or warnings
-- Graceful degradation or alternative approach
+**期待されるプロセス**:
+1. 詳細なステップバイステップの分解
+2. 条件ロジック付き
+3. エラー処理
+4. 複数の可能な結果
 
-## Best Practices
+**期待される出力**:
+```
+包括的な出力例
+```
 
-### Performance
-- Optimize for speed and efficiency
-- Minimize resource usage
-- Cache when appropriate
+### 例3: エッジケース
 
-### Quality
-- Follow industry standards
-- Ensure output consistency
-- Maintain documentation
+**コンテキスト**: 異常または困難なシナリオ
 
-### User Experience
-- Provide clear feedback
-- Show progress for long operations
-- Offer helpful error messages
+**ユーザーリクエスト**:
+```
+"エッジケース入力"
+```
 
-### Security
-- Validate all inputs
-- Sanitize outputs
-- Protect sensitive data
+**期待される処理**:
+- これがエッジケースであることを検出する方法
+- 必要な特別な処理
+- 適切なエラーメッセージまたは警告
+- 優雅な劣化または代替アプローチ
 
-## Tool Usage
+## ベストプラクティス
 
-### Preferred Tools
-List the tools Claude should use for this skill:
-- **Read**: For reading files
-- **Write**: For creating new files
-- **Grep**: For searching code
-- **Bash**: For system operations
+### パフォーマンス
+- 速度と効率を最適化
+- リソース使用を最小化
+- 適切な場合はキャッシュを使用
 
-### Tool Restrictions
-If applicable, specify tools that should NOT be used and why.
+### 品質
+- 業界標準に従う
+- 出力の一貫性を確保
+- ドキュメントを維持
 
-## Error Handling
+### ユーザー体験
+- 明確なフィードバックを提供
+- 長い操作では進捗を表示
+- 役立つエラーメッセージを提供
 
-### Common Errors
+### セキュリティ
+- すべての入力を検証
+- 出力をサニタイズ
+- 機密データを保護
 
-#### Error 1: [Error Name]
-- **Cause**: Why this error occurs
-- **Detection**: How to identify it
-- **Resolution**: Steps to fix it
-- **Prevention**: How to avoid it
+## ツールの使用
 
-#### Error 2: [Another Error]
-- **Cause**: Why this error occurs
-- **Detection**: How to identify it
-- **Resolution**: Steps to fix it
-- **Prevention**: How to avoid it
+### 推奨ツール
+このスキルでCl audeが使用すべきツールをリスト：
+- **Read**: ファイルの読み取り用
+- **Write**: 新しいファイルの作成用
+- **Grep**: コードの検索用
+- **Bash**: システム操作用
 
-### Edge Cases
+### ツールの制限
+該当する場合、使用すべきではないツールとその理由を指定します。
 
-#### Case 1: [Edge Case Name]
-- **Scenario**: When this occurs
-- **Handling**: How to manage it
-- **Fallback**: Alternative approach
+## エラー処理
 
-#### Case 2: [Another Edge Case]
-- **Scenario**: When this occurs
-- **Handling**: How to manage it
-- **Fallback**: Alternative approach
+### 一般的なエラー
 
-## Integration
+#### エラー1: [エラー名]
+- **原因**: なぜこのエラーが発生するか
+- **検出**: どのように識別するか
+- **解決**: 修正するステップ
+- **予防**: どのように回避するか
 
-### With Other Skills
-- How this skill works with complementary skills
-- Recommended skill combinations
-- Workflow patterns
+#### エラー2: [別のエラー]
+- **原因**: なぜこのエラーが発生するか
+- **検出**: どのように識別するか
+- **解決**: 修正するステップ
+- **予防**: どのように回避するか
 
-### With External Tools
-- API integrations
-- External services
-- Third-party dependencies
+### エッジケース
 
-## Limitations
+#### ケース1: [エッジケース名]
+- **シナリオ**: いつこれが発生するか
+- **処理**: どのように管理するか
+- **フォールバック**: 代替アプローチ
 
-- Known constraints
-- Unsupported scenarios
-- Platform-specific issues
-- Performance boundaries
+#### ケース2: [別のエッジケース]
+- **シナリオ**: いつこれが発生するか
+- **処理**: どのように管理するか
+- **フォールバック**: 代替アプローチ
 
-## References
+## 統合
 
-For additional information, Claude can reference:
-- reference.md for detailed technical specifications
-- examples.md for extended examples
-- templates/ for file templates
-- scripts/ for helper utilities
+### 他のスキルとの統合
+- このスキルが補完的なスキルとどのように連携するか
+- 推奨されるスキルの組み合わせ
+- ワークフローパターン
 
-## Versioning
+### 外部ツールとの統合
+- API統合
+- 外部サービス
+- サードパーティの依存関係
 
-### Version 1.0.0
-- Initial release
-- Core functionality
+## 制限事項
 
-### Future Enhancements
-- Planned improvements
-- Feature requests
-- Known issues to address
+- 既知の制約
+- サポートされていないシナリオ
+- プラットフォーム固有の問題
+- パフォーマンスの境界
+
+## 参照
+
+追加情報については、Claudeは以下を参照できます：
+- 詳細な技術仕様についてはreference.md
+- 拡張例についてはexamples.md
+- ファイルテンプレートについてはtemplates/
+- ヘルパーユーティリティについてはscripts/
+
+## バージョン管理
+
+### バージョン1.0.0
+- 初回リリース
+- コア機能
+
+### 将来の機能拡張
+- 計画されている改善
+- 機能リクエスト
+- 対処すべき既知の問題
