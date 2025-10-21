@@ -1,5 +1,8 @@
 # Claude Code スキルリポジトリ
 
+[![CI](https://github.com/y-nishizaki/skills/workflows/CI/badge.svg)](https://github.com/y-nishizaki/skills/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 [Claude Code](https://claude.com/claude-code) の能力を拡張する、再利用可能なスキルのキュレーションされたコレクションです。専門的な知識とワークフローを提供します。
 
 ## Claude Code スキルとは？
