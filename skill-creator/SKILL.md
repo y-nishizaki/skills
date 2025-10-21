@@ -1,5 +1,5 @@
 ---
-name: skill-creator
+name: "skill-creator"
 description: >
   新しいClaude Codeスキルを作成します。ユーザーが新しいスキルを作成したい、カスタムスキルを構築したい、
   スキルを生成したい、またはスキルの作成について質問した時に使用します。
