@@ -1,0 +1,117 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  markdown-lint:
+    name: Markdown Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Lint Markdown files
+        uses: DavidAnson/markdownlint-cli2-action@v16
+        with:
+          globs: '**/*.md'
+
+  yaml-validation:
+    name: YAML Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install yamllint
+        run: pip install yamllint
+
+      - name: Validate YAML frontmatter
+        run: |
+          # Check all SKILL.md files have valid YAML frontmatter
+          find . -name "SKILL.md" -type f | while read -r file; do
+            echo "Checking YAML frontmatter in $file"
+            # Extract YAML frontmatter between --- markers
+            awk '/^---$/{i++; if(i==2) exit; next} i==1' "$file" > /tmp/frontmatter.yml
+            if [ -s /tmp/frontmatter.yml ]; then
+              yamllint /tmp/frontmatter.yml || exit 1
+            else
+              echo "Warning: No YAML frontmatter found in $file"
+            fi
+          done
+
+      - name: Validate workflow YAML files
+        run: |
+          if [ -d .github/workflows ]; then
+            yamllint .github/workflows/*.yml
+          fi
+
+  link-checker:
+    name: Link Checker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check links in Markdown files
+        uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          use-quiet-mode: 'yes'
+          config-file: '.github/workflows/link-check-config.json'
+
+  file-validation:
+    name: File Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check for trailing whitespace
+        run: |
+          if grep -r '[[:blank:]]$' --include="*.md" --include="*.yml" --include="*.yaml" .; then
+            echo "Error: Found trailing whitespace"
+            exit 1
+          fi
+
+      - name: Validate skill structure
+        run: |
+          # Check each skill directory has required files
+          for dir in */; do
+            if [ "$dir" = ".github/" ]; then
+              continue
+            fi
+            if [ -f "${dir}SKILL.md" ]; then
+              echo "✓ ${dir}SKILL.md found"
+              # Check for required frontmatter fields
+              if ! grep -q "^name:" "${dir}SKILL.md"; then
+                echo "Error: ${dir}SKILL.md missing 'name' field"
+                exit 1
+              fi
+              if ! grep -q "^description:" "${dir}SKILL.md"; then
+                echo "Error: ${dir}SKILL.md missing 'description' field"
+                exit 1
+              fi
+            fi
+          done
+
+  summary:
+    name: CI Summary
+    runs-on: ubuntu-latest
+    needs: [markdown-lint, yaml-validation, link-checker, file-validation]
+    if: always()
+    steps:
+      - name: Check results
+        run: |
+          if [ "${{ needs.markdown-lint.result }}" != "success" ] || \
+             [ "${{ needs.yaml-validation.result }}" != "success" ] || \
+             [ "${{ needs.link-checker.result }}" != "success" ] || \
+             [ "${{ needs.file-validation.result }}" != "success" ]; then
+            echo "❌ CI failed"
+            exit 1
+          else
+            echo "✅ All CI checks passed"
+          fi
