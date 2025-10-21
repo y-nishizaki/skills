@@ -5,16 +5,19 @@
 ## 例1: 技術実装リサーチ
 
 ### ユーザーリクエスト
+
 「2025年のReactでのサーバーサイドレンダリングの実装方法をリサーチして」
 
 ### リサーチプロセス
 
 **ステップ1: 目標の定義**
+
 - リサーチクエスチョン: ReactでSSRを実装するための現在の方法とベストプラクティスは何ですか?
 - スコープ: 最新のアプローチ、人気のあるフレームワーク、実装パターン
 - 成功基準: オプションの理解、実装ガイダンス、コード例
 
 **ステップ2: 情報源の計画**
+
 - React公式ドキュメント
 - Next.jsドキュメント(人気のあるSSRフレームワーク)
 - SSRベストプラクティスに関する最近の記事
@@ -24,24 +27,28 @@
 **ステップ3: 情報収集**
 
 *クエリ1: WebSearch「React サーバーサイドレンダリング 2025 ベストプラクティス」*
+
 - 結果はNext.jsが支配的なソリューションであることを示す
 - React 18+の機能(Server Components、Suspense)
 - 代替フレームワーク(Remix、Astro)
 - パフォーマンスに関する考慮事項
 
 *クエリ2: WebFetch React公式ドキュメント*
+
 - React 18で導入されたServer Components
 - ストリーミングSSR機能
 - ハイドレーションのベストプラクティス
 - 統合パターン
 
 *クエリ3: WebFetch Next.jsドキュメント*
+
 - App Router(現在推奨されるアプローチ)
 - Pages Router(レガシーだが安定)
 - 自動SSR/SSG/ISR処理
 - パフォーマンス最適化機能
 
 **ステップ4: 検証**
+
 - 公式ドキュメントと複数の情報源でReact Server Componentsの情報を相互確認
 - Next.jsが現在推奨されるアプローチであることを検証(複数の権威ある情報源が同意)
 - React 18+の機能が安定し本番環境対応であることを確認
@@ -81,6 +88,7 @@
    情報源: Remixドキュメント、コミュニティ比較
 
 **実装例(Next.js App Router)**
+
 ```javascript
 // app/page.tsx - デフォルトでServer Component
 async function getData() {
@@ -95,6 +103,7 @@ export default async function Page() {
 ```
 
 **ベストプラクティス**
+
 - データ取得にはReact Server Componentsを使用する
 - パフォーマンス向上のためにストリーミングを実装する
 - クライアントサイドJavaScriptを最小限に抑える
@@ -102,14 +111,16 @@ export default async function Page() {
 - 可能な場合は静的生成(SSG)を検討する
 
 **主要な考慮事項**
+
 - 最新機能にはReact 18+が必要
 - ネイティブアプローチのビルドツールセットアップがより複雑
 - Next.jsは多くのSSRの課題を簡素化
 - ホスティング要件を考慮する(Node.jsサーバーが必要)
 
 **情報源**
-- Reactドキュメント: https://react.dev/reference/react/
-- Next.jsドキュメント: https://nextjs.org/docs
+
+- Reactドキュメント: <https://react.dev/reference/react/>
+- Next.jsドキュメント: <https://nextjs.org/docs>
 - 「React Server Components」(Reactチームブログ)
 - SSRフレームワークに関するコミュニティ比較(2024-2025)
 
@@ -118,17 +129,20 @@ export default async function Page() {
 ## 例2: 比較分析リサーチ
 
 ### ユーザーリクエスト
+
 「状態管理のためにReduxとZustandを比較して」
 
 ### リサーチプロセス
 
 **ステップ1: 目標の定義**
+
 - 2つの状態管理ライブラリを比較する
 - 主要な違いを理解する
 - 各自の使用例を特定する
 - 推奨ガイダンスを提供する
 
 **ステップ2: 情報源の計画**
+
 - 両方の公式ドキュメント
 - コミュニティの比較とディスカッション
 - GitHubリポジトリ(スター、アクティビティ)
@@ -138,20 +152,24 @@ export default async function Page() {
 **ステップ3: 情報収集**
 
 *Reduxをリサーチ*
+
 - WebFetch: 公式Redux Toolkitドキュメント
 - WebSearch: 「Redux ベストプラクティス 2025」
 - 収集: 核となる概念、エコシステム、学習曲線
 
 *Zustandをリサーチ*
+
 - WebFetch: Zustand GitHubリポジトリとドキュメント
 - WebSearch: 「Zustand 状態管理 利点」
 - 収集: 核となる概念、シンプルさの要因、使用例
 
 *比較*
+
 - WebSearch: 「Redux vs Zustand 2025」
 - 探す: 移行経験、パフォーマンス比較、コミュニティの意見
 
 **ステップ4: 検証**
+
 - 複数の情報源から人気度メトリクスを検証(GitHub、npmトレンド)
 - ベンチマークでパフォーマンスの主張を相互確認
 - 公式情報源からエコシステムの成熟度を確認
@@ -167,6 +185,7 @@ ReduxとZustandはどちらもReactの人気のある状態管理ソリューシ
 **Redux(Redux Toolkit付き)**
 
 *強み:*
+
 - 広範なツールを備えた成熟したエコシステム
 - タイムトラベルデバッグ付きのDevTools
 - 確立されたパターンと規約
@@ -175,11 +194,13 @@ ReduxとZustandはどちらもReactの人気のある状態管理ソリューシ
 - 複雑な状態を持つ大規模アプリケーションに最適
 
 *考慮事項:*
+
 - より多くのボイラープレート(Redux Toolkitでも)
 - より急な学習曲線
 - シンプルなアプリケーションには過剰になる可能性がある
 
 *例:*
+
 ```javascript
 // Redux Toolkitアプローチ
 import { createSlice } from '@reduxjs/toolkit'
@@ -197,6 +218,7 @@ const counterSlice = createSlice({
 **Zustand**
 
 *強み:*
+
 - 最小限のボイラープレートとシンプルなAPI
 - プロバイダーラッパーが不要
 - より小さいバンドルサイズ(~1KB)
@@ -205,12 +227,14 @@ const counterSlice = createSlice({
 - 小中規模のアプリケーションに最適
 
 *考慮事項:*
+
 - より小さいエコシステムとより少ないツール
 - 確立されたパターンが少ない
 - より少ないミドルウェアオプション
 - DevToolsがReduxほど成熟していない
 
 *例:*
+
 ```javascript
 // Zustandアプローチ
 import create from 'zustand'
@@ -236,6 +260,7 @@ const useStore = create((set) => ({
 **推奨事項**
 
 *Reduxを選択する場合:*
+
 - 大規模で複雑なアプリケーションを構築する
 - 広範なミドルウェアが必要(saga、observable)
 - 成熟したDevToolsとタイムトラベルデバッグが欲しい
@@ -243,6 +268,7 @@ const useStore = create((set) => ({
 - 確立されたベストプラクティスと規約が必要
 
 *Zustandを選択する場合:*
+
 - 小中規模のアプリケーションを構築する
 - 最小限のセットアップとボイラープレートが欲しい
 - シンプルで柔軟なAPIを好む
@@ -250,12 +276,14 @@ const useStore = create((set) => ({
 - 新しいプロジェクトを新規に開始する
 
 **移行に関する考慮事項**
+
 - Zustand → Redux: 複雑な非同期にミドルウェアが必要になる可能性がある
 - Redux → Zustand: 大幅に簡素化できるが、一部のツールを失う
 
 **情報源**
-- Redux Toolkitドキュメント: https://redux-toolkit.js.org/
-- Zustand GitHub: https://github.com/pmndrs/zustand
+
+- Redux Toolkitドキュメント: <https://redux-toolkit.js.org/>
+- Zustand GitHub: <https://github.com/pmndrs/zustand>
 - npmトレンド比較(2025年1月)
 - 「Redux vs Zustand」コミュニティディスカッション(2024-2025)
 - js-framework-benchmarkからのパフォーマンスベンチマーク
@@ -265,16 +293,19 @@ const useStore = create((set) => ({
 ## 例3: 事実検証リサーチ
 
 ### ユーザーリクエスト
+
 「React Server ComponentsがuseEffectの必要性を排除するというのは本当ですか検証して」
 
 ### リサーチプロセス
 
 **ステップ1: 目標の定義**
+
 - React Server ComponentsとuseEffectに関する特定の主張を検証する
 - これらの概念間の関係を理解する
 - 正確でニュアンスのある回答を提供する
 
 **ステップ2: 情報源の計画**
+
 - React公式ドキュメント(主要な権威)
 - Reactチームのブログ投稿と発表
 - Server Componentsを説明する技術記事
@@ -283,21 +314,25 @@ const useStore = create((set) => ({
 **ステップ3: 情報収集**
 
 *クエリ1: Server Componentsに関するReact公式ドキュメント*
+
 - Server Componentsはサーバー上でのみ実行される
 - ブラウザAPIにアクセスできない
 - useEffect、useStateなどのフックを使用できない
 
 *クエリ2: useEffectに関するReactドキュメント*
+
 - useEffectは外部システムとの同期用
 - Client Componentsでのみ動作する
 - ブラウザの相互作用にはまだ必要
 
 *クエリ3: 記事と例*
+
 - ServerとClient Componentのパターン
 - それぞれが適切な場合
 - 実世界の使用例
 
 **ステップ4: 検証**
+
 - 公式Reactドキュメント全体で相互参照
 - 複数の技術記事で確認
 - ニュアンスを示すコード例を見つける
@@ -310,6 +345,7 @@ const useStore = create((set) => ({
 **検証結果: 部分的に真実(重要なコンテキストが必要)**
 
 **正確な側面:**
+
 - Server ComponentsはuseEffectを使用できない(サーバー上でのみ実行される)
 - 以前useEffectを必要としていた多くの使用例(データ取得など)は、Server Componentsで置き換えることができる
 - Server Componentsはサーバーサイドのデータ取得に対するuseEffectを排除できる
@@ -370,11 +406,13 @@ function ClientComponent() {
 「React Server Componentsは、データ取得などのサーバーサイド操作に対するuseEffectの必要性を置き換えますが、useEffectはクライアントサイドの相互作用にとって依然として不可欠であり、Client Componentsでは引き続き必要です。」
 
 **これが重要な理由:**
+
 - Server Componentsの誤用を防ぐ理解
 - ServerとClient Componentsの補完的な性質を明確にする
 - 開発者が適切なコンポーネントタイプを選択するのに役立つ
 
 **情報源:**
+
 - Reactドキュメント: 「Server Components」
 - Reactドキュメント: 「useEffect」
 - Reactチームブログ: 「Server Componentsの紹介」
@@ -387,16 +425,19 @@ function ClientComponent() {
 ## 例4: コードベース固有のリサーチ
 
 ### ユーザーリクエスト
+
 「このコードベースでAPIエラーをどのように処理しているかリサーチして」
 
 ### リサーチプロセス
 
 **ステップ1: 目標の定義**
+
 - 現在のエラー処理パターンを理解する
 - APIエラーがキャッチされる場所を特定する
 - チーム参照用にアプローチを文書化する
 
 **ステップ2: 情報源の計画**
+
 - エラー処理パターンをGrepする
 - APIクライアントコードを読む
 - エラー処理ユーティリティを調査する
@@ -406,26 +447,31 @@ function ClientComponent() {
 **ステップ3: 情報収集**
 
 *検索1: APIクライアントコードを見つける*
+
 ```bash
 Glob: "**/*api*.{ts,js,tsx,jsx}"
 ```
 
 *検索2: エラー処理を探す*
+
 ```bash
 Grep: "catch|try|Error" in API files
 ```
 
 *検索3: エラーユーティリティを見つける*
+
 ```bash
 Grep: "handleError|errorHandler"
 ```
 
 *検索4: 設定を調査*
+
 ```bash
 Read: axios設定、fetchラッパー
 ```
 
 **ステップ4: 分析**
+
 - 特定されたファイルを読んでパターンを理解する
 - API呼び出しからユーザー表示までのエラーフローをトレースする
 - コードベース全体の一貫性に注意する
@@ -473,6 +519,7 @@ axios.interceptors.response.use(
    - スタックトレースとコンテキストを含む
 
 **主要なファイル**
+
 - `src/api/client.ts:15-45` - Axiosインターセプターセットアップ
 - `src/utils/errors.ts:10-35` - エラー変換ロジック
 - `src/components/ErrorBoundary.tsx:20-50` - UIエラー処理
@@ -480,6 +527,7 @@ axios.interceptors.response.use(
 - `src/hooks/useApiCall.ts:30-60` - エラー処理付きAPI呼び出し用フック
 
 **処理されるエラータイプ**
+
 - ネットワークエラー(接続なし)
 - HTTPエラー(4xx、5xxステータスコード)
 - タイムアウトエラー
@@ -494,11 +542,13 @@ axios.interceptors.response.use(
 ✅ グレースフルデグラデーション
 
 **改善の余地がある領域**
+
 - 一部のコンポーネントがエラー処理フックをバイパスしている
 - 一部のケースでエラーメッセージがより具体的になる可能性がある
 - 一時的な障害に対する再試行ロジックが実装されていない
 
 **使用パターン**
+
 ```javascript
 // 推奨アプローチ(カスタムフックを使用)
 const { data, error, loading } = useApiCall('/endpoint')
@@ -509,6 +559,7 @@ const { data, error, loading } = useApiCall('/endpoint')
 ```
 
 **情報源**
+
 - src/api/client.ts(Axios設定)
 - src/utils/errors.ts(エラーユーティリティ)
 - src/components/ErrorBoundary.tsx(エラーUI)
@@ -520,16 +571,19 @@ const { data, error, loading } = useApiCall('/endpoint')
 ## 例5: 時事/トレンドリサーチ
 
 ### ユーザーリクエスト
+
 「2025年のAIコーディングアシスタントの現状は?」
 
 ### リサーチプロセス
 
 **ステップ1: 目標の定義**
+
 - AIコーディングツールの現在の状況を理解する
 - 主要プレーヤーとその機能を特定する
 - 最近の開発とトレンドに注意する
 
 **ステップ2: 情報源の計画**
+
 - 最近のニュースと記事(過去6ヶ月)
 - AI企業からの公式発表
 - 開発者コミュニティのディスカッション
@@ -538,21 +592,25 @@ const { data, error, loading } = useApiCall('/endpoint')
 **ステップ3: 情報収集**
 
 *WebSearch: 「AIコーディングアシスタント 2025」*
+
 - 最新のツールと機能
 - 最近の発表
 - マーケットリーダー
 
 *WebSearch: 「GitHub Copilot vs Claude Code vs Cursor 2025」*
+
 - 比較情報
 - 機能の違い
 - ユーザーの好み
 
 *WebFetch: 公式製品ページ*
+
 - 現在の機能
 - 価格と利用可能性
 - 最新の更新
 
 **ステップ4: 検証**
+
 - 公式情報源から機能を相互確認
 - 複数の情報源から採用数を検証
 - 公式発表で最近の更新を確認
@@ -614,6 +672,7 @@ const { data, error, loading } = useApiCall('/endpoint')
    - 脆弱性検出
 
 **採用状況**
+
 - プロフェッショナル開発者の約40〜50%が定期的にAIコーディングツールを使用(各種調査)
 - 最も一般的な用途: コード補完と生成
 - 増加する用途: リファクタリング、ドキュメント、テスト
@@ -621,6 +680,7 @@ const { data, error, loading } = useApiCall('/endpoint')
 **主要な考慮事項**
 
 *ツールの選択:*
+
 - IDEとコマンドラインの好み
 - 既存のツール統合
 - 予算(無料と有料ティア)
@@ -628,24 +688,28 @@ const { data, error, loading } = useApiCall('/endpoint')
 - プライバシー/セキュリティ要件
 
 *現在の制限事項:*
+
 - 依然として開発者の監視が必要
 - 不正確または安全でないコードを提案する可能性がある
 - 異なる言語/フレームワーク間で品質が変動
 - コンテキストウィンドウの制限
 
 **最近の開発(過去3ヶ月)**
+
 - 拡張されたコンテキストウィンドウ
 - より良いマルチファイル編集
 - 改善されたテスト生成
 - 強化されたデバッグ機能
 
 **今後の展望**
+
 - 精度の継続的な改善
 - 複雑なコードベースのより良い理解
 - 特定のドメイン用のより専門化されたツール
 - 開発ワークフローとの統合
 
 **情報源**
+
 - GitHub Copilot公式ドキュメント(2025年1月)
 - Anthropic Claude Codeリリース(2025)
 - Stack Overflow、JetBrainsからの開発者調査(2024-2025)
@@ -661,26 +725,31 @@ const { data, error, loading } = useApiCall('/endpoint')
 ## 例6: クイック定義リサーチ
 
 ### ユーザーリクエスト
+
 「JavaScriptのツリーシェイキングとは何ですか?」
 
 ### リサーチプロセス
 
 **ステップ1: 目標の定義**
+
 - 明確な定義を提供する
 - どのように機能するかを説明する
 - 実用的なコンテキストを提供する
 
 **ステップ2: クイック情報源戦略**
+
 - 公式バンドラードキュメント
 - 権威あるJavaScriptリソース
 - 明確な例
 
 **ステップ3: 情報収集**
+
 - WebSearch: 「ツリーシェイキング JavaScript 定義」
 - WebFetch: webpackまたはRollupドキュメント
 - 明確な例を探す
 
 **ステップ4: クイック検証**
+
 - 情報源間で定義を確認
 - 技術的正確性を検証
 
@@ -692,12 +761,14 @@ const { data, error, loading } = useApiCall('/endpoint')
 ツリーシェイキングは、JavaScriptバンドラーで使用されるデッドコード削除技術で、最終バンドルから未使用のエクスポートを削除します。
 
 **どのように機能するか**
+
 1. バンドラーがES6モジュールのインポート/エクスポートを分析
 2. 実際に使用されているエクスポートを特定
 3. 最終バンドルから未使用のコードを削除
 4. より小さいバンドルサイズになる
 
 **例**
+
 ```javascript
 // utils.js
 export function usedFunction() { /* ... */ }
@@ -709,16 +780,19 @@ usedFunction()  // これだけがバンドルに含まれる
 ```
 
 **要件**
+
 - ES6モジュール(import/export)
 - それをサポートするモジュールバンドラー(webpack、Rollupなど)
 - 副作用のないコード
 
 **利点**
+
 - より小さいバンドルサイズ
 - より速いロード時間
 - より良いパフォーマンス
 
 **情報源**
+
 - Webpackドキュメント: 「Tree Shaking」
 - Rollupドキュメント
 - MDN Web Docs
@@ -728,6 +802,7 @@ usedFunction()  // これだけがバンドルに含まれる
 ## 一般的なリサーチパターンの概要
 
 ### パターン1: 幅優先(概要)
+
 1. 高レベルの理解を得る
 2. 主要な概念を特定する
 3. 簡潔な要約を提供する
@@ -736,6 +811,7 @@ usedFunction()  // これだけがバンドルに含まれる
 **使用目的:** クイック定義、概要、初期探索
 
 ### パターン2: 深さ優先(包括的)
+
 1. トピックの徹底的な調査
 2. 複数の権威ある情報源
 3. 詳細な例と説明
@@ -744,6 +820,7 @@ usedFunction()  // これだけがバンドルに含まれる
 **使用目的:** 複雑なトピック、実装ガイド、徹底的な分析
 
 ### パターン3: 比較(分析)
+
 1. 各オプションを独立してリサーチ
 2. 比較基準を特定
 3. 同じ基準で評価
@@ -752,6 +829,7 @@ usedFunction()  // これだけがバンドルに含まれる
 **使用目的:** 技術比較、ソリューション評価、意思決定サポート
 
 ### パターン4: 検証(ファクトチェック)
+
 1. 特定の主張を特定
 2. 権威ある情報源を見つける
 3. 確認証拠と矛盾証拠を探す
@@ -760,6 +838,7 @@ usedFunction()  // これだけがバンドルに含まれる
 **使用目的:** ファクトチェック、主張検証、正確性検証
 
 ### パターン5: 発見(コードベース)
+
 1. 関連するコードパターンを検索
 2. 調査結果を読んで分析
 3. 実装をトレース
