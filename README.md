@@ -65,6 +65,68 @@ cp -r skills/[スキル名] .
 
 `.claude/skills/` ディレクトリをリポジトリにコミットします。チームメンバーは変更をプルした後、自動的にアクセスできるようになります。
 
+## 開発者向けセットアップ
+
+### pre-commit フックのセットアップ
+
+このリポジトリでは、コードの品質を保つために pre-commit フックを使用しています。
+コミット前に自動的に以下のチェックが実行されます：
+
+- 末尾の空白の削除
+- ファイル末尾の改行の修正
+- YAML 構文チェック
+- Markdown Lint
+- YAML Lint
+- スキル構造の検証
+
+#### インストール方法
+
+```bash
+# pre-commit をインストール
+pip install pre-commit
+
+# pre-commit フックを有効化
+pre-commit install
+
+# (オプション) 既存のすべてのファイルでチェックを実行
+pre-commit run --all-files
+```
+
+#### 使い方
+
+pre-commit フックをインストール後は、`git commit` を実行するたびに自動的にチェックが実行されます。
+
+```bash
+# 通常通りコミット - 自動的にチェックが実行される
+git add .
+git commit -m "commit message"
+```
+
+チェックに失敗した場合、一部のファイルは自動的に修正されます。修正されたファイルを再度 add してコミットしてください：
+
+```bash
+git add .
+git commit -m "commit message"
+```
+
+#### トラブルシューティング
+
+**特定のチェックをスキップする場合：**
+
+```bash
+# すべてのフックをスキップ（推奨しません）
+git commit --no-verify
+
+# 特定のフックのみ実行
+SKIP=markdownlint-cli2 git commit -m "message"
+```
+
+**pre-commit を更新する場合：**
+
+```bash
+pre-commit autoupdate
+```
+
 ## 独自のスキルを作成する
 
 ### 基本的なスキル構造

@@ -40,9 +40,33 @@ cp -r your-skill ~/.claude/skills/
 # Claude Codeで実際に使用してテスト
 ```
 
-#### CI チェック
+#### pre-commit フックのセットアップ（推奨）
 
-変更をコミットする前に、ローカルでCIチェックを実行することをお勧めします:
+このリポジトリでは、pre-commit フックを使用してコミット前に自動的にチェックを実行できます：
+
+```bash
+# pre-commit をインストール
+pip install pre-commit
+
+# pre-commit フックを有効化
+pre-commit install
+
+# (オプション) 既存のすべてのファイルでチェックを実行
+pre-commit run --all-files
+```
+
+pre-commit フックをインストール後は、`git commit` を実行するたびに自動的に以下のチェックが実行されます：
+
+- 末尾の空白の削除
+- ファイル末尾の改行の修正
+- YAML 構文チェック
+- Markdown Lint
+- YAML Lint
+- スキル構造の検証
+
+#### 手動で CI チェックを実行する場合
+
+pre-commit をインストールせずに手動でチェックを実行することもできます：
 
 ```bash
 # Markdownのlint
