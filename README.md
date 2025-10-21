@@ -1,219 +1,217 @@
-# Claude Code Skills Repository
+# Claude Code スキルリポジトリ
 
-> **日本語版**: [README.ja.md](README.ja.md) をご覧ください
+[Claude Code](https://claude.com/claude-code) の能力を拡張する、再利用可能なスキルのキュレーションされたコレクションです。専門的な知識とワークフローを提供します。
 
-A curated collection of reusable skills for [Claude Code](https://claude.com/claude-code), extending its capabilities with specialized expertise and workflows.
+## Claude Code スキルとは？
 
-## What Are Claude Code Skills?
+スキルは Claude Code の機能を拡張するモジュール式の機能です。各スキルは、ドメインの専門知識を発見可能な機能にパッケージ化し、Claude がリクエストに関連する場合に自律的に呼び出すことができます。
 
-Skills are modular capabilities that extend Claude Code's functionality. Each skill packages domain expertise into a discoverable capability that Claude can autonomously invoke when relevant to your request.
+**主な特徴:**
+- **モデルによる呼び出し**: Claude がコンテキストに基づいてスキルを使用するタイミングを自動的に判断
+- **モジュール式**: 各スキルは特定の機能またはワークフローに焦点を当てる
+- **共有可能**: git やプラグインを通じてチーム全体で簡単に配布
+- **設定可能**: ツール制限により、機密性の高いコンテキストでの安全な実行を保証
 
-**Key characteristics:**
-- **Model-invoked**: Claude automatically decides when to use skills based on context
-- **Modular**: Each skill focuses on a specific capability or workflow
-- **Shareable**: Easily distributed across teams through git or plugins
-- **Configurable**: Tool restrictions ensure safe execution in sensitive contexts
-
-## Repository Structure
+## リポジトリの構造
 
 ```
 skills/
 ├── README.md
 ├── LICENSE
-└── [skill-name]/
-    ├── SKILL.md          # Required: Skill definition and instructions
-    ├── reference.md      # Optional: Reference documentation
-    ├── examples.md       # Optional: Usage examples
-    ├── scripts/          # Optional: Helper scripts
-    └── templates/        # Optional: File templates
+└── [スキル名]/
+    ├── SKILL.md          # 必須: スキルの定義と手順
+    ├── reference.md      # オプション: リファレンスドキュメント
+    ├── examples.md       # オプション: 使用例
+    ├── scripts/          # オプション: ヘルパースクリプト
+    └── templates/        # オプション: ファイルテンプレート
 ```
 
-## Quick Start
+## クイックスタート
 
-### Prerequisites
+### 前提条件
 
-- [Claude Code](https://claude.com/claude-code) installed
-- Basic understanding of YAML and Markdown
+- [Claude Code](https://claude.com/claude-code) がインストールされていること
+- YAML と Markdown の基本的な理解
 
-### Installing Skills
+### スキルのインストール
 
-#### For Personal Use
+#### 個人用
 
-Clone skills to your personal skills directory:
+個人のスキルディレクトリにスキルをクローンします:
 
 ```bash
-# Clone individual skills
+# 個別のスキルをクローン
 git clone https://github.com/y-nishizaki/skills.git
 cd skills
-cp -r [skill-name] ~/.claude/skills/
+cp -r [スキル名] ~/.claude/skills/
 ```
 
-#### For Team/Project Use
+#### チーム/プロジェクト用
 
-Add skills directly to your project:
+プロジェクトに直接スキルを追加します:
 
 ```bash
-# In your project directory
+# プロジェクトディレクトリで
 mkdir -p .claude/skills
 cd .claude/skills
 git clone https://github.com/y-nishizaki/skills.git
-# Copy desired skills to .claude/skills/
-cp -r skills/[skill-name] .
+# 必要なスキルを .claude/skills/ にコピー
+cp -r skills/[スキル名] .
 ```
 
-Commit the `.claude/skills/` directory to your repository. Team members will automatically have access after pulling changes.
+`.claude/skills/` ディレクトリをリポジトリにコミットします。チームメンバーは変更をプルした後、自動的にアクセスできるようになります。
 
-## Creating Your Own Skills
+## 独自のスキルを作成する
 
-### Basic Skill Structure
+### 基本的なスキル構造
 
-Every skill requires a `SKILL.md` file with YAML frontmatter:
+すべてのスキルには、YAML フロントマターを含む `SKILL.md` ファイルが必要です:
 
 ```yaml
 ---
-name: Your Skill Name
-description: Brief description with trigger terms that help Claude know when to use this skill
+name: スキル名
+description: Claude がこのスキルをいつ使用すべきかを知るのに役立つトリガー用語を含む簡潔な説明
 ---
 
-# Your Skill Name
+# スキル名
 
-## Purpose
-Explain what this skill does and when it should be used.
+## 目的
+このスキルが何をするか、いつ使用すべきかを説明します。
 
-## Instructions
-Step-by-step instructions for Claude to follow.
+## 手順
+Claude が従うべきステップバイステップの手順。
 
-## Examples
-Concrete usage scenarios.
+## 例
+具体的な使用シナリオ。
 ```
 
-### Best Practices
+### ベストプラクティス
 
-**1. Write Specific Descriptions**
-- Include trigger terms users might mention
-- Be explicit about when the skill should activate
-- Avoid vague or overly broad descriptions
+**1. 具体的な説明を書く**
+- ユーザーが言及する可能性のあるトリガー用語を含める
+- スキルがいつアクティブになるべきかを明示的に示す
+- 曖昧または過度に広範な説明を避ける
 
-**2. Keep Skills Focused**
-- One skill = one capability
-- Split complex workflows into multiple complementary skills
+**2. スキルを焦点を絞ったものにする**
+- 1つのスキル = 1つの機能
+- 複雑なワークフローを複数の補完的なスキルに分割
 
-**3. Use Tool Restrictions When Appropriate**
+**3. 適切な場合はツール制限を使用する**
 ```yaml
 ---
-name: Code Reviewer
-description: Reviews code for best practices and potential issues
+name: コードレビュアー
+description: ベストプラクティスと潜在的な問題についてコードをレビューする
 allowed-tools: Read, Grep, Glob
 ---
 ```
 
-**4. Provide Clear Examples**
-- Show realistic usage scenarios
-- Include both input and expected behavior
-- Document edge cases
+**4. 明確な例を提供する**
+- 現実的な使用シナリオを示す
+- 入力と期待される動作の両方を含める
+- エッジケースを文書化する
 
-**5. Use Forward Slashes in Paths**
-- Ensures cross-platform compatibility
-- Always use `/` even on Windows
+**5. パスにはフォワードスラッシュを使用する**
+- クロスプラットフォームの互換性を保証
+- Windows でも常に `/` を使用
 
-**6. Progressive Documentation**
-- Start with essential info in SKILL.md
-- Move detailed reference to separate files
-- Claude loads additional context as needed
+**6. 段階的なドキュメント**
+- SKILL.md に必須情報から始める
+- 詳細なリファレンスは別ファイルに移動
+- Claude は必要に応じて追加のコンテキストを読み込む
 
-### Testing Your Skills
+### スキルのテスト
 
-1. **Local testing**: Place skill in `~/.claude/skills/` and test with Claude Code
-2. **Description validation**: Verify Claude activates the skill with natural requests
-3. **Team validation**: Have colleagues test before committing to project
-4. **YAML validation**: Check syntax with a YAML linter
+1. **ローカルテスト**: スキルを `~/.claude/skills/` に配置し、Claude Code でテスト
+2. **説明の検証**: Claude が自然なリクエストでスキルをアクティブにすることを確認
+3. **チームの検証**: プロジェクトにコミットする前に同僚にテストしてもらう
+4. **YAML の検証**: YAML リンターで構文をチェック
 
-## Contributing
+## コントリビューション
 
-Contributions are welcome! Please follow these guidelines:
+コントリビューションを歓迎します！以下のガイドラインに従ってください:
 
-1. **Fork the repository**
-2. **Create a feature branch**: `git checkout -b feature/amazing-skill`
-3. **Follow the skill structure** outlined above
-4. **Test thoroughly** with Claude Code
-5. **Document clearly** in SKILL.md
-6. **Submit a pull request** with:
-   - Clear description of the skill's purpose
-   - Example use cases
-   - Any dependencies or requirements
+1. **リポジトリをフォーク**
+2. **フィーチャーブランチを作成**: `git checkout -b feature/amazing-skill`
+3. **上記のスキル構造に従う**
+4. **Claude Code で徹底的にテスト**
+5. **SKILL.md で明確に文書化**
+6. **プルリクエストを送信**（以下を含む）:
+   - スキルの目的の明確な説明
+   - 使用例
+   - 依存関係または要件
 
-### Contribution Checklist
+### コントリビューションチェックリスト
 
-- [ ] SKILL.md includes complete frontmatter (name, description)
-- [ ] Description contains specific trigger terms
-- [ ] Instructions are clear and actionable
-- [ ] Examples demonstrate realistic usage
-- [ ] Forward slashes used in all file paths
-- [ ] Tested locally with Claude Code
-- [ ] No sensitive information in files
-- [ ] License compatible (MIT)
+- [ ] SKILL.md に完全なフロントマター（name、description）が含まれている
+- [ ] 説明に具体的なトリガー用語が含まれている
+- [ ] 手順が明確で実行可能である
+- [ ] 例が現実的な使用法を示している
+- [ ] すべてのファイルパスでフォワードスラッシュを使用している
+- [ ] Claude Code でローカルテストを実施した
+- [ ] ファイルに機密情報が含まれていない
+- [ ] ライセンスに互換性がある（MIT）
 
-## Available Skills
+## 利用可能なスキル
 
-### Skill Creator
+### Skill Creator（スキル作成スキル）
 
-**Location**: `skill-creator/`
+**場所**: `skill-creator/`
 
-A meta-skill that helps you create new Claude Code skills following best practices and proper structure.
+ベストプラクティスと適切な構造に従って、新しいClaude Codeスキルを作成するのを支援するメタスキルです。
 
-**Features**:
-- Generates complete skill directory structure
-- Creates SKILL.md with proper YAML frontmatter
-- Includes validation and best practices guidance
-- Provides basic and advanced templates
-- Comprehensive reference documentation
+**機能**:
+- 完全なスキルディレクトリ構造を生成
+- 適切なYAMLフロントマター付きのSKILL.mdを作成
+- 検証とベストプラクティスのガイダンスを含む
+- 基本と高度なテンプレートを提供
+- 包括的なリファレンスドキュメント
 
-**Usage**: Ask Claude to "create a new skill" or "build a skill for [purpose]"
+**使用方法**: Claudeに「新しいスキルを作成」または「[目的]のためのスキルを作って」と依頼してください
 
-**Installation**:
+**インストール**:
 ```bash
 cp -r skill-creator ~/.claude/skills/
 ```
 
-**Files**:
-- `SKILL.md` - Main skill definition and creation process
-- `reference.md` - Detailed technical reference and specifications
-- `templates/basic-skill-template.md` - Simple skill template
-- `templates/advanced-skill-template.md` - Complex skill template
+**ファイル**:
+- `SKILL.md` - メインのスキル定義と作成プロセス
+- `reference.md` - 詳細な技術リファレンスと仕様
+- `templates/basic-skill-template.md` - シンプルなスキルテンプレート
+- `templates/advanced-skill-template.md` - 複雑なスキルテンプレート
 
-## Debugging Common Issues
+## よくある問題のデバッグ
 
-### Claude doesn't use my skill
-- **Check description specificity**: Add clearer trigger terms
-- **Verify file location**: Ensure skill is in `~/.claude/skills/` or `.claude/skills/`
-- **Test activation**: Try explicit requests matching your trigger terms
+### Claude がスキルを使用しない
+- **説明の具体性を確認**: より明確なトリガー用語を追加
+- **ファイルの場所を確認**: スキルが `~/.claude/skills/` または `.claude/skills/` にあることを確認
+- **アクティベーションをテスト**: トリガー用語に一致する明示的なリクエストを試す
 
-### YAML parsing errors
-- Verify opening and closing `---` markers
-- Check for tabs (use spaces only)
-- Validate indentation
-- Use a YAML linter
+### YAML 解析エラー
+- 開始と終了の `---` マーカーを確認
+- タブがないか確認（スペースのみを使用）
+- インデントを検証
+- YAML リンターを使用
 
-### Conflicts with other skills
-- Use distinct trigger terms in descriptions
-- Narrow the scope of when skills activate
-- Consider combining overlapping skills
+### 他のスキルとの競合
+- 説明で異なるトリガー用語を使用
+- スキルがアクティブになるタイミングのスコープを絞る
+- 重複するスキルの統合を検討
 
-## Resources
+## リソース
 
-- [Official Claude Code Skills Documentation](https://docs.claude.com/en/docs/claude-code/skills.md)
-- [Claude Code Documentation](https://docs.claude.com/en/docs/claude-code)
-- [GitHub Issues](https://github.com/y-nishizaki/skills/issues) - Report bugs or request features
+- [Claude Code スキル公式ドキュメント](https://docs.claude.com/en/docs/claude-code/skills.md)
+- [Claude Code ドキュメント](https://docs.claude.com/en/docs/claude-code)
+- [GitHub Issues](https://github.com/y-nishizaki/skills/issues) - バグ報告や機能リクエスト
 
-## License
+## ライセンス
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+このプロジェクトは MIT ライセンスの下でライセンスされています - 詳細は [LICENSE](LICENSE) ファイルを参照してください。
 
-## Acknowledgments
+## 謝辞
 
-- Built for [Claude Code](https://claude.com/claude-code) by Anthropic
-- Inspired by the Claude Code community and best practices
+- Anthropic の [Claude Code](https://claude.com/claude-code) 向けに構築
+- Claude Code コミュニティとベストプラクティスに触発されて作成
 
 ---
 
-**Note**: This is an unofficial community repository. For official Claude Code documentation and support, visit [docs.claude.com](https://docs.claude.com).
+**注意**: これは非公式のコミュニティリポジトリです。公式の Claude Code ドキュメントとサポートについては、[docs.claude.com](https://docs.claude.com) を参照してください。
