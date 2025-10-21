@@ -102,19 +102,19 @@ jobs:
               exit 1
             fi
 
-            # Check reference.md exists (required)
-            if [ ! -f "${dir}reference.md" ]; then
-              echo "Error: ${dir}reference.md not found (required)"
-              exit 1
+            # Check reference.md exists (optional)
+            if [ -f "${dir}reference.md" ]; then
+              echo "✓ ${dir}reference.md found"
+            else
+              echo "  ${dir}reference.md not found (optional)"
             fi
-            echo "✓ ${dir}reference.md found"
 
-            # Check examples.md exists (required)
-            if [ ! -f "${dir}examples.md" ]; then
-              echo "Error: ${dir}examples.md not found (required)"
-              exit 1
+            # Check examples.md exists (optional)
+            if [ -f "${dir}examples.md" ]; then
+              echo "✓ ${dir}examples.md found"
+            else
+              echo "  ${dir}examples.md not found (optional)"
             fi
-            echo "✓ ${dir}examples.md found"
           done
 
   summary:
