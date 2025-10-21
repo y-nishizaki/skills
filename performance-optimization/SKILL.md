@@ -257,152 +257,65 @@ description: "パフォーマンス改善時の思考プロセス。最適化、
 
 **ステップ2: アーキテクチャレベルの最適化**
 
-**例1: キャッシュの導入**
+主要な最適化戦略：
 
-```python
-# Before
-def get_user_posts(user_id):
-    return database.query("SELECT * FROM posts WHERE user_id = ?", user_id)
+**1. キャッシング**
 
-# After
-def get_user_posts(user_id):
-    cache_key = f"user_posts:{user_id}"
-    cached = cache.get(cache_key)
-    if cached:
-        return cached
+- アプリケーションキャッシュ（メモリ、Redis等）
+- データベースクエリキャッシュ
+- HTTP キャッシュ（CDN）
 
-    posts = database.query("SELECT * FROM posts WHERE user_id = ?", user_id)
-    cache.set(cache_key, posts, ttl=300)  # 5分間キャッシュ
-    return posts
-```
+**2. 非同期処理**
 
-**計測:**
+- バックグラウンドジョブ
+- メッセージキュー
+- イベント駆動アーキテクチャ
 
-- キャッシュヒット率
-- レスポンスタイムの改善
-- データベース負荷の削減
+**3. 並列処理**
 
-**例2: 非同期処理**
+- マルチスレッド・マルチプロセス
+- 非同期 I/O
 
-```python
-# Before
-def create_order(order_data):
-    order = save_order(order_data)
-    send_confirmation_email(order)  # 遅い
-    update_inventory(order)  # 遅い
-    return order
-
-# After
-def create_order(order_data):
-    order = save_order(order_data)
-    # 非同期タスクとして実行
-    async_task.send_confirmation_email.delay(order.id)
-    async_task.update_inventory.delay(order.id)
-    return order
-```
-
-**計測:**
-
-- レスポンスタイムの改善
-- スループットの向上
+**具体的な実装例は [examples.md](examples.md) を参照してください。**
 
 **ステップ3: アルゴリズムレベルの最適化**
 
-**例: アルゴリズムの改善**
+アルゴリズムと データ構造の改善：
 
-```python
-# Before: O(n²)
-def find_duplicates(items):
-    duplicates = []
-    for i, item1 in enumerate(items):
-        for j, item2 in enumerate(items):
-            if i != j and item1 == item2:
-                duplicates.append(item1)
-    return duplicates
+**1. より効率的なアルゴリズム**
 
-# After: O(n)
-def find_duplicates(items):
-    seen = set()
-    duplicates = set()
-    for item in items:
-        if item in seen:
-            duplicates.add(item)
-        seen.add(item)
-    return list(duplicates)
-```
+- 時間計算量の削減（O(n²) → O(n log n) → O(n)）
+- 不要な処理の削除
+- 早期リターン
 
-**計測:**
+**2. 適切なデータ構造の選択**
 
-- 実行時間の比較
-- 大量データでのテスト
+- リスト vs セット vs 辞書
+- 探索パフォーマンスの違い（O(n) vs O(1)）
+- メモリとのトレードオフ
 
-**例: データ構造の変更**
-
-```python
-# Before: リストで線形探索 O(n)
-user_ids = [1, 2, 3, 4, 5, ...]
-if user_id in user_ids:  # 遅い
-    ...
-
-# After: セットでハッシュ探索 O(1)
-user_ids = {1, 2, 3, 4, 5, ...}
-if user_id in user_ids:  # 速い
-    ...
-```
+**具体的な実装例は [examples.md](examples.md) を参照してください。**
 
 **ステップ4: コードレベルの最適化**
 
-**例1: 不要な処理の削除**
+コードレベルでの小さな改善：
 
-```python
-# Before
-def process_users(users):
-    results = []
-    for user in users:
-        # ループ内で毎回計算（不要）
-        threshold = calculate_threshold()
-        if user.score > threshold:
-            results.append(user)
-    return results
+**1. 不要な処理の削除**
 
-# After
-def process_users(users):
-    results = []
-    threshold = calculate_threshold()  # 一度だけ計算
-    for user in users:
-        if user.score > threshold:
-            results.append(user)
-    return results
-```
+- ループ内の繰り返し計算を外に出す
+- 条件判定の順序を最適化
 
-**例2: ループの最適化**
+**2. ループの最適化**
 
-```python
-# Before
-result = []
-for item in items:
-    result.append(item.value * 2)
+- 言語固有の最適化構文を使用（リスト内包表記等）
+- 不要なイテレーションを避ける
 
-# After: リスト内包表記（Python では高速）
-result = [item.value * 2 for item in items]
-```
+**3. 早期リターン**
 
-**例3: 早期リターン**
+- 不要なデータ取得を避ける
+- 条件分岐で早期に終了
 
-```python
-# Before
-def find_user(user_id):
-    users = get_all_users()  # すべてのユーザーを取得
-    for user in users:
-        if user.id == user_id:
-            return user
-    return None
-
-# After
-def find_user(user_id):
-    # 直接データベースで検索
-    return database.query("SELECT * FROM users WHERE id = ?", user_id)
-```
+**具体的な実装例は [examples.md](examples.md) を参照してください。**
 
 **移行条件:**
 
