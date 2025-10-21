@@ -1,56 +1,58 @@
 ---
 name: your-skill-name
-description: Brief description of what this skill does and when to use it. Include trigger keywords that help Claude identify when to activate this skill.
+description: "このスキルが何をするか、いつ使用するかの簡単な説明。Claudeがこのスキルを起動するタイミングを識別するのに役立つトリガーキーワードを含めます。"
 version: 1.0.0
 ---
 
-# Your Skill Name
+# あなたのスキル名
 
-## Purpose
+## 目的
 
-Explain what this skill does and when it should be used. Be specific about the problems it solves and the value it provides.
+このスキルが何をするか、いつ使用すべきかを説明します。解決する問題と提供する価値について具体的に記述してください。
 
-## Instructions
+## 指示
 
-### Step 1: [First Action]
+### ステップ1: [最初のアクション]
 
-Describe the first step Claude should take when this skill is activated.
+このスキルが起動された時にCl audeが最初に実行すべきステップを説明します。
 
-### Step 2: [Next Action]
+### ステップ2: [次のアクション]
 
-Describe subsequent steps in detail.
+後続のステップを詳細に説明します。
 
-### Step 3: [Final Action]
+### ステップ3: [最終アクション]
 
-Describe how to complete the task and what the final output should be.
+タスクを完了する方法と最終的な出力がどうあるべきかを説明します。
 
-## Examples
+## 例
 
-### Example 1: Basic Usage
+### 例1: 基本的な使用方法
 
-**User Request**: "Example of what a user might say"
+**ユーザーリクエスト**: "ユーザーが言いそうなことの例"
 
-**Expected Behavior**:
-- Claude should do X
-- Then do Y
-- Finally produce Z
+**期待される動作**:
 
-### Example 2: Advanced Usage
+- ClaudeはXを実行すべき
+- 次にYを実行
+- 最後にZを生成
 
-**User Request**: "Another example request"
+### 例2: 高度な使用方法
 
-**Expected Behavior**:
-- More complex workflow
-- Additional considerations
+**ユーザーリクエスト**: "別のリクエスト例"
 
-## Best Practices
+**期待される動作**:
 
-- List important guidelines
-- Include tips for optimal results
-- Note any limitations or constraints
+- より複雑なワークフロー
+- 追加の考慮事項
 
-## Error Handling
+## ベストプラクティス
 
-- How to handle common errors
-- What to do if prerequisites are missing
-- Edge cases to consider
+- 重要なガイドラインをリスト
+- 最適な結果を得るためのヒントを含める
+- 制限や制約に注意
+
+## エラー処理
+
+- 一般的なエラーの処理方法
+- 前提条件が不足している場合の対処法
+- 考慮すべきエッジケース

@@ -1,337 +1,358 @@
 ---
 name: research
-description: Conduct thorough research using systematic methodology. Use when researching topics, gathering information, investigating subjects, verifying facts, or performing comprehensive analysis. Keywords - research, investigate, analyze, gather information, fact-check, verify, study.
+description: "体系的な方法論を使用して徹底的なリサーチを実施します。トピックの調査、情報収集、主題の調査、事実確認、または包括的な分析を実行する際に使用します。キーワード - リサーチ、調査、分析、情報収集、ファクトチェック、検証、研究。"
 version: 1.0.0
 ---
 
-# Research Skill
+# リサーチスキル
 
-## Purpose
+## 目的
 
-This skill guides you through conducting rigorous, systematic research following established best practices. It ensures comprehensive information gathering, proper verification, and credible results through a structured methodology.
+このスキルは、確立されたベストプラクティスに従って、厳密で体系的なリサーチを実施するためのガイドを提供します。構造化された方法論を通じて、包括的な情報収集、適切な検証、および信頼できる結果を保証します。
 
-## When to Use This Skill
+## このスキルを使用する場合
 
-Use this skill when:
-- User requests to research a topic or subject
-- User asks to investigate or analyze information
-- User needs to gather comprehensive information on a subject
-- User wants to verify facts or cross-check information
-- User mentions "research", "investigate", "analyze", or "study"
-- User needs a systematic approach to information gathering
+以下の場合にこのスキルを使用します:
 
-## Research Process
+- ユーザーがトピックや主題のリサーチをリクエストした場合
+- ユーザーが情報の調査または分析を求めた場合
+- ユーザーが主題に関する包括的な情報を収集する必要がある場合
+- ユーザーが事実を検証または相互確認したい場合
+- ユーザーが「リサーチ」、「調査」、「分析」、または「研究」と言及した場合
+- ユーザーが情報収集への体系的なアプローチを必要とする場合
 
-### Step 1: Define Research Objectives
+## リサーチプロセス
 
-Before beginning research, clearly establish:
+### ステップ1: リサーチ目標の定義
 
-1. **Research Question**: What specific question are you trying to answer?
-2. **Scope**: What are the boundaries of this research?
-3. **Success Criteria**: What information would constitute a complete answer?
-4. **Time/Depth Constraints**: How comprehensive should the research be?
+リサーチを開始する前に、以下を明確に確立します:
 
-**Ask the user for clarification if:**
-- The research topic is too broad or vague
-- Multiple interpretations are possible
-- Specific aspects should be prioritized
+1. **リサーチクエスチョン**: 答えようとしている具体的な質問は何ですか?
+2. **スコープ**: このリサーチの境界は何ですか?
+3. **成功基準**: どのような情報が完全な回答を構成しますか?
+4. **時間/深さの制約**: リサーチはどの程度包括的であるべきですか?
 
-### Step 2: Plan Information Sources
+**以下の場合はユーザーに明確化を求めます:**
 
-Identify appropriate sources based on the research topic:
+- リサーチトピックが広すぎるか曖昧すぎる場合
+- 複数の解釈が可能な場合
+- 特定の側面を優先すべき場合
 
-**Primary Sources:**
-- Official documentation
-- Academic papers and research publications
-- Technical specifications
-- Original datasets
-- Expert interviews or statements
+### ステップ2: 情報源の計画
 
-**Secondary Sources:**
-- Analysis and commentary
-- Tutorials and guides
-- News articles (from credible outlets)
-- Community discussions (verified)
+リサーチトピックに基づいて適切な情報源を特定します:
 
-**Tool-Specific Sources:**
-- WebSearch: For current information, recent developments, general knowledge
-- WebFetch: For specific documentation, articles, or web pages
-- Read: For local documentation, code, or files
-- Grep/Glob: For searching within codebases or file systems
+**一次情報源:**
 
-### Step 3: Systematic Information Gathering
+- 公式ドキュメント
+- 学術論文と研究出版物
+- 技術仕様
+- 元のデータセット
+- 専門家のインタビューまたは声明
 
-Follow a structured approach:
+**二次情報源:**
 
-1. **Start Broad, Then Narrow**:
-   - Begin with overview sources to understand the landscape
-   - Identify key concepts, terminology, and subtopics
-   - Drill down into specific areas of interest
+- 分析と解説
+- チュートリアルとガイド
+- ニュース記事(信頼できる報道機関から)
+- コミュニティディスカッション(検証済み)
 
-2. **Use Multiple Sources**:
-   - Gather information from at least 2-3 independent sources
-   - Cross-reference facts to ensure accuracy
-   - Note any conflicting information for further investigation
+**ツール固有の情報源:**
 
-3. **Document Source Quality**:
-   - Evaluate credibility (official docs > blogs)
-   - Check publication dates (prefer recent for current topics)
-   - Assess author expertise and reputation
-   - Note any potential biases
+- WebSearch: 現在の情報、最近の開発、一般知識用
+- WebFetch: 特定のドキュメント、記事、またはWebページ用
+- Read: ローカルドキュメント、コード、またはファイル用
+- Grep/Glob: コードベースまたはファイルシステム内の検索用
 
-4. **Maintain Organization**:
-   - Track which sources provided which information
-   - Organize findings by subtopic or theme
-   - Note questions that arise during research
+### ステップ3: 体系的な情報収集
 
-### Step 4: Verify and Cross-Check Information
+構造化されたアプローチに従います:
 
-Critical verification practices:
+1. **広く始めて、次に絞る**:
+   - 概要情報源から始めて全体像を理解する
+   - 主要な概念、用語、サブトピックを特定する
+   - 関心のある特定の領域を掘り下げる
 
-1. **Cross-Reference Facts**:
-   - Verify key claims across multiple sources
-   - Flag information found in only one source
-   - Investigate discrepancies between sources
+2. **複数の情報源を使用する**:
+   - 少なくとも2〜3の独立した情報源から情報を収集する
+   - 正確性を確保するために事実を相互参照する
+   - さらなる調査のために矛盾する情報に注意する
 
-2. **Check Recency**:
-   - Verify information is current and up-to-date
-   - Note if practices or facts have changed
-   - Prefer recent sources for technical or evolving topics
+3. **情報源の品質を文書化する**:
+   - 信頼性を評価する(公式ドキュメント > ブログ)
+   - 公開日を確認する(現在のトピックには最近のものを優先)
+   - 著者の専門知識と評判を評価する
+   - 潜在的なバイアスに注意する
 
-3. **Evaluate Source Authority**:
-   - Official documentation > community resources
-   - Peer-reviewed > non-reviewed
-   - Expert consensus > individual opinions
+4. **組織化を維持する**:
+   - どの情報源がどの情報を提供したかを追跡する
+   - サブトピックまたはテーマ別に調査結果を整理する
+   - リサーチ中に生じる質問を記録する
 
-4. **Quality Assurance**:
-   - Sufficient coverage of the topic
-   - Appropriate depth for the user's needs
-   - Accurate and reliable information
+### ステップ4: 情報の検証と相互確認
 
-### Step 5: Synthesize and Present Findings
+重要な検証の実践:
 
-Organize research results effectively:
+1. **事実の相互参照**:
+   - 複数の情報源で主要な主張を検証する
+   - 1つの情報源でのみ見つかった情報にフラグを立てる
+   - 情報源間の矛盾を調査する
 
-1. **Structure Information Clearly**:
-   - Use headings and sections for different aspects
-   - Present information in logical order
-   - Highlight key findings prominently
+2. **最新性を確認する**:
+   - 情報が最新であることを確認する
+   - 実践や事実が変更されているかどうかに注意する
+   - 技術的または進化するトピックには最近の情報源を優先する
 
-2. **Provide Context**:
-   - Explain technical terms when necessary
-   - Connect related concepts
-   - Note important caveats or limitations
+3. **情報源の権威を評価する**:
+   - 公式ドキュメント > コミュニティリソース
+   - 査読済み > 未査読
+   - 専門家のコンセンサス > 個人の意見
 
-3. **Include Citations**:
-   - Reference specific sources for key claims
-   - Provide URLs or file paths when relevant
-   - Enable users to verify or explore further
+4. **品質保証**:
+   - トピックの十分なカバレッジ
+   - ユーザーのニーズに適した深さ
+   - 正確で信頼できる情報
 
-4. **Acknowledge Gaps**:
-   - Note areas where information is limited
-   - Identify conflicting information
-   - Suggest areas for further investigation if needed
+### ステップ5: 調査結果の統合と提示
 
-## Best Practices
+リサーチ結果を効果的に整理します:
 
-### Information Gathering
+1. **情報を明確に構造化する**:
+   - 異なる側面に見出しとセクションを使用する
+   - 論理的な順序で情報を提示する
+   - 主要な調査結果を目立たせる
 
-- **Thoroughness**: Cover the topic comprehensively within defined scope
-- **Efficiency**: Balance depth with the user's needs
-- **Diversity**: Use varied source types to get complete picture
-- **Recency**: Prioritize current information for evolving topics
-- **Reliability**: Favor authoritative, peer-reviewed, or official sources
+2. **コンテキストを提供する**:
+   - 必要に応じて技術用語を説明する
+   - 関連する概念を結びつける
+   - 重要な注意事項や制限事項に注意する
 
-### Verification
+3. **引用を含める**:
+   - 主要な主張に対する特定の情報源を参照する
+   - 関連する場合はURLまたはファイルパスを提供する
+   - ユーザーが検証またはさらに探索できるようにする
 
-- **Multi-Source Validation**: Confirm key facts from multiple sources
-- **Quality Over Quantity**: Better to have fewer high-quality sources
-- **Critical Evaluation**: Question claims that seem unusual or unsupported
-- **Context Awareness**: Consider the source's perspective and potential bias
+4. **ギャップを認める**:
+   - 情報が限られている領域に注意する
+   - 矛盾する情報を特定する
+   - 必要に応じてさらなる調査のための領域を提案する
 
-### Presentation
+## ベストプラクティス
 
-- **Clarity**: Present findings in clear, understandable language
-- **Structure**: Organize information logically
-- **Completeness**: Answer the research question fully
-- **Transparency**: Acknowledge limitations and uncertainties
-- **Actionability**: Provide practical takeaways when appropriate
+### 情報収集
 
-## Research Strategies by Topic Type
+- **徹底性**: 定義されたスコープ内でトピックを包括的にカバーする
+- **効率性**: 深さとユーザーのニーズのバランスを取る
+- **多様性**: 完全な全体像を得るために多様な情報源タイプを使用する
+- **最新性**: 進化するトピックには現在の情報を優先する
+- **信頼性**: 権威ある、査読済み、または公式の情報源を優先する
 
-### Technical/Code Research
-- Start with official documentation
-- Check recent GitHub issues, discussions, or release notes
-- Verify version compatibility
-- Look for code examples and best practices
-- Cross-check with community resources (Stack Overflow, forums)
+### 検証
 
-### Conceptual/Theoretical Research
-- Begin with authoritative definitions
-- Review academic or expert sources
-- Understand historical context
-- Identify current consensus and debates
-- Note practical applications
+- **複数情報源の検証**: 複数の情報源から主要な事実を確認する
+- **量より質**: より少ない高品質の情報源の方が良い
+- **批判的評価**: 異常または裏付けのない主張に疑問を持つ
+- **コンテキスト認識**: 情報源の視点と潜在的なバイアスを考慮する
 
-### Current Events/Trends
-- Use recent (last 1-2 years) sources
-- Check multiple news outlets for balance
-- Verify with official statements or data
-- Note ongoing developments
-- Distinguish facts from speculation
+### 提示
 
-### Best Practices/Methodologies
-- Look for established standards or frameworks
-- Review expert recommendations
-- Consider industry consensus
-- Check recent updates or evolutions
-- Note context-specific variations
+- **明確性**: 明確で理解しやすい言語で調査結果を提示する
+- **構造**: 論理的に情報を整理する
+- **完全性**: リサーチクエスチョンに完全に答える
+- **透明性**: 制限と不確実性を認める
+- **実用性**: 適切な場合は実用的な要点を提供する
 
-## Error Handling
+## トピックタイプ別のリサーチ戦略
 
-### Insufficient Information
-- Acknowledge gaps explicitly
-- Explain what information is unavailable
-- Suggest alternative approaches
-- Provide partial answers with caveats
+### 技術/コードリサーチ
 
-### Conflicting Information
-- Present multiple perspectives
-- Explain the nature of the conflict
-- Evaluate which source is more authoritative
-- Let user know uncertainty exists
+- 公式ドキュメントから始める
+- 最近のGitHubの問題、ディスカッション、またはリリースノートを確認する
+- バージョンの互換性を確認する
+- コード例とベストプラクティスを探す
+- コミュニティリソース(Stack Overflow、フォーラム)と相互確認する
 
-### Outdated Information
-- Note when information may be outdated
-- Try to find more recent sources
-- Explain how things have changed
-- Provide historical context if relevant
+### 概念/理論的リサーチ
 
-### Overly Broad Topics
-- Ask user to narrow the scope
-- Suggest specific aspects to focus on
-- Provide high-level overview with option to drill down
-- Break research into manageable subtopics
+- 権威ある定義から始める
+- 学術または専門家の情報源をレビューする
+- 歴史的背景を理解する
+- 現在のコンセンサスと議論を特定する
+- 実用的なアプリケーションに注意する
 
-## Tool Usage Guidelines
+### 時事/トレンド
+
+- 最近(過去1〜2年)の情報源を使用する
+- バランスのために複数のニュースアウトレットを確認する
+- 公式声明またはデータで検証する
+- 進行中の開発に注意する
+- 事実と推測を区別する
+
+### ベストプラクティス/方法論
+
+- 確立された標準またはフレームワークを探す
+- 専門家の推奨事項をレビューする
+- 業界のコンセンサスを考慮する
+- 最近の更新または進化を確認する
+- コンテキスト固有のバリエーションに注意する
+
+## エラー処理
+
+### 情報不足
+
+- ギャップを明示的に認める
+- 利用できない情報を説明する
+- 代替アプローチを提案する
+- 注意事項付きで部分的な回答を提供する
+
+### 矛盾する情報
+
+- 複数の視点を提示する
+- 矛盾の性質を説明する
+- どの情報源がより権威があるかを評価する
+- 不確実性が存在することをユーザーに知らせる
+
+### 古い情報
+
+- 情報が古い可能性がある場合に注意する
+- より最近の情報源を見つけようとする
+- 物事がどのように変化したかを説明する
+- 関連する場合は歴史的背景を提供する
+
+### 広すぎるトピック
+
+- ユーザーにスコープを絞るよう依頼する
+- 焦点を当てる特定の側面を提案する
+- 掘り下げるオプション付きの高レベルの概要を提供する
+- リサーチを管理可能なサブトピックに分割する
+
+## ツール使用ガイドライン
 
 **WebSearch**:
-- Best for: Current information, general knowledge, recent developments
-- Use for: Getting an overview, finding recent articles, checking latest trends
-- Verify: Cross-check facts from multiple search results
+
+- 最適な用途: 現在の情報、一般知識、最近の開発
+- 使用目的: 概要の取得、最近の記事の検索、最新トレンドの確認
+- 検証: 複数の検索結果から事実を相互確認する
 
 **WebFetch**:
-- Best for: Specific articles, documentation, detailed content from known URLs
-- Use for: Reading complete articles, accessing specific documentation
-- Verify: Check source credibility and publication date
+
+- 最適な用途: 特定の記事、ドキュメント、既知のURLからの詳細なコンテンツ
+- 使用目的: 完全な記事の読み取り、特定のドキュメントへのアクセス
+- 検証: 情報源の信頼性と公開日を確認する
 
 **Read**:
-- Best for: Local files, code, documentation in the project
-- Use for: Examining existing implementations, local documentation
-- Verify: Check file modification dates, version information
+
+- 最適な用途: ローカルファイル、コード、プロジェクト内のドキュメント
+- 使用目的: 既存の実装の調査、ローカルドキュメント
+- 検証: ファイルの変更日、バージョン情報を確認する
 
 **Grep/Glob**:
-- Best for: Searching within codebases or file systems
-- Use for: Finding implementations, examples, patterns in code
-- Verify: Ensure results are from current/active code
 
-## Examples
+- 最適な用途: コードベースまたはファイルシステム内の検索
+- 使用目的: 実装、例、コードのパターンの検索
+- 検証: 結果が現在/アクティブなコードからのものであることを確認する
 
-### Example 1: Technical Research
+## 例
 
-**User Request**: "Research the best practices for React state management in 2025"
+### 例1: 技術リサーチ
 
-**Expected Behavior**:
-1. Define scope: React state management approaches, current best practices
-2. Gather information:
-   - WebSearch for "React state management best practices 2025"
-   - WebFetch React official documentation
-   - Research popular solutions (Context, Redux, Zustand, etc.)
-3. Verify information from multiple sources
-4. Synthesize findings:
-   - Overview of current approaches
-   - Comparison of popular solutions
-   - Best practices and recommendations
-   - When to use each approach
-   - Recent trends or changes
-5. Provide citations and sources
+**ユーザーリクエスト**: 「2025年のReact状態管理のベストプラクティスをリサーチして」
 
-### Example 2: Conceptual Research
+**期待される動作**:
 
-**User Request**: "What is test-driven development?"
+1. スコープを定義: React状態管理アプローチ、現在のベストプラクティス
+2. 情報を収集:
+   - 「React状態管理ベストプラクティス2025」をWebSearchする
+   - React公式ドキュメントをWebFetchする
+   - 人気のあるソリューション(Context、Redux、Zustandなど)をリサーチする
+3. 複数の情報源から情報を検証する
+4. 調査結果を統合:
+   - 現在のアプローチの概要
+   - 人気のあるソリューションの比較
+   - ベストプラクティスと推奨事項
+   - 各アプローチを使用する場合
+   - 最近のトレンドまたは変更
+5. 引用と情報源を提供する
 
-**Expected Behavior**:
-1. Define scope: TDD concept, methodology, benefits
-2. Gather information:
-   - WebSearch for authoritative definitions
-   - Find original sources or standard references
-   - Look for practical examples
-3. Verify across multiple sources
-4. Present findings:
-   - Clear definition
-   - Core principles and process
-   - Benefits and tradeoffs
-   - Practical examples
-   - Common misconceptions
-5. Include references to authoritative sources
+### 例2: 概念的リサーチ
 
-### Example 3: Codebase Research
+**ユーザーリクエスト**: 「テスト駆動開発とは何ですか?」
 
-**User Request**: "Research how authentication is implemented in this project"
+**期待される動作**:
 
-**Expected Behavior**:
-1. Define scope: Authentication flow, methods, security practices
-2. Gather information:
-   - Grep for authentication-related code
-   - Read configuration files
-   - Examine authentication modules
-   - Check for security middleware
-3. Analyze findings:
-   - Trace authentication flow
-   - Identify methods used (JWT, session, etc.)
-   - Note security measures
-4. Present results:
-   - Overview of authentication approach
-   - Key files and functions (with file:line references)
-   - Security considerations
-   - Any concerns or recommendations
+1. スコープを定義: TDDの概念、方法論、利点
+2. 情報を収集:
+   - 権威ある定義をWebSearchする
+   - 元の情報源または標準的な参考文献を見つける
+   - 実用的な例を探す
+3. 複数の情報源で検証する
+4. 調査結果を提示:
+   - 明確な定義
+   - 核となる原則とプロセス
+   - 利点とトレードオフ
+   - 実用的な例
+   - 一般的な誤解
+5. 権威ある情報源への参照を含める
 
-### Example 4: Verification Research
+### 例3: コードベースリサーチ
 
-**User Request**: "Verify if this claim about Python performance is accurate"
+**ユーザーリクエスト**: 「このプロジェクトで認証がどのように実装されているかをリサーチして」
 
-**Expected Behavior**:
-1. Identify specific claim to verify
-2. Research from multiple authoritative sources:
-   - Official Python documentation
-   - Performance benchmarks
-   - Expert analysis
-3. Cross-check facts across sources
-4. Present findings:
-   - Verification result (accurate/inaccurate/partially accurate)
-   - Supporting evidence from sources
-   - Nuances or context that affect accuracy
-   - Citations for claims
+**期待される動作**:
 
-## Quality Checklist
+1. スコープを定義: 認証フロー、方法、セキュリティプラクティス
+2. 情報を収集:
+   - 認証関連のコードをGrepする
+   - 設定ファイルを読む
+   - 認証モジュールを調査する
+   - セキュリティミドルウェアを確認する
+3. 調査結果を分析:
+   - 認証フローをトレースする
+   - 使用されている方法を特定する(JWT、セッションなど)
+   - セキュリティ対策に注意する
+4. 結果を提示:
+   - 認証アプローチの概要
+   - 主要なファイルと関数(ファイル:行参照付き)
+   - セキュリティに関する考慮事項
+   - 懸念事項または推奨事項
 
-Before presenting research results, verify:
+### 例4: 検証リサーチ
 
-- [ ] Research question has been answered
-- [ ] Information gathered from multiple credible sources
-- [ ] Key facts have been cross-verified
-- [ ] Sources are appropriately recent for the topic
-- [ ] Conflicting information has been investigated
-- [ ] Findings are clearly organized and structured
-- [ ] Technical terms are explained when necessary
-- [ ] Citations or references are provided for key claims
-- [ ] Gaps or limitations are acknowledged
-- [ ] Result is actionable and useful for the user
+**ユーザーリクエスト**: 「Pythonのパフォーマンスに関するこの主張が正確かどうか検証して」
 
-## Notes
+**期待される動作**:
 
-- **Adapt depth to user needs**: A quick question needs less depth than a comprehensive analysis
-- **Be transparent about limitations**: Better to acknowledge gaps than to speculate
-- **Prioritize quality over speed**: Thorough research takes time but provides better value
-- **Stay objective**: Present facts and multiple perspectives rather than opinions
-- **Keep learning**: Research methods evolve, especially for technical topics
+1. 検証する具体的な主張を特定する
+2. 複数の権威ある情報源からリサーチする:
+   - 公式Pythonドキュメント
+   - パフォーマンスベンチマーク
+   - 専門家の分析
+3. 情報源間で事実を相互確認する
+4. 調査結果を提示:
+   - 検証結果(正確/不正確/部分的に正確)
+   - 情報源からの裏付け証拠
+   - 正確性に影響を与えるニュアンスまたはコンテキスト
+   - 主張の引用
+
+## 品質チェックリスト
+
+リサーチ結果を提示する前に、以下を確認します:
+
+- [ ] リサーチクエスチョンに答えている
+- [ ] 複数の信頼できる情報源から情報を収集している
+- [ ] 主要な事実を相互検証している
+- [ ] 情報源はトピックに対して適切に最新である
+- [ ] 矛盾する情報を調査している
+- [ ] 調査結果が明確に整理され構造化されている
+- [ ] 必要に応じて技術用語を説明している
+- [ ] 主要な主張に対して引用または参照を提供している
+- [ ] ギャップまたは制限事項を認めている
+- [ ] 結果がユーザーにとって実用的で有用である
+
+## 注意事項
+
+- **ユーザーのニーズに深さを適応させる**: 簡単な質問には包括的な分析よりも少ない深さが必要です
+- **制限について透明性を保つ**: 推測するよりもギャップを認める方が良い
+- **速度よりも質を優先する**: 徹底的なリサーチには時間がかかりますが、より良い価値を提供します
+- **客観性を保つ**: 意見ではなく事実と複数の視点を提示する
+- **学び続ける**: リサーチ方法は進化します、特に技術的なトピックについて

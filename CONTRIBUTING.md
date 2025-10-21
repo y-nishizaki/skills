@@ -70,6 +70,7 @@ git commit -m "docs: Update README with new examples"
 ```
 
 コミットメッセージの規約:
+
 - `feat:` - 新機能
 - `fix:` - バグ修正
 - `docs:` - ドキュメントのみの変更
