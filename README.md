@@ -1,5 +1,7 @@
 # Claude Code Skills Repository
 
+> **日本語版**: [README.ja.md](README.ja.md) をご覧ください
+
 A curated collection of reusable skills for [Claude Code](https://claude.com/claude-code), extending its capabilities with specialized expertise and workflows.
 
 ## What Are Claude Code Skills?
@@ -193,35 +195,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 **Note**: This is an unofficial community repository. For official Claude Code documentation and support, visit [docs.claude.com](https://docs.claude.com).
-
----
-
-## 日本語 (Japanese)
-
-### 概要
-
-Claude Code用のスキルを管理するリポジトリです。スキルはClaude Codeの機能を拡張する再利用可能なモジュールで、特定のタスクやワークフローに対する専門知識をパッケージ化します。
-
-### スキルのインストール方法
-
-**個人用:**
-```bash
-git clone https://github.com/y-nishizaki/skills.git
-cd skills
-cp -r [スキル名] ~/.claude/skills/
-```
-
-**プロジェクト/チーム用:**
-```bash
-mkdir -p .claude/skills
-cd .claude/skills
-# 必要なスキルをコピー
-```
-
-### コントリビューション
-
-スキルの追加や改善の提案を歓迎します。Pull Requestを送る前に、上記のベストプラクティスとチェックリストを確認してください。
-
-### 詳細情報
-
-より詳しい情報は、[Claude Code公式ドキュメント](https://docs.claude.com/en/docs/claude-code/skills.md)を参照してください。
