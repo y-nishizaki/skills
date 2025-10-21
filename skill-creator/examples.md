@@ -30,6 +30,7 @@
 - 既存の命名規則を確認
 
 **リサーチ結果:**
+
 - markdownlint-cli2が最新のツール
 - 一般的な設定ファイル: `.markdownlint.json`
 - トリガーワード: "markdown lint", "markdownlint", "mdリント"
@@ -109,6 +110,7 @@ npx markdownlint-cli2 --fix "**/*.md"
 **ユーザーリクエスト**: "README.mdをlintして"
 
 **期待される動作**:
+
 1. `npx markdownlint-cli2 README.md` を実行
 2. エラーがあれば報告
 3. 修正方法を提案
@@ -118,6 +120,7 @@ npx markdownlint-cli2 --fix "**/*.md"
 **ユーザーリクエスト**: "すべてのMarkdownファイルをチェックして"
 
 **期待される動作**:
+
 1. `npx markdownlint-cli2 "**/*.md"` を実行
 2. 見つかったすべてのエラーを報告
 3. 自動修正を提案
@@ -150,7 +153,7 @@ npx markdownlint-cli2 --fix "**/*.md"
 
 **ステップ6: 出力**
 
-```
+```text
 リサーチサマリー:
 - 既存の類似スキル: なし
 - 推奨ツール: markdownlint-cli2（最新版）
@@ -200,6 +203,7 @@ Read src/components/Button.tsx  # 例として
 - TypeScriptパターンを確認
 
 **リサーチ結果:**
+
 - TypeScript + React 18が標準
 - 関数コンポーネント + Hooksが推奨
 - Propsインターフェースは別に定義
@@ -282,6 +286,7 @@ dependencies:
 **ユーザーリクエスト**: "Buttonという新しいコンポーネントを作成して"
 
 **期待される動作**:
+
 1. コンポーネント名を確認: "Button"
 2. タイプを確認: "基本"
 3. 必要なPropsを尋ねる: onClick、children、disabled
@@ -289,6 +294,7 @@ dependencies:
    - `src/components/Button/Button.tsx`
    - `src/components/Button/Button.test.tsx`
    - `src/components/Button/index.ts`
+
 5. 型安全なPropsインターフェースを含める
 
 ### 例2: フォームコンポーネント
@@ -296,6 +302,7 @@ dependencies:
 **ユーザーリクエスト**: "LoginFormコンポーネントを作成して、onSubmitとloadingのpropsが必要です"
 
 **期待される動作**:
+
 1. コンポーネント名: "LoginForm"
 2. タイプ: "フォーム"
 3. Props: onSubmit、loading
@@ -417,11 +424,13 @@ Read markdown-linter/SKILL.md
 - 既存のユーザーワークフローを維持
 
 *WebSearch: 「markdownlint auto-fix」*
+
 - `--fix` フラグの使い方
 - 自動修正の制限事項
 - ベストプラクティス
 
 **リサーチ結果:**
+
 - `--fix` フラグで多くのエラーを自動修正可能
 - 一部のエラーは手動修正が必要
 - ユーザーに確認を求めるべき
@@ -478,6 +487,7 @@ git commit -m "Backup before markdownlint auto-fix"
 **ユーザーリクエスト**: "Markdownファイルをlintして自動修正して"
 
 **期待される動作**:
+
 1. `npx markdownlint-cli2 "**/*.md"` を実行
 2. エラーを報告
 3. ユーザーに自動修正の確認を求める
@@ -513,7 +523,7 @@ cp -r markdown-linter ~/.claude/skills/
 
 **ステップ7: 出力**
 
-```
+```text
 リサーチサマリー:
 - markdownlintの--fix機能を調査
 - 自動修正の制限事項を特定
@@ -615,6 +625,7 @@ yamllint SKILL.md
 - Dockerトラブルシューティングチェックリスト
 
 **リサーチ結果:**
+
 - 一般的な問題: コンテナが起動しない、ネットワーク問題、ボリュームマウント
 - 主要コマンド: logs、inspect、exec、stats
 - デバッグワークフロー: ログ確認 → コンテナ状態 → 内部調査
@@ -674,6 +685,7 @@ docker inspect <container-name>
 ### ステップ3: 問題固有の診断
 
 **コンテナが起動しない:**
+
 ```bash
 # 完全なログを確認
 docker logs <container-name>
@@ -686,6 +698,7 @@ docker inspect <container-name> | grep -A 10 "Memory"
 ```
 
 **ネットワーク問題:**
+
 ```bash
 # ネットワーク設定
 docker inspect <container-name> | grep -A 20 "Networks"
@@ -696,6 +709,7 @@ docker exec <container-name> curl <url>
 ```
 
 **ボリューム問題:**
+
 ```bash
 # マウント確認
 docker inspect <container-name> | grep -A 10 "Mounts"
@@ -707,6 +721,7 @@ docker exec <container-name> ls -la /mount/path
 ### ステップ4: 解決策の提案
 
 診断結果に基づいて解決策を提供：
+
 - 設定の修正
 - 再起動コマンド
 - docker-composeの調整
@@ -723,6 +738,7 @@ docker exec <container-name> ls -la /mount/path
 **ユーザーリクエスト**: "myappコンテナが起動後すぐにクラッシュします"
 
 **期待される動作**:
+
 1. ステータス確認: `docker ps -a`
 2. ログ確認: `docker logs myapp`
 3. エラーメッセージを分析
@@ -766,6 +782,7 @@ docker run -d --name test-container nginx
 ### パターン1: シンプルなツールラッパー
 
 **特徴:**
+
 - 単一のCLIツールをラップ
 - SKILL.mdのみで十分
 - 明確なステップバイステップの指示
@@ -775,6 +792,7 @@ docker run -d --name test-container nginx
 ### パターン2: テンプレートジェネレーター
 
 **特徴:**
+
 - `templates/` ディレクトリを使用
 - プレースホルダー置換ロジック
 - 複数のテンプレートオプション
@@ -784,6 +802,7 @@ docker run -d --name test-container nginx
 ### パターン3: ワークフローオーケストレーター
 
 **特徴:**
+
 - 複数のツール/ステップを組み合わせる
 - 条件分岐
 - 詳細なreference.mdとexamples.md
@@ -793,6 +812,7 @@ docker run -d --name test-container nginx
 ### パターン4: リサーチアシスタント
 
 **特徴:**
+
 - WebSearchとWebFetchを使用
 - 情報の検証と統合
 - 構造化された出力形式
@@ -818,20 +838,23 @@ docker run -d --name test-container nginx
 
 ## スキル品質チェックリスト
 
-作成前：
+作成前:
+
 - [ ] 類似スキルがないか確認
 - [ ] 必要な技術を調査
 - [ ] ベストプラクティスを確認
 - [ ] トリガーキーワードを特定
 
-作成中：
+作成中:
+
 - [ ] 有効なYAMLフロントマター
 - [ ] 明確な説明とトリガー
 - [ ] ステップバイステップの指示
 - [ ] 実用的な例
 - [ ] エラー処理
 
-作成後：
+作成後:
+
 - [ ] YAMLとMarkdownのリント
 - [ ] 実際のシナリオでテスト
 - [ ] ドキュメントの完全性を確認
