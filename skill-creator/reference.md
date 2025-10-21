@@ -554,9 +554,10 @@ description: コード品質、ベストプラクティス、潜在的なバグ�
 
 **例**:
 ```yaml
+# タブを使用している（見えませんがエラーの原因になります）
 ---
-name:	skill-name
-	description: 不適切なフォーマット
+name: skill-name
+  description: 不適切なフォーマット
 ```
 
 **解決策**: スペースを使用し、適切な構造にする
