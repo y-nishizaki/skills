@@ -136,6 +136,7 @@ npx markdownlint-cli2 --fix "**/*.md"
 
 - markdownlintがインストールされていない場合: インストール手順を提供
 - 設定ファイルエラー: 設定の問題を特定して修正を提案
+
 ```
 
 **ステップ4: サポートファイルを作成**
@@ -419,6 +420,7 @@ Read markdown-linter/SKILL.md
 ```
 
 *改善領域を特定*
+
 - 現在の機能を理解
 - 追加すべき機能を特定
 - 既存のユーザーワークフローを維持
@@ -461,9 +463,11 @@ Read markdown-linter/SKILL.md
 
 1. ユーザーに尋ねる: "これらのエラーを自動的に修正しますか？"
 2. 確認された場合:
+
    ```bash
    npx markdownlint-cli2 --fix "**/*.md"
    ```
+
 3. 修正されたファイルを報告
 4. 残っているエラーがあれば手動修正を提案
 
@@ -474,7 +478,6 @@ Read markdown-linter/SKILL.md
 ```bash
 git add .
 git commit -m "Backup before markdownlint auto-fix"
-```
 ```
 
 **ステップ4: examples.mdを更新**
@@ -731,9 +734,9 @@ docker exec <container-name> ls -la /mount/path
 
 将来の問題を防ぐためのベストプラクティスを提案。
 
-## 例
+### 使用例
 
-### 例1: クラッシュするコンテナ
+#### 例1: クラッシュするコンテナ
 
 **ユーザーリクエスト**: "myappコンテナが起動後すぐにクラッシュします"
 
@@ -745,18 +748,19 @@ docker exec <container-name> ls -la /mount/path
 4. 一般的な原因を特定（設定ミス、ポート競合など）
 5. 具体的な解決策を提供
 
-## ベストプラクティス
+### Docker debugger ベストプラクティス
 
 - 常に非破壊的なコマンドから開始
 - ユーザーにコマンドの説明を提供
 - セキュリティリスクを警告
 - バックアップを推奨
 
-## エラー処理
+### Docker debugger エラー処理
 
 - Dockerがインストールされていない: インストール手順
 - 権限エラー: sudoまたはDocker groupへの追加を提案
 - コンテナが見つからない: 名前/IDを確認
+
 ```
 
 **ステップ4: 包括的なreference.mdを作成**

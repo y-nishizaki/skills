@@ -327,31 +327,24 @@ description: "ドキュメント作成時の思考プロセス。ドキュメン
       ```
 
    2. 仮想環境を作成します
+
       ```bash
       python -m venv venv
       source venv/bin/activate  # Windows: venv\Scripts\activate
       ```
 
    ## ステップ 2: 依存関係のインストール
+
    ...
    ```
 
 4. **チェックポイント**
 
-   ```markdown
-   ## 確認
-   以下のコマンドで動作を確認します：
-   ```bash
-   python app.py
-   ```
+   各ステップの後に動作確認を行います：
 
-   期待される出力：
-   ```
-   Server running on http://localhost:5000
-   ```
-
-   うまく動かない場合は、トラブルシューティングを参照してください。
-   ```
+   - コマンド実行: `python app.py`
+   - 期待される出力: `Server running on http://localhost:5000`
+   - 問題がある場合はトラブルシューティングセクションを参照
 
 **移行条件:**
 
