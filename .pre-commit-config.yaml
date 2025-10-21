@@ -1,0 +1,81 @@
+---
+# pre-commit フック設定
+# インストール: pre-commit install
+# 実行: pre-commit run --all-files
+
+repos:
+  # 基本的なファイルチェック
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+        name: 末尾の空白を削除
+        args: [--markdown-linebreak-ext=md]
+      - id: end-of-file-fixer
+        name: ファイル末尾の改行を修正
+      - id: check-yaml
+        name: YAML構文チェック
+        args: [--unsafe]  # YAML frontmatter のために必要
+      - id: check-added-large-files
+        name: 大きなファイルの追加をチェック
+        args: [--maxkb=1000]
+      - id: check-merge-conflict
+        name: マージコンフリクトマーカーをチェック
+      - id: mixed-line-ending
+        name: 混在する改行コードをチェック
+        args: [--fix=lf]
+
+  # Markdown linting
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.12.1
+    hooks:
+      - id: markdownlint-cli2
+        name: Markdown Lint
+        args: ["**/*.md"]
+
+  # YAML linting
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.35.1
+    hooks:
+      - id: yamllint
+        name: YAML Lint
+        args: [-c=.yamllint.yml]
+        types: [yaml]
+
+  # カスタムスキル構造検証
+  - repo: local
+    hooks:
+      - id: validate-skill-structure
+        name: スキル構造の検証
+        entry: bash -c 'for dir in */; do
+          if [ "$dir" = ".github/" ]; then continue; fi;
+          if [ ! -f "${dir}SKILL.md" ]; then
+            echo "Error: ${dir}SKILL.md not found (required)";
+            exit 1;
+          fi;
+          if ! grep -q "^name:" "${dir}SKILL.md"; then
+            echo "Error: ${dir}SKILL.md missing name field";
+            exit 1;
+          fi;
+          if ! grep -q "^description:" "${dir}SKILL.md"; then
+            echo "Error: ${dir}SKILL.md missing description field";
+            exit 1;
+          fi;
+          done'
+        language: system
+        pass_filenames: false
+        files: "SKILL.md$"
+
+      - id: validate-yaml-frontmatter
+        name: YAML frontmatter の検証
+        entry: bash -c 'for file in "$@"; do
+          echo "Checking YAML frontmatter in $file";
+          awk "/^---$/{i++; if(i==2) exit; next} i==1" "$file" > /tmp/frontmatter.yml;
+          if [ -s /tmp/frontmatter.yml ]; then
+            yamllint /tmp/frontmatter.yml || exit 1;
+          else
+            echo "Warning: No YAML frontmatter found in $file";
+          fi;
+          done' --
+        language: system
+        files: "SKILL.md$"
