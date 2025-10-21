@@ -605,12 +605,14 @@ mutation {
 ### REST vs GraphQL
 
 **REST を選ぶ:**
+
 - シンプルなCRUD
 - キャッシュ重視
 - HTTP標準に準拠
 - 学習コスト低
 
 **GraphQL を選ぶ:**
+
 - 柔軟なデータ取得
 - クライアント主導
 - リアルタイム更新
@@ -619,11 +621,13 @@ mutation {
 ### 同期 vs 非同期
 
 **同期API（REST）:**
+
 - 即座にレスポンス
 - シンプルな処理
 - リアルタイム性
 
 **非同期API（ジョブキュー）:**
+
 - 時間のかかる処理
 - バックグラウンド実行
 - スケーラビリティ
@@ -707,6 +711,7 @@ GET /api/jobs/abc123
 ### api-design → database-design
 
 APIとDB の整合:
+
 1. api-designでエンドポイント設計
 2. database-designでスキーマ設計
 3. 効率的なデータアクセス
@@ -714,6 +719,7 @@ APIとDB の整合:
 ### api-design + security-audit
 
 APIセキュリティ:
+
 1. api-designでエンドポイント設計
 2. security-auditで脆弱性チェック
 3. 認証・認可の強化
@@ -721,6 +727,7 @@ APIセキュリティ:
 ### api-design → documentation
 
 API ドキュメント:
+
 1. api-designで仕様決定
 2. documentationでドキュメント作成
 3. OpenAPI仕様書

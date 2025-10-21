@@ -570,6 +570,7 @@ jobs:
 ### dependency-management + security-audit
 
 セキュリティチェック:
+
 1. security-auditで脆弱性検出
 2. dependency-managementで更新
 3. 継続的な監視
@@ -577,6 +578,7 @@ jobs:
 ### dependency-management + ci-cd-setup
 
 自動化:
+
 1. ci-cd-setupでパイプライン設定
 2. dependency-managementで定期チェック
 3. 自動PR作成
@@ -584,6 +586,7 @@ jobs:
 ### dependency-management → migration-assistant
 
 メジャーアップグレード:
+
 1. dependency-managementで更新検出
 2. migration-assistantで移行計画
 3. 段階的な更新

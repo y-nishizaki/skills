@@ -49,24 +49,28 @@ description: "CI/CDパイプラインの設定と自動化。CI/CD、パイプ�
 **ステップ2: CI/CDツールの選択**
 
 **GitHub Actions:**
+
 - GitHubネイティブ
 - YAMLベース
 - マーケットプレイス豊富
 - 無料枠あり
 
 **GitLab CI/CD:**
+
 - GitLabネイティブ
 - .gitlab-ci.yml
 - Auto DevOps
 - セルフホスト可能
 
 **Jenkins:**
+
 - オープンソース
 - プラグイン豊富
 - セルフホスト
 - 柔軟性高い
 
 **CircleCI, Travis CI:**
+
 - クラウドベース
 - 設定シンプル
 - 並列実行
@@ -535,16 +539,19 @@ deploy-blue-green:
 ### デプロイ戦略の選択
 
 **Rolling Update:**
+
 - 段階的な置き換え
 - ダウンタイムなし
 - ロールバック可能
 
 **Blue-Green:**
+
 - 即座の切り替え
 - 簡単なロールバック
 - リソース2倍必要
 
 **Canary:**
+
 - 段階的なトラフィック移行
 - リスク最小化
 - 複雑な設定
@@ -552,11 +559,13 @@ deploy-blue-green:
 ### 自動 vs 手動デプロイ
 
 **自動デプロイ:**
+
 - 開発環境
 - ステージング環境
 - 高頻度リリース
 
 **手動承認:**
+
 - 本番環境
 - 重要な変更
 - コンプライアンス要件
@@ -615,6 +624,7 @@ deploy-blue-green:
 ### ci-cd-setup + test-automation
 
 自動テストの統合:
+
 1. test-automationでテスト作成
 2. ci-cd-setupでパイプライン統合
 3. 継続的なテスト実行
@@ -622,6 +632,7 @@ deploy-blue-green:
 ### ci-cd-setup + security-audit
 
 セキュリティチェックの自動化:
+
 1. security-auditで要件定義
 2. ci-cd-setupでスキャン統合
 3. 脆弱性の早期発見
@@ -629,6 +640,7 @@ deploy-blue-green:
 ### ci-cd-setup → dependency-management
 
 依存関係の自動更新:
+
 1. dependency-managementで更新検出
 2. ci-cd-setupで自動テスト
 3. 安全な依存関係更新

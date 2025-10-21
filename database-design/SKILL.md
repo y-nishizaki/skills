@@ -74,6 +74,7 @@ ER図で表現:
 **ステップ1: 正規化の適用**
 
 **第1正規形（1NF）:**
+
 - 各カラムは単一の値
 - 繰り返しグループがない
 
@@ -98,10 +99,12 @@ CREATE TABLE order_items (
 ```
 
 **第2正規形（2NF）:**
+
 - 1NFを満たす
 - 部分関数従属性がない
 
 **第3正規形（3NF）:**
+
 - 2NFを満たす
 - 推移的関数従属性がない
 
@@ -456,11 +459,13 @@ ALTER TABLE users RENAME COLUMN new_email TO email;
 ### 正規化 vs 非正規化
 
 **正規化:**
+
 - データ整合性重視
 - 書き込みが多い
 - ストレージ効率
 
 **非正規化:**
+
 - 読み取りパフォーマンス
 - 集計・JOIN削減
 - キャッシュ的な使い方
@@ -513,6 +518,7 @@ ALTER TABLE users RENAME COLUMN new_email TO email;
 ### database-design → api-design
 
 APIとDB設計の整合:
+
 1. database-designでスキーマ設計
 2. api-designでエンドポイント設計
 3. データモデルとAPI仕様の一貫性
@@ -520,6 +526,7 @@ APIとDB設計の整合:
 ### database-design + performance-optimization
 
 DB最適化:
+
 1. database-designでスキーマ確認
 2. performance-optimizationでクエリ最適化
 3. インデックス・パーティショニング適用
@@ -527,6 +534,7 @@ DB最適化:
 ### database-design → migration-assistant
 
 DBマイグレーション:
+
 1. database-designで新スキーマ設計
 2. migration-assistantで移行計画
 3. 段階的なデータ移行

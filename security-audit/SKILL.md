@@ -784,6 +784,7 @@ docker scan myapp:latest
 ### security-audit → code-review
 
 セキュアコードレビュー:
+
 1. security-auditスキルで脆弱性を特定
 2. code-reviewスキルでコード品質全体を評価
 3. セキュアコーディングのベストプラクティス適用
@@ -791,6 +792,7 @@ docker scan myapp:latest
 ### security-audit → dependency-management
 
 依存関係のセキュリティ:
+
 1. security-auditスキルで脆弱性を検出
 2. dependency-managementスキルで更新
 3. 継続的な監視
@@ -798,6 +800,7 @@ docker scan myapp:latest
 ### security-audit + test-automation
 
 セキュリティテスト:
+
 1. security-auditスキルで脆弱性を特定
 2. test-automationスキルでテストケース作成
 3. リグレッション防止

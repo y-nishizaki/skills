@@ -650,11 +650,13 @@ def get_error_message(code, lang="ja"):
 ### どこでエラーをキャッチするか
 
 **早期（関数内）:**
+
 - バリデーション
 - ビジネスルール
 - リソースクリーンアップ
 
 **遅延（ハンドラー）:**
+
 - 横断的関心事
 - ログ・メトリクス
 - HTTPレスポンス
@@ -720,6 +722,7 @@ def get_error_message(code, lang="ja"):
 ### error-handling + debugging
 
 エラー調査:
+
 1. error-handlingで適切なログ
 2. debuggingで原因特定
 3. 修正と改善
@@ -727,6 +730,7 @@ def get_error_message(code, lang="ja"):
 ### error-handling + test-automation
 
 エラーのテスト:
+
 1. error-handlingでエラー設計
 2. test-automationでテストケース
 3. エラーパスの検証
@@ -734,6 +738,7 @@ def get_error_message(code, lang="ja"):
 ### error-handling + security-audit
 
 セキュアなエラー処理:
+
 1. security-auditで情報漏洩チェック
 2. error-handlingで適切なメッセージ
 3. セキュリティ強化

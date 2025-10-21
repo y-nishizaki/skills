@@ -80,16 +80,19 @@ description: "技術スタックの移行支援。migration、移行、アップ
 ```
 
 **メリット:**
+
 - シンプル
 - 期間が短い
 - 並行運用不要
 
 **デメリット:**
+
 - リスクが高い
 - ダウンタイム発生
 - ロールバック困難
 
 **適用場面:**
+
 - 小規模システム
 - ダウンタイム許容
 - 大きな変更が必要
@@ -103,16 +106,19 @@ description: "技術スタックの移行支援。migration、移行、アップ
 ```
 
 **メリット:**
+
 - リスク分散
 - 段階的検証
 - ロールバック容易
 
 **デメリット:**
+
 - 期間が長い
 - 複雑性増加
 - 並行運用コスト
 
 **適用場面:**
+
 - 大規模システム
 - ダウンタイム不可
 - 継続的な検証が必要
@@ -126,11 +132,13 @@ description: "技術スタックの移行支援。migration、移行、アップ
 ```
 
 **メリット:**
+
 - 比較検証可能
 - 安全性が高い
 - 段階的移行
 
 **デメリット:**
+
 - リソース2倍
 - 同期の複雑さ
 - コスト増
@@ -691,12 +699,14 @@ class RollbackDecision:
 ### いつ移行すべきか
 
 **移行すべき:**
+
 - セキュリティリスク
 - サポート終了
 - パフォーマンス問題
 - 保守困難
 
 **様子見:**
+
 - 安定稼働中
 - 移行コスト高
 - 代替手段あり
@@ -704,11 +714,13 @@ class RollbackDecision:
 ### 移行戦略の選択
 
 **Big Bang:**
+
 - 小規模
 - 変更大
 - 期限厳守
 
 **Strangler Fig:**
+
 - 大規模
 - 段階的
 - リスク回避
@@ -763,6 +775,7 @@ class RollbackDecision:
 ### migration-assistant + database-design
 
 DB移行:
+
 1. database-designで新スキーマ設計
 2. migration-assistantで移行計画
 3. データ移行実施
@@ -770,6 +783,7 @@ DB移行:
 ### migration-assistant + test-automation
 
 テスト戦略:
+
 1. test-automationでテスト実装
 2. migration-assistantで移行実施
 3. 継続的な検証
@@ -777,6 +791,7 @@ DB移行:
 ### migration-assistant + dependency-management
 
 依存関係更新:
+
 1. dependency-managementで更新検出
 2. migration-assistantで影響分析
 3. 段階的な更新
