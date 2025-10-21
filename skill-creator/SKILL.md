@@ -13,6 +13,8 @@ version: 1.0.0
 
 このスキルは、ユーザーが適切なディレクトリ構造、YAMLフロントマター付きのSKILL.mdファイル、およびベストプラクティスに従ったサポートドキュメントファイルを生成することで、新しいClaude Codeスキルを作成するのを支援します。
 
+公式のスキル仕様（[anthropics/skills](https://github.com/anthropics/skills)）に基づき、**Progressive Disclosure（段階的開示）**の原則に従って、効率的なコンテキスト管理を実現するスキルを作成します。
+
 ## このスキルを使用するタイミング
 
 以下の場合にこのスキルを使用します：
@@ -114,6 +116,16 @@ version: 1.0.0
 
 以下の構造でスキルディレクトリを作成します：
 
+**公式推奨構造（anthropics/skills）:**
+```
+[skill-name]/
+├── SKILL.md          # 必須: メインスキル定義（<5k語が推奨）
+├── scripts/          # 任意: 実行可能なスクリプト（コンテキストに読み込まれない）
+├── references/       # 任意: 必要時に読み込まれるドキュメント
+└── assets/           # 任意: 出力用ファイル（テンプレート、ロゴなど）
+```
+
+**代替構造（このリポジトリで使用）:**
 ```
 [skill-name]/
 ├── SKILL.md          # 必須: メインスキル定義
@@ -123,27 +135,60 @@ version: 1.0.0
 └── scripts/          # 任意: ヘルパースクリプト
 ```
 
+**Progressive Disclosure（段階的開示）の原則:**
+
+スキルは3段階でコンテキストを読み込みます：
+
+1. **メタデータ**（常時、~100語）: name + description
+2. **SKILL.md本文**（トリガー時、<5k語）: 手順とガイドライン
+3. **バンドルリソース**（必要時）: scripts、references、assets
+
+この設計により、効率的なコンテキスト管理を実現します。
+
 ### ステップ3: SKILL.mdを生成
 
 以下の構造でSKILL.mdファイルを作成します：
 
+**YAMLフロントマター:**
+
 ```yaml
 ---
-name: [skill-name]
-description: [トリガーキーワードを含む簡単な説明]
-version: 1.0.0
-dependencies: [任意: 依存関係をリスト]
+name: [skill-name]                    # 必須: ハイフン区切りの小文字
+description: >                         # 必須: third-personで記述
+  [スキルの機能と使用タイミングを説明。トリガーキーワードを含める]
+version: 1.0.0                         # 推奨: セマンティックバージョニング
+dependencies: [依存関係]               # 任意: 必要なツールやライブラリ
+allowed-tools: [Tool1, Tool2]          # 任意: Claude Codeのみ、事前承認ツール
+license: [ライセンス]                  # 任意: 簡潔に
+metadata:                              # 任意: カスタムキー・バリューペア
+  key: value
 ---
+```
 
+**重要な記述ガイドライン:**
+
+- **description**: third-person（三人称）で記述
+  - ❌ "Use this skill when..."
+  - ✅ "This skill should be used when..."
+- **本文**: imperative/infinitive form（命令形/不定詞形）を使用
+  - ✅ "To accomplish X, do Y"
+  - ✅ "Check the file permissions"
+  - ❌ "You should check the file permissions"
+
+**本文の構造:**
+
+```markdown
 # [スキル名]
 
 ## 目的
 [このスキルが何をするか、いつ使用するかの詳細な説明]
+[数文に抑える - 詳細はreferencesへ]
 
 ## 指示
 
 ### [ステップ1のタイトル]
 [このステップの詳細な指示]
+[imperative formを使用: "Do X", "Check Y", "Verify Z"]
 
 ### [ステップ2のタイトル]
 [このステップの詳細な指示]
@@ -171,15 +216,51 @@ dependencies: [任意: 依存関係をリスト]
 - [考慮すべきエッジケース]
 ```
 
-### ステップ4: サポートファイルを作成（必要な場合）
+**Progressive Disclosureのヒント:**
 
-**reference.md**: メインのSKILL.mdに含めるべきでない詳細な技術仕様、APIリファレンス、または広範なドキュメント用。
+- SKILL.mdは<5k語を目指す
+- 詳細な仕様はreferences/に移動
+- テンプレートやボイラープレートはassets/に配置
+- 実行可能なスクリプトはscripts/に配置
 
-**examples.md**: 拡張例、チュートリアル、またはデモンストレーションシナリオ用。
+### ステップ4: バンドルリソースを作成（必要な場合）
 
-**templates/**: スキルがコードやドキュメントを生成する際に使用する可能性のあるファイルテンプレート用。
+**公式推奨構造:**
 
-**scripts/**: スキルの機能をサポートするヘルパースクリプト用。
+**scripts/** - 実行可能なスクリプト
+- **目的**: 決定論的な実行、トークン効率
+- **特徴**: コンテキストに読み込まれない
+- **使用例**: rotate_pdf.py、validate_schema.sh、format_output.js
+- **いつ使用**: 同じコードが繰り返し再作成される場合、または決定論的な信頼性が必要な場合
+
+**references/** - リファレンスドキュメント
+- **目的**: 必要時に読み込まれる詳細ドキュメント
+- **特徴**: SKILL.mdよりも詳細な情報
+- **使用例**: finance.md（財務スキーマ）、api_docs.md（API仕様）、policies.md（企業ポリシー）
+- **いつ使用**: SKILL.mdが長くなりすぎる場合、詳細な仕様が必要な場合
+
+**assets/** - 出力用ファイル
+- **目的**: そのまま使用できる出力ファイル
+- **特徴**: コンテキストに読み込まれない
+- **使用例**: logo.png（ブランディング）、template.pptx（スライドテンプレート）、boilerplate/（フロントエンドボイラープレート）
+- **いつ使用**: テンプレート、ロゴ、ボイラープレートコードなど
+
+**代替構造（このリポジトリ）:**
+
+**reference.md** - 詳細な技術仕様、APIリファレンス、広範なドキュメント
+
+**examples.md** - 拡張例、チュートリアル、デモンストレーションシナリオ
+
+**templates/** - ファイルテンプレート（公式のassets/に相当）
+
+**scripts/** - ヘルパースクリプト（公式と同様）
+
+**重要な原則:**
+
+- 情報はSKILL.mdまたはreferencesのいずれかに配置（重複を避ける）
+- SKILL.mdは重要な手順とワークフローのガイダンスのみ
+- 詳細なリファレンス資料、スキーマ、例はreferencesへ移動
+- コンテキスト管理を意識し、SKILL.mdを簡潔に保つ
 
 ### ステップ5: スキルを検証
 
@@ -228,35 +309,94 @@ dependencies: [任意: 依存関係をリスト]
 
 2. **スキルを焦点を絞ったものにする**: 1つのスキルは1つのことをうまく行うべきです。複雑なワークフローは、複数の補完的なスキルに分割すべきです。
 
-3. **段階的なドキュメント**: SKILL.mdで重要な情報から始めます。詳細なリファレンス資料は別のファイルに移動します。
+3. **Progressive Disclosureを適用**: 3段階のコンテキスト読み込みを意識する
+   - メタデータ（~100語）: name + description
+   - SKILL.md本文（<5k語）: 重要な手順とガイドライン
+   - バンドルリソース（必要時のみ）: scripts、references、assets
 
-4. **テストの推奨**: 以下の方法でスキルをテストすることをユーザーに提案します：
+4. **適切な記述スタイルを使用**:
+   - **description**: third-person（三人称）で記述
+     - ❌ "Use this skill when..."
+     - ✅ "This skill should be used when..."
+   - **本文**: imperative/infinitive form（命令形/不定詞形）を使用
+     - ✅ "To accomplish X, do Y"
+     - ✅ "Check the file permissions"
+     - ❌ "You should check the file permissions"
+
+5. **コンテキストを効率的に管理**:
+   - SKILL.mdは簡潔に保つ（<5k語）
+   - 詳細な仕様はreferences/に移動
+   - スクリプトは決定論的な実行が必要な場合のみ使用
+   - 重複を避ける（情報はSKILL.mdまたはreferencesのいずれか）
+
+6. **テストの推奨**: 以下の方法でスキルをテストすることをユーザーに提案します：
    - `~/.claude/skills/`に配置
    - トリガーキーワードに一致するリクエストを行う
    - Claudeが適切にスキルを起動することを確認
+   - 実際の使用シナリオでテストし、即座にフィードバックに基づいて反復
 
-5. **競合を避ける**: スキル名が既存のスキルと競合したり、組み込み機能に似すぎていないか確認します。
+7. **競合を避ける**: スキル名が既存のスキルと競合したり、組み込み機能に似すぎていないか確認します。
+
+8. **公式リソースを参照**: [anthropics/skills](https://github.com/anthropics/skills)リポジトリで最新の例とベストプラクティスを確認します。
 
 ## 一般的なパターン
 
-### シンプルなスキル
+### シンプルなスキル（SKILL.mdのみ）
 
 単純なタスクの場合、SKILL.mdだけで十分です。
 
-### 複雑なスキル
+**例**: コマンドラッパー、シンプルなチェッカー
 
-複雑なワークフローの場合、以下を含めます：
+### スクリプトベースのスキル
 
-- SKILL.md（コア指示）
-- reference.md（技術的詳細）
-- examples.md（拡張例）
+決定論的な実行が必要な場合：
+
+**公式構造**:
+- SKILL.md（指示）
+- scripts/（実行可能なスクリプト）
+
+**例**: PDFエディター（rotate_pdf.py）、データバリデーター（validate_schema.sh）
+
+### リファレンス重視のスキル
+
+詳細なドキュメントが必要な場合：
+
+**公式構造**:
+- SKILL.md（ワークフロー）
+- references/（API仕様、スキーマ、ポリシー）
+
+**例**: BigQueryスキル（schema.md）、財務スキル（finance.md）
 
 ### テンプレートベースのスキル
 
 ファイルを生成するスキルの場合：
 
+**公式構造**:
 - SKILL.md（指示）
-- templates/ディレクトリ（ファイルテンプレート）
+- assets/（テンプレート、ボイラープレート）
+
+**代替構造**:
+- SKILL.md（指示）
+- templates/（ファイルテンプレート）
+
+**例**: フロントエンドビルダー（hello-worldボイラープレート）、プロジェクトイニシャライザー
+
+### 複合スキル
+
+複数のリソースタイプが必要な場合：
+
+**公式構造**:
+- SKILL.md（コア指示）
+- scripts/（実行可能コード）
+- references/（技術的詳細）
+- assets/（テンプレート、ロゴなど）
+
+**代替構造**:
+- SKILL.md（コア指示）
+- reference.md（技術的詳細）
+- examples.md（拡張例）
+- templates/（ファイルテンプレート）
+- scripts/（ヘルパースクリプト）
 
 ## エラー処理
 

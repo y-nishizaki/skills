@@ -1,19 +1,140 @@
 # スキル作成リファレンスドキュメント
 
+このリファレンスは、[anthropics/skills](https://github.com/anthropics/skills)公式リポジトリの仕様と、このリポジトリのパターンを統合したものです。
+
 ## 目次
 
-1. [YAMLフロントマター仕様](#yamlフロントマター仕様)
-2. [ファイル構造パターン](#ファイル構造パターン)
-3. [説明の書き方ガイド](#説明の書き方ガイド)
-4. [指示の書き方ベストプラクティス](#指示の書き方ベストプラクティス)
-5. [ツール使用ガイドライン](#ツール使用ガイドライン)
-6. [テストと検証](#テストと検証)
-7. [よくある落とし穴](#よくある落とし穴)
-8. [高度なパターン](#高度なパターン)
+1. [公式スキル仕様](#公式スキル仕様)
+2. [Progressive Disclosure（段階的開示）](#progressive-disclosure段階的開示)
+3. [YAMLフロントマター仕様](#yamlフロントマター仕様)
+4. [ファイル構造パターン](#ファイル構造パターン)
+5. [記述スタイルガイド](#記述スタイルガイド)
+6. [説明の書き方ガイド](#説明の書き方ガイド)
+7. [指示の書き方ベストプラクティス](#指示の書き方ベストプラクティス)
+8. [バンドルリソースの使用](#バンドルリソースの使用)
+9. [ツール使用ガイドライン](#ツール使用ガイドライン)
+10. [テストと検証](#テストと検証)
+11. [よくある落とし穴](#よくある落とし穴)
+12. [高度なパターン](#高度なパターン)
+
+---
+
+## 公式スキル仕様
+
+公式仕様（[Agent Skills Spec v1.0](https://github.com/anthropics/skills/blob/main/agent_skills_spec.md)）に基づく要件：
+
+### 必須要素
+
+- **SKILL.md**: スキルのエントリーポイント（唯一の必須ファイル）
+- **YAMLフロントマター**: name と description フィールドが必須
+- **ディレクトリ名**: nameフィールドと一致する必要あり
+
+### 任意要素
+
+- **scripts/**: 実行可能なスクリプト
+- **references/**: リファレンスドキュメント
+- **assets/**: 出力用ファイル
+
+### 公式リソース
+
+- [anthropics/skills](https://github.com/anthropics/skills) - 公式スキルコレクション
+- [agent_skills_spec.md](https://github.com/anthropics/skills/blob/main/agent_skills_spec.md) - 正式な仕様
+- [skill-creator](https://github.com/anthropics/skills/tree/main/skill-creator) - 公式のスキル作成ガイド
+
+---
+
+## Progressive Disclosure（段階的開示）
+
+公式の設計原則に基づく3段階のコンテキスト読み込みシステム：
+
+### レベル1: メタデータ（常時読み込み、~100語）
+
+```yaml
+---
+name: skill-name
+description: >
+  Complete description of functionality and when to use it.
+---
+```
+
+- **目的**: Claudeがスキルを起動するタイミングを決定
+- **内容**: name + description のみ
+- **サイズ**: ~100語を目標
+- **読み込み**: 常時
+
+### レベル2: SKILL.md本文（トリガー時、<5k語）
+
+```markdown
+# Skill Name
+
+## Purpose
+[Brief description]
+
+## Instructions
+[Step-by-step procedures]
+
+## Examples
+[Usage scenarios]
+```
+
+- **目的**: 手順とワークフローのガイダンスを提供
+- **内容**: 重要な指示、例、ベストプラクティス
+- **サイズ**: <5k語を目標
+- **読み込み**: スキルがトリガーされた時
+
+### レベル3: バンドルリソース（必要時のみ）
+
+```
+skill-name/
+├── SKILL.md
+├── scripts/         # 決定論的な実行用
+├── references/      # 詳細なドキュメント用
+└── assets/          # 出力ファイル用
+```
+
+- **目的**: 必要に応じて追加情報を提供
+- **内容**: スクリプト、リファレンス、テンプレート
+- **サイズ**: 制限なし（スクリプトは実行のみ、コンテキストに読み込まれない）
+- **読み込み**: 明示的に参照された時のみ
+
+### Progressive Disclosureの利点
+
+1. **効率的なコンテキスト管理**: 必要な情報のみを読み込む
+2. **トークン節約**: 大規模なドキュメントをスキル本文から分離
+3. **決定論的な実行**: スクリプトはコンテキストに読み込まれず、直接実行
+4. **スケーラビリティ**: 詳細な仕様を無制限に追加可能
+
+### 適用ガイドライン
+
+**SKILL.mdに含めるべき内容:**
+- スキルの目的（数文）
+- ワークフローと手順
+- 簡潔な例
+- 重要なガイドライン
+
+**references/に移動すべき内容:**
+- 詳細なAPI仕様
+- スキーマ定義
+- 企業ポリシー
+- 拡張例とチュートリアル
+
+**scripts/に配置すべき内容:**
+- 繰り返し再作成されるコード
+- 決定論的な実行が必要な処理
+- データ変換スクリプト
+- バリデーター
+
+**assets/に配置すべき内容:**
+- ファイルテンプレート
+- ボイラープレートコード
+- ロゴや画像
+- 設定ファイルのサンプル
 
 ---
 
 ## YAMLフロントマター仕様
+
+公式仕様（Agent Skills Spec v1.0）と拡張フィールド：
 
 ### 必須フィールド
 
@@ -24,19 +145,52 @@
 - **形式**: ハイフン区切りの小文字（ケバブケース）
 - **例**: `skill-creator`、`code-reviewer`、`api-tester`
 - **検証**: ユニークで、英数字とハイフンのみ
+- **公式要件**: ディレクトリ名と一致する必要あり
 
 #### description
 
 - **型**: 文字列
-- **最大長**: 200文字
+- **最大長**: 200文字（推奨: ~100語）
 - **目的**: Claudeがスキルを起動するタイミングを決定するのを支援
+- **記述スタイル**: third-person（三人称）を使用
+  - ❌ "Use this skill when..."
+  - ✅ "This skill should be used when..."
 - **必須内容**:
   - スキルが何をするか
   - いつ使用するか
   - トリガーキーワード
-- **例**: "適切な構造とベストプラクティスで新しいClaude Codeスキルを作成します。スキル構築、機能生成、カスタムツール作成時に使用します。"
+- **例**: "This skill creates new Claude Code skills with proper structure and best practices. Should be used for skill building, feature generation, and custom tool creation."
 
-### 任意フィールド
+### 公式の任意フィールド
+
+#### allowed-tools
+
+- **型**: 配列
+- **適用**: Claude Codeのみ
+- **目的**: 事前承認されたツールのリストを指定
+- **例**: `allowed-tools: [Read, Write, Edit, Bash]`
+- **使用タイミング**: スキルが使用できるツールを制限したい場合
+
+#### license
+
+- **型**: 文字列
+- **形式**: 簡潔なライセンス識別子
+- **例**: `MIT`、`Apache-2.0`、`Proprietary`
+- **推奨**: 簡潔に保つ
+
+#### metadata
+
+- **型**: オブジェクト（キー・バリューペア）
+- **目的**: 実装固有のカスタムデータ
+- **例**:
+  ```yaml
+  metadata:
+    author: "Your Name"
+    category: "development"
+    tags: ["python", "testing"]
+  ```
+
+### 拡張任意フィールド（このリポジトリ）
 
 #### version
 
@@ -96,7 +250,9 @@ description: これは検証に失敗します
 
 ## ファイル構造パターン
 
-### 最小スキル（シンプルなタスク）
+### 公式推奨構造
+
+#### 最小スキル（SKILL.mdのみ）
 
 ```
 skill-name/
@@ -110,7 +266,88 @@ skill-name/
 - 最小限のドキュメントが必要
 - 例がメインファイルに収まる
 
-### 標準スキル（最も一般的）
+#### スクリプトベースのスキル
+
+```
+skill-name/
+├── SKILL.md
+└── scripts/
+    ├── rotate_pdf.py
+    ├── validate_schema.sh
+    └── format_output.js
+```
+
+**使用タイミング**:
+
+- 決定論的な実行が必要
+- 同じコードが繰り返し再作成される
+- トークン効率が重要
+- コンテキストへの読み込みを避けたい
+
+#### リファレンス重視のスキル
+
+```
+skill-name/
+├── SKILL.md
+└── references/
+    ├── finance.md
+    ├── api_docs.md
+    └── policies.md
+```
+
+**使用タイミング**:
+
+- 詳細な仕様が必要
+- APIドキュメントを参照
+- 企業ポリシーやスキーマを含む
+- SKILL.mdが長くなりすぎる場合
+
+#### アセット重視のスキル
+
+```
+skill-name/
+├── SKILL.md
+└── assets/
+    ├── logo.png
+    ├── template.pptx
+    └── boilerplate/
+        ├── index.html
+        └── styles.css
+```
+
+**使用タイミング**:
+
+- テンプレートファイルを生成
+- ボイラープレートコードを提供
+- ブランドリソース（ロゴなど）を使用
+- プロジェクト初期化
+
+#### 複合スキル（フルスタック）
+
+```
+skill-name/
+├── SKILL.md
+├── scripts/
+│   ├── helper.py
+│   └── validator.sh
+├── references/
+│   ├── api_docs.md
+│   └── schema.md
+└── assets/
+    ├── template1.md
+    └── config.yaml
+```
+
+**使用タイミング**:
+
+- 複雑な複数ステップのプロセス
+- 実行可能なスクリプトと詳細なドキュメントの両方が必要
+- テンプレートとリファレンスを組み合わせる
+- エンタープライズレベルのワークフロー
+
+### このリポジトリの代替構造
+
+#### 標準スキル（最も一般的）
 
 ```
 skill-name/
@@ -126,7 +363,7 @@ skill-name/
 - 技術仕様が有益
 - APIまたはフォーマットリファレンスが必要
 
-### 複雑なスキル（高度なワークフロー）
+#### 複雑なスキル（高度なワークフロー）
 
 ```
 skill-name/
@@ -149,23 +386,141 @@ skill-name/
 - 複数の設定オプション
 - ドメイン固有の知識
 
-### テンプレート重視のスキル
+### 構造選択のガイドライン
 
+**公式構造 vs このリポジトリ:**
+
+| 要素 | 公式 | このリポジトリ | 推奨 |
+|------|------|----------------|------|
+| リファレンス | `references/` ディレクトリ | `reference.md` 単一ファイル | 大規模: `references/`、小規模: `reference.md` |
+| テンプレート | `assets/` | `templates/` | どちらでも可（一貫性を保つ） |
+| 例 | `references/` に含める | `examples.md` | どちらでも可 |
+| スクリプト | `scripts/` | `scripts/` | `scripts/`（両方同じ） |
+
+**選択基準:**
+
+- **公式構造を使用**: 他の公式スキルとの互換性が重要な場合
+- **このリポジトリの構造を使用**: シンプルさと単一ファイルの利便性を優先する場合
+- **混合アプローチ**: プロジェクトのニーズに応じて柔軟に選択
+
+---
+
+## 記述スタイルガイド
+
+公式のスキル作成ガイドに基づく記述スタイル：
+
+### YAMLフロントマターの記述スタイル
+
+#### description フィールド
+
+**ルール**: third-person（三人称）で記述
+
+**良い例:**
+
+```yaml
+description: >
+  This skill creates new Claude Code skills with proper structure.
+  Should be used for skill building and feature generation.
 ```
-skill-name/
-├── SKILL.md
-└── templates/
-    ├── basic.md
-    ├── advanced.md
-    └── config.yaml
+
+```yaml
+description: >
+  Analyzes code for bugs, performance issues, and best practices.
+  Use for code review, quality checks, and pattern analysis.
 ```
 
-**使用タイミング**:
+**悪い例:**
 
-- 主な機能がファイル生成
-- 複数のテンプレートバリエーション
-- スキャフォールディングまたはボイラープレート生成
-- プロジェクト初期化
+```yaml
+description: >
+  Use this skill when you want to create a new skill.  # 二人称（"you"）を使用
+```
+
+```yaml
+description: >
+  I will help you build skills with best practices.  # 一人称（"I"）を使用
+```
+
+**修正方法:**
+
+- "Use this skill when..." → "This skill should be used when..."
+- "I will help..." → "This skill helps..."
+- "You should use..." → "Should be used for..."
+
+### SKILL.md本文の記述スタイル
+
+#### 指示の記述
+
+**ルール**: imperative/infinitive form（命令形/不定詞形）を使用
+
+**良い例:**
+
+```markdown
+## Instructions
+
+### Step 1: Analyze the request
+To accomplish X, do Y.
+Check the file permissions.
+Verify the syntax is correct.
+
+### Step 2: Generate output
+Create the file structure.
+Add the necessary files.
+Validate the results.
+```
+
+**悪い例:**
+
+```markdown
+## Instructions
+
+### Step 1: Analyze the request
+You should analyze the request.  # 二人称を使用
+You need to check the file permissions.
+Claude will verify the syntax.
+
+### Step 2: Generate output
+You should create the file structure.
+Then you add the necessary files.
+```
+
+**修正方法:**
+
+- "You should check..." → "Check..."
+- "Claude will verify..." → "Verify..."
+- "You need to..." → "To accomplish X, do Y" または "Do X"
+
+### 比較表
+
+| コンテキスト | 悪い（避ける） | 良い（使用） |
+|--------------|----------------|--------------|
+| description | "Use this skill when..." | "This skill should be used when..." |
+| description | "I will help you..." | "This skill helps..." |
+| 指示 | "You should check..." | "Check..." |
+| 指示 | "You need to verify..." | "Verify..." / "To verify X, do Y" |
+| 指示 | "Claude will analyze..." | "Analyze..." |
+| 目的 | "This skill will help you..." | "This skill helps..." |
+
+### 記述のベストプラクティス
+
+1. **簡潔さを保つ**
+   - 冗長な表現を避ける
+   - 直接的な指示を使用
+   - 不要な修飾語を削除
+
+2. **明確な動作動詞を使用**
+   - ✅ Check, Verify, Create, Analyze, Generate
+   - ❌ Should check, Need to verify, Will create
+
+3. **手順を論理的に構造化**
+   - 番号付きステップを使用
+   - 階層的な構造を維持
+   - 各ステップを明確に区別
+
+4. **例を含める**
+   - 実際の使用シナリオを示す
+   - 期待される入力と出力を明示
+   - エッジケースをカバー
 
 ---
 
@@ -355,6 +710,214 @@ description: "この非常に包括的なスキルは、構文チェック、セ
 - 一般的なレビューを試みる
 - 構造パターンに焦点を当てる
 ```
+
+---
+
+## バンドルリソースの使用
+
+公式のスキル構造に基づくバンドルリソースの詳細ガイド：
+
+### scripts/ ディレクトリ
+
+#### 目的と利点
+
+**主な目的:**
+- 決定論的な実行を保証
+- トークン効率を向上
+- 同じコードの繰り返し再作成を避ける
+
+**利点:**
+1. **コンテキストに読み込まれない**: スクリプトは実行されるだけで、Claudeのコンテキストウィンドウを消費しない
+2. **決定論的な信頼性**: コードが毎回同じように実行される
+3. **トークン節約**: 大きなコードブロックをコンテキストから除外
+
+#### 使用タイミング
+
+以下の場合にscripts/を使用：
+
+- **繰り返しパターン**: 同じコードが複数回再作成される
+- **複雑なロジック**: 手動で記述するには複雑すぎる処理
+- **データ変換**: PDFの回転、画像処理、データフォーマット変換
+- **バリデーション**: スキーマ検証、構文チェック
+
+#### 例
+
+```python
+# scripts/rotate_pdf.py
+import PyPDF2
+import sys
+
+def rotate_pdf(input_path, output_path, degrees):
+    """Rotate PDF pages by specified degrees"""
+    with open(input_path, 'rb') as file:
+        pdf_reader = PyPDF2.PdfReader(file)
+        pdf_writer = PyPDF2.PdfWriter()
+
+        for page in pdf_reader.pages:
+            page.rotate(degrees)
+            pdf_writer.add_page(page)
+
+        with open(output_path, 'wb') as output:
+            pdf_writer.write(output)
+
+if __name__ == "__main__":
+    rotate_pdf(sys.argv[1], sys.argv[2], int(sys.argv[3]))
+```
+
+**SKILL.mdでの参照:**
+
+```markdown
+### Step 2: Rotate PDF
+
+Execute the rotation script:
+
+\`\`\`bash
+python scripts/rotate_pdf.py input.pdf output.pdf 90
+\`\`\`
+```
+
+### references/ ディレクトリ
+
+#### 目的と利点
+
+**主な目的:**
+- 詳細なドキュメントを必要時のみ読み込む
+- SKILL.mdを簡潔に保つ
+- 専門知識を文書化
+
+**利点:**
+1. **Progressive Disclosure**: 必要な時にのみ読み込まれる
+2. **無制限の詳細**: サイズ制限なし
+3. **モジュール化**: トピックごとに分割可能
+
+#### 使用タイミング
+
+以下の場合にreferences/を使用：
+
+- **API仕様**: 詳細なAPIドキュメント
+- **スキーマ定義**: データベーススキーマ、JSONスキーマ
+- **企業ポリシー**: コンプライアンスルール、ブランドガイドライン
+- **技術リファレンス**: 詳細な技術仕様
+
+#### 例
+
+```markdown
+<!-- references/api_docs.md -->
+# BigQuery API Documentation
+
+## Authentication
+
+Use service account credentials...
+
+## Common Queries
+
+### Query 1: Get user data
+\`\`\`sql
+SELECT * FROM users WHERE created_at > TIMESTAMP('2025-01-01')
+\`\`\`
+
+### Query 2: Aggregate metrics
+\`\`\`sql
+SELECT
+  DATE(timestamp) as date,
+  COUNT(*) as events
+FROM events
+GROUP BY date
+ORDER BY date DESC
+\`\`\`
+
+## Error Handling
+
+- Error 403: Check IAM permissions...
+- Error 404: Verify dataset exists...
+```
+
+**SKILL.mdでの参照:**
+
+```markdown
+### Step 3: Execute Query
+
+Refer to `references/api_docs.md` for query examples and best practices.
+
+Use Read tool to access specific query patterns from the reference.
+```
+
+### assets/ ディレクトリ
+
+#### 目的と利点
+
+**主な目的:**
+- そのまま使用できる出力ファイルを提供
+- ブランドリソースを含める
+- ボイラープレートコードを格納
+
+**利点:**
+1. **即座に使用可能**: 変更なしで使用できるファイル
+2. **コンテキスト節約**: コンテキストに読み込まれない
+3. **一貫性**: テンプレートやブランドの一貫性を保証
+
+#### 使用タイミング
+
+以下の場合にassets/を使用：
+
+- **テンプレートファイル**: PPTX、DOCX、PDFテンプレート
+- **ボイラープレート**: プロジェクト初期化コード
+- **ブランドリソース**: ロゴ、フォント、カラーパレット
+- **設定ファイル**: サンプル設定、.envテンプレート
+
+#### 例
+
+```
+assets/
+├── logo.png                    # 企業ロゴ
+├── presentation-template.pptx  # プレゼンテーションテンプレート
+├── boilerplate/
+│   ├── index.html             # HTMLボイラープレート
+│   ├── styles.css             # CSSテンプレート
+│   └── app.js                 # JavaScriptスターター
+└── config/
+    ├── .env.example           # 環境変数テンプレート
+    └── eslint.config.js       # ESLint設定サンプル
+```
+
+**SKILL.mdでの参照:**
+
+```markdown
+### Step 4: Initialize Project
+
+Copy boilerplate files from assets:
+
+\`\`\`bash
+cp -r assets/boilerplate/* ./project/
+cp assets/config/.env.example ./project/.env
+\`\`\`
+
+Customize the files according to project requirements.
+```
+
+### バンドルリソースのベストプラクティス
+
+1. **重複を避ける**
+   - 情報はSKILL.mdまたはreferencesのいずれかに配置
+   - 同じ内容を複数の場所に記載しない
+
+2. **明確な命名規則**
+   - ファイル名は目的を明確に示す
+   - 階層的なディレクトリ構造を使用
+
+3. **適切な分割**
+   - references/: トピックごとに分割（api_docs.md、schema.md、policies.md）
+   - assets/: タイプごとに分割（templates/、logos/、configs/）
+
+4. **ドキュメント化**
+   - SKILL.mdでバンドルリソースの使用方法を説明
+   - 各リソースの目的を明確に記述
+
+5. **Progressive Disclosureを意識**
+   - SKILL.mdは簡潔に（<5k語）
+   - 詳細はreferences/へ
+   - 実行可能コードはscripts/へ
+   - 出力ファイルはassets/へ
 
 ---
 
