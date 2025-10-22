@@ -7,6 +7,7 @@
 - `index.html` - メインのカタログページ
 - `skills.json` - スキルメタデータ（自動生成）
 - `generate_catalog.py` - スキルメタデータ抽出スクリプト
+- `requirements.txt` - Pythonスクリプトの依存関係
 - `.nojekyll` - Jekyll処理を無効化
 
 ## スキルカタログの更新方法
@@ -23,6 +24,24 @@
 ### 手動更新
 
 ローカルでカタログを確認したい場合：
+
+#### 1. 依存関係のインストール
+
+初回のみ、必要なPythonパッケージをインストールします：
+
+```bash
+pip install -r docs/requirements.txt
+```
+
+または、システム全体にインストールしたくない場合は仮想環境を使用：
+
+```bash
+python3 -m venv venv
+source venv/bin/activate  # Windowsの場合: venv\Scripts\activate
+pip install -r docs/requirements.txt
+```
+
+#### 2. カタログの生成
 
 ```bash
 python3 docs/generate_catalog.py

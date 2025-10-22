@@ -1,0 +1,4 @@
+# スキルカタログ生成に必要な依存関係
+
+# YAMLパーシング（generate_catalog.pyで使用）
+PyYAML>=6.0.1

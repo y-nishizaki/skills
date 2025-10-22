@@ -29,6 +29,11 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Install dependencies
+        run: |
+          echo "Installing Python dependencies..."
+          pip install -r docs/requirements.txt
+
       - name: Generate skills catalog
         run: |
           echo "Generating skills catalog..."
