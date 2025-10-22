@@ -11,15 +11,34 @@
 
 ## スキルカタログの更新方法
 
-新しいスキルを追加したり、既存のスキルを更新した場合は、以下のコマンドでカタログを再生成してください：
+### 自動更新（推奨）
+
+`main` ブランチにプッシュすると、GitHub Actions が自動的に：
+
+1. `docs/generate_catalog.py` を実行してスキルカタログを生成
+2. GitHub Pages にデプロイ
+
+新しいスキルを追加したら、`main` ブランチにマージするだけで自動的にカタログが更新されます。
+
+### 手動更新
+
+ローカルでカタログを確認したい場合：
 
 ```bash
 python3 docs/generate_catalog.py
 ```
 
-これにより `docs/skills.json` が更新され、GitHub Pages に反映されます。
+これにより `docs/skills.json` が更新されます。
 
 ## GitHub Pages の設定
+
+### GitHub Actions を使用する場合（推奨）
+
+1. GitHubリポジトリの **Settings** → **Pages** に移動
+2. **Source** を `GitHub Actions` に設定
+3. `.github/workflows/deploy-pages.yml` が自動的にデプロイを実行
+
+### 手動デプロイの場合
 
 1. GitHubリポジトリの **Settings** → **Pages** に移動
 2. **Source** を `Deploy from a branch` に設定

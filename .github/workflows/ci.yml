@@ -81,7 +81,7 @@ jobs:
         run: |
           # Check each skill directory has required files
           for dir in */; do
-            if [ "$dir" = ".github/" ]; then
+            if [ "$dir" = ".github/" ] || [ "$dir" = "docs/" ]; then
               continue
             fi
 
