@@ -133,6 +133,13 @@
     "category": "code-quality"
   },
   {
+    "id": "presentation-mastery",
+    "name": "プレゼンテーション・マスタリー",
+    "description": "効果的なプレゼンテーションを設計・実行するスキル。ストーリーテリング、構成設計、データビジュアライゼーション、話し方のテクニックを活用して聴衆を動かすプレゼンを実現",
+    "path": "thinking-skills/presentation-mastery",
+    "category": "thinking-skills"
+  },
+  {
     "id": "migration-assistant",
     "name": "マイグレーション支援",
     "description": "技術スタックの移行支援。migration、移行、アップグレード、マイグレーション、技術スタック変更に関する依頼に対応",
