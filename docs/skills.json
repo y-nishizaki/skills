@@ -7,6 +7,13 @@
     "category": "design"
   },
   {
+    "id": "business-continuity-planning",
+    "name": "BCP(事業継続計画)",
+    "description": "供給途絶時の代替ルート設計、在庫戦略、復旧計画により事業継続性を確保。災害・パンデミック等の緊急事態に対応",
+    "path": "supply-chain/business-continuity-planning",
+    "category": "supply-chain"
+  },
+  {
     "id": "ci-cd-setup",
     "name": "CI/CD設定",
     "description": "CI/CDパイプラインの設定と自動化。CI/CD、パイプライン、GitHub Actions、GitLab CI、自動デプロイに関する依頼に対応",
@@ -14,11 +21,32 @@
     "category": "devops"
   },
   {
+    "id": "erp-mrp-systems",
+    "name": "ERP・MRPシステム",
+    "description": "SAP、Oracle、Dynamics等の基幹システムの活用。資材所要量計画(MRP)、生産計画、在庫管理を統合的に運用",
+    "path": "supply-chain/erp-mrp-systems",
+    "category": "supply-chain"
+  },
+  {
     "id": "github-pages",
     "name": "GitHub Pages",
     "description": "GitHub Pagesを使用した静的サイトホスティングの設定と管理。静的サイト、ドキュメントサイト、ポートフォリオ、プロジェクトページ、Jekyll、カスタムドメイン、GitHub Actions連携に関する依頼に対応",
     "path": "devops/github-pages",
     "category": "devops"
+  },
+  {
+    "id": "iot-blockchain",
+    "name": "IoT・ブロックチェーン活用",
+    "description": "IoTセンサーによるリアルタイムトラッキング、ブロックチェーンでのトレーサビリティとスマートコントラクトによる次世代SCM",
+    "path": "supply-chain/iot-blockchain",
+    "category": "supply-chain"
+  },
+  {
+    "id": "kpi-management",
+    "name": "KPI管理",
+    "description": "サプライチェーンの主要業績評価指標を設定・測定・改善。リードタイム、在庫回転率、OTIF等の指標を管理し、パフォーマンスを可視化",
+    "path": "supply-chain/kpi-management",
+    "category": "supply-chain"
   },
   {
     "id": "mlops",
@@ -91,6 +119,20 @@
     "category": "データサイエンス発展"
   },
   {
+    "id": "cross-functional-communication",
+    "name": "クロスファンクショナルコミュニケーション",
+    "description": "営業・生産・経営層との効果的な連携。部門間の壁を超え、情報共有と協働でサプライチェーン全体最適を実現",
+    "path": "supply-chain/cross-functional-communication",
+    "category": "supply-chain"
+  },
+  {
+    "id": "cost-analysis",
+    "name": "コスト分析",
+    "description": "原材料費、輸送費、人件費などサプライチェーンコスト構造を可視化・分析。コストドライバーを特定し、削減機会を発見",
+    "path": "supply-chain/cost-analysis",
+    "category": "supply-chain"
+  },
+  {
     "id": "code-review",
     "name": "コードレビュー",
     "description": "コードレビュー時の思考プロセス。レビュー、確認、評価、品質チェックに関する依頼に対応",
@@ -103,6 +145,55 @@
     "description": "新規コード作成時の思考プロセス。新規、作成、実装、機能追加、開発に関する依頼に対応",
     "path": "code-generation/code-creation",
     "category": "code-generation"
+  },
+  {
+    "id": "sustainable-procurement",
+    "name": "サステナブル調達",
+    "description": "環境・倫理・コンプライアンスを考慮した調達戦略。ESG基準、サーキュラーエコノミー、人権配慮で持続可能なサプライチェーンを実現",
+    "path": "supply-chain/sustainable-procurement",
+    "category": "supply-chain"
+  },
+  {
+    "id": "supply-chain-data-analytics",
+    "name": "サプライチェーンデータ分析",
+    "description": "Excel、SQL、Python、Power BIを活用した高度なデータ分析。サプライチェーンの洞察を導き、データドリブンな意思決定を実現",
+    "path": "supply-chain/supply-chain-data-analytics",
+    "category": "supply-chain"
+  },
+  {
+    "id": "supply-chain-project-management",
+    "name": "サプライチェーンプロジェクトマネジメント",
+    "description": "SCM改善プロジェクトの計画・実行・管理。進捗管理、リスク管理、PDCA運用により、変革を成功に導く",
+    "path": "supply-chain/supply-chain-project-management",
+    "category": "supply-chain"
+  },
+  {
+    "id": "scm-overview",
+    "name": "サプライチェーンマネジメント概要",
+    "description": "サプライチェーン全体の理解と最適化。需要予測から調達・生産・在庫・配送までの一貫した流れを把握し、効率的なSCM戦略を立案",
+    "path": "supply-chain/scm-overview",
+    "category": "supply-chain"
+  },
+  {
+    "id": "supply-chain-analytics-ai",
+    "name": "サプライチェーン・アナリティクスAI",
+    "description": "AI/機械学習によるサプライチェーンの高度な分析と最適化。予測モデル、最適化アルゴリズム、自動化で競争優位を確立",
+    "path": "supply-chain/supply-chain-analytics-ai",
+    "category": "supply-chain"
+  },
+  {
+    "id": "supply-chain-optimization",
+    "name": "サプライチェーン最適化",
+    "description": "数理最適化、線形計画法、シミュレーションを活用。複雑な制約下で最適な生産計画、配送計画、ネットワーク設計を実現",
+    "path": "supply-chain/supply-chain-optimization",
+    "category": "supply-chain"
+  },
+  {
+    "id": "circular-economy-design",
+    "name": "サーキュラーエコノミー設計",
+    "description": "リサイクル・リユースを含む循環型サプライチェーンの構築。環境負荷を低減し、資源効率を最大化する持続可能なビジネスモデルを設計",
+    "path": "supply-chain/circular-economy-design",
+    "category": "supply-chain"
   },
   {
     "id": "system-design",
@@ -138,6 +229,13 @@
     "description": "ユーザー中心の課題発見と解決のフレームワーク。共感による潜在ニーズの発見、迅速なプロトタイピング、反復的な改善に使用",
     "path": "thinking-skills/design-thinking",
     "category": "thinking-skills"
+  },
+  {
+    "id": "digital-twin",
+    "name": "デジタルツイン",
+    "description": "仮想空間上でのサプライチェーン再現とシミュレーション。リアルタイムデータと予測モデルで、最適な意思決定を支援",
+    "path": "supply-chain/digital-twin",
+    "category": "supply-chain"
   },
   {
     "id": "debugging",
@@ -231,6 +329,20 @@
     "category": "データサイエンス基礎"
   },
   {
+    "id": "process-mapping",
+    "name": "プロセスマッピング",
+    "description": "業務フローや物流経路の可視化と最適化。プロセスを図示し、ボトルネック、非付加価値活動、改善機会を特定してプロセス改善を推進",
+    "path": "supply-chain/process-mapping",
+    "category": "supply-chain"
+  },
+  {
+    "id": "vendor-management",
+    "name": "ベンダー管理",
+    "description": "サプライヤーの選定、評価、育成、関係管理。価格交渉、契約管理、リスク評価により、安定した調達と戦略的パートナーシップを構築",
+    "path": "supply-chain/vendor-management",
+    "category": "supply-chain"
+  },
+  {
     "id": "migration-assistant",
     "name": "マイグレーション支援",
     "description": "技術スタックの移行支援。migration、移行、アップグレード、マイグレーション、技術スタック変更に関する依頼に対応",
@@ -252,11 +364,39 @@
     "category": "データサイエンスモデリング"
   },
   {
+    "id": "risk-assessment",
+    "name": "リスクアセスメント",
+    "description": "地政学リスク、サプライヤー依存、自然災害などサプライチェーンリスクを特定・評価・軽減する体系的アプローチ",
+    "path": "supply-chain/risk-assessment",
+    "category": "supply-chain"
+  },
+  {
     "id": "refactoring",
     "name": "リファクタリング",
     "description": "既存コード改善時の思考プロセス。リファクタリング、改善、整理、クリーンアップに関する依頼に対応",
     "path": "code-quality/refactoring",
     "category": "code-quality"
+  },
+  {
+    "id": "resilience-building",
+    "name": "レジリエンス構築",
+    "description": "多元調達、ローカル化、柔軟生産体制により供給網の強靭性を高め、ショックからの回復力と適応力を構築",
+    "path": "supply-chain/resilience-building",
+    "category": "supply-chain"
+  },
+  {
+    "id": "logistics-cost-optimization",
+    "name": "ロジスティクスコスト最適化",
+    "description": "輸送費・在庫コスト・リードタイムのトレードオフを分析・最適化。総物流費削減とサービスレベル向上を両立",
+    "path": "supply-chain/logistics-cost-optimization",
+    "category": "supply-chain"
+  },
+  {
+    "id": "negotiation-coordination",
+    "name": "交渉・調整力",
+    "description": "価格交渉、納期調整、サプライヤーとの信頼構築。Win-Winの関係を築き、持続可能なパートナーシップで競争優位を確立",
+    "path": "supply-chain/negotiation-coordination",
+    "category": "supply-chain"
   },
   {
     "id": "hypothesis-building",
@@ -278,6 +418,13 @@
     "description": "仮説が未検証でも暫定的に信じて前進する意思のスキル。信念の保持と柔軟な修正力のバランスを取り、長期的プロジェクト遂行と不確実性下での意思決定に使用",
     "path": "thinking-skills/commitment-belief",
     "category": "thinking-skills"
+  },
+  {
+    "id": "warehouse-management",
+    "name": "倉庫管理",
+    "description": "効率的な入出庫、保管、ピッキング作業。WMSの活用、レイアウト最適化、在庫精度向上で倉庫オペレーションを改善",
+    "path": "supply-chain/warehouse-management",
+    "category": "supply-chain"
   },
   {
     "id": "ethics-privacy",
@@ -341,6 +488,13 @@
     "description": "A/Bテスト、介入効果分析。因果関係の特定",
     "path": "analysis/data-science/advanced/causal-inference",
     "category": "データサイエンス発展"
+  },
+  {
+    "id": "inventory-management",
+    "name": "在庫管理",
+    "description": "安全在庫、発注点、ABC分析などの理論と実践。適正在庫の維持、欠品防止とコスト削減のバランスを実現する在庫最適化",
+    "path": "supply-chain/inventory-management",
+    "category": "supply-chain"
   },
   {
     "id": "horenso",
@@ -483,10 +637,24 @@
     "category": "thinking-skills"
   },
   {
+    "id": "transportation-management",
+    "name": "輸送管理",
+    "description": "モーダルミックス、配送計画、ルート最適化による効率的な輸送オペレーション。コスト削減とサービスレベル向上を両立",
+    "path": "supply-chain/transportation-management",
+    "category": "supply-chain"
+  },
+  {
     "id": "focus-rest",
     "name": "集中と休息",
     "description": "Pomodoro法、環境要因の最適化、エネルギー管理を活用して、高い集中力を維持し、効果的な休息で生産性を最大化するスキル。25分の集中と5分の休憩のサイクルで、持続可能な生産性を実現する",
     "path": "time-management/focus-rest",
     "category": "time-management"
+  },
+  {
+    "id": "demand-forecasting",
+    "name": "需要予測",
+    "description": "統計手法や機械学習を活用した需要予測。過去データ、トレンド、季節性を分析し、精度の高い予測で在庫最適化と欠品防止を実現",
+    "path": "supply-chain/demand-forecasting",
+    "category": "supply-chain"
   }
 ]
