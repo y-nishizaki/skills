@@ -42,6 +42,30 @@ def extract_yaml_frontmatter(file_path):
         return None
 
 
+def get_category_name(relative_path):
+    """相対パスから適切なカテゴリ名を取得"""
+    # カテゴリマッピング（相対パス → 日本語カテゴリ名）
+    category_mapping = {
+        'analysis/data-science/fundamentals': 'データサイエンス基礎',
+        'analysis/data-science/modeling': 'データサイエンスモデリング',
+        'analysis/data-science/business-application': 'データサイエンスビジネス応用',
+        'analysis/data-science/advanced': 'データサイエンス発展',
+        'analysis/data-science/mindset': 'データサイエンスマインドセット',
+    }
+
+    parent_path = str(relative_path.parent)
+
+    # マッピングに存在する場合はそれを返す
+    if parent_path in category_mapping:
+        return category_mapping[parent_path]
+
+    # マッピングに存在しない場合は親ディレクトリ名をそのまま返す
+    if relative_path.parent != Path('.'):
+        return parent_path
+
+    return 'root'
+
+
 def scan_skills(base_dir='.'):
     """すべてのスキルディレクトリをスキャンしてメタデータを抽出"""
     skills = []
@@ -67,7 +91,7 @@ def scan_skills(base_dir='.'):
                 'name': metadata.get('name', skill_dir.name),
                 'description': metadata.get('description', '説明がありません'),
                 'path': str(relative_path),
-                'category': str(relative_path.parent) if relative_path.parent != Path('.') else 'root'
+                'category': get_category_name(relative_path)
             }
             skills.append(skill_data)
 

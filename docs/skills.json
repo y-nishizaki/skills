@@ -21,6 +21,20 @@
     "category": "devops"
   },
   {
+    "id": "mlops",
+    "name": "MLOps",
+    "description": "機械学習モデルの運用自動化。CI/CD、モニタリング、再学習",
+    "path": "analysis/data-science/advanced/mlops",
+    "category": "データサイエンス発展"
+  },
+  {
+    "id": "sql-fundamentals",
+    "name": "SQL基礎",
+    "description": "データベースからのデータ抽出・加工。SELECT、JOIN、GROUP BY、サブクエリなど",
+    "path": "analysis/data-science/fundamentals/sql-fundamentals",
+    "category": "データサイエンス基礎"
+  },
+  {
     "id": "generic-subagent",
     "name": "generic-subagent",
     "description": "任意のタスクを別セッションで実行し、メインセッションのコンテキストウィンドウを節約します。 別セッション実行、コンテキスト節約、サブエージェント実行、タスク委任、セッション分離が必要な時に使用します。 キーワード - 別セッション、コンテキスト節約、独立実行、タスク分離、サブエージェント。",
@@ -56,11 +70,25 @@
     "category": "thinking-skills"
   },
   {
+    "id": "innovation-mindset",
+    "name": "イノベーションマインド",
+    "description": "失敗を学びに変え、実験を通じて継続的に改善する思考法。失敗許容の文化醸成、小さな実験の積み重ね、変革への挑戦に使用",
+    "path": "thinking-skills/innovation-mindset",
+    "category": "thinking-skills"
+  },
+  {
     "id": "error-handling",
     "name": "エラーハンドリング改善",
     "description": "エラー処理とエラーハンドリングの改善。エラー処理、例外処理、エラーハンドリング、リトライ、ログに関する依頼に対応",
     "path": "code-quality/error-handling",
     "category": "code-quality"
+  },
+  {
+    "id": "cloud-skills",
+    "name": "クラウドスキル",
+    "description": "AWS、GCP、Azureでのデータ分析環境構築とスケーラブルな運用",
+    "path": "analysis/data-science/advanced/cloud-skills",
+    "category": "データサイエンス発展"
   },
   {
     "id": "code-review",
@@ -84,6 +112,13 @@
     "category": "design"
   },
   {
+    "id": "stress-management",
+    "name": "ストレスマネジメント",
+    "description": "ストレス要因を可視化し、呼吸法・瞑想・軽運動を通じて効果的にストレスを管理するスキル。ストレス日記の記録、リラクゼーション技法の習慣化、期待値の調整に使用",
+    "path": "self-management/stress-management",
+    "category": "self-management"
+  },
+  {
     "id": "security-audit",
     "name": "セキュリティ監査",
     "description": "セキュリティ監査と脆弱性評価。セキュリティ、脆弱性、セキュアコーディング、セキュリティチェック、監査に関する依頼に対応",
@@ -96,6 +131,13 @@
     "description": "テスト自動化の戦略と実装。テスト、ユニットテスト、統合テスト、E2Eテスト、テストカバレッジに関する依頼に対応",
     "path": "testing/test-automation",
     "category": "testing"
+  },
+  {
+    "id": "design-thinking",
+    "name": "デザイン思考",
+    "description": "ユーザー中心の課題発見と解決のフレームワーク。共感による潜在ニーズの発見、迅速なプロトタイピング、反復的な改善に使用",
+    "path": "thinking-skills/design-thinking",
+    "category": "thinking-skills"
   },
   {
     "id": "debugging",
@@ -112,11 +154,32 @@
     "category": "design"
   },
   {
+    "id": "data-literacy",
+    "name": "データリテラシー",
+    "description": "データの型、欠損値の扱い方、データ品質の理解などデータ分析の基礎知識",
+    "path": "analysis/data-science/fundamentals/data-literacy",
+    "category": "データサイエンス基礎"
+  },
+  {
     "id": "data-analysis",
     "name": "データ分析",
     "description": "データ分析・探索時の思考プロセス。データ、分析、探索、可視化、統計に関する依頼に対応",
     "path": "analysis/data-analysis",
     "category": "analysis"
+  },
+  {
+    "id": "data-preprocessing",
+    "name": "データ前処理",
+    "description": "欠損値補完、異常値処理、特徴量エンジニアリング。クリーンで分析可能なデータを作成",
+    "path": "analysis/data-science/modeling/data-preprocessing",
+    "category": "データサイエンスモデリング"
+  },
+  {
+    "id": "data-visualization",
+    "name": "データ可視化・ストーリーテリング",
+    "description": "効果的な可視化とストーリー構築。インサイトを伝える技術",
+    "path": "analysis/data-science/business-application/data-visualization",
+    "category": "データサイエンスビジネス応用"
   },
   {
     "id": "documentation",
@@ -126,6 +189,13 @@
     "category": "analysis"
   },
   {
+    "id": "domain-knowledge",
+    "name": "ドメイン知識",
+    "description": "業界特有のデータ構造・指標の理解。専門的な洞察の獲得",
+    "path": "analysis/data-science/business-application/domain-knowledge",
+    "category": "データサイエンスビジネス応用"
+  },
+  {
     "id": "performance-optimization",
     "name": "パフォーマンス最適化",
     "description": "パフォーマンス改善時の思考プロセス。最適化、高速化、パフォーマンス、速度改善に関する依頼に対応",
@@ -133,11 +203,32 @@
     "category": "code-quality"
   },
   {
+    "id": "big-data-processing",
+    "name": "ビッグデータ処理",
+    "description": "Spark、Hadoop、BigQueryなど大規模データの効率的処理",
+    "path": "analysis/data-science/advanced/big-data-processing",
+    "category": "データサイエンス発展"
+  },
+  {
     "id": "presentation-mastery",
     "name": "プレゼンテーション・マスタリー",
     "description": "効果的なプレゼンテーションを設計・実行するスキル。ストーリーテリング、構成設計、データビジュアライゼーション、話し方のテクニックを活用して聴衆を動かすプレゼンを実現",
     "path": "thinking-skills/presentation-mastery",
     "category": "thinking-skills"
+  },
+  {
+    "id": "presentation-skills",
+    "name": "プレゼンテーション・報告スキル",
+    "description": "分析結果を非技術者に伝える。効果的なコミュニケーション",
+    "path": "analysis/data-science/business-application/presentation-skills",
+    "category": "データサイエンスビジネス応用"
+  },
+  {
+    "id": "programming-fundamentals",
+    "name": "プログラミング基礎",
+    "description": "Python/Rでのデータ操作。pandas、NumPy、matplotlib、seabornなどの必須ライブラリ",
+    "path": "analysis/data-science/fundamentals/programming-fundamentals",
+    "category": "データサイエンス基礎"
   },
   {
     "id": "migration-assistant",
@@ -154,11 +245,25 @@
     "category": "thinking-skills"
   },
   {
+    "id": "model-evaluation",
+    "name": "モデル評価",
+    "description": "精度、再現率、AUC等の指標理解。モデル性能の適切な評価と改善",
+    "path": "analysis/data-science/modeling/model-evaluation",
+    "category": "データサイエンスモデリング"
+  },
+  {
     "id": "refactoring",
     "name": "リファクタリング",
     "description": "既存コード改善時の思考プロセス。リファクタリング、改善、整理、クリーンアップに関する依頼に対応",
     "path": "code-quality/refactoring",
     "category": "code-quality"
+  },
+  {
+    "id": "hypothesis-building",
+    "name": "仮説構築",
+    "description": "限られた情報から最も可能性の高い仮説を立て、検証可能な形で定義するスキル。データ分析や問題解決で仮説ドリブンに進めたい場合に使用",
+    "path": "thinking-skills/hypothesis-building",
+    "category": "thinking-skills"
   },
   {
     "id": "dependency-management",
@@ -175,6 +280,27 @@
     "category": "thinking-skills"
   },
   {
+    "id": "ethics-privacy",
+    "name": "倫理・プライバシー意識",
+    "description": "データ利用の法的・倫理的ルール。責任あるAIの実践",
+    "path": "analysis/data-science/business-application/ethics-privacy",
+    "category": "データサイエンスビジネス応用"
+  },
+  {
+    "id": "listening-skills",
+    "name": "傾聴力",
+    "description": "アクティブ・リスニングのスキル。相手の発言内容を正確に理解し、復唱・要約で確認し、非言語情報を読み取り、相手の真の意図を推察する質問を通じて信頼関係を構築する",
+    "path": "thinking-skills/listening-skills",
+    "category": "thinking-skills"
+  },
+  {
+    "id": "priority-management",
+    "name": "優先順位設定",
+    "description": "Eisenhowerマトリクス、逆算思考、ToDoの棚卸しを活用して、重要なタスクに集中し、不要なタスクを排除するスキル。タスクの優先順位を明確にし、目標達成に向けた効率的な時間配分を実現する",
+    "path": "time-management/priority-management",
+    "category": "time-management"
+  },
+  {
     "id": "shared-practices",
     "name": "共通プラクティス",
     "description": "全スキル共通の思考習慣。前提条件、検証、エラー回復、コミュニケーションの原則を提供",
@@ -182,10 +308,73 @@
     "category": "shared"
   },
   {
+    "id": "reproducibility",
+    "name": "再現性・透明性の意識",
+    "description": "誰が見ても理解できるコードとレポート。科学的なデータ分析の実践",
+    "path": "analysis/data-science/mindset/reproducibility",
+    "category": "データサイエンスマインドセット"
+  },
+  {
+    "id": "assumption-verification",
+    "name": "前提検証",
+    "description": "主張や判断の土台となる前提・仮定を洗い出し、その妥当性を系統的に検証するスキル。「そもそもそれは本当か？」を問い、情報源の信頼性確認や反例探索を通じて、より確実な意思決定の基盤を構築する際に使用",
+    "path": "thinking-skills/assumption-verification",
+    "category": "thinking-skills"
+  },
+  {
     "id": "creative-problem-solving",
     "name": "創造的問題解決",
     "description": "制約条件下で最適解を設計するスキル。既存構造の再利用、段階的改善、小さな成功の累積による大規模成果の実現に使用",
     "path": "thinking-skills/creative-problem-solving",
+    "category": "thinking-skills"
+  },
+  {
+    "id": "creative-ideation",
+    "name": "創造的発想力",
+    "description": "SCAMPER法などの発想技法を活用して革新的なアイデアを生み出すスキル。既存の枠を超えた発想、アイデアの量産、非常識な仮説からの実現に使用",
+    "path": "thinking-skills/creative-ideation",
+    "category": "thinking-skills"
+  },
+  {
+    "id": "causal-inference",
+    "name": "因果推論・実験設計",
+    "description": "A/Bテスト、介入効果分析。因果関係の特定",
+    "path": "analysis/data-science/advanced/causal-inference",
+    "category": "データサイエンス発展"
+  },
+  {
+    "id": "horenso",
+    "name": "報連相",
+    "description": "ビジネスにおける報告・連絡・相談のスキル。事実・判断・希望を分けて伝え、適切なタイミング（事前・中間・結果）で情報共有し、上司や同僚の情報ニーズを先読みして円滑なコミュニケーションを実現する",
+    "path": "thinking-skills/horenso",
+    "category": "thinking-skills"
+  },
+  {
+    "id": "multi-perspective-thinking",
+    "name": "多角的視点",
+    "description": "単一の視点に固執せず、複数のステークホルダーや異なる立場から物事を見ることで、盲点の発見と包括的な理解を実現するスキル。顧客・上司・競合などの視点での再評価、デビルズアドボケイト（反論役）による批判的検証に使用",
+    "path": "thinking-skills/multi-perspective-thinking",
+    "category": "thinking-skills"
+  },
+  {
+    "id": "curiosity-hypothesis",
+    "name": "好奇心と仮説思考",
+    "description": "「なぜ？」を問い続ける姿勢。データから洞察を引き出す探求心",
+    "path": "analysis/data-science/mindset/curiosity-hypothesis",
+    "category": "データサイエンスマインドセット"
+  },
+  {
+    "id": "learning-ability",
+    "name": "学習力",
+    "description": "毎月1テーマを深掘りし、アウトプット前提でインプットを行い、人に教えることで知識を定着させる効果的な学習スキル。インプット・アウトプットバランス、深掘り学習、教える学習法に使用",
+    "path": "self-management/learning-ability",
+    "category": "self-management"
+  },
+  {
+    "id": "decision-making",
+    "name": "意思決定",
+    "description": "定量・定性データを組み合わせ、影響範囲・リスク・実現性を評価してファクトベースで判断するスキル。重要な選択を客観的に行いたい場合に使用",
+    "path": "thinking-skills/decision-making",
     "category": "thinking-skills"
   },
   {
@@ -196,6 +385,27 @@
     "category": "thinking-skills"
   },
   {
+    "id": "reflection-practice",
+    "name": "振り返り習慣",
+    "description": "1日の終わりに成功と改善点を記録し、PDCAサイクルを回して継続的な自己改善を実現するスキル。4行日記、KPTフレームワーク、思考の癖のレビューに使用",
+    "path": "self-management/reflection-practice",
+    "category": "self-management"
+  },
+  {
+    "id": "exploratory-data-analysis",
+    "name": "探索的データ分析（EDA）",
+    "description": "データの傾向を可視化して洞察を得る。パターン発見とデータ理解",
+    "path": "analysis/data-science/modeling/exploratory-data-analysis",
+    "category": "データサイエンスモデリング"
+  },
+  {
+    "id": "mathematical-thinking",
+    "name": "数学的思考力",
+    "description": "データサイエンスに必要な数学の基礎理解。確率、線形代数、微分積分などのモデル理解の土台",
+    "path": "analysis/data-science/fundamentals/mathematical-thinking",
+    "category": "データサイエンス基礎"
+  },
+  {
     "id": "contextual-empathy",
     "name": "文脈的共感",
     "description": "他者の立場・背景・目的を文脈的に理解し、共感的に判断するスキル。「なぜそう考えるのか」を掘り下げ、認知の多様性を受け止める。チーム協働や要件理解に使用",
@@ -203,10 +413,80 @@
     "category": "thinking-skills"
   },
   {
+    "id": "verification-culture",
+    "name": "検証文化",
+    "description": "思い込みを捨ててデータで確かめる習慣。証拠に基づく意思決定",
+    "path": "analysis/data-science/mindset/verification-culture",
+    "category": "データサイエンスマインドセット"
+  },
+  {
+    "id": "structured-thinking",
+    "name": "構造化思考",
+    "description": "複雑な問題をMECE（重複なく漏れなく）分解し、ロジックツリーで因果関係を整理するスキル。問題の全体像を可視化し、構造的に理解したい場合に使用",
+    "path": "thinking-skills/structured-thinking",
+    "category": "thinking-skills"
+  },
+  {
+    "id": "machine-learning",
+    "name": "機械学習",
+    "description": "回帰、分類、クラスタリング。予測モデルの構築とチューニング",
+    "path": "analysis/data-science/modeling/machine-learning",
+    "category": "データサイエンスモデリング"
+  },
+  {
+    "id": "specialized-ml",
+    "name": "特化型機械学習（NLP/CV）",
+    "description": "自然言語処理と画像認識。専門分野での応用",
+    "path": "analysis/data-science/advanced/specialized-ml",
+    "category": "データサイエンス発展"
+  },
+  {
+    "id": "statistics-fundamentals",
+    "name": "統計学の基礎",
+    "description": "データサイエンスの基盤となる統計学の基礎概念。平均、分散、標準偏差、相関、回帰分析、仮説検定などの理解と応用",
+    "path": "analysis/data-science/fundamentals/statistics-fundamentals",
+    "category": "データサイエンス基礎"
+  },
+  {
+    "id": "statistical-inference",
+    "name": "統計的推論",
+    "description": "仮説検定、信頼区間、因果推論。データに基づく結論の導出",
+    "path": "analysis/data-science/modeling/statistical-inference",
+    "category": "データサイエンスモデリング"
+  },
+  {
+    "id": "expression-skills",
+    "name": "表現力",
+    "description": "ビジネスコミュニケーションにおける効果的な表現スキル。ピラミッド構造やPREP法を活用し、1分で要点を明確に伝え、聞き手のレベルに合わせた言葉選びで説得力のあるコミュニケーションを実現する",
+    "path": "thinking-skills/expression-skills",
+    "category": "thinking-skills"
+  },
+  {
+    "id": "planning-scheduling",
+    "name": "計画・スケジューリング",
+    "description": "時間予算表、バッファ確保、タスクの粒度分解を活用して、現実的で実行可能なスケジュールを作成するスキル。時間を可視化し、余裕を持った計画で生産性を最大化する",
+    "path": "time-management/planning-scheduling",
+    "category": "time-management"
+  },
+  {
+    "id": "problem-definition",
+    "name": "課題設定力",
+    "description": "ビジネス課題をデータで定義できる力。適切な問題設定とKPI設計",
+    "path": "analysis/data-science/business-application/problem-definition",
+    "category": "データサイエンスビジネス応用"
+  },
+  {
     "id": "embodied-learning",
     "name": "身体化された学習",
     "description": "体験を通じて知識を身体的・感覚的に統合するスキル。抽象的理解を「感じる知」に変換し、直感的判断を磨く。経験の蓄積と違和感の活用に使用",
     "path": "thinking-skills/embodied-learning",
     "category": "thinking-skills"
+  },
+  {
+    "id": "focus-rest",
+    "name": "集中と休息",
+    "description": "Pomodoro法、環境要因の最適化、エネルギー管理を活用して、高い集中力を維持し、効果的な休息で生産性を最大化するスキル。25分の集中と5分の休憩のサイクルで、持続可能な生産性を実現する",
+    "path": "time-management/focus-rest",
+    "category": "time-management"
   }
 ]
