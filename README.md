@@ -22,12 +22,43 @@
 skills/
 ├── README.md
 ├── LICENSE
-└── [スキル名]/
-    ├── SKILL.md          # 必須: スキルの定義と手順
-    ├── reference.md      # オプション: リファレンスドキュメント
-    ├── examples.md       # オプション: 使用例
-    ├── scripts/          # オプション: ヘルパースクリプト
-    └── templates/        # オプション: ファイルテンプレート
+├── development-tools/     # 開発ツール・メタ
+│   ├── skill-creator/
+│   ├── subagent-creator/
+│   └── generic-subagent/
+├── code-quality/          # コード品質
+│   ├── code-review/
+│   ├── refactoring/
+│   ├── debugging/
+│   ├── error-handling/
+│   ├── security-audit/
+│   └── performance-optimization/
+├── design/                # 設計
+│   ├── system-design/
+│   ├── api-design/
+│   └── database-design/
+├── devops/                # 開発運用
+│   ├── ci-cd-setup/
+│   ├── dependency-management/
+│   └── migration-assistant/
+├── testing/               # テスト
+│   └── test-automation/
+├── code-generation/       # コード生成
+│   └── code-creation/
+├── analysis/              # 分析・調査
+│   ├── data-analysis/
+│   ├── research/
+│   └── documentation/
+└── shared/                # 共通
+    └── shared-practices/
+
+各スキルの構造:
+[スキル名]/
+├── SKILL.md          # 必須: スキルの定義と手順
+├── reference.md      # オプション: リファレンスドキュメント
+├── examples.md       # オプション: 使用例
+├── scripts/          # オプション: ヘルパースクリプト
+└── templates/        # オプション: ファイルテンプレート
 ```
 
 ## クイックスタート
@@ -44,10 +75,15 @@ skills/
 個人のスキルディレクトリにスキルをクローンします:
 
 ```bash
-# 個別のスキルをクローン
+# リポジトリをクローン
 git clone https://github.com/y-nishizaki/skills.git
 cd skills
-cp -r [スキル名] ~/.claude/skills/
+
+# 個別のスキルをコピー
+cp -r [カテゴリ]/[スキル名] ~/.claude/skills/
+
+# 例: スキル作成ツールをインストール
+cp -r development-tools/skill-creator ~/.claude/skills/
 ```
 
 #### チーム/プロジェクト用
@@ -60,7 +96,7 @@ mkdir -p .claude/skills
 cd .claude/skills
 git clone https://github.com/y-nishizaki/skills.git
 # 必要なスキルを .claude/skills/ にコピー
-cp -r skills/[スキル名] .
+cp -r skills/[カテゴリ]/[スキル名] .
 ```
 
 `.claude/skills/` ディレクトリをリポジトリにコミットします。チームメンバーは変更をプルした後、自動的にアクセスできるようになります。
@@ -225,34 +261,86 @@ allowed-tools: Read, Grep, Glob
 
 ## 利用可能なスキル
 
-### Skill Creator（スキル作成スキル）
+スキルはカテゴリごとに整理されています。各カテゴリのREADME.mdで詳細を確認できます。
 
-**場所**: `skill-creator/`
+### 開発ツール (development-tools/)
 
-ベストプラクティスと適切な構造に従って、新しいClaude Codeスキルを作成するのを支援するメタスキルです。
+Claude Code自体を拡張するためのメタツール。
 
-**機能**:
+- **skill-creator** - 新しいスキルを作成するためのガイドとツール
+- **subagent-creator** - サブエージェント作成ツール
+- **generic-subagent** - 汎用サブエージェント実装
 
-- 完全なスキルディレクトリ構造を生成
-- 適切なYAMLフロントマター付きのSKILL.mdを作成
-- 検証とベストプラクティスのガイダンスを含む
-- 基本と高度なテンプレートを提供
-- 包括的なリファレンスドキュメント
+### コード品質 (code-quality/)
 
-**使用方法**: Claudeに「新しいスキルを作成」または「[目的]のためのスキルを作って」と依頼してください
+コードの品質を多角的に向上。
+
+- **code-review** - コードレビューの思考プロセス
+- **refactoring** - リファクタリングの計画と実行
+- **debugging** - デバッグの体系的アプローチ
+- **error-handling** - エラーハンドリング設計
+- **security-audit** - セキュリティ監査
+- **performance-optimization** - パフォーマンス最適化
+
+### 設計 (design/)
+
+システム、API、データベースの設計。
+
+- **system-design** - システムアーキテクチャ設計
+- **api-design** - REST API、GraphQL設計
+- **database-design** - データベーススキーマ設計
+
+### DevOps (devops/)
+
+開発運用の自動化とベストプラクティス。
+
+- **ci-cd-setup** - CI/CDパイプライン構築
+- **dependency-management** - 依存関係管理
+- **migration-assistant** - システム・データ移行支援
+
+### テスト (testing/)
+
+自動テストの戦略と実装。
+
+- **test-automation** - テスト自動化
+
+### コード生成 (code-generation/)
+
+高品質なコードの生成。
+
+- **code-creation** - 新規コード作成
+
+### 分析・調査 (analysis/)
+
+データ分析、リサーチ、ドキュメント作成。
+
+- **data-analysis** - データ分析とEDA
+- **research** - 技術調査とリサーチ
+- **documentation** - ドキュメント作成
+
+### 共通 (shared/)
+
+プロジェクト全体で共有されるベストプラクティス。
+
+- **shared-practices** - 共通パターンと標準手順
+
+---
+
+### 使用例: Skill Creator
+
+**場所**: `development-tools/skill-creator/`
+
+最も基本的なスキルとして、新しいスキルの作成を支援します。
 
 **インストール**:
 
 ```bash
-cp -r skill-creator ~/.claude/skills/
+cp -r development-tools/skill-creator ~/.claude/skills/
 ```
 
-**ファイル**:
+**使用方法**:
 
-- `SKILL.md` - メインのスキル定義と作成プロセス
-- `reference.md` - 詳細な技術リファレンスと仕様
-- `templates/basic-skill-template.md` - シンプルなスキルテンプレート
-- `templates/advanced-skill-template.md` - 複雑なスキルテンプレート
+Claudeに「新しいスキルを作成」または「[目的]のためのスキルを作って」と依頼してください
 
 ## よくある問題のデバッグ
 
