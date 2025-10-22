@@ -5,6 +5,12 @@
     },
     {
       "pattern": "^https://claude.com/claude-code"
+    },
+    {
+      "pattern": "example\\.com"
+    },
+    {
+      "pattern": "example\\.org"
     }
   ],
   "timeout": "20s",
