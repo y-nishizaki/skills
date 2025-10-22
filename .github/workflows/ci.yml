@@ -79,41 +79,58 @@ jobs:
 
       - name: Validate skill structure
         run: |
-          # Check each skill directory has required files
-          for dir in */; do
-            if [ "$dir" = ".github/" ] || [ "$dir" = "docs/" ]; then
+          # Find all leaf directories (skill directories) and validate them
+          # A leaf directory is one that has no subdirectories
+          # Exclude resource directories: templates, scripts, references, assets
+
+          # Find all directories excluding .git, .github, and docs
+          find . -type d -not -path '*/\.*' -not -path './docs*' | while read -r dir; do
+            # Skip root directory
+            if [ "$dir" = "." ]; then
               continue
             fi
 
-            # Check SKILL.md exists (required)
-            if [ ! -f "${dir}SKILL.md" ]; then
-              echo "Error: ${dir}SKILL.md not found (required)"
-              exit 1
-            fi
-            echo "✓ ${dir}SKILL.md found"
+            # Get the directory name (basename)
+            dirname=$(basename "$dir")
 
-            # Check for required frontmatter fields
-            if ! grep -q "^name:" "${dir}SKILL.md"; then
-              echo "Error: ${dir}SKILL.md missing 'name' field"
-              exit 1
-            fi
-            if ! grep -q "^description:" "${dir}SKILL.md"; then
-              echo "Error: ${dir}SKILL.md missing 'description' field"
-              exit 1
+            # Skip resource directories (these are bundled resources, not skills)
+            if [ "$dirname" = "templates" ] || [ "$dirname" = "scripts" ] || \
+               [ "$dirname" = "references" ] || [ "$dirname" = "assets" ]; then
+              echo "Skipping resource directory: $dir"
+              continue
             fi
 
-            # Check reference.md exists (optional)
-            if [ -f "${dir}reference.md" ]; then
-              echo "✓ ${dir}reference.md found"
-            else
-              echo "  ${dir}reference.md not found (optional)"
-            fi
+            # Check if this directory is a leaf (has no subdirectories)
+            subdir_count=$(find "$dir" -mindepth 1 -maxdepth 1 -type d | wc -l)
 
-            # Check examples.md exists (optional)
-            if [ -f "${dir}examples.md" ]; then
-              echo "✓ ${dir}examples.md found"
-            else
-              echo "  ${dir}examples.md not found (optional)"
+            # If it's a leaf directory (no subdirectories), it should have SKILL.md
+            if [ "$subdir_count" -eq 0 ]; then
+              # Check SKILL.md exists (required)
+              if [ ! -f "${dir}/SKILL.md" ]; then
+                echo "Error: ${dir}/SKILL.md not found (required for leaf directory)"
+                exit 1
+              fi
+              echo "✓ ${dir}/SKILL.md found"
+
+              # Check for required frontmatter fields
+              if ! grep -q "^name:" "${dir}/SKILL.md"; then
+                echo "Error: ${dir}/SKILL.md missing 'name' field"
+                exit 1
+              fi
+              if ! grep -q "^description:" "${dir}/SKILL.md"; then
+                echo "Error: ${dir}/SKILL.md missing 'description' field"
+                exit 1
+              fi
+
+              # Check reference.md exists (optional)
+              if [ -f "${dir}/reference.md" ]; then
+                echo "✓ ${dir}/reference.md found"
+              fi
+
+              # Check examples.md exists (optional)
+              if [ -f "${dir}/examples.md" ]; then
+                echo "✓ ${dir}/examples.md found"
+              fi
             fi
           done
 
