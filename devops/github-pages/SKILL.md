@@ -315,7 +315,7 @@ git push
 
 **ステップ2: DNSレコードの設定**
 
-**Apexドメイン（example.com）の場合:**
+**Apexドメイン（`example.com`）の場合:**
 
 DNSプロバイダーでAレコードを設定:
 
@@ -328,7 +328,7 @@ Value: 185.199.108.153
        185.199.111.153
 ```
 
-**サブドメイン（www.example.com）の場合:**
+**サブドメイン（`www.example.com`）の場合:**
 
 CNAMEレコードを設定:
 
