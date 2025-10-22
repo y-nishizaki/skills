@@ -11,11 +11,20 @@
     },
     {
       "pattern": "example\\.org"
+    },
+    {
+      "pattern": "^#%E8%AA%BF%E6%9F%BB"
+    },
+    {
+      "pattern": "^#%E8%A4%87%E9%9B%91"
+    },
+    {
+      "pattern": "^#%E4%B8%A6%E5%88%97"
     }
   ],
   "timeout": "20s",
   "retryOn429": true,
   "retryCount": 3,
   "fallbackRetryDelay": "30s",
-  "aliveStatusCodes": [200, 206, 403]
+  "aliveStatusCodes": [200, 206, 403, 503]
 }
