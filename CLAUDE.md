@@ -7,7 +7,7 @@
 ## スキルの作成
 
 新しいスキルを作成する場合は、**skill-creator スキル**を使用してください。
-詳細な手順とベストプラクティスは [skill-creator/SKILL.md](skill-creator/SKILL.md) を参照してください。
+詳細な手順とベストプラクティスは [skill-creator/SKILL.md](development-tools/skill-creator/SKILL.md) を参照してください。
 
 ## 技術要件
 
@@ -23,4 +23,4 @@
 
 - [README.md](README.md) - リポジトリの概要とクイックスタート
 - [CONTRIBUTING.md](CONTRIBUTING.md) - コントリビューションガイドライン
-- [skill-creator/SKILL.md](skill-creator/SKILL.md) - スキル作成の詳細ガイド
+- [skill-creator/SKILL.md](development-tools/skill-creator/SKILL.md) - スキル作成の詳細ガイド
