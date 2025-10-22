@@ -34,6 +34,7 @@ with mlflow.start_run():
     mlflow.sklearn.log_model(model, "model")
 ```
 
+
 ### 2. モデルデプロイ
 
 ```python
@@ -50,6 +51,7 @@ def predict(features: dict):
     prediction = model.predict(X)
     return {"prediction": prediction.tolist()}
 ```
+
 
 ### 3. データパイプライン
 
@@ -75,6 +77,7 @@ train_model = PythonOperator(
 extract_data >> train_model
 ```
 
+
 ### 4. モニタリング
 
 ```python
@@ -93,6 +96,7 @@ def monitor_model(y_true, y_pred):
     log_metrics(metrics)
 ```
 
+
 ### 5. データドリフト検出
 
 ```python
@@ -108,6 +112,7 @@ for feature in features:
     if p_value < 0.05:
         print(f"Drift detected in {feature}")
 ```
+
 
 ## MLOpsツール
 

@@ -37,9 +37,11 @@ description: "「なぜ？」を問い続ける姿勢。データから洞察を
 根本原因: データ更新プロセスの欠如
 ```
 
+
 ### 2. データに「質問」する
 
 **良い質問の例**:
+
 - 「このセグメントは他と何が違うのか？」
 - 「時系列でどう変化しているか？」
 - 「外れ値は何を意味するのか？」
@@ -63,22 +65,26 @@ df.groupby('region')['sales'].mean()
 df.groupby(['region', 'customer_segment'])['sales'].mean()
 ```
 
+
 ## 仮説思考の実践
 
 ### 1. 仮説の立て方
 
 **良い仮説の条件**:
+
 - 検証可能
 - 具体的
 - 測定可能
 - ビジネス的意味がある
 
 **仮説の例**:
+
 ```
 悪い例: 「売上を増やせるはず」
 良い例: 「20代女性向けの商品ラインを拡充すれば、
         このセグメントの売上が20%増加する」
 ```
+
 
 ### 2. 仮説駆動型分析
 
@@ -103,9 +109,11 @@ t_stat, p_value = ttest_ind(
 plt.boxplot([high_freq['order_value'], low_freq['order_value']])
 ```
 
+
 ### 3. 仮説の反証可能性
 
 **ポパーの反証主義**:
+
 - 仮説は反証可能でなければならない
 - 「〜〜ではない」ことを示せる条件を明確に
 
@@ -119,6 +127,7 @@ plt.boxplot([high_freq['order_value'], low_freq['order_value']])
 
 # これらが観測されたら仮説を棄却
 ```
+
 
 ## 探索的思考の習慣
 
@@ -142,6 +151,7 @@ algo = Ptt(model="rbf").fit(signal)
 result = algo.predict(pen=10)
 ```
 
+
 ### 2. 仮説のリスト化
 
 ```markdown
@@ -163,6 +173,7 @@ result = algo.predict(pen=10)
    - 検証方法: NPSスコア、レビュー分析
    - 優先度: 中
 ```
+
 
 ### 3. 実験的アプローチ
 
@@ -191,6 +202,7 @@ print(f"Morning open rate: {morning_rate:.2%}")
 print(f"Evening open rate: {evening_rate:.2%}")
 ```
 
+
 ## データ探索のベストプラクティス
 
 ### 1. まず可視化
@@ -208,6 +220,7 @@ df.set_index('date')[['sales', 'visitors']].plot(figsize=(15, 5))
 # カテゴリ別比較
 sns.boxplot(data=df, x='category', y='value')
 ```
+
 
 ### 2. 複数の仮説を並行検証
 
@@ -232,9 +245,11 @@ for name, variable in hypotheses.items():
 best_hypothesis = min(results.items(), key=lambda x: x[1]['p_value'])
 ```
 
+
 ### 3. 失敗から学ぶ
 
 **仮説が棄却されたとき**:
+
 - なぜ間違っていたのか？
 - 何を見落としていたのか？
 - 次はどう改善できるか？
@@ -291,6 +306,7 @@ df.groupby('category')['abandoned_due_to_shipping'].mean()
 # 5. 実験
 # 特定カテゴリで送料無料キャンペーンを実施
 ```
+
 
 ## 検証ポイント
 

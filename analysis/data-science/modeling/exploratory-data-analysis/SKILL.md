@@ -32,6 +32,7 @@ df.nunique()
 df['column'].value_counts()
 ```
 
+
 ### 2. 単変量分析
 
 ```python
@@ -57,6 +58,7 @@ df['category'].value_counts().plot(kind='bar')
 df['category'].value_counts().plot(kind='pie')
 ```
 
+
 ### 3. 二変量分析
 
 ```python
@@ -81,6 +83,7 @@ pd.crosstab(df['category1'], df['category2'])
 sns.heatmap(pd.crosstab(df['cat1'], df['cat2']), annot=True)
 ```
 
+
 ### 4. 相関分析
 
 ```python
@@ -99,6 +102,7 @@ print(target_corr)
 sns.pairplot(df[['var1', 'var2', 'var3', 'target']], hue='target')
 ```
 
+
 ### 5. 多変量分析
 
 ```python
@@ -114,6 +118,7 @@ pd.pivot_table(df, values='sales',
 # 複数条件での分析
 df.groupby(['category', 'region'])['sales'].mean().unstack()
 ```
+
 
 ### 6. 時系列分析
 
@@ -135,6 +140,7 @@ decomposition.plot()
 df.groupby(df['date'].dt.dayofweek)['value'].mean().plot(kind='bar')
 ```
 
+
 ### 7. 分布の確認
 
 ```python
@@ -149,6 +155,7 @@ print(f"Kurtosis: {df['value'].kurtosis()}")
 # 複数変数の分布
 df[numeric_cols].hist(figsize=(15, 10), bins=30)
 ```
+
 
 ## 効果的な可視化テクニック
 
@@ -175,6 +182,7 @@ g = sns.FacetGrid(df, col='category', row='region')
 g.map(plt.scatter, 'x', 'y')
 ```
 
+
 ### 複数プロット
 
 ```python
@@ -199,6 +207,7 @@ axes[1, 1].set_title('Value by Category')
 plt.tight_layout()
 ```
 
+
 ## 洞察の抽出
 
 ### パターンの発見
@@ -220,6 +229,7 @@ df.groupby('age_group')['purchase_amount'].agg(['mean', 'median', 'count'])
 df['dayofweek'] = df['date'].dt.day_name()
 df.groupby('dayofweek')['sales'].mean().plot(kind='bar')
 ```
+
 
 ## ベストプラクティス
 

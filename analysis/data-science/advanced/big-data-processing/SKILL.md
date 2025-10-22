@@ -36,6 +36,7 @@ result = df.groupBy("category") \
 result.write.parquet("s3://bucket/results/")
 ```
 
+
 ### 2. Dask（Python）
 
 ```python
@@ -45,6 +46,7 @@ import dask.dataframe as dd
 df = dd.read_csv("data/*.csv")
 result = df.groupby("category")["sales"].sum().compute()
 ```
+
 
 ### 3. BigQuery（Google Cloud）
 
@@ -60,6 +62,7 @@ GROUP BY category
 ORDER BY total_sales DESC
 LIMIT 100
 ```
+
 
 ## ベストプラクティス
 

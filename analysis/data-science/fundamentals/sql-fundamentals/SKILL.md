@@ -31,6 +31,7 @@ SELECT DISTINCT city FROM users;
 SELECT name AS user_name, age AS user_age FROM users;
 ```
 
+
 **WHERE句による条件指定:**
 
 ```sql
@@ -56,6 +57,7 @@ SELECT * FROM users WHERE age BETWEEN 20 AND 30;
 SELECT * FROM users WHERE email IS NOT NULL;
 ```
 
+
 ### フェーズ2: データの並べ替えと制限
 
 ```sql
@@ -69,6 +71,7 @@ SELECT * FROM users LIMIT 10;
 -- OFFSET（スキップ）
 SELECT * FROM users LIMIT 10 OFFSET 20;  -- 21件目から10件
 ```
+
 
 ### フェーズ3: 集計関数（Aggregation）
 
@@ -103,6 +106,7 @@ GROUP BY city
 HAVING COUNT(*) >= 10;
 ```
 
+
 ### フェーズ4: テーブル結合（JOIN）
 
 ```sql
@@ -128,6 +132,7 @@ INNER JOIN orders o ON u.user_id = o.user_id
 INNER JOIN products p ON o.product_id = p.product_id;
 ```
 
+
 ### フェーズ5: サブクエリ
 
 ```sql
@@ -151,6 +156,7 @@ SELECT name, age,
     (SELECT AVG(age) FROM users) as avg_age
 FROM users;
 ```
+
 
 ### フェーズ6: ウィンドウ関数
 
@@ -184,6 +190,7 @@ SELECT order_date, amount,
 FROM orders;
 ```
 
+
 ### フェーズ7: 実務的なクエリ
 
 **日付処理:**
@@ -205,6 +212,7 @@ FROM orders
 GROUP BY DAYOFWEEK(order_date);
 ```
 
+
 **CASE式（条件分岐）:**
 
 ```sql
@@ -217,6 +225,7 @@ SELECT name, age,
     END as age_group
 FROM users;
 ```
+
 
 **文字列操作:**
 
@@ -233,29 +242,35 @@ FROM users;
 SELECT UPPER(name) as name_upper FROM users;
 ```
 
+
 ## 判断のポイント
 
 ### JOINの選択
 
 **INNER JOIN:**
+
 - 両方に存在するデータのみ
 - マスタとトランザクションの結合
 
 **LEFT JOIN:**
+
 - 左テーブルの全データを保持
 - 欠損を許容する場合
 
 **RIGHT JOIN:**
+
 - 右テーブルの全データを保持
 - LEFT JOINの逆
 
 ### GROUP BYの使い分け
 
 **単純集計:**
+
 - COUNT, SUM, AVG
 - カテゴリ別の統計
 
 **ウィンドウ関数:**
+
 - 行ごとの計算が必要
 - ランキング、累積計算
 - 元の行を保持
@@ -263,48 +278,58 @@ SELECT UPPER(name) as name_upper FROM users;
 ### サブクエリ vs JOIN
 
 **サブクエリ:**
+
 - 可読性が高い
 - シンプルな条件
 
 **JOIN:**
+
 - パフォーマンスが良い
 - 複雑な結合
 
 ## よくある落とし穴
 
 1. **SELECT * の多用**
+
    - ❌ すべての列を取得
    - ✅ 必要な列のみ
 
 2. **GROUP BYの誤り**
+
    - ❌ SELECT name, city, COUNT(*)
    - ✅ GROUP BYに非集計列を含める
 
 3. **JOINの重複**
+
    - ❌ 1対多で重複が発生
    - ✅ DISTINCTまたはサブクエリ
 
 4. **NULLの扱い**
+
    - ❌ column = NULL
    - ✅ column IS NULL
 
 5. **インデックスの無視**
+
    - ❌ WHERE句で関数使用
    - ✅ インデックスが効く条件
 
 ## 検証ポイント
 
 ### 基本スキル
+
 - [ ] SELECT, WHERE, ORDER BYを使える
 - [ ] 集計関数を使える
 - [ ] GROUP BYを理解している
 
 ### 応用スキル
+
 - [ ] JOINを適切に使える
 - [ ] サブクエリを書ける
 - [ ] ウィンドウ関数を使える
 
 ### パフォーマンス
+
 - [ ] EXPLAINで実行計画を確認できる
 - [ ] インデックスを意識している
 - [ ] 不要なデータを取得していない
@@ -334,6 +359,7 @@ ORDER BY
     total_amount DESC;
 ```
 
+
 ### パフォーマンス最適化
 
 - インデックスの活用
@@ -359,3 +385,4 @@ FROM users;
 SELECT MIN(created_at), MAX(created_at)
 FROM orders;
 ```
+

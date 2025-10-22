@@ -31,6 +31,7 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 ```
 
+
 ```python
 # Pythonバージョンの記録
 import sys
@@ -42,6 +43,7 @@ import numpy as np
 print(f"pandas: {pd.__version__}")
 print(f"numpy: {np.__version__}")
 ```
+
 
 ### 2. ランダムシードの固定
 
@@ -70,6 +72,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     random_state=RANDOM_SEED  # ここでも指定
 )
 ```
+
 
 ### 3. データのバージョン管理
 
@@ -112,6 +115,7 @@ snapshot_file, meta = create_data_snapshot(
 )
 ```
 
+
 ## コードの可読性
 
 ### 1. クリーンなコード
@@ -127,6 +131,7 @@ filtered_df = df[df['sales'] > 10]
 # カテゴリ別の平均を計算
 category_means = filtered_df.groupby('category')['revenue'].mean()
 ```
+
 
 ### 2. 関数化
 
@@ -162,6 +167,7 @@ def run_analysis():
 # 実行
 result = run_analysis()
 ```
+
 
 ### 3. ドキュメンテーション
 
@@ -210,6 +216,7 @@ def calculate_customer_lifetime_value(
     return clv
 ```
 
+
 ## Jupyter Notebookのベストプラクティス
 
 ### 1. 構造化されたNotebook
@@ -224,6 +231,7 @@ def calculate_customer_lifetime_value(
 ## 2. データの読み込みと確認
 ```
 
+
 ```python
 # データ読み込み
 df = pd.read_csv('customer_data.csv')
@@ -234,6 +242,7 @@ df.info()
 df.head()
 ```
 
+
 ```markdown
 ## 3. データクリーニング
 
@@ -241,6 +250,7 @@ df.head()
 - age: 中央値で補完
 - income: 削除（欠損率が高いため）
 ```
+
 
 ### 2. セルの適切な分割
 
@@ -271,6 +281,7 @@ plt.title('Category Means')
 plt.show()
 ```
 
+
 ### 3. 出力の管理
 
 ```python
@@ -285,6 +296,7 @@ print(df.head())
 print("\nLast 5 rows:")
 print(df.tail())
 ```
+
 
 ## 分析の記録
 
@@ -325,6 +337,7 @@ except Exception as e:
 logger.info("Analysis completed successfully")
 ```
 
+
 ### 2. 決定の記録
 
 ```python
@@ -355,6 +368,7 @@ with open('analysis_decisions.json', 'w') as f:
     json.dump(ANALYSIS_DECISIONS, f, indent=2, ensure_ascii=False)
 ```
 
+
 ## 結果の共有
 
 ### 1. README の作成
@@ -376,17 +390,23 @@ with open('analysis_decisions.json', 'w') as f:
 
 ### 環境構築
 ```bash
+
 pip install -r requirements.txt
+
 ```
 
 ### 分析実行
 ```bash
+
 python main.py --config config.yaml
+
 ```
 
 ### Jupyter Notebookで確認
 ```bash
+
 jupyter notebook analysis.ipynb
+
 ```
 
 ## 結果
@@ -396,6 +416,7 @@ jupyter notebook analysis.ipynb
 
 ## ファイル構成
 ```
+
 .
 ├── README.md
 ├── requirements.txt
@@ -414,11 +435,13 @@ jupyter notebook analysis.ipynb
 │   └── figures/
 └── tests/
     └── test_processing.py
+
 ```
 
 ## 連絡先
 Data Science Team <ds-team@example.com>
 ```
+
 
 ### 2. コードのテスト
 
@@ -462,6 +485,7 @@ if __name__ == '__main__':
     unittest.main()
 ```
 
+
 ## バージョン管理
 
 ### 1. Git の活用
@@ -483,6 +507,7 @@ git commit -m "Add feature: customer segmentation analysis
 - Update README with usage instructions"
 ```
 
+
 ### 2. プルリクエストテンプレート
 
 ```markdown
@@ -503,6 +528,7 @@ git commit -m "Add feature: customer segmentation analysis
 - [ ] Linterを実行
 - [ ] テストが通ることを確認
 ```
+
 
 ## ベストプラクティス
 

@@ -17,12 +17,14 @@ description: "データ利用の法的・倫理的ルール。責任あるAIの�
 ### 1. 個人情報の取り扱い
 
 **日本の法律**: 個人情報保護法
+
 - 個人を識別できる情報
 - 取得時の利用目的明示
 - 本人同意の原則
 - 安全管理措置
 
 **GDPR（EU）**:
+
 - データの最小化
 - 忘れられる権利
 - データポータビリティ
@@ -49,6 +51,7 @@ counts = df.groupby(quasi_identifiers).size()
 print(f"Minimum k: {counts.min()}")
 ```
 
+
 ### 3. 差分プライバシー
 
 ```python
@@ -68,16 +71,19 @@ true_count = 1000
 private_count = add_laplace_noise(true_count, sensitivity=1, epsilon=0.1)
 ```
 
+
 ## 公平性とバイアス
 
 ### 1. バイアスの種類
 
 **データバイアス**:
+
 - 選択バイアス
 - 測定バイアス
 - 歴史的バイアス
 
 **アルゴリズムバイアス**:
+
 - 特定グループへの不公平な扱い
 - フィードバックループ
 
@@ -117,6 +123,7 @@ print(f"Demographic parity ratio: {ratio:.2f}")
 # 1.0に近いほど公平
 ```
 
+
 ### 3. バイアスの軽減
 
 ```python
@@ -137,6 +144,7 @@ for group in ['A', 'B']:
     # グループごとに最適な閾値を決定
     thresholds[group] = find_optimal_threshold(y_test[mask], y_pred_proba[mask])
 ```
+
 
 ## データガバナンス
 
@@ -160,6 +168,7 @@ dataset:
     - role: "ml-engineer"
       permission: "read-write"
 ```
+
 
 ### 2. データアクセス管理
 
@@ -188,6 +197,7 @@ def delete_expired_data(table_name, date_column):
     execute_query(query)
 ```
 
+
 ## 透明性と説明可能性
 
 ### 1. モデルの説明
@@ -204,6 +214,7 @@ shap.force_plot(explainer.expected_value, shap_values[0], X_test.iloc[0])
 # 全体的な特徴量重要度
 shap.summary_plot(shap_values, X_test)
 ```
+
 
 ### 2. モデルカード
 
@@ -242,6 +253,7 @@ shap.summary_plot(shap_values, X_test)
 - 年齢・性別によるバイアス: 確認済み（公平性指標 0.95）
 - プライバシー: 個人識別情報は使用せず
 ```
+
 
 ## 責任あるAIの実践
 
@@ -285,6 +297,7 @@ def fairness_monitoring(model, X, y, sensitive_attr):
 # 週次で実行
 schedule.every().week.do(lambda: fairness_monitoring(model, X_prod, y_prod, sensitive))
 ```
+
 
 ## ベストプラクティス
 

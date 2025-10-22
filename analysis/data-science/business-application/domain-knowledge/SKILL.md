@@ -17,17 +17,20 @@ description: "業界特有のデータ構造・指標の理解。専門的な洞
 ### 1. 業界の基礎理解
 
 **ビジネスモデル**
+
 - 収益構造
 - 顧客セグメント
 - 価値提供
 - コスト構造
 
 **業界特有の用語**
+
 - 専門用語集の作成
 - 略語の理解
 - KPIの意味
 
 **規制・法律**
+
 - 業界規制
 - データ利用制限
 - コンプライアンス
@@ -35,18 +38,21 @@ description: "業界特有のデータ構造・指標の理解。専門的な洞
 ### 2. 学習方法
 
 **社内リソース**
+
 - 営業・マーケチームとの対話
 - 社内ドキュメント
 - 過去のプロジェクト
 - 社内トレーニング
 
 **外部リソース**
+
 - 業界レポート
 - 専門書・論文
 - セミナー・カンファレンス
 - オンラインコース
 
 **実践**
+
 - プロダクトを使ってみる
 - 顧客の視点で体験
 - 競合分析
@@ -71,6 +77,7 @@ rfm = df.groupby('customer_id').agg({
 })
 ```
 
+
 ### SaaS
 
 ```python
@@ -83,6 +90,7 @@ ltv_cac_ratio = lifetime_value / customer_acquisition_cost
 # コホート分析
 cohort = df.groupby(['cohort_month', 'month_number'])['retained'].mean()
 ```
+
 
 ### 金融
 
@@ -97,6 +105,7 @@ value_at_risk = np.percentile(returns, 5)  # 95% VaR
 sharpe_ratio = (return - risk_free_rate) / std_dev
 ```
 
+
 ### 医療・ヘルスケア
 
 ```python
@@ -109,6 +118,7 @@ bed_occupancy_rate = occupied_beds / total_beds
 sensitivity = true_positives / (true_positives + false_negatives)
 specificity = true_negatives / (true_negatives + false_positives)
 ```
+
 
 ## ドメイン知識の活用
 
@@ -125,6 +135,7 @@ df['is_holiday_season'] = df['month'].isin([11, 12])
 df['day_of_week'] = df['date'].dt.dayofweek
 df['is_payday'] = df['date'].dt.day.isin([15, 25])
 ```
+
 
 ### 2. 異常値の判断
 
@@ -146,6 +157,7 @@ invalid_vitals = df[
     (df['body_temp'] < 30)
 ]
 ```
+
 
 ### 3. ビジネスルールの実装
 
@@ -175,16 +187,19 @@ def calculate_churn_risk(df):
 df['churn_risk_score'] = df.apply(calculate_churn_risk, axis=1)
 ```
 
+
 ## ドメインエキスパートとの協働
 
 ### 1. 効果的な質問
 
 **理解のための質問**:
+
 - 「この指標はなぜ重要ですか？」
 - 「通常の範囲はどれくらいですか？」
 - 「季節性はありますか？」
 
 **検証のための質問**:
+
 - 「この結果は妥当ですか？」
 - 「想定外の点はありますか？」
 - 「これは実装可能ですか？」
