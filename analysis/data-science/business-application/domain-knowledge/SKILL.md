@@ -77,7 +77,6 @@ rfm = df.groupby('customer_id').agg({
 })
 ```
 
-
 ### SaaS
 
 ```python
@@ -90,7 +89,6 @@ ltv_cac_ratio = lifetime_value / customer_acquisition_cost
 # コホート分析
 cohort = df.groupby(['cohort_month', 'month_number'])['retained'].mean()
 ```
-
 
 ### 金融
 
@@ -105,7 +103,6 @@ value_at_risk = np.percentile(returns, 5)  # 95% VaR
 sharpe_ratio = (return - risk_free_rate) / std_dev
 ```
 
-
 ### 医療・ヘルスケア
 
 ```python
@@ -118,7 +115,6 @@ bed_occupancy_rate = occupied_beds / total_beds
 sensitivity = true_positives / (true_positives + false_negatives)
 specificity = true_negatives / (true_negatives + false_positives)
 ```
-
 
 ## ドメイン知識の活用
 
@@ -135,7 +131,6 @@ df['is_holiday_season'] = df['month'].isin([11, 12])
 df['day_of_week'] = df['date'].dt.dayofweek
 df['is_payday'] = df['date'].dt.day.isin([15, 25])
 ```
-
 
 ### 2. 異常値の判断
 
@@ -157,7 +152,6 @@ invalid_vitals = df[
     (df['body_temp'] < 30)
 ]
 ```
-
 
 ### 3. ビジネスルールの実装
 
@@ -186,7 +180,6 @@ def calculate_churn_risk(df):
 
 df['churn_risk_score'] = df.apply(calculate_churn_risk, axis=1)
 ```
-
 
 ## ドメインエキスパートとの協働
 

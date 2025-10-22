@@ -33,7 +33,6 @@ plt.ylabel('Actual')
 print(classification_report(y_test, y_pred))
 ```
 
-
 ### 2. 主要な指標
 
 ```python
@@ -57,7 +56,6 @@ print(f"Recall: {recall:.3f}")
 print(f"F1: {f1:.3f}")
 ```
 
-
 ### 3. ROC曲線とAUC
 
 ```python
@@ -79,7 +77,6 @@ plt.title('ROC Curve')
 plt.legend()
 ```
 
-
 ### 4. Precision-Recall曲線
 
 ```python
@@ -94,7 +91,6 @@ plt.ylabel('Precision')
 plt.title('Precision-Recall Curve')
 plt.legend()
 ```
-
 
 ### 5. 閾値の最適化
 
@@ -120,7 +116,6 @@ plt.ylabel('F1 Score')
 plt.axvline(optimal_threshold, color='r', linestyle='--')
 ```
 
-
 ### 6. 多クラス分類の評価
 
 ```python
@@ -138,7 +133,6 @@ print(classification_report(y_test, y_pred))
 from sklearn.metrics import roc_auc_score
 auc = roc_auc_score(y_test, y_pred_proba, multi_class='ovr')
 ```
-
 
 ## 回帰モデルの評価
 
@@ -171,7 +165,6 @@ print(f"R²: {r2:.3f}")
 print(f"Adjusted R²: {adj_r2:.3f}")
 ```
 
-
 ### 2. 残差分析
 
 ```python
@@ -195,7 +188,6 @@ from scipy import stats
 stats.probplot(residuals, dist="norm", plot=plt)
 ```
 
-
 ### 3. 予測値vs実測値
 
 ```python
@@ -211,7 +203,6 @@ plt.title('Predicted vs Actual')
 correlation = np.corrcoef(y_test, y_pred)[0, 1]
 print(f"Correlation: {correlation:.3f}")
 ```
-
 
 ## クラスタリングの評価
 
@@ -238,7 +229,6 @@ for i in range(n_clusters):
     )
 ```
 
-
 ### 2. その他の指標
 
 ```python
@@ -253,7 +243,6 @@ ch_score = calinski_harabasz_score(X, clusters)
 print(f"Davies-Bouldin: {db_score:.3f}")
 print(f"Calinski-Harabasz: {ch_score:.3f}")
 ```
-
 
 ## モデル比較
 
@@ -285,7 +274,6 @@ for name, cv_results in results.items():
     print(f"  Test AUC: {cv_results['test_roc_auc'].mean():.3f}")
 ```
 
-
 ### 2. 学習曲線
 
 ```python
@@ -315,7 +303,6 @@ plt.ylabel('Score')
 plt.legend()
 ```
 
-
 ### 3. 検証曲線
 
 ```python
@@ -342,7 +329,6 @@ plt.ylabel('Score')
 plt.legend()
 ```
 
-
 ## ビジネス指標との連携
 
 ```python
@@ -366,7 +352,6 @@ for threshold in [0.3, 0.5, 0.7]:
     value = business_value(y_test, y_pred)
     print(f"Threshold {threshold}: ¥{value:,}")
 ```
-
 
 ## ベストプラクティス
 

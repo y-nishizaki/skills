@@ -38,7 +38,6 @@ estimator = Estimator(
 estimator.fit({'training': 's3://bucket/data'})
 ```
 
-
 ### GCP
 
 ```python
@@ -57,7 +56,6 @@ from google.cloud import aiplatform
 aiplatform.init(project="my-project")
 ```
 
-
 ### Azure
 
 ```python
@@ -67,7 +65,6 @@ from azureml.core import Workspace, Experiment
 ws = Workspace.from_config()
 experiment = Experiment(workspace=ws, name="my-experiment")
 ```
-
 
 ## 主要サービス
 

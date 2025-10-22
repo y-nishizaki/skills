@@ -69,7 +69,6 @@ app.layout = html.Div([
 ])
 ```
 
-
 ### 4. インタラクティブ可視化
 
 ```python
@@ -97,7 +96,6 @@ fig.update_layout(
 fig.show()
 ```
 
-
 ## ストーリーテリング
 
 ### 1. ストーリー構造
@@ -117,7 +115,6 @@ fig.show()
 3. 発見: 「新規ユーザーの初回体験に問題」
 4. 提案: 「オンボーディングを改善することで10%改善可能」
 ```
-
 
 ### 3. Three Numbers Rule
 
@@ -143,7 +140,6 @@ ax2.set_ylabel('Users')
 
 plt.suptitle('オンボーディング改善の効果', fontsize=16)
 ```
-
 
 ## ツールの活用
 
@@ -183,7 +179,6 @@ px.scatter(df, x='x', y='y', size='size', color='category')
 import altair as alt
 alt.Chart(df).mark_bar().encode(x='category', y='value')
 ```
-
 
 ## プレゼンテーション
 

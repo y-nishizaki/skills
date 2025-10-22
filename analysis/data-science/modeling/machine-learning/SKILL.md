@@ -39,7 +39,6 @@ r2 = r2_score(y_test, y_pred)
 print(f"MSE: {mse:.3f}, R²: {r2:.3f}")
 ```
 
-
 ### 2. ロジスティック回帰
 
 ```python
@@ -58,7 +57,6 @@ accuracy = accuracy_score(y_test, y_pred)
 auc = roc_auc_score(y_test, y_pred_proba)
 print(f"Accuracy: {accuracy:.3f}, AUC: {auc:.3f}")
 ```
-
 
 ### 3. 決定木
 
@@ -79,7 +77,6 @@ importances = pd.Series(
 ).sort_values(ascending=False)
 ```
 
-
 ### 4. ランダムフォレスト
 
 ```python
@@ -96,7 +93,6 @@ model.fit(X_train, y_train)
 # OOB（Out-of-Bag）スコア
 print(f"OOB Score: {model.oob_score_:.3f}")
 ```
-
 
 ### 5. 勾配ブースティング
 
@@ -118,7 +114,6 @@ model.fit(X_train, y_train,
 y_pred = model.predict(X_test)
 ```
 
-
 ### 6. サポートベクターマシン（SVM）
 
 ```python
@@ -134,7 +129,6 @@ model = SVC(
 model.fit(X_train, y_train)
 ```
 
-
 ### 7. k近傍法（k-NN）
 
 ```python
@@ -146,7 +140,6 @@ model = KNeighborsClassifier(
 )
 model.fit(X_train, y_train)
 ```
-
 
 ## 教師なし学習
 
@@ -171,7 +164,6 @@ kmeans = KMeans(n_clusters=3, random_state=42)
 clusters = kmeans.fit_predict(X)
 ```
 
-
 ### 2. 階層的クラスタリング
 
 ```python
@@ -187,7 +179,6 @@ model = AgglomerativeClustering(n_clusters=3)
 clusters = model.fit_predict(X)
 ```
 
-
 ### 3. 主成分分析（PCA）
 
 ```python
@@ -202,7 +193,6 @@ cumsum = np.cumsum(pca.explained_variance_ratio_)
 pca = PCA(n_components=0.95)  # 95%の分散を保持
 X_reduced = pca.fit_transform(X)
 ```
-
 
 ## ハイパーパラメータチューニング
 
@@ -230,7 +220,6 @@ print(f"Best params: {grid_search.best_params_}")
 print(f"Best score: {grid_search.best_score_:.3f}")
 ```
 
-
 ### 2. ランダムサーチ
 
 ```python
@@ -255,7 +244,6 @@ random_search = RandomizedSearchCV(
 random_search.fit(X_train, y_train)
 ```
 
-
 ### 3. ベイズ最適化
 
 ```python
@@ -278,7 +266,6 @@ bayes_search = BayesSearchCV(
 )
 bayes_search.fit(X_train, y_train)
 ```
-
 
 ## 交差検証
 
@@ -305,7 +292,6 @@ tscv = TimeSeriesSplit(n_splits=5)
 scores = cross_val_score(model, X, y, cv=tscv)
 ```
 
-
 ## アンサンブル学習
 
 ### 1. バギング
@@ -320,7 +306,6 @@ model = BaggingClassifier(
 )
 model.fit(X_train, y_train)
 ```
-
 
 ### 2. スタッキング
 
@@ -340,7 +325,6 @@ stacking_model = StackingClassifier(
 stacking_model.fit(X_train, y_train)
 ```
 
-
 ### 3. ブレンディング
 
 ```python
@@ -357,7 +341,6 @@ final_pred = (
     weights[2] * model3_pred
 )
 ```
-
 
 ## ベストプラクティス
 

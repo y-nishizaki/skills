@@ -28,7 +28,6 @@ required_n = tt_ind_solve_power(
 print(f"Required sample size per group: {int(required_n)}")
 ```
 
-
 ### 2. ランダム割り当て
 
 ```python
@@ -37,7 +36,6 @@ import numpy as np
 np.random.seed(42)
 df['group'] = np.random.choice(['A', 'B'], size=len(df), p=[0.5, 0.5])
 ```
-
 
 ### 3. 分析
 
@@ -56,7 +54,6 @@ print(f"p-value: {p_value:.4f}")
 print(f"Effect size: {cohens_d:.3f}")
 ```
 
-
 ## 準実験デザイン
 
 ### 1. 差分の差分法（DID）
@@ -73,7 +70,6 @@ model = smf.ols(
 did_effect = model.params['treated:post']
 print(f"DID Effect: {did_effect:.3f}")
 ```
-
 
 ### 2. 傾向スコアマッチング
 
@@ -94,7 +90,6 @@ knn.fit(control[['propensity_score']])
 matches = knn.kneighbors(treated[['propensity_score']])
 ```
 
-
 ### 3. 回帰不連続デザイン（RDD）
 
 ```python
@@ -110,7 +105,6 @@ model = smf.ols(
 
 rdd_effect = model.params['above']
 ```
-
 
 ## 因果推論のフレームワーク
 
@@ -135,7 +129,6 @@ estimate = model.estimate_effect(identified_estimand)
 print(estimate)
 ```
 
-
 ### 2. 媒介分析
 
 ```python
@@ -151,7 +144,6 @@ direct_model = OLS(outcome, [treatment, mediator]).fit()
 # Indirect effect
 indirect_effect = total_effect - direct_effect
 ```
-
 
 ## 実験デザインの原則
 
@@ -172,7 +164,6 @@ for var in covariates:
     )
     print(f"{var}: p={p_value:.3f}")
 ```
-
 
 ### 3. サンプルサイズ
 

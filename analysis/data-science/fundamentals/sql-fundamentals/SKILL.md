@@ -31,7 +31,6 @@ SELECT DISTINCT city FROM users;
 SELECT name AS user_name, age AS user_age FROM users;
 ```
 
-
 **WHERE句による条件指定:**
 
 ```sql
@@ -57,7 +56,6 @@ SELECT * FROM users WHERE age BETWEEN 20 AND 30;
 SELECT * FROM users WHERE email IS NOT NULL;
 ```
 
-
 ### フェーズ2: データの並べ替えと制限
 
 ```sql
@@ -71,7 +69,6 @@ SELECT * FROM users LIMIT 10;
 -- OFFSET（スキップ）
 SELECT * FROM users LIMIT 10 OFFSET 20;  -- 21件目から10件
 ```
-
 
 ### フェーズ3: 集計関数（Aggregation）
 
@@ -106,7 +103,6 @@ GROUP BY city
 HAVING COUNT(*) >= 10;
 ```
 
-
 ### フェーズ4: テーブル結合（JOIN）
 
 ```sql
@@ -132,7 +128,6 @@ INNER JOIN orders o ON u.user_id = o.user_id
 INNER JOIN products p ON o.product_id = p.product_id;
 ```
 
-
 ### フェーズ5: サブクエリ
 
 ```sql
@@ -156,7 +151,6 @@ SELECT name, age,
     (SELECT AVG(age) FROM users) as avg_age
 FROM users;
 ```
-
 
 ### フェーズ6: ウィンドウ関数
 
@@ -190,7 +184,6 @@ SELECT order_date, amount,
 FROM orders;
 ```
 
-
 ### フェーズ7: 実務的なクエリ
 
 **日付処理:**
@@ -212,7 +205,6 @@ FROM orders
 GROUP BY DAYOFWEEK(order_date);
 ```
 
-
 **CASE式（条件分岐）:**
 
 ```sql
@@ -225,7 +217,6 @@ SELECT name, age,
     END as age_group
 FROM users;
 ```
-
 
 **文字列操作:**
 
@@ -241,7 +232,6 @@ FROM users;
 -- UPPER / LOWER（大文字・小文字）
 SELECT UPPER(name) as name_upper FROM users;
 ```
-
 
 ## 判断のポイント
 
@@ -359,7 +349,6 @@ ORDER BY
     total_amount DESC;
 ```
 
-
 ### パフォーマンス最適化
 
 - インデックスの活用
@@ -385,4 +374,3 @@ FROM users;
 SELECT MIN(created_at), MAX(created_at)
 FROM orders;
 ```
-

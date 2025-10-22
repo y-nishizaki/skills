@@ -39,7 +39,6 @@ def preprocess_text(text):
     return ' '.join(tokens)
 ```
 
-
 ### 2. ベクトル化
 
 ```python
@@ -63,7 +62,6 @@ inputs = tokenizer(text, return_tensors='pt')
 outputs = model(**inputs)
 ```
 
-
 ### 3. NLPタスク
 
 ```python
@@ -84,7 +82,6 @@ summary = summarizer(long_text, max_length=130, min_length=30)
 qa = pipeline('question-answering')
 answer = qa(question="Who founded Apple?", context=text)
 ```
-
 
 ## 画像認識（Computer Vision）
 
@@ -115,7 +112,6 @@ datagen = ImageDataGenerator(
 )
 ```
 
-
 ### 2. 画像分類
 
 ```python
@@ -136,7 +132,6 @@ preds = model.predict(x)
 predictions = decode_predictions(preds, top=3)[0]
 ```
 
-
 ### 3. 物体検出
 
 ```python
@@ -154,7 +149,6 @@ results.show()
 boxes = results.xyxy[0]  # x1, y1, x2, y2, confidence, class
 ```
 
-
 ### 4. セグメンテーション
 
 ```python
@@ -170,7 +164,6 @@ cfg.MODEL.WEIGHTS = model_zoo.get_checkpoint_url("COCO-InstanceSegmentation/mask
 predictor = DefaultPredictor(cfg)
 outputs = predictor(image)
 ```
-
 
 ## 転移学習
 
@@ -196,7 +189,6 @@ model = models.Sequential([
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 model.fit(train_data, epochs=10)
 ```
-
 
 ### 2. 事前学習モデルの活用
 

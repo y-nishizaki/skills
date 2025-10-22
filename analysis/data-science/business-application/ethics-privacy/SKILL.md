@@ -51,7 +51,6 @@ counts = df.groupby(quasi_identifiers).size()
 print(f"Minimum k: {counts.min()}")
 ```
 
-
 ### 3. 差分プライバシー
 
 ```python
@@ -70,7 +69,6 @@ def add_laplace_noise(value, sensitivity, epsilon):
 true_count = 1000
 private_count = add_laplace_noise(true_count, sensitivity=1, epsilon=0.1)
 ```
-
 
 ## 公平性とバイアス
 
@@ -123,7 +121,6 @@ print(f"Demographic parity ratio: {ratio:.2f}")
 # 1.0に近いほど公平
 ```
 
-
 ### 3. バイアスの軽減
 
 ```python
@@ -144,7 +141,6 @@ for group in ['A', 'B']:
     # グループごとに最適な閾値を決定
     thresholds[group] = find_optimal_threshold(y_test[mask], y_pred_proba[mask])
 ```
-
 
 ## データガバナンス
 
@@ -168,7 +164,6 @@ dataset:
     - role: "ml-engineer"
       permission: "read-write"
 ```
-
 
 ### 2. データアクセス管理
 
@@ -197,7 +192,6 @@ def delete_expired_data(table_name, date_column):
     execute_query(query)
 ```
 
-
 ## 透明性と説明可能性
 
 ### 1. モデルの説明
@@ -214,7 +208,6 @@ shap.force_plot(explainer.expected_value, shap_values[0], X_test.iloc[0])
 # 全体的な特徴量重要度
 shap.summary_plot(shap_values, X_test)
 ```
-
 
 ### 2. モデルカード
 
@@ -253,7 +246,6 @@ shap.summary_plot(shap_values, X_test)
 - 年齢・性別によるバイアス: 確認済み（公平性指標 0.95）
 - プライバシー: 個人識別情報は使用せず
 ```
-
 
 ## 責任あるAIの実践
 
@@ -297,7 +289,6 @@ def fairness_monitoring(model, X, y, sensitive_attr):
 # 週次で実行
 schedule.every().week.do(lambda: fairness_monitoring(model, X_prod, y_prod, sensitive))
 ```
-
 
 ## ベストプラクティス
 

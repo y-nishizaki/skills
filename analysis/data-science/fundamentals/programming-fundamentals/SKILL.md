@@ -59,7 +59,6 @@ arange = np.arange(0, 10, 2)  # 0から10まで2刻み
 linspace = np.linspace(0, 1, 5)  # 0から1まで5等分
 ```
 
-
 **2. 配列操作**
 
 - [ ] shape: 配列の形状
@@ -90,7 +89,6 @@ arr[::2]  # 2個おき
 arr[arr > 3]  # 3より大きい要素
 ```
 
-
 **移行条件:**
 
 - [ ] NumPy配列を作成・操作できる
@@ -120,7 +118,6 @@ df = pd.read_csv('data.csv')
 df = pd.read_excel('data.xlsx')
 ```
 
-
 **2. データの確認**
 
 - [ ] head(): 先頭数行
@@ -144,7 +141,6 @@ df['adult'] = df['age'] >= 20
 df.drop('city', axis=1, inplace=True)
 ```
 
-
 **ステップ2: データフィルタリングと集計**
 
 **1. 行のフィルタリング**
@@ -162,7 +158,6 @@ df[df['city'].isin(['Tokyo', 'Osaka'])]
 # 文字列フィルタ
 df[df['name'].str.contains('A')]
 ```
-
 
 **2. グループ化と集計**
 
@@ -183,7 +178,6 @@ pd.pivot_table(df,
                aggfunc='mean')
 ```
 
-
 **3. ソートとランキング**
 
 ```python
@@ -196,7 +190,6 @@ df.sort_values(['city', 'age'])
 # ランキング
 df['rank'] = df['age'].rank()
 ```
-
 
 **ステップ3: データ結合と変換**
 
@@ -211,7 +204,6 @@ pd.merge(df1, df2, on='key', how='left')
 pd.concat([df1, df2], axis=0)  # 縦方向
 pd.concat([df1, df2], axis=1)  # 横方向
 ```
-
 
 **2. データ変換**
 
@@ -232,7 +224,6 @@ df['age'] = df['age'].astype(int)
 df['date'] = pd.to_datetime(df['date'])
 ```
 
-
 **3. 欠損値処理**
 
 ```python
@@ -249,7 +240,6 @@ df['age'].fillna(df['age'].mean())
 # 前方補完・後方補完
 df.fillna(method='ffill')
 ```
-
 
 **移行条件:**
 
@@ -285,7 +275,6 @@ plt.hist(data, bins=20)
 plt.show()
 ```
 
-
 **ステップ2: 複数プロットとカスタマイズ**
 
 ```python
@@ -308,7 +297,6 @@ plt.plot(x, y,
 plt.legend()
 plt.grid(True)
 ```
-
 
 **移行条件:**
 
@@ -340,7 +328,6 @@ sns.violinplot(x='category', y='value', data=df)
 sns.heatmap(df.corr(), annot=True, cmap='coolwarm')
 ```
 
-
 **ステップ2: 高度な可視化**
 
 ```python
@@ -357,7 +344,6 @@ sns.catplot(x='category',
 # 分布プロット
 sns.displot(df, x='value', hue='category', kind='kde')
 ```
-
 
 **移行条件:**
 
@@ -386,7 +372,6 @@ df['result'] = df['value'].apply(lambda x: x * 2)
 df['result'] = df['value'] * 2
 ```
 
-
 **ステップ2: メモリ効率**
 
 ```python
@@ -399,7 +384,6 @@ for chunk in chunks:
 df['int_col'] = df['int_col'].astype('int32')
 df['cat_col'] = df['cat_col'].astype('category')
 ```
-
 
 **ステップ3: コードの可読性**
 
@@ -421,7 +405,6 @@ def calculate_stats(df):
 
 result = df.pipe(filter_age).pipe(calculate_stats)
 ```
-
 
 **移行条件:**
 

@@ -24,7 +24,6 @@ When（いつまでに）解決が必要か？
 How much（どれくらい）改善が必要か？
 ```
 
-
 ### 2. データ問題への変換
 
 **ビジネス課題 → データの問い**
@@ -68,7 +67,6 @@ cart_abandonment_rate = abandoned_carts / carts_created
 return_rate = returns / orders
 ```
 
-
 ### 2. KPIの分解
 
 ```
@@ -78,7 +76,6 @@ return_rate = returns / orders
 コンバージョン率 = カート追加率 × 購入完了率
 平均購入単価 = 商品単価 × 購入個数
 ```
-
 
 ### 3. KPIダッシュボード設計
 
@@ -102,7 +99,6 @@ return_rate = returns / orders
 - データ更新頻度: 1日1回
 ```
 
-
 ### 2. ビジネス指標
 
 ```python
@@ -118,7 +114,6 @@ return_rate = returns / orders
 - NPS: +10ポイント改善
 - 解約率: 5%→3%に低減
 ```
-
 
 ## ステークホルダー管理
 

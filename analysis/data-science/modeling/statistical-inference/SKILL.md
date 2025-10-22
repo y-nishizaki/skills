@@ -30,7 +30,6 @@ if p_value < 0.05:
     print("統計的に有意な差がある")
 ```
 
-
 ### 2. 主要な検定手法
 
 ```python
@@ -50,7 +49,6 @@ u_stat, p_value = stats.mannwhitneyu(group_a, group_b)
 # ウィルコクソン符号順位検定
 w_stat, p_value = stats.wilcoxon(before, after)
 ```
-
 
 ### 3. 信頼区間
 
@@ -79,7 +77,6 @@ n = 100  # 試行回数
 ci = proportion_confint(count, n, method='wilson')
 ```
 
-
 ### 4. 効果量
 
 ```python
@@ -101,7 +98,6 @@ elif abs(d) < 0.5:
 else:
     print("大きい効果")
 ```
-
 
 ### 5. A/Bテスト
 
@@ -127,7 +123,6 @@ print(f"リフト: {lift:.2f}%")
 print(f"p値: {p_value:.4f}")
 ```
 
-
 ### 6. サンプルサイズ設計
 
 ```python
@@ -144,7 +139,6 @@ required_n = tt_ind_solve_power(
 
 print(f"必要サンプルサイズ: {int(required_n)} (各群)")
 ```
-
 
 ### 7. 多重検定の補正
 
@@ -171,7 +165,6 @@ rejected, p_adjusted, _, _ = multipletests(
 print(f"調整後p値: {p_adjusted}")
 print(f"棄却された帰無仮説: {rejected}")
 ```
-
 
 ## 因果推論の基礎
 
@@ -203,7 +196,6 @@ def match_by_propensity(df, propensity_scores, caliper=0.1):
     return matched_df
 ```
 
-
 ### 2. 差分の差分法（DID）
 
 ```python
@@ -218,7 +210,6 @@ print(model.summary())
 did_effect = model.params['treated:time']
 print(f"DID効果: {did_effect:.3f}")
 ```
-
 
 ### 3. 回帰不連続デザイン（RDD）
 
@@ -236,7 +227,6 @@ model = smf.ols(
 rdd_effect = model.params['above_cutoff']
 print(f"RDD効果: {rdd_effect:.3f}")
 ```
-
 
 ## ベストプラクティス
 

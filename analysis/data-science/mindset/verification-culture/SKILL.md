@@ -38,7 +38,6 @@ ASSUMPTIONS = {
 # ドキュメントに残す
 ```
 
-
 ### 3. 再現可能な分析
 
 ```python
@@ -63,7 +62,6 @@ result = analyze(df)
 result.to_csv(f'result_{datetime.now():%Y%m%d}.csv')
 ```
 
-
 ## 証拠に基づく意思決定
 
 ### 1. HiPPO（Highest Paid Person's Opinion）を避ける
@@ -87,7 +85,6 @@ print(comparison)
 run_ab_test(plan_a, plan_b, duration=14)
 ```
 
-
 ### 2. 確証バイアスへの対処
 
 ```python
@@ -108,7 +105,6 @@ print(f"Negative feedback rate: {len(negative_feedback) / len(df):.1%}")
 print("\nCommon complaints:")
 print(negative_feedback['comment'].value_counts().head())
 ```
-
 
 ### 3. 小さく試して学ぶ
 
@@ -132,7 +128,6 @@ else:
     print("Pilot failed. Analyzing reasons...")
     analyze_failure(pilot_result)
 ```
-
 
 ## 測定と評価
 
@@ -159,7 +154,6 @@ metrics = {
     ]
 }
 ```
-
 
 ### 2. ベースラインの確立
 
@@ -195,7 +189,6 @@ print(f"\nImprovement:")
 print(improvement)
 ```
 
-
 ### 3. 統計的有意性の確認
 
 ```python
@@ -215,7 +208,6 @@ if p_value < 0.05:
 else:
     print(f"No significant difference (p={p_value:.4f})")
 ```
-
 
 ## 実験と学習
 
@@ -244,7 +236,6 @@ experiment_log = {
 # データベースに保存
 save_experiment_log(experiment_log)
 ```
-
 
 ### 2. ポストモーテム（事後分析）
 
@@ -278,7 +269,6 @@ save_experiment_log(experiment_log)
 - A/Bテストを並行実施
 ```
 
-
 ## 組織への浸透
 
 ### 1. データリテラシーの向上
@@ -310,7 +300,6 @@ app.layout = html.Div([
     html.Div(id='alerts', children=generate_alerts(df))
 ])
 ```
-
 
 ### 2. 意思決定プロセスの標準化
 
@@ -347,7 +336,6 @@ app.layout = html.Div([
 - 定期的なレビュー
 - 必要に応じて修正
 ```
-
 
 ### 3. 透明性の確保
 
@@ -390,7 +378,6 @@ def create_analysis_report(analysis_id):
     # Slack/Email で共有
     share_report(report)
 ```
-
 
 ## ベストプラクティス
 

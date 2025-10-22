@@ -35,7 +35,6 @@ imputer = KNNImputer(n_neighbors=5)
 df_imputed = imputer.fit_transform(df)
 ```
 
-
 ### 2. 外れ値処理
 
 ```python
@@ -56,7 +55,6 @@ df['column'] = df['column'].clip(lower, upper)
 df['column'] = np.log1p(df['column'])  # 対数変換
 ```
 
-
 ### 3. スケーリング・正規化
 
 ```python
@@ -75,7 +73,6 @@ from sklearn.preprocessing import RobustScaler
 scaler = RobustScaler()
 df_robust = scaler.fit_transform(df[numeric_cols])
 ```
-
 
 ### 4. カテゴリ変数のエンコーディング
 
@@ -96,7 +93,6 @@ df['category_encoded'] = df['category'].map(category_means)
 freq = df['category'].value_counts()
 df['category_freq'] = df['category'].map(freq)
 ```
-
 
 ### 5. 特徴量エンジニアリング
 
@@ -125,7 +121,6 @@ df['user_avg_amount'] = df.groupby('user_id')['amount'].transform('mean')
 df['user_total_count'] = df.groupby('user_id')['order_id'].transform('count')
 ```
 
-
 ### 6. 特徴量選択
 
 ```python
@@ -152,7 +147,6 @@ importances = pd.Series(model.feature_importances_, index=X.columns)
 top_features = importances.sort_values(ascending=False).head(20)
 ```
 
-
 ### 7. データ分割
 
 ```python
@@ -174,7 +168,6 @@ tscv = TimeSeriesSplit(n_splits=5)
 for train_idx, test_idx in tscv.split(X):
     X_train, X_test = X[train_idx], X[test_idx]
 ```
-
 
 ## ベストプラクティス
 
@@ -209,7 +202,6 @@ model = Pipeline(steps=[
 ])
 ```
 
-
 ### データリーケージの防止
 
 - 前処理はトレーニングデータのみで学習
@@ -229,7 +221,6 @@ import joblib
 joblib.dump(scaler, 'scaler.pkl')
 scaler = joblib.load('scaler.pkl')
 ```
-
 
 ## 検証ポイント
 
