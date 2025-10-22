@@ -1,0 +1,128 @@
+[
+  {
+    "id": "api-design",
+    "name": "API設計",
+    "description": "RESTful API設計とGraphQL設計。API、エンドポイント、REST、GraphQL、API設計に関する依頼に対応",
+    "path": "api-design"
+  },
+  {
+    "id": "ci-cd-setup",
+    "name": "CI/CD設定",
+    "description": "CI/CDパイプラインの設定と自動化。CI/CD、パイプライン、GitHub Actions、GitLab CI、自動デプロイに関する依頼に対応",
+    "path": "ci-cd-setup"
+  },
+  {
+    "id": "generic-subagent",
+    "name": "generic-subagent",
+    "description": ">",
+    "path": "generic-subagent"
+  },
+  {
+    "id": "research",
+    "name": "research",
+    "description": ">",
+    "path": "research"
+  },
+  {
+    "id": "skill-creator",
+    "name": "skill-creator",
+    "description": "効果的なスキルを作成するためのガイド。ユーザーがClaudeの機能を専門知識、ワークフロー、またはツール統合で拡張する新しいスキルを作成（または既存スキルを更新）したい場合に使用されます。",
+    "path": "skill-creator"
+  },
+  {
+    "id": "subagent-creator",
+    "name": "subagent-creator",
+    "description": ">",
+    "path": "subagent-creator"
+  },
+  {
+    "id": "error-handling",
+    "name": "エラーハンドリング改善",
+    "description": "エラー処理とエラーハンドリングの改善。エラー処理、例外処理、エラーハンドリング、リトライ、ログに関する依頼に対応",
+    "path": "error-handling"
+  },
+  {
+    "id": "code-review",
+    "name": "コードレビュー",
+    "description": "コードレビュー時の思考プロセス。レビュー、確認、評価、品質チェックに関する依頼に対応",
+    "path": "code-review"
+  },
+  {
+    "id": "code-creation",
+    "name": "コード作成",
+    "description": "新規コード作成時の思考プロセス。新規、作成、実装、機能追加、開発に関する依頼に対応",
+    "path": "code-creation"
+  },
+  {
+    "id": "system-design",
+    "name": "システム設計",
+    "description": "システム・アーキテクチャ設計時の思考プロセス。設計、アーキテクチャ、システム、構成に関する依頼に対応",
+    "path": "system-design"
+  },
+  {
+    "id": "security-audit",
+    "name": "セキュリティ監査",
+    "description": "セキュリティ監査と脆弱性評価。セキュリティ、脆弱性、セキュアコーディング、セキュリティチェック、監査に関する依頼に対応",
+    "path": "security-audit"
+  },
+  {
+    "id": "test-automation",
+    "name": "テスト自動化",
+    "description": "テスト自動化の戦略と実装。テスト、ユニットテスト、統合テスト、E2Eテスト、テストカバレッジに関する依頼に対応",
+    "path": "test-automation"
+  },
+  {
+    "id": "debugging",
+    "name": "デバッグ",
+    "description": "バグ修正・問題解決時の思考プロセス。エラー、バグ、問題、修正、デバッグに関する依頼に対応",
+    "path": "debugging"
+  },
+  {
+    "id": "database-design",
+    "name": "データベース設計",
+    "description": "データベース設計とスキーマ最適化。データベース、スキーマ、DB設計、マイグレーション、インデックスに関する依頼に対応",
+    "path": "database-design"
+  },
+  {
+    "id": "data-analysis",
+    "name": "データ分析",
+    "description": "データ分析・探索時の思考プロセス。データ、分析、探索、可視化、統計に関する依頼に対応",
+    "path": "data-analysis"
+  },
+  {
+    "id": "documentation",
+    "name": "ドキュメント作成",
+    "description": "ドキュメント作成時の思考プロセス。ドキュメント、説明、README、API 仕様書作成に関する依頼に対応",
+    "path": "documentation"
+  },
+  {
+    "id": "performance-optimization",
+    "name": "パフォーマンス最適化",
+    "description": "パフォーマンス改善時の思考プロセス。最適化、高速化、パフォーマンス、速度改善に関する依頼に対応",
+    "path": "performance-optimization"
+  },
+  {
+    "id": "migration-assistant",
+    "name": "マイグレーション支援",
+    "description": "技術スタックの移行支援。migration、移行、アップグレード、マイグレーション、技術スタック変更に関する依頼に対応",
+    "path": "migration-assistant"
+  },
+  {
+    "id": "refactoring",
+    "name": "リファクタリング",
+    "description": "既存コード改善時の思考プロセス。リファクタリング、改善、整理、クリーンアップに関する依頼に対応",
+    "path": "refactoring"
+  },
+  {
+    "id": "dependency-management",
+    "name": "依存関係管理",
+    "description": "パッケージ依存関係の管理と更新。依存関係、パッケージ、npm、pip、更新、脆弱性に関する依頼に対応",
+    "path": "dependency-management"
+  },
+  {
+    "id": "shared-practices",
+    "name": "共通プラクティス",
+    "description": "全スキル共通の思考習慣。前提条件、検証、エラー回復、コミュニケーションの原則を提供",
+    "path": "shared-practices"
+  }
+]
