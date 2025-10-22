@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code スキルカタログ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            outline: none;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .search-box input:focus {
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .stats {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .skill-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .skill-card h3 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-card .skill-id {
+            font-size: 0.8em;
+            color: #999;
+            font-weight: normal;
+            font-family: 'Courier New', monospace;
+        }
+
+        .skill-card p {
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .skill-card .skill-link {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .skill-card .skill-link:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        .no-results {
+            text-align: center;
+            color: white;
+            font-size: 1.2em;
+            padding: 40px;
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+            opacity: 0.9;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Claude Code スキルカタログ</h1>
+            <p>再利用可能なスキルのコレクション</p>
+        </header>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="スキルを検索...">
+        </div>
+
+        <div class="stats">
+            <span id="skillCount">0</span> 個のスキルが利用可能
+        </div>
+
+        <div class="skills-grid" id="skillsGrid">
+            <!-- スキルカードがここに動的に追加されます -->
+        </div>
+
+        <div class="no-results" id="noResults">
+            検索結果が見つかりませんでした
+        </div>
+
+        <footer>
+            <p>
+                <a href="https://github.com/y-nishizaki/skills" target="_blank">GitHub リポジトリ</a> |
+                <a href="https://docs.claude.com/en/docs/claude-code" target="_blank">Claude Code ドキュメント</a>
+            </p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                Anthropic の Claude Code 向けに構築
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        let allSkills = [];
+
+        // スキルデータを読み込む
+        async function loadSkills() {
+            try {
+                const response = await fetch('skills.json');
+                allSkills = await response.json();
+                displaySkills(allSkills);
+                updateStats(allSkills.length);
+            } catch (error) {
+                console.error('スキルの読み込みエラー:', error);
+            }
+        }
+
+        // スキルを表示
+        function displaySkills(skills) {
+            const grid = document.getElementById('skillsGrid');
+            const noResults = document.getElementById('noResults');
+
+            if (skills.length === 0) {
+                grid.style.display = 'none';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            grid.style.display = 'grid';
+            noResults.style.display = 'none';
+
+            grid.innerHTML = skills.map(skill => `
+                <div class="skill-card" onclick="openSkill('${skill.path}')">
+                    <h3>
+                        ${skill.name}
+                        <span class="skill-id">${skill.id}</span>
+                    </h3>
+                    <p>${skill.description}</p>
+                    <a href="https://github.com/y-nishizaki/skills/tree/main/${skill.path}"
+                       class="skill-link"
+                       onclick="event.stopPropagation()"
+                       target="_blank">詳細を見る →</a>
+                </div>
+            `).join('');
+        }
+
+        // スキルページを開く
+        function openSkill(path) {
+            window.open(`https://github.com/y-nishizaki/skills/tree/main/${path}`, '_blank');
+        }
+
+        // 統計を更新
+        function updateStats(count) {
+            document.getElementById('skillCount').textContent = count;
+        }
+
+        // 検索機能
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const filtered = allSkills.filter(skill =>
+                skill.name.toLowerCase().includes(query) ||
+                skill.description.toLowerCase().includes(query) ||
+                skill.id.toLowerCase().includes(query)
+            );
+            displaySkills(filtered);
+            updateStats(filtered.length);
+        });
+
+        // ページ読み込み時にスキルを読み込む
+        loadSkills();
+    </script>
+</body>
+</html>
