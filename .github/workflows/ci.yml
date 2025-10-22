@@ -80,7 +80,8 @@ jobs:
       - name: Validate skill structure
         run: |
           # Find all leaf directories (skill directories) and validate them
-          # A leaf directory is one that contains SKILL.md or has no subdirectories
+          # A leaf directory is one that has no subdirectories
+          # Exclude resource directories: templates, scripts, references, assets
 
           # Find all directories excluding .git, .github, and docs
           find . -type d -not -path '*/\.*' -not -path './docs*' | while read -r dir; do
@@ -89,7 +90,17 @@ jobs:
               continue
             fi
 
-            # Check if this directory is a leaf (has no subdirectories or contains SKILL.md)
+            # Get the directory name (basename)
+            dirname=$(basename "$dir")
+
+            # Skip resource directories (these are bundled resources, not skills)
+            if [ "$dirname" = "templates" ] || [ "$dirname" = "scripts" ] || \
+               [ "$dirname" = "references" ] || [ "$dirname" = "assets" ]; then
+              echo "Skipping resource directory: $dir"
+              continue
+            fi
+
+            # Check if this directory is a leaf (has no subdirectories)
             subdir_count=$(find "$dir" -mindepth 1 -maxdepth 1 -type d | wc -l)
 
             # If it's a leaf directory (no subdirectories), it should have SKILL.md
