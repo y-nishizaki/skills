@@ -38,7 +38,9 @@ skill-name/
 
 #### SKILL.md（必須）
 
-**メタデータの品質:** YAMLフロントマターの`name`と`description`は、Claudeがスキルをいつ使用するかを決定します。スキルが何をするか、いつ使用するかについて具体的に記述してください。三人称を使用してください（例：「Use this skill when...」ではなく「This skill should be used when...」）。
+**メタデータの品質:** YAMLフロントマターの`name`と`description`は、Claudeがスキルをいつ使用するかを決定します。
+スキルが何をするか、いつ使用するかについて具体的に記述してください。三人称を使用してください
+（例：「Use this skill when...」ではなく「This skill should be used when...」）。
 
 #### バンドルリソース（任意）
 
@@ -161,7 +163,10 @@ scripts/init_skill.py <skill-name> --path <output-directory>
 
 #### SKILL.mdを更新する
 
-**記述スタイル:** スキル全体を**命令形/不定詞形**（動詞で始まる指示）で記述し、二人称は使用しないでください。客観的で指示的な言語を使用してください（例：「You should do X」や「If you need to do X」ではなく「To accomplish X, do Y」）。これにより、AI用の一貫性と明確性が維持されます。
+**記述スタイル:** スキル全体を**命令形/不定詞形**（動詞で始まる指示）で記述し、二人称は使用しないでください。
+客観的で指示的な言語を使用してください
+（例：「You should do X」や「If you need to do X」ではなく「To accomplish X, do Y」）。
+これにより、AI用の一貫性と明確性が維持されます。
 
 SKILL.mdを完成させるには、以下の質問に答えてください：
 
@@ -200,6 +205,7 @@ scripts/package_skill.py <path/to/skill-folder> ./dist
 スキルをテストした後、ユーザーは改善を要求する場合があります。多くの場合、これはスキルを使用した直後に、スキルのパフォーマンスに関する新鮮なコンテキストとともに発生します。
 
 **反復ワークフロー:**
+
 1. 実際のタスクでスキルを使用する
 2. 苦労や非効率性に気づく
 3. SKILL.mdまたはバンドルリソースをどのように更新すべきかを特定する
