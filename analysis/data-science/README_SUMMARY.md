@@ -3,6 +3,7 @@
 ## 作成済みスキル
 
 ### 基礎スキル（Fundamentals）✓
+
 1. **statistics-fundamentals** - 統計学の基礎
 2. **mathematical-thinking** - 数学的思考力
 3. **data-literacy** - データリテラシー
@@ -12,6 +13,7 @@
 ## 今後作成予定のスキル
 
 ### 分析・モデリング（Modeling）
+
 6. **data-preprocessing** - データ前処理
 7. **exploratory-data-analysis** - 探索的データ分析
 8. **statistical-inference** - 統計的推論
@@ -19,6 +21,7 @@
 10. **model-evaluation** - モデリング評価
 
 ### ビジネス応用（Business Application）
+
 11. **problem-definition** - 課題設定力
 12. **data-visualization** - データ可視化
 13. **presentation-skills** - プレゼンテーション
@@ -26,6 +29,7 @@
 15. **ethics-privacy** - 倫理・プライバシー
 
 ### 発展スキル（Advanced）
+
 16. **big-data-processing** - ビッグデータ処理
 17. **cloud-skills** - クラウドスキル
 18. **mlops** - MLOps
@@ -33,6 +37,7 @@
 20. **specialized-ml** - 特化型ML（NLP/CV）
 
 ### マインドセット（Mindset）
+
 21. **curiosity-hypothesis** - 好奇心と仮説思考
 22. **verification-culture** - 検証文化
 23. **reproducibility** - 再現性・透明性
