@@ -71,6 +71,66 @@
             font-size: 1.1em;
         }
 
+        .category-filters {
+            max-width: 900px;
+            margin: 0 auto 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: 0 20px;
+        }
+
+        .category-filter-btn {
+            background: white;
+            border: 2px solid white;
+            color: #667eea;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.95em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .category-filter-btn:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .category-filter-btn.active {
+            background: #667eea;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .category-section {
+            margin-bottom: 50px;
+        }
+
+        .category-header {
+            color: white;
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .category-header .count {
+            font-size: 0.7em;
+            opacity: 0.9;
+            font-weight: normal;
+        }
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -155,6 +215,24 @@
             .skills-grid {
                 grid-template-columns: 1fr;
             }
+
+            .category-filters {
+                gap: 8px;
+            }
+
+            .category-filter-btn {
+                font-size: 0.85em;
+                padding: 8px 16px;
+            }
+
+            .category-header {
+                font-size: 1.4em;
+                padding: 12px 20px;
+            }
+
+            .category-section {
+                margin-bottom: 35px;
+            }
         }
     </style>
 </head>
@@ -173,8 +251,12 @@
             <span id="skillCount">0</span> 個のスキルが利用可能
         </div>
 
-        <div class="skills-grid" id="skillsGrid">
-            <!-- スキルカードがここに動的に追加されます -->
+        <div class="category-filters" id="categoryFilters">
+            <!-- カテゴリフィルターボタンがここに動的に追加されます -->
+        </div>
+
+        <div id="skillsContainer">
+            <!-- カテゴリセクションまたはスキルグリッドがここに動的に追加されます -->
         </div>
 
         <div class="no-results" id="noResults">
@@ -194,46 +276,171 @@
 
     <script>
         let allSkills = [];
+        let currentCategory = 'all';
+        let currentSearchQuery = '';
+
+        // カテゴリ名の日本語マッピング
+        const categoryNames = {
+            'analysis': '分析',
+            'code-generation': 'コード生成',
+            'code-quality': 'コード品質',
+            'design': '設計',
+            'development-tools': '開発ツール',
+            'devops': 'DevOps',
+            'shared': '共通',
+            'testing': 'テスト',
+            'thinking-skills': '思考スキル'
+        };
 
         // スキルデータを読み込む
         async function loadSkills() {
             try {
                 const response = await fetch('skills.json');
                 allSkills = await response.json();
-                displaySkills(allSkills);
+                renderCategoryFilters();
+                displaySkillsGrouped(allSkills);
                 updateStats(allSkills.length);
             } catch (error) {
                 console.error('スキルの読み込みエラー:', error);
             }
         }
 
-        // スキルを表示
-        function displaySkills(skills) {
-            const grid = document.getElementById('skillsGrid');
+        // カテゴリフィルターボタンを生成
+        function renderCategoryFilters() {
+            const filtersContainer = document.getElementById('categoryFilters');
+
+            // カテゴリごとのスキル数を集計
+            const categoryCounts = {};
+            allSkills.forEach(skill => {
+                categoryCounts[skill.category] = (categoryCounts[skill.category] || 0) + 1;
+            });
+
+            // ソート済みカテゴリリスト
+            const sortedCategories = Object.keys(categoryCounts).sort();
+
+            // 「すべて」ボタン
+            let html = `<button class="category-filter-btn active" onclick="filterByCategory('all')">
+                すべて (${allSkills.length})
+            </button>`;
+
+            // 各カテゴリボタン
+            sortedCategories.forEach(category => {
+                const displayName = categoryNames[category] || category;
+                const count = categoryCounts[category];
+                html += `<button class="category-filter-btn" onclick="filterByCategory('${category}')">
+                    ${displayName} (${count})
+                </button>`;
+            });
+
+            filtersContainer.innerHTML = html;
+        }
+
+        // カテゴリでフィルタリング
+        function filterByCategory(category) {
+            currentCategory = category;
+            currentSearchQuery = '';
+            document.getElementById('searchInput').value = '';
+
+            // ボタンのアクティブ状態を更新
+            document.querySelectorAll('.category-filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // 表示を更新
+            if (category === 'all') {
+                displaySkillsGrouped(allSkills);
+                updateStats(allSkills.length);
+            } else {
+                const filtered = allSkills.filter(skill => skill.category === category);
+                displaySkillsList(filtered);
+                updateStats(filtered.length);
+            }
+        }
+
+        // スキルをグループ表示（カテゴリ別）
+        function displaySkillsGrouped(skills) {
+            const container = document.getElementById('skillsContainer');
             const noResults = document.getElementById('noResults');
 
             if (skills.length === 0) {
-                grid.style.display = 'none';
+                container.innerHTML = '';
                 noResults.style.display = 'block';
                 return;
             }
 
-            grid.style.display = 'grid';
             noResults.style.display = 'none';
 
-            grid.innerHTML = skills.map(skill => `
+            // カテゴリごとにグループ化
+            const grouped = {};
+            skills.forEach(skill => {
+                if (!grouped[skill.category]) {
+                    grouped[skill.category] = [];
+                }
+                grouped[skill.category].push(skill);
+            });
+
+            // カテゴリをソート
+            const sortedCategories = Object.keys(grouped).sort();
+
+            let html = '';
+            sortedCategories.forEach(category => {
+                const categorySkills = grouped[category];
+                const displayName = categoryNames[category] || category;
+
+                html += `
+                    <div class="category-section">
+                        <div class="category-header">
+                            ${displayName}
+                            <span class="count">${categorySkills.length}個のスキル</span>
+                        </div>
+                        <div class="skills-grid">
+                            ${categorySkills.map(skill => renderSkillCard(skill)).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // スキルをリスト表示（フィルタ時）
+        function displaySkillsList(skills) {
+            const container = document.getElementById('skillsContainer');
+            const noResults = document.getElementById('noResults');
+
+            if (skills.length === 0) {
+                container.innerHTML = '';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            noResults.style.display = 'none';
+
+            container.innerHTML = `
+                <div class="skills-grid">
+                    ${skills.map(skill => renderSkillCard(skill)).join('')}
+                </div>
+            `;
+        }
+
+        // スキルカードをレンダリング
+        function renderSkillCard(skill) {
+            const categoryDisplay = categoryNames[skill.category] || skill.category;
+            return `
                 <div class="skill-card" onclick="openSkill('${skill.path}')">
                     <h3>
                         ${skill.name}
                         <span class="skill-id">${skill.id}</span>
                     </h3>
+                    <p style="font-size: 0.85em; color: #999; margin-bottom: 8px;">📁 ${categoryDisplay}</p>
                     <p>${skill.description}</p>
                     <a href="https://github.com/y-nishizaki/skills/tree/main/${skill.path}"
                        class="skill-link"
                        onclick="event.stopPropagation()"
                        target="_blank">詳細を見る →</a>
                 </div>
-            `).join('');
+            `;
         }
 
         // スキルページを開く
@@ -246,15 +453,59 @@
             document.getElementById('skillCount').textContent = count;
         }
 
-        // 検索機能
+        // 検索機能（スペース・ハイフン・大文字小文字を無視）
+        function normalizeSearchText(text) {
+            return text.toLowerCase().replace(/[\s\-_]/g, '');
+        }
+
         document.getElementById('searchInput').addEventListener('input', (e) => {
             const query = e.target.value.toLowerCase();
-            const filtered = allSkills.filter(skill =>
-                skill.name.toLowerCase().includes(query) ||
-                skill.description.toLowerCase().includes(query) ||
-                skill.id.toLowerCase().includes(query)
-            );
-            displaySkills(filtered);
+            currentSearchQuery = query;
+
+            // 検索中はカテゴリフィルターを解除
+            if (query) {
+                document.querySelectorAll('.category-filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+            }
+
+            if (!query) {
+                // 検索クリア時はカテゴリフィルターに戻る
+                if (currentCategory === 'all') {
+                    displaySkillsGrouped(allSkills);
+                    updateStats(allSkills.length);
+                } else {
+                    const filtered = allSkills.filter(skill => skill.category === currentCategory);
+                    displaySkillsList(filtered);
+                    updateStats(filtered.length);
+                }
+                return;
+            }
+
+            const normalizedQuery = normalizeSearchText(query);
+
+            const filtered = allSkills.filter(skill => {
+                const categoryDisplay = categoryNames[skill.category] || skill.category;
+
+                // 通常の検索（部分一致）
+                const basicMatch =
+                    skill.name.toLowerCase().includes(query) ||
+                    skill.description.toLowerCase().includes(query) ||
+                    skill.id.toLowerCase().includes(query) ||
+                    skill.category.toLowerCase().includes(query) ||
+                    categoryDisplay.toLowerCase().includes(query);
+
+                // 正規化された検索（スペース・ハイフン無視）
+                const normalizedMatch =
+                    normalizeSearchText(skill.name).includes(normalizedQuery) ||
+                    normalizeSearchText(skill.description).includes(normalizedQuery) ||
+                    normalizeSearchText(skill.id).includes(normalizedQuery) ||
+                    normalizeSearchText(categoryDisplay).includes(normalizedQuery);
+
+                return basicMatch || normalizedMatch;
+            });
+
+            displaySkillsList(filtered);
             updateStats(filtered.length);
         });
 

@@ -43,20 +43,29 @@ def scan_skills(base_dir='.'):
     skills = []
     base_path = Path(base_dir)
 
-    # すべてのディレクトリを走査
-    for item in base_path.iterdir():
-        if item.is_dir() and not item.name.startswith('.') and item.name != 'docs':
-            skill_file = item / 'SKILL.md'
-            if skill_file.exists():
-                metadata = extract_yaml_frontmatter(skill_file)
-                if metadata and 'name' in metadata:
-                    skill_data = {
-                        'id': item.name,
-                        'name': metadata.get('name', item.name),
-                        'description': metadata.get('description', '説明がありません'),
-                        'path': str(item.name)
-                    }
-                    skills.append(skill_data)
+    # 除外するディレクトリ
+    exclude_dirs = {'.git', '.github', 'docs', 'node_modules', '__pycache__', '.vscode'}
+
+    # 再帰的にSKILL.mdファイルを検索
+    for skill_file in base_path.rglob('SKILL.md'):
+        # 除外ディレクトリをスキップ
+        if any(excluded in skill_file.parts for excluded in exclude_dirs):
+            continue
+
+        metadata = extract_yaml_frontmatter(skill_file)
+        if metadata and 'name' in metadata:
+            # スキルディレクトリへの相対パス（リポジトリルートから）
+            skill_dir = skill_file.parent
+            relative_path = skill_dir.relative_to(base_path)
+
+            skill_data = {
+                'id': skill_dir.name,
+                'name': metadata.get('name', skill_dir.name),
+                'description': metadata.get('description', '説明がありません'),
+                'path': str(relative_path),
+                'category': str(relative_path.parent) if relative_path.parent != Path('.') else 'root'
+            }
+            skills.append(skill_data)
 
     # 名前でソート
     skills.sort(key=lambda x: x['name'])

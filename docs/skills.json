@@ -3,126 +3,203 @@
     "id": "api-design",
     "name": "API設計",
     "description": "RESTful API設計とGraphQL設計。API、エンドポイント、REST、GraphQL、API設計に関する依頼に対応",
-    "path": "api-design"
+    "path": "design/api-design",
+    "category": "design"
   },
   {
     "id": "ci-cd-setup",
     "name": "CI/CD設定",
     "description": "CI/CDパイプラインの設定と自動化。CI/CD、パイプライン、GitHub Actions、GitLab CI、自動デプロイに関する依頼に対応",
-    "path": "ci-cd-setup"
+    "path": "devops/ci-cd-setup",
+    "category": "devops"
+  },
+  {
+    "id": "github-pages",
+    "name": "GitHub Pages",
+    "description": "GitHub Pagesを使用した静的サイトホスティングの設定と管理。静的サイト、ドキュメントサイト、ポートフォリオ、プロジェクトページ、Jekyll、カスタムドメイン、GitHub Actions連携に関する依頼に対応",
+    "path": "devops/github-pages",
+    "category": "devops"
   },
   {
     "id": "generic-subagent",
     "name": "generic-subagent",
     "description": ">",
-    "path": "generic-subagent"
+    "path": "development-tools/generic-subagent",
+    "category": "development-tools"
   },
   {
     "id": "research",
     "name": "research",
     "description": ">",
-    "path": "research"
+    "path": "analysis/research",
+    "category": "analysis"
   },
   {
     "id": "skill-creator",
     "name": "skill-creator",
     "description": "効果的なスキルを作成するためのガイド。ユーザーがClaudeの機能を専門知識、ワークフロー、またはツール統合で拡張する新しいスキルを作成（または既存スキルを更新）したい場合に使用されます。",
-    "path": "skill-creator"
+    "path": "development-tools/skill-creator",
+    "category": "development-tools"
   },
   {
     "id": "subagent-creator",
     "name": "subagent-creator",
     "description": ">",
-    "path": "subagent-creator"
+    "path": "development-tools/subagent-creator",
+    "category": "development-tools"
+  },
+  {
+    "id": "abductive-reasoning",
+    "name": "アブダクション推論",
+    "description": "限られた情報から最も妥当な仮説を構築するスキル。観察→仮説→検証のサイクルで未知の事象を説明し、創発的な理解を促進",
+    "path": "thinking-skills/abductive-reasoning",
+    "category": "thinking-skills"
   },
   {
     "id": "error-handling",
     "name": "エラーハンドリング改善",
     "description": "エラー処理とエラーハンドリングの改善。エラー処理、例外処理、エラーハンドリング、リトライ、ログに関する依頼に対応",
-    "path": "error-handling"
+    "path": "code-quality/error-handling",
+    "category": "code-quality"
   },
   {
     "id": "code-review",
     "name": "コードレビュー",
     "description": "コードレビュー時の思考プロセス。レビュー、確認、評価、品質チェックに関する依頼に対応",
-    "path": "code-review"
+    "path": "code-quality/code-review",
+    "category": "code-quality"
   },
   {
     "id": "code-creation",
     "name": "コード作成",
     "description": "新規コード作成時の思考プロセス。新規、作成、実装、機能追加、開発に関する依頼に対応",
-    "path": "code-creation"
+    "path": "code-generation/code-creation",
+    "category": "code-generation"
   },
   {
     "id": "system-design",
     "name": "システム設計",
     "description": "システム・アーキテクチャ設計時の思考プロセス。設計、アーキテクチャ、システム、構成に関する依頼に対応",
-    "path": "system-design"
+    "path": "design/system-design",
+    "category": "design"
   },
   {
     "id": "security-audit",
     "name": "セキュリティ監査",
     "description": "セキュリティ監査と脆弱性評価。セキュリティ、脆弱性、セキュアコーディング、セキュリティチェック、監査に関する依頼に対応",
-    "path": "security-audit"
+    "path": "code-quality/security-audit",
+    "category": "code-quality"
   },
   {
     "id": "test-automation",
     "name": "テスト自動化",
     "description": "テスト自動化の戦略と実装。テスト、ユニットテスト、統合テスト、E2Eテスト、テストカバレッジに関する依頼に対応",
-    "path": "test-automation"
+    "path": "testing/test-automation",
+    "category": "testing"
   },
   {
     "id": "debugging",
     "name": "デバッグ",
     "description": "バグ修正・問題解決時の思考プロセス。エラー、バグ、問題、修正、デバッグに関する依頼に対応",
-    "path": "debugging"
+    "path": "code-quality/debugging",
+    "category": "code-quality"
   },
   {
     "id": "database-design",
     "name": "データベース設計",
     "description": "データベース設計とスキーマ最適化。データベース、スキーマ、DB設計、マイグレーション、インデックスに関する依頼に対応",
-    "path": "database-design"
+    "path": "design/database-design",
+    "category": "design"
   },
   {
     "id": "data-analysis",
     "name": "データ分析",
     "description": "データ分析・探索時の思考プロセス。データ、分析、探索、可視化、統計に関する依頼に対応",
-    "path": "data-analysis"
+    "path": "analysis/data-analysis",
+    "category": "analysis"
   },
   {
     "id": "documentation",
     "name": "ドキュメント作成",
     "description": "ドキュメント作成時の思考プロセス。ドキュメント、説明、README、API 仕様書作成に関する依頼に対応",
-    "path": "documentation"
+    "path": "analysis/documentation",
+    "category": "analysis"
   },
   {
     "id": "performance-optimization",
     "name": "パフォーマンス最適化",
     "description": "パフォーマンス改善時の思考プロセス。最適化、高速化、パフォーマンス、速度改善に関する依頼に対応",
-    "path": "performance-optimization"
+    "path": "code-quality/performance-optimization",
+    "category": "code-quality"
   },
   {
     "id": "migration-assistant",
     "name": "マイグレーション支援",
     "description": "技術スタックの移行支援。migration、移行、アップグレード、マイグレーション、技術スタック変更に関する依頼に対応",
-    "path": "migration-assistant"
+    "path": "devops/migration-assistant",
+    "category": "devops"
+  },
+  {
+    "id": "metacognition",
+    "name": "メタ認知",
+    "description": "自分の思考・理解・判断を客観視し、学習過程を計画・監視・評価するスキル。理解度の可視化、思考戦略の改善、継続的学習の質向上に使用",
+    "path": "thinking-skills/metacognition",
+    "category": "thinking-skills"
   },
   {
     "id": "refactoring",
     "name": "リファクタリング",
     "description": "既存コード改善時の思考プロセス。リファクタリング、改善、整理、クリーンアップに関する依頼に対応",
-    "path": "refactoring"
+    "path": "code-quality/refactoring",
+    "category": "code-quality"
   },
   {
     "id": "dependency-management",
     "name": "依存関係管理",
     "description": "パッケージ依存関係の管理と更新。依存関係、パッケージ、npm、pip、更新、脆弱性に関する依頼に対応",
-    "path": "dependency-management"
+    "path": "devops/dependency-management",
+    "category": "devops"
+  },
+  {
+    "id": "commitment-belief",
+    "name": "信念とコミットメント",
+    "description": "仮説が未検証でも暫定的に信じて前進する意思のスキル。信念の保持と柔軟な修正力のバランスを取り、長期的プロジェクト遂行と不確実性下での意思決定に使用",
+    "path": "thinking-skills/commitment-belief",
+    "category": "thinking-skills"
   },
   {
     "id": "shared-practices",
     "name": "共通プラクティス",
     "description": "全スキル共通の思考習慣。前提条件、検証、エラー回復、コミュニケーションの原則を提供",
-    "path": "shared-practices"
+    "path": "shared/shared-practices",
+    "category": "shared"
+  },
+  {
+    "id": "creative-problem-solving",
+    "name": "創造的問題解決",
+    "description": "制約条件下で最適解を設計するスキル。既存構造の再利用、段階的改善、小さな成功の累積による大規模成果の実現に使用",
+    "path": "thinking-skills/creative-problem-solving",
+    "category": "thinking-skills"
+  },
+  {
+    "id": "critical-thinking",
+    "name": "批判的思考",
+    "description": "前提・仮定・実装・結論を疑問視し、論理構造を検証するスキル。「なぜ？」「本当にそうか？」と問い、根本原因の発見や誤謬の検出に使用",
+    "path": "thinking-skills/critical-thinking",
+    "category": "thinking-skills"
+  },
+  {
+    "id": "contextual-empathy",
+    "name": "文脈的共感",
+    "description": "他者の立場・背景・目的を文脈的に理解し、共感的に判断するスキル。「なぜそう考えるのか」を掘り下げ、認知の多様性を受け止める。チーム協働や要件理解に使用",
+    "path": "thinking-skills/contextual-empathy",
+    "category": "thinking-skills"
+  },
+  {
+    "id": "embodied-learning",
+    "name": "身体化された学習",
+    "description": "体験を通じて知識を身体的・感覚的に統合するスキル。抽象的理解を「感じる知」に変換し、直感的判断を磨く。経験の蓄積と違和感の活用に使用",
+    "path": "thinking-skills/embodied-learning",
+    "category": "thinking-skills"
   }
 ]
