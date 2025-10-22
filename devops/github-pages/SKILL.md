@@ -254,7 +254,7 @@ This site demonstrates the power of GitHub Pages and Jekyll.
 
 **ステップ3: ブログ機能の追加**
 
-```markdown
+````markdown
 <!-- _posts/2025-01-15-first-post.md -->
 ---
 layout: post
@@ -275,7 +275,7 @@ Jekyll makes it easy to create blog posts with just Markdown files.
 ```ruby
 puts "Hello, GitHub Pages!"
 ```
-```
+````
 
 **ステップ4: ローカル開発環境**
 
