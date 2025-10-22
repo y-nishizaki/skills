@@ -7,6 +7,7 @@
 import json
 import os
 import re
+import yaml
 from pathlib import Path
 
 
@@ -23,16 +24,19 @@ def extract_yaml_frontmatter(file_path):
 
         yaml_content = match.group(1)
 
-        # 簡易的なYAMLパーサー（name と description を抽出）
-        metadata = {}
-        for line in yaml_content.split('\n'):
-            if ':' in line:
-                key, value = line.split(':', 1)
-                key = key.strip()
-                value = value.strip().strip('"').strip("'")
-                metadata[key] = value
+        # PyYAMLを使用して正しくパース
+        try:
+            metadata = yaml.safe_load(yaml_content)
+            if metadata and isinstance(metadata, dict):
+                # descriptionが複数行の場合、改行と余分な空白を整形
+                if 'description' in metadata and isinstance(metadata['description'], str):
+                    # 複数行のdescriptionを1行にまとめ、余分な空白を削除
+                    metadata['description'] = ' '.join(metadata['description'].split())
+                return metadata
+        except yaml.YAMLError as e:
+            print(f"YAML parsing error in {file_path}: {e}")
+            return None
 
-        return metadata
     except Exception as e:
         print(f"Error reading {file_path}: {e}")
         return None

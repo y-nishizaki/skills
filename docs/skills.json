@@ -23,14 +23,14 @@
   {
     "id": "generic-subagent",
     "name": "generic-subagent",
-    "description": ">",
+    "description": "任意のタスクを別セッションで実行し、メインセッションのコンテキストウィンドウを節約します。 別セッション実行、コンテキスト節約、サブエージェント実行、タスク委任、セッション分離が必要な時に使用します。 キーワード - 別セッション、コンテキスト節約、独立実行、タスク分離、サブエージェント。",
     "path": "development-tools/generic-subagent",
     "category": "development-tools"
   },
   {
     "id": "research",
     "name": "research",
-    "description": ">",
+    "description": "体系的な方法論を使用して徹底的なリサーチを実施します。トピックの調査、情報収集、主題の調査、 事実確認、または包括的な分析を実行する際に使用します。 キーワード - リサーチ、調査、分析、情報収集、ファクトチェック、検証、研究。",
     "path": "analysis/research",
     "category": "analysis"
   },
@@ -44,7 +44,7 @@
   {
     "id": "subagent-creator",
     "name": "subagent-creator",
-    "description": ">",
+    "description": "Taskツールを使用して汎用的なサブエージェントを作成し、複雑なタスクを別セッションで実行します。 サブエージェント作成、タスク委任、並列実行、バックグラウンド処理、効率的なタスク分割を依頼された時に使用します。 キーワード - サブエージェント作成、Task実行、並列処理、タスク委任、マルチエージェント。",
     "path": "development-tools/subagent-creator",
     "category": "development-tools"
   },
