@@ -1,326 +1,326 @@
-# Governance Models for Open Source Communities
+# オープンソースコミュニティのガバナンスモデル
 
-This reference provides detailed governance structures and decision-making frameworks for open source projects.
+このリファレンスは、オープンソースプロジェクトの詳細なガバナンス構造と意思決定フレームワークを提供します。
 
-## Common Governance Models
+## 一般的なガバナンスモデル
 
-### 1. Benevolent Dictator For Life (BDFL)
+### 1. 優しい終身独裁者（BDFL）
 
-**Structure:**
-- Single individual has final decision-making authority
-- Community provides input but BDFL makes final calls
-- Often the project founder or primary maintainer
+**構造:**
+- 単一の個人が最終的な意思決定権限を持つ
+- コミュニティは意見を提供するが、BDFLが最終的な判断を下す
+- 多くの場合、プロジェクトの創設者または主要メンテナー
 
-**When to Use:**
-- Early-stage projects requiring rapid decision-making
-- Projects with strong, trusted technical leadership
-- Small to medium-sized communities
+**使用するタイミング:**
+- 迅速な意思決定が必要な初期段階のプロジェクト
+- 強力で信頼される技術リーダーシップを持つプロジェクト
+- 小規模から中規模のコミュニティ
 
-**Advantages:**
-- Clear decision-making authority
-- Fast resolution of conflicts
-- Consistent technical vision
+**利点:**
+- 明確な意思決定権限
+- 対立の迅速な解決
+- 一貫した技術的ビジョン
 
-**Challenges:**
-- Single point of failure
-- Succession planning difficulties
-- Can discourage broad leadership development
+**課題:**
+- 単一障害点
+- 後継者計画の困難
+- 広範なリーダーシップ開発を妨げる可能性
 
-**Examples:** Linux (Linus Torvalds), Python (historically Guido van Rossum)
+**例:** Linux（Linus Torvalds）、Python（歴史的にGuido van Rossum）
 
-### 2. Meritocracy
+### 2. メリトクラシー
 
-**Structure:**
-- Influence proportional to contributions and demonstrated expertise
-- Contributors earn trust through sustained, quality work
-- Multiple maintainers with domain-specific authority
+**構造:**
+- 貢献と実証された専門知識に比例した影響力
+- コントリビューターは持続的で質の高い仕事を通じて信頼を獲得
+- ドメイン固有の権限を持つ複数のメンテナー
 
-**Progression Path:**
-1. **User** - Uses the project
-2. **Contributor** - Submits patches, reports issues
-3. **Committer** - Regular contributor granted commit access
-4. **Maintainer** - Responsible for specific subsystems
-5. **Core Team** - Overall project direction and governance
+**進行パス:**
+1. **ユーザー** - プロジェクトを使用する
+2. **コントリビューター** - パッチを送信し、イシューを報告する
+3. **コミッター** - コミットアクセスを付与された定期的なコントリビューター
+4. **メンテナー** - 特定のサブシステムに責任を持つ
+5. **コアチーム** - プロジェクト全体の方向性とガバナンス
 
-**When to Use:**
-- Medium to large projects with active contribution
-- Projects valuing technical excellence
-- Communities with clear contribution pathways
+**使用するタイミング:**
+- アクティブな貢献がある中規模から大規模のプロジェクト
+- 技術的卓越性を重視するプロジェクト
+- 明確な貢献経路を持つコミュニティ
 
-**Advantages:**
-- Rewards sustained contribution
-- Scalable as project grows
-- Attracts skilled contributors
+**利点:**
+- 持続的な貢献を報酬として与える
+- プロジェクトの成長に合わせてスケーラブル
+- 熟練したコントリビューターを引き付ける
 
-**Challenges:**
-- Can favor code over other contributions
-- May disadvantage part-time contributors
-- Risk of implicit bias in recognizing merit
+**課題:**
+- 他の貢献よりもコードを優遇する可能性
+- パートタイムのコントリビューターに不利になる可能性
+- メリットの認識における暗黙のバイアスのリスク
 
-**Examples:** Apache projects, Mozilla
+**例:** Apacheプロジェクト、Mozilla
 
-### 3. Consensus-Based Democracy
+### 3. コンセンサスベースの民主主義
 
-**Structure:**
-- Major decisions require community consensus
-- Voting mechanisms for contentious issues
-- All voices carry equal weight in discussions
+**構造:**
+- 主要な決定にはコミュニティのコンセンサスが必要
+- 論争のある問題には投票メカニズム
+- すべての声がディスカッションで平等な重みを持つ
 
-**Decision-Making Process:**
-1. Proposal introduced to community
-2. Public discussion period (typically 1-2 weeks)
-3. Attempt to reach consensus
-4. If consensus fails, vote (majority or supermajority)
-5. Document decision and rationale
+**意思決定プロセス:**
+1. コミュニティに提案を紹介
+2. 公開ディスカッション期間（通常1〜2週間）
+3. コンセンサスに達する試み
+4. コンセンサスが失敗した場合、投票（過半数または絶対多数）
+5. 決定と根拠を文書化
 
-**When to Use:**
-- Communities valuing equality and inclusion
-- Projects with diverse stakeholder interests
-- Well-established projects with stable governance
+**使用するタイミング:**
+- 平等と包括性を重視するコミュニティ
+- 多様な利害関係者の利益を持つプロジェクト
+- 安定したガバナンスを持つ確立されたプロジェクト
 
-**Advantages:**
-- Inclusive decision-making
-- Broad stakeholder buy-in
-- Reduced risk of arbitrary decisions
+**利点:**
+- 包括的な意思決定
+- 幅広い利害関係者の賛同
+- 恣意的な決定のリスクの低減
 
-**Challenges:**
-- Slower decision-making
-- Can be deadlocked on divisive issues
-- Requires active community participation
+**課題:**
+- より遅い意思決定
+- 分裂的な問題で行き詰まる可能性
+- アクティブなコミュニティ参加が必要
 
-### 4. Corporate-Backed with Community Input
+### 4. コミュニティ入力を伴う企業支援
 
-**Structure:**
-- Company employs core maintainers
-- Community advisory board or technical steering committee
-- Balance between corporate interests and community needs
+**構造:**
+- 企業がコアメンテナーを雇用
+- コミュニティ諮問委員会または技術運営委員会
+- 企業の利益とコミュニティのニーズのバランス
 
-**Governance Elements:**
-- **Corporate Team** - Day-to-day development and maintenance
-- **Technical Steering Committee (TSC)** - Community representatives providing guidance
-- **Clear boundaries** - Define what company controls vs. community input
+**ガバナンス要素:**
+- **企業チーム** - 日々の開発と保守
+- **技術運営委員会（TSC）** - ガイダンスを提供するコミュニティ代表者
+- **明確な境界** - 企業が管理するものとコミュニティ入力を定義
 
-**When to Use:**
-- Projects requiring significant corporate investment
-- Enterprise software with community adoption
-- Projects transitioning from proprietary to open source
+**使用するタイミング:**
+- 大規模な企業投資が必要なプロジェクト
+- コミュニティ採用を伴うエンタープライズソフトウェア
+- プロプライエタリからオープンソースに移行するプロジェクト
 
-**Advantages:**
-- Sustainable funding model
-- Professional development resources
-- Clear project roadmap
+**利点:**
+- 持続可能な資金調達モデル
+- 専門的な開発リソース
+- 明確なプロジェクトロードマップ
 
-**Challenges:**
-- Balancing corporate and community interests
-- Maintaining community trust
-- Risk of company dependency
+**課題:**
+- 企業とコミュニティの利益のバランスを取る
+- コミュニティの信頼を維持する
+- 企業依存のリスク
 
-**Examples:** Kubernetes, .NET Core, Android
+**例:** Kubernetes、.NET Core、Android
 
-### 5. Foundation Governance
+### 5. 財団ガバナンス
 
-**Structure:**
-- Independent foundation owns project assets
-- Board of directors provides oversight
-- Technical committees make development decisions
-- Multiple member organizations contribute
+**構造:**
+- 独立した財団がプロジェクト資産を所有
+- 理事会が監視を提供
+- 技術委員会が開発決定を行う
+- 複数のメンバー組織が貢献
 
-**Typical Structure:**
-- **Board of Directors** - Strategic oversight, budget, legal
-- **Technical Steering Committee** - Technical direction and architecture
-- **Working Groups** - Domain-specific initiatives
-- **Maintainers** - Code ownership and reviews
+**典型的な構造:**
+- **理事会** - 戦略的監視、予算、法務
+- **技術運営委員会** - 技術的方向性とアーキテクチャ
+- **ワーキンググループ** - ドメイン固有のイニシアチブ
+- **メンテナー** - コードの所有権とレビュー
 
-**When to Use:**
-- Large, mature projects
-- Projects requiring vendor neutrality
-- Multiple corporate contributors
+**使用するタイミング:**
+- 大規模で成熟したプロジェクト
+- ベンダー中立性が必要なプロジェクト
+- 複数の企業コントリビューター
 
-**Advantages:**
-- Vendor-neutral governance
-- Professional legal and financial management
-- Sustainable long-term structure
+**利点:**
+- ベンダー中立のガバナンス
+- 専門的な法的および財務管理
+- 持続可能な長期構造
 
-**Challenges:**
-- Requires significant resources
-- Can become bureaucratic
-- Balancing member interests
+**課題:**
+- 大きなリソースが必要
+- 官僚的になる可能性
+- メンバーの利益のバランスを取る
 
-**Examples:** Linux Foundation projects, Apache Software Foundation, Cloud Native Computing Foundation
+**例:** Linux Foundationプロジェクト、Apache Software Foundation、Cloud Native Computing Foundation
 
-## Decision-Making Frameworks
+## 意思決定フレームワーク
 
-### Lazy Consensus
+### 怠惰なコンセンサス
 
-**Process:**
-1. Proposal made publicly
-2. Silence after reasonable period indicates consent
-3. Objections must be raised explicitly
-4. Active approval not required for all decisions
+**プロセス:**
+1. 公に提案を行う
+2. 合理的な期間後の沈黙は同意を示す
+3. 異議は明示的に提起する必要がある
+4. すべての決定に積極的な承認は不要
 
-**Best For:**
-- Day-to-day operational decisions
-- Minor changes and bug fixes
-- Active communities with trust
+**最適な用途:**
+- 日々の運用決定
+- 小さな変更とバグ修正
+- 信頼のあるアクティブなコミュニティ
 
-**Timeline:** Typically 72 hours for small changes, 1-2 weeks for significant changes
+**タイムライン:** 小さな変更には通常72時間、重要な変更には1〜2週間
 
-### Request for Comments (RFC)
+### コメント要求（RFC）
 
-**Process:**
-1. Author creates detailed RFC document
-2. RFC posted for community review
-3. Discussion period (typically 2-4 weeks)
-4. Address feedback and revise
-5. Final comment period before acceptance
-6. Decision by designated authority (TSC, maintainers, etc.)
+**プロセス:**
+1. 著者が詳細なRFC文書を作成
+2. コミュニティレビューのためにRFCを投稿
+3. ディスカッション期間（通常2〜4週間）
+4. フィードバックに対処して修正
+5. 受け入れ前の最終コメント期間
+6. 指定された権限（TSC、メンテナーなど）による決定
 
-**RFC Structure:**
-- **Summary** - One-paragraph explanation
-- **Motivation** - Why is this needed?
-- **Detailed Design** - Technical specification
-- **Drawbacks** - Known limitations
-- **Alternatives** - Other approaches considered
-- **Unresolved Questions** - Issues requiring further discussion
+**RFC構造:**
+- **概要** - 1段落の説明
+- **動機** - なぜこれが必要か?
+- **詳細設計** - 技術仕様
+- **欠点** - 既知の制限
+- **代替案** - 検討した他のアプローチ
+- **未解決の質問** - さらなるディスカッションが必要な問題
 
-**Best For:**
-- Major feature additions
-- Breaking changes
-- Architectural decisions
+**最適な用途:**
+- 主要な機能追加
+- 破壊的変更
+- アーキテクチャの決定
 
-### Voting Mechanisms
+### 投票メカニズム
 
-**Simple Majority (>50%):**
-- Use for routine governance decisions
-- Selecting between equivalent alternatives
-- Non-contentious policy changes
+**単純過半数（>50%）:**
+- 日常的なガバナンス決定に使用
+- 同等の代替案の選択
+- 論争のないポリシー変更
 
-**Supermajority (2/3 or 3/4):**
-- Use for major changes
-- Governance structure modifications
-- Contentious decisions requiring broad support
+**絶対多数（2/3または3/4）:**
+- 主要な変更に使用
+- ガバナンス構造の変更
+- 広範なサポートを必要とする論争のある決定
 
-**Consensus with Fallback:**
-- Attempt consensus first
-- Fall back to voting if consensus cannot be reached
-- Document both supporters and objectors
+**フォールバック付きコンセンサス:**
+- 最初にコンセンサスを試みる
+- コンセンサスに達できない場合は投票にフォールバック
+- 支持者と反対者の両方を文書化
 
-## Governance Documentation
+## ガバナンスドキュメント
 
-### Essential Documents
+### 必須文書
 
 **1. GOVERNANCE.md**
-Include:
-- Decision-making processes
-- Role definitions and responsibilities
-- How to gain elevated privileges
-- Conflict resolution procedures
-- Amendment process for governance changes
+含める内容:
+- 意思決定プロセス
+- 役割の定義と責任
+- 昇格された特権を獲得する方法
+- 対立解決手順
+- ガバナンス変更の修正プロセス
 
 **2. CODE_OF_CONDUCT.md**
-Define:
-- Expected behavior standards
-- Unacceptable behavior
-- Reporting mechanisms
-- Enforcement procedures
-- Scope of application
+定義する内容:
+- 期待される行動基準
+- 受け入れられない行動
+- レポートメカニズム
+- 実施手順
+- 適用範囲
 
 **3. CONTRIBUTING.md**
-Document:
-- How to submit contributions
-- Code review process
-- Testing requirements
-- Style guides
-- Communication channels
+文書化する内容:
+- 貢献を送信する方法
+- コードレビュープロセス
+- テスト要件
+- スタイルガイド
+- コミュニケーションチャネル
 
-**4. MAINTAINERS.md or OWNERS**
-List:
-- Current maintainers by subsystem
-- Contact information
-- Areas of responsibility
-- Escalation paths
+**4. MAINTAINERS.mdまたはOWNERS**
+リスト:
+- サブシステム別の現在のメンテナー
+- 連絡先情報
+- 責任領域
+- エスカレーションパス
 
-### Communication Requirements
+### コミュニケーション要件
 
-**Transparency Practices:**
-- Conduct technical discussions in public channels
-- Document meeting minutes publicly
-- Announce decisions through mailing lists/forums
-- Maintain public roadmap
-- Explain rationale for major decisions
+**透明性のプラクティス:**
+- パブリックチャネルで技術的ディスカッションを実施
+- 会議の議事録を公に文書化
+- メーリングリスト/フォーラムを通じて決定を発表
+- 公開ロードマップを維持
+- 主要な決定の根拠を説明
 
-**Archive Decisions:**
-- Maintain searchable decision log
-- Link decisions to relevant discussions
-- Update documentation to reflect decisions
-- Provide context for historical choices
+**決定をアーカイブ:**
+- 検索可能な決定ログを維持
+- 決定を関連するディスカッションにリンク
+- 決定を反映するようにドキュメントを更新
+- 歴史的な選択のコンテキストを提供
 
-## Conflict Resolution
+## 対立解決
 
-### Resolution Ladder
+### 解決ラダー
 
-1. **Direct Discussion** - Parties discuss privately to resolve
-2. **Mediation** - Trusted community member facilitates
-3. **Maintainer Review** - Subsystem maintainer makes determination
-4. **TSC/Core Team Escalation** - Governance body decides
-5. **Code of Conduct Enforcement** - CoC team handles if violations involved
+1. **直接ディスカッション** - 当事者が私的に解決するためにディスカッション
+2. **調停** - 信頼されるコミュニティメンバーが促進
+3. **メンテナーレビュー** - サブシステムメンテナーが決定を下す
+4. **TSC/コアチームエスカレーション** - ガバナンス機関が決定
+5. **行動規範の実施** - 違反が関与している場合、CoC チームが処理
 
-### Best Practices
+### ベストプラクティス
 
-- Assume good faith in disagreements
-- Focus on technical merits, not personalities
-- Document disagreements objectively
-- Provide cooling-off periods for heated discussions
-- Separate technical disagreements from conduct issues
-- Involve neutral third parties when needed
+- 意見の相違では善意を仮定する
+- 個性ではなく技術的メリットに焦点を当てる
+- 意見の相違を客観的に文書化する
+- 熱いディスカッションのためのクールダウン期間を提供
+- 技術的な意見の相違と行動の問題を分離
+- 必要に応じて中立的な第三者を関与させる
 
-## Transitioning Governance Models
+## ガバナンスモデルの移行
 
-### When to Change
+### いつ変更するか
 
-Indicators for governance evolution:
-- Project scale exceeds current structure
-- Decision-making bottlenecks emerge
-- Community requests broader participation
-- Corporate or foundation support becomes available
-- Succession planning becomes critical
+ガバナンスの進化の指標:
+- プロジェクト規模が現在の構造を超える
+- 意思決定のボトルネックが現れる
+- コミュニティがより広範な参加を要求
+- 企業または財団のサポートが利用可能になる
+- 後継者計画が重要になる
 
-### Transition Process
+### 移行プロセス
 
-1. **Assess** - Evaluate current governance effectiveness
-2. **Research** - Study governance models of similar projects
-3. **Propose** - Draft new governance structure
-4. **Discuss** - Gather community input (4-8 weeks)
-5. **Refine** - Incorporate feedback
-6. **Approve** - Use existing governance process to adopt new model
-7. **Document** - Update all governance documentation
-8. **Communicate** - Announce widely with transition timeline
-9. **Implement** - Phase in new structure gradually
-10. **Review** - Assess effectiveness after 6-12 months
+1. **評価** - 現在のガバナンスの有効性を評価
+2. **調査** - 類似プロジェクトのガバナンスモデルを研究
+3. **提案** - 新しいガバナンス構造を起草
+4. **ディスカッション** - コミュニティの入力を収集（4〜8週間）
+5. **洗練** - フィードバックを組み込む
+6. **承認** - 既存のガバナンスプロセスを使用して新しいモデルを採用
+7. **文書化** - すべてのガバナンスドキュメントを更新
+8. **コミュニケーション** - 移行タイムラインとともに広く発表
+9. **実装** - 新しい構造を段階的に導入
+10. **レビュー** - 6〜12ヶ月後に有効性を評価
 
-### Common Transitions
+### 一般的な移行
 
-- **BDFL → Meritocracy**: Founder steps back, elevates trusted contributors
-- **Meritocracy → Foundation**: Project matures, requires vendor neutrality
-- **Corporate → Foundation**: Company donates project to foundation
-- **Informal → Formal**: Growth requires explicit governance structure
+- **BDFL → メリトクラシー**: 創設者が退き、信頼されるコントリビューターを昇格
+- **メリトクラシー → 財団**: プロジェクトが成熟し、ベンダー中立性が必要
+- **企業 → 財団**: 企業がプロジェクトを財団に寄付
+- **非公式 → 公式**: 成長には明示的なガバナンス構造が必要
 
-## Governance Anti-Patterns
+## ガバナンスのアンチパターン
 
-**Avoid:**
+**避けるべきこと:**
 
-- **Secret Decisions** - Making important choices in private channels
-- **Unclear Authority** - Ambiguity about who decides what
-- **Governance Theater** - Requesting input but ignoring it
-- **Eternal Discussion** - No mechanism to reach closure
-- **Surprise Announcements** - Major changes without prior discussion
-- **Selective Enforcement** - Applying rules inconsistently
-- **Founder Syndrome** - Original contributors refusing to share authority
-- **Corporate Capture** - Single company dominating nominally open governance
+- **秘密の決定** - プライベートチャネルで重要な選択を行う
+- **不明確な権限** - 誰が何を決定するかについての曖昧さ
+- **ガバナンスシアター** - 入力を要求するが無視する
+- **永遠のディスカッション** - 終結に達するメカニズムがない
+- **サプライズ発表** - 事前のディスカッションなしの主要な変更
+- **選択的実施** - ルールを一貫性なく適用
+- **創設者症候群** - 元のコントリビューターが権限を共有することを拒否
+- **企業の捕獲** - 単一企業が名目上オープンなガバナンスを支配
 
-## Resources
+## リソース
 
 - Apache Software Foundation Governance: https://www.apache.org/foundation/governance/
 - CNCF Governance: https://www.cncf.io/governance/
-- Producing Open Source Software (Karl Fogel): https://producingoss.com/
+- Producing Open Source Software（Karl Fogel）: https://producingoss.com/
 - The Open Source Way: https://www.theopensourceway.org/
