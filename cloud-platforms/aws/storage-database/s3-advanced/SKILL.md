@@ -1,70 +1,23 @@
 ---
-name: aws-s3
-description: AWS S3（Simple Storage Service）を使用してオブジェクトストレージを管理し、ストレージクラス、ライフサイクルポリシー、バージョニングを活用してコストを最適化する方法
+name: s3-advanced
+description: S3の高度な機能を習得：データレイク、高度なストレージクラス（Glacier、Deep Archive）、レプリケーション、イベント通知、Access Points、パフォーマンス最適化、Object Lock
 ---
 
-# AWS S3 スキル
+# AWS S3 Advanced スキル
 
 ## 概要
 
-Amazon S3（Simple Storage Service）は、業界をリードするスケーラビリティ、データ可用性、セキュリティ、パフォーマンスを提供するオブジェクトストレージサービスです。このスキルでは、S3のストレージクラス、ライフサイクルポリシー、バージョニング、暗号化、アクセス制御を駆使して、コスト効率の高いストレージ戦略を構築する方法を学びます。
+このスキルでは、Amazon S3の高度な機能を深く学びます。データレイク構築、Glacierなどの高度なストレージクラス、クロスリージョンレプリケーション、イベント通知、S3 Access Points、パフォーマンス最適化、Object Lockなどのエンタープライズ向け機能をカバーします。
 
 ### 2025年の重要なアップデート
 
-- **S3 Intelligent-Tiering**: すべての新規ワークロードのデフォルト推奨
 - **S3 Express One Zone**: 1桁ミリ秒のレイテンシ（高頻度アクセス用）
-- **ライフサイクルポリシーの自動化**: 組織規模での自動適用
+- **Multi-Region Access Points**: 自動フェイルオーバーでグローバル展開を簡素化
+- **S3 Object Lambda**: データ取得時にリアルタイムで変換
 
 ## 主な使用ケース
 
-### 1. 静的Webサイトホスティング
-
-S3で静的WebサイトをホストしCloudFrontで配信します。
-
-```bash
-# バケットの作成
-aws s3 mb s3://my-static-website --region ap-northeast-1
-
-# 静的Webサイトホスティングの有効化
-aws s3 website s3://my-static-website/ \
-    --index-document index.html \
-    --error-document error.html
-
-# ファイルのアップロード
-aws s3 sync ./website/ s3://my-static-website/ \
-    --delete \
-    --cache-control "public, max-age=31536000" \
-    --exclude "*.html" \
-    --exclude "index.html"
-
-# HTMLファイルは短いキャッシュ期間
-aws s3 sync ./website/ s3://my-static-website/ \
-    --exclude "*" \
-    --include "*.html" \
-    --cache-control "public, max-age=3600"
-
-# バケットポリシーで読み取りアクセスを許可
-cat > bucket-policy.json << 'EOF'
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "PublicReadGetObject",
-      "Effect": "Allow",
-      "Principal": "*",
-      "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::my-static-website/*"
-    }
-  ]
-}
-EOF
-
-aws s3api put-bucket-policy \
-    --bucket my-static-website \
-    --policy file://bucket-policy.json
-```
-
-### 2. データレイク構築
+### 1. データレイク構築
 
 大量のデータを効率的に保存し、Athena、Glue、EMRで分析します。
 
@@ -95,111 +48,18 @@ aws s3 cp data.parquet s3://company-datalake/raw/year=2025/month=01/day=22/ \
     --storage-class INTELLIGENT_TIERING
 ```
 
-### 3. S3 Intelligent-Tiering（2025年推奨）
+### 2. クロスリージョンレプリケーション（CRR）
 
-アクセスパターンに基づいて自動的にストレージクラスを最適化します。
-
-```bash
-# 新規データを直接Intelligent-Tieringにアップロード
-aws s3 cp large-file.zip s3://my-bucket/ \
-    --storage-class INTELLIGENT_TIERING
-
-# バケット全体のデフォルトをIntelligent-Tieringに設定
-aws s3api put-bucket-intelligent-tiering-configuration \
-    --bucket my-bucket \
-    --id default-config \
-    --intelligent-tiering-configuration file://it-config.json
-
-# it-config.json
-cat > it-config.json << 'EOF'
-{
-  "Id": "default-config",
-  "Status": "Enabled",
-  "Tierings": [
-    {
-      "Days": 90,
-      "AccessTier": "ARCHIVE_ACCESS"
-    },
-    {
-      "Days": 180,
-      "AccessTier": "DEEP_ARCHIVE_ACCESS"
-    }
-  ]
-}
-EOF
-```
-
-**コスト削減効果**:
-- 30日後（低頻度アクセス層）: 40%削減
-- 90日後（アーカイブ即時アクセス層）: 68%削減
-- 180日後（ディープアーカイブアクセス層）: 95%削減
-
-### 4. ライフサイクルポリシー
-
-オブジェクトを自動的に移行・削除してコストを最適化します。
+ディザスタリカバリとグローバル展開を実現します。
 
 ```bash
-# ライフサイクルポリシーの設定
-aws s3api put-bucket-lifecycle-configuration \
-    --bucket my-bucket \
-    --lifecycle-configuration file://lifecycle-policy.json
-
-# lifecycle-policy.json
-cat > lifecycle-policy.json << 'EOF'
-{
-  "Rules": [
-    {
-      "Id": "Move to Intelligent-Tiering",
-      "Status": "Enabled",
-      "Filter": {
-        "Prefix": ""
-      },
-      "Transitions": [
-        {
-          "Days": 0,
-          "StorageClass": "INTELLIGENT_TIERING"
-        }
-      ]
-    },
-    {
-      "Id": "Delete old versions",
-      "Status": "Enabled",
-      "Filter": {
-        "Prefix": ""
-      },
-      "NoncurrentVersionExpiration": {
-        "NoncurrentDays": 30,
-        "NewerNoncurrentVersions": 3
-      }
-    },
-    {
-      "Id": "Clean incomplete multipart uploads",
-      "Status": "Enabled",
-      "Filter": {
-        "Prefix": ""
-      },
-      "AbortIncompleteMultipartUpload": {
-        "DaysAfterInitiation": 7
-      }
-    }
-  ]
-}
-EOF
-```
-
-**重要ポイント**:
-- 現行バージョンと非現行バージョンで別々のルールを定義
-- `NewerNoncurrentVersions`で最新N個を保持
-- 不完全なマルチパートアップロードを定期的にクリーンアップ
-
-### 5. S3バージョニングとレプリケーション
-
-データ保護とディザスタリカバリを実現します。
-
-```bash
-# バージョニング有効化
+# バージョニング有効化（ソースとデスティネーション両方で必須）
 aws s3api put-bucket-versioning \
     --bucket source-bucket \
+    --versioning-configuration Status=Enabled
+
+aws s3api put-bucket-versioning \
+    --bucket destination-bucket \
     --versioning-configuration Status=Enabled
 
 # クロスリージョンレプリケーション（CRR）の設定
@@ -260,9 +120,49 @@ EOF
 aws iam create-role \
     --role-name S3ReplicationRole \
     --assume-role-policy-document file://trust-policy.json
+
+# レプリケーション用IAMポリシーの作成
+cat > replication-policy.json << 'EOF'
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetReplicationConfiguration",
+        "s3:ListBucket"
+      ],
+      "Resource": "arn:aws:s3:::source-bucket"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObjectVersionForReplication",
+        "s3:GetObjectVersionAcl",
+        "s3:GetObjectVersionTagging"
+      ],
+      "Resource": "arn:aws:s3:::source-bucket/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:ReplicateObject",
+        "s3:ReplicateDelete",
+        "s3:ReplicateTags"
+      ],
+      "Resource": "arn:aws:s3:::destination-bucket/*"
+    }
+  ]
+}
+EOF
+
+aws iam put-role-policy \
+    --role-name S3ReplicationRole \
+    --policy-name ReplicationPolicy \
+    --policy-document file://replication-policy.json
 ```
 
-### 6. S3イベント通知
+### 3. S3イベント通知
 
 オブジェクトの変更を検知してLambda、SQS、SNSに通知します。
 
@@ -305,9 +205,17 @@ cat > notification-config.json << 'EOF'
   ]
 }
 EOF
+
+# Lambda関数にS3からの呼び出し権限を付与
+aws lambda add-permission \
+    --function-name image-processor \
+    --statement-id s3-invoke \
+    --action lambda:InvokeFunction \
+    --principal s3.amazonaws.com \
+    --source-arn arn:aws:s3:::my-bucket
 ```
 
-### 7. S3 Access Points（マルチテナント管理）
+### 4. S3 Access Points（マルチテナント管理）
 
 複数のアプリケーションやチームで同じバケットを共有します。
 
@@ -332,7 +240,7 @@ cat > ap-policy.json << 'EOF'
       "Action": ["s3:GetObject", "s3:PutObject"],
       "Resource": "arn:aws:s3:ap-northeast-1:123456789012:accesspoint/analytics-team-ap/object/*",
       "Condition": {
-        "StringEquals": {
+        "StringLike": {
           "s3:prefix": "analytics/*"
         }
       }
@@ -345,9 +253,15 @@ aws s3control put-access-point-policy \
     --account-id 123456789012 \
     --name analytics-team-ap \
     --policy file://ap-policy.json
+
+# Access Point経由でのアクセス
+aws s3 ls s3://arn:aws:s3:ap-northeast-1:123456789012:accesspoint/analytics-team-ap/
+
+# Access Point名でのアクセス（簡易形式）
+aws s3 cp data.csv s3://arn:aws:s3:ap-northeast-1:123456789012:accesspoint/analytics-team-ap/analytics/data.csv
 ```
 
-### 8. S3 Object Lock（WORM: Write Once Read Many）
+### 5. S3 Object Lock（WORM: Write Once Read Many）
 
 コンプライアンス要件に対応した削除不可能なデータ保存です。
 
@@ -384,213 +298,128 @@ aws s3api put-object \
     --body document.pdf \
     --object-lock-mode COMPLIANCE \
     --object-lock-retain-until-date 2026-12-31T23:59:59Z
+
+# Legal Holdの設定（保持期限なし）
+aws s3api put-object-legal-hold \
+    --bucket compliance-bucket \
+    --key legal-evidence.pdf \
+    --legal-hold Status=ON
 ```
 
 **モードの違い**:
 - **GOVERNANCE**: 特権ユーザーが上書き可能
 - **COMPLIANCE**: 誰も削除・上書き不可（ルートユーザーでも）
 
-## 思考プロセス
+### 6. 高度なストレージクラス（Glacier）
 
-S3を使用したストレージ戦略を設計する際の段階的な思考プロセスです。
-
-### フェーズ1: ストレージクラスの選択
-
-```python
-"""
-S3ストレージクラス選択ロジック（2025年版）
-"""
-
-def choose_storage_class(access_pattern):
-    """
-    アクセスパターンに基づいて最適なストレージクラスを選択
-    """
-    if access_pattern.access_frequency == 'unknown':
-        # 2025年のデフォルト推奨
-        return 'INTELLIGENT_TIERING'
-
-    if access_pattern.access_frequency == 'frequent':
-        if access_pattern.latency_requirement == 'single_digit_ms':
-            return 'EXPRESS_ONE_ZONE'  # 2025年新機能
-        else:
-            return 'STANDARD'
-
-    if access_pattern.access_frequency == 'infrequent':
-        if access_pattern.availability_requirement == 'high':
-            return 'STANDARD_IA'  # Multi-AZ
-        else:
-            return 'ONEZONE_IA'  # Single-AZ（20%安い）
-
-    if access_pattern.access_frequency == 'archive':
-        if access_pattern.retrieval_time == 'instant':
-            return 'GLACIER_INSTANT_RETRIEVAL'  # ミリ秒
-        elif access_pattern.retrieval_time == 'flexible':
-            return 'GLACIER_FLEXIBLE_RETRIEVAL'  # 1-5分または1-12時間
-        else:
-            return 'GLACIER_DEEP_ARCHIVE'  # 12-48時間（最安）
-
-    # デフォルトはIntelligent-Tiering
-    return 'INTELLIGENT_TIERING'
-
-# 使用例
-class AccessPattern:
-    def __init__(self):
-        self.access_frequency = 'unknown'
-        self.latency_requirement = 'standard'
-        self.availability_requirement = 'high'
-        self.retrieval_time = 'instant'
-
-pattern = AccessPattern()
-pattern.access_frequency = 'unknown'
-storage_class = choose_storage_class(pattern)
-print(f"推奨ストレージクラス: {storage_class}")
-# 出力: INTELLIGENT_TIERING
-```
-
-### フェーズ2: ライフサイクルポリシーの設計
-
-```python
-"""
-ライフサイクルポリシー生成ツール
-"""
-import json
-
-def generate_lifecycle_policy(config):
-    """
-    設定に基づいてライフサイクルポリシーを生成
-    """
-    rules = []
-
-    # ルール1: Intelligent-Tieringへの移行
-    if config.get('use_intelligent_tiering'):
-        rules.append({
-            'Id': 'Move to Intelligent-Tiering',
-            'Status': 'Enabled',
-            'Filter': {'Prefix': config.get('prefix', '')},
-            'Transitions': [{
-                'Days': 0,
-                'StorageClass': 'INTELLIGENT_TIERING'
-            }]
-        })
-
-    # ルール2: 古いバージョンの削除
-    if config.get('delete_old_versions'):
-        rules.append({
-            'Id': 'Delete old versions',
-            'Status': 'Enabled',
-            'Filter': {'Prefix': config.get('prefix', '')},
-            'NoncurrentVersionExpiration': {
-                'NoncurrentDays': config.get('version_retention_days', 30),
-                'NewerNoncurrentVersions': config.get('versions_to_keep', 3)
-            }
-        })
-
-    # ルール3: 不完全マルチパートアップロードの削除
-    rules.append({
-        'Id': 'Clean incomplete uploads',
-        'Status': 'Enabled',
-        'Filter': {'Prefix': ''},
-        'AbortIncompleteMultipartUpload': {
-            'DaysAfterInitiation': 7
-        }
-    })
-
-    # ルール4: 一時ファイルの自動削除
-    if config.get('temp_files_prefix'):
-        rules.append({
-            'Id': 'Delete temp files',
-            'Status': 'Enabled',
-            'Filter': {'Prefix': config.get('temp_files_prefix')},
-            'Expiration': {
-                'Days': config.get('temp_files_retention_days', 7)
-            }
-        })
-
-    return {'Rules': rules}
-
-# 使用例
-config = {
-    'use_intelligent_tiering': True,
-    'delete_old_versions': True,
-    'version_retention_days': 30,
-    'versions_to_keep': 5,
-    'temp_files_prefix': 'tmp/',
-    'temp_files_retention_days': 3
-}
-
-policy = generate_lifecycle_policy(config)
-print(json.dumps(policy, indent=2))
-```
-
-### フェーズ3: セキュリティとアクセス制御
+長期アーカイブとコスト最適化を実現します。
 
 ```bash
-# S3バケットポリシー生成（最小権限の原則）
-cat > secure-bucket-policy.json << 'EOF'
+# Glacier Instant Retrievalへの移行（即座の取り出し）
+aws s3api put-object \
+    --bucket my-archive-bucket \
+    --key archive-data.zip \
+    --body data.zip \
+    --storage-class GLACIER_IR
+
+# Glacier Flexible Retrievalへの移行（1-5分または3-5時間）
+aws s3 cp data.tar.gz s3://my-archive-bucket/ \
+    --storage-class GLACIER
+
+# Glacier Deep Archiveへの移行（12時間、最安）
+aws s3 cp old-data.tar.gz s3://my-archive-bucket/ \
+    --storage-class DEEP_ARCHIVE
+
+# Glacierからのデータ復元
+aws s3api restore-object \
+    --bucket my-archive-bucket \
+    --key archived-file.zip \
+    --restore-request '{
+        "Days": 7,
+        "GlacierJobParameters": {
+            "Tier": "Standard"
+        }
+    }'
+
+# 復元状態の確認
+aws s3api head-object \
+    --bucket my-archive-bucket \
+    --key archived-file.zip
+```
+
+**取り出し層の比較**:
+- **Expedited**: 1-5分（$30/1000リクエスト + $0.03/GB）
+- **Standard**: 3-5時間（$0.05/1000リクエスト + $0.01/GB）
+- **Bulk**: 5-12時間（$0.025/1000リクエスト + $0.0025/GB）
+
+## 思考プロセス
+
+### フェーズ1: 高度なセキュリティとアクセス制御
+
+```bash
+# KMS暗号化の有効化
+aws s3api put-bucket-encryption \
+    --bucket my-secure-bucket \
+    --server-side-encryption-configuration '{
+        "Rules": [{
+            "ApplyServerSideEncryptionByDefault": {
+                "SSEAlgorithm": "aws:kms",
+                "KMSMasterKeyID": "arn:aws:kms:ap-northeast-1:123456789012:key/12345678-1234-1234-1234-123456789012"
+            },
+            "BucketKeyEnabled": true
+        }]
+    }'
+
+# KMSキーポリシーでアクセス制御
+cat > kms-key-policy.json << 'EOF'
 {
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "DenyUnencryptedObjectUploads",
-      "Effect": "Deny",
-      "Principal": "*",
-      "Action": "s3:PutObject",
-      "Resource": "arn:aws:s3:::my-secure-bucket/*",
-      "Condition": {
-        "StringNotEquals": {
-          "s3:x-amz-server-side-encryption": "AES256"
-        }
-      }
-    },
-    {
-      "Sid": "DenyInsecureTransport",
-      "Effect": "Deny",
-      "Principal": "*",
-      "Action": "s3:*",
-      "Resource": [
-        "arn:aws:s3:::my-secure-bucket",
-        "arn:aws:s3:::my-secure-bucket/*"
-      ],
-      "Condition": {
-        "Bool": {
-          "aws:SecureTransport": "false"
-        }
-      }
-    },
-    {
-      "Sid": "AllowSpecificRoleAccess",
+      "Sid": "Enable IAM User Permissions",
       "Effect": "Allow",
       "Principal": {
-        "AWS": "arn:aws:iam::123456789012:role/AppServerRole"
+        "AWS": "arn:aws:iam::123456789012:root"
+      },
+      "Action": "kms:*",
+      "Resource": "*"
+    },
+    {
+      "Sid": "Allow S3 to use the key",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "s3.amazonaws.com"
       },
       "Action": [
-        "s3:GetObject",
-        "s3:PutObject"
+        "kms:Decrypt",
+        "kms:GenerateDataKey"
       ],
-      "Resource": "arn:aws:s3:::my-secure-bucket/app-data/*"
+      "Resource": "*"
     }
   ]
 }
 EOF
 
-aws s3api put-bucket-policy \
-    --bucket my-secure-bucket \
-    --policy file://secure-bucket-policy.json
-
-# パブリックアクセスブロックの有効化（2025年必須）
-aws s3api put-public-access-block \
-    --bucket my-secure-bucket \
-    --public-access-block-configuration \
-        BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicBuckets=true
+# アクセスログの有効化
+aws s3api put-bucket-logging \
+    --bucket my-bucket \
+    --bucket-logging-status '{
+        "LoggingEnabled": {
+            "TargetBucket": "my-log-bucket",
+            "TargetPrefix": "s3-access-logs/"
+        }
+    }'
 ```
 
-### フェーズ4: パフォーマンス最適化
+### フェーズ2: パフォーマンス最適化
 
 ```python
 """
 大容量ファイルのマルチパートアップロード
 """
 import boto3
+import os
+import threading
 from boto3.s3.transfer import TransferConfig
 
 def upload_large_file(file_path, bucket, key):
@@ -644,7 +473,7 @@ def upload_large_file(file_path, bucket, key):
 upload_large_file('large-video.mp4', 'my-media-bucket', 'videos/large-video.mp4')
 ```
 
-### フェーズ5: コスト最適化の監視
+### フェーズ3: コスト最適化の監視
 
 ```bash
 # S3 Storage Lensでコストと使用状況を分析
@@ -706,71 +535,10 @@ aws cloudwatch put-metric-alarm \
 
 ## ベストプラクティス（2025年版）
 
-### 1. Intelligent-Tieringをデフォルトに
-
-**推奨**: すべての新規ワークロードでIntelligent-Tieringを使用
+### 1. KMS暗号化のBucket Key有効化
 
 ```bash
-# バケットのデフォルトストレージクラスをIntelligent-Tieringに設定
-# （注: S3にはデフォルトストレージクラス設定がないため、アプリケーションレベルで実装）
-
-# Python Boto3での実装例
-import boto3
-
-s3 = boto3.client('s3')
-
-def upload_with_intelligent_tiering(bucket, key, file_path):
-    """デフォルトでIntelligent-Tieringを使用"""
-    s3.upload_file(
-        file_path,
-        bucket,
-        key,
-        ExtraArgs={'StorageClass': 'INTELLIGENT_TIERING'}
-    )
-```
-
-**理由**:
-- アクセスパターンが不明な場合でも自動最適化
-- 30-60%のコスト削減（典型的なワークロード）
-- 監視費用: わずか$0.0025/1000オブジェクト
-
-### 2. バージョニングとライフサイクルポリシーの組み合わせ
-
-```bash
-# バージョニング + ライフサイクルで誤削除を防ぎつつコスト管理
-cat > versioning-lifecycle.json << 'EOF'
-{
-  "Rules": [
-    {
-      "Id": "Keep recent versions, archive old ones",
-      "Status": "Enabled",
-      "Filter": {"Prefix": ""},
-      "NoncurrentVersionTransitions": [
-        {
-          "NoncurrentDays": 30,
-          "StorageClass": "GLACIER_INSTANT_RETRIEVAL"
-        },
-        {
-          "NoncurrentDays": 90,
-          "StorageClass": "GLACIER_DEEP_ARCHIVE"
-        }
-      ],
-      "NoncurrentVersionExpiration": {
-        "NoncurrentDays": 365,
-        "NewerNoncurrentVersions": 5
-      }
-    }
-  ]
-}
-EOF
-```
-
-**ポイント**: 最新5バージョンを保持、それ以前は1年後に削除
-
-### 3. 暗号化とセキュリティのレイヤー化
-
-```bash
-# レイヤー1: バケットレベルのデフォルト暗号化
+# Bucket Key有効化でKMSコストを99%削減
 aws s3api put-bucket-encryption \
     --bucket my-bucket \
     --server-side-encryption-configuration '{
@@ -782,32 +550,14 @@ aws s3api put-bucket-encryption \
             "BucketKeyEnabled": true
         }]
     }'
-
-# レイヤー2: バケットポリシーで非暗号化アップロードを拒否（既出）
-
-# レイヤー3: IAMポリシーで最小権限
-cat > iam-policy.json << 'EOF'
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "s3:GetObject",
-        "s3:PutObject"
-      ],
-      "Resource": "arn:aws:s3:::my-bucket/app-data/${aws:username}/*"
-    }
-  ]
-}
-EOF
 ```
 
 **Bucket Key有効化のメリット**:
 - KMS APIコールを99%削減
 - KMSコストを大幅削減
+- パフォーマンス向上
 
-### 4. CloudFrontとの統合
+### 2. CloudFrontとの統合
 
 ```bash
 # CloudFront Origin Access Identity（OAI）の作成
@@ -832,9 +582,13 @@ cat > cloudfront-bucket-policy.json << 'EOF'
   ]
 }
 EOF
+
+aws s3api put-bucket-policy \
+    --bucket my-bucket \
+    --policy file://cloudfront-bucket-policy.json
 ```
 
-### 5. S3 Transfer Accelerationで高速アップロード
+### 3. S3 Transfer Accelerationで高速アップロード
 
 ```bash
 # Transfer Accelerationの有効化
@@ -846,6 +600,10 @@ aws s3api put-bucket-accelerate-configuration \
 aws s3 cp large-file.zip s3://my-global-bucket/ \
     --endpoint-url https://s3-accelerate.amazonaws.com \
     --region us-west-2
+
+# 速度比較テスト
+aws s3api get-bucket-accelerate-configuration \
+    --bucket my-global-bucket
 ```
 
 **適用ケース**:
@@ -853,7 +611,7 @@ aws s3 cp large-file.zip s3://my-global-bucket/ \
 - 大容量ファイル（GB単位）
 - 追加コスト: $0.04/GB（通常転送より）
 
-### 6. S3 Select/Glacier Selectでデータ転送量削減
+### 4. S3 Select/Glacier Selectでデータ転送量削減
 
 ```bash
 # S3 Selectで必要なデータのみ取得（CSV例）
@@ -865,43 +623,82 @@ aws s3api select-object-content \
     --input-serialization '{"CSV": {"FileHeaderInfo": "USE", "RecordDelimiter": "\n", "FieldDelimiter": ","}}' \
     --output-serialization '{"CSV": {}}' \
     output.csv
+
+# S3 Select（JSON例）
+aws s3api select-object-content \
+    --bucket my-bucket \
+    --key data/events.json \
+    --expression "SELECT s.event_type, s.timestamp FROM S3Object[*] s WHERE s.status = 'error'" \
+    --expression-type SQL \
+    --input-serialization '{"JSON": {"Type": "DOCUMENT"}}' \
+    --output-serialization '{"JSON": {}}' \
+    errors.json
+
+# Parquet形式での使用
+aws s3api select-object-content \
+    --bucket my-bucket \
+    --key data/sales.parquet \
+    --expression "SELECT product, SUM(amount) as total FROM S3Object GROUP BY product" \
+    --expression-type SQL \
+    --input-serialization '{"Parquet": {}}' \
+    --output-serialization '{"CSV": {}}' \
+    summary.csv
 ```
 
 **メリット**:
 - データ転送量を最大80%削減
 - 処理時間を最大400%高速化
+- コスト: $0.002/GB（スキャン）+ $0.0007/GB（返却）
+
+### 5. S3 Batch Operationsで大規模処理
+
+```bash
+# Batch Operationsでタグを一括設定
+cat > batch-job-manifest.csv << 'EOF'
+my-bucket,object1.txt
+my-bucket,object2.txt
+my-bucket,object3.txt
+EOF
+
+# マニフェストをS3にアップロード
+aws s3 cp batch-job-manifest.csv s3://my-batch-bucket/manifests/
+
+# Batch Job作成
+aws s3control create-job \
+    --account-id 123456789012 \
+    --operation '{
+        "S3PutObjectTagging": {
+            "TagSet": [
+                {"Key": "Department", "Value": "Engineering"},
+                {"Key": "Environment", "Value": "Production"}
+            ]
+        }
+    }' \
+    --manifest '{
+        "Spec": {
+            "Format": "S3BatchOperations_CSV_20180820",
+            "Fields": ["Bucket", "Key"]
+        },
+        "Location": {
+            "ObjectArn": "arn:aws:s3:::my-batch-bucket/manifests/batch-job-manifest.csv",
+            "ETag": "etag-value"
+        }
+    }' \
+    --report '{
+        "Bucket": "arn:aws:s3:::my-batch-bucket",
+        "Format": "Report_CSV_20180820",
+        "Enabled": true,
+        "Prefix": "batch-reports/",
+        "ReportScope": "AllTasks"
+    }' \
+    --priority 10 \
+    --role-arn arn:aws:iam::123456789012:role/S3BatchOperationsRole \
+    --no-confirmation-required
+```
 
 ## よくある落とし穴と対策
 
-### 1. バージョニング有効化後のコスト爆発
-
-**症状**: バケットのストレージコストが予想外に高騰
-
-**原因**: 古いバージョンが自動削除されず蓄積
-
-**対策**:
-
-```bash
-# 現在のバージョン数を確認
-aws s3api list-object-versions \
-    --bucket my-bucket \
-    --max-keys 1000 \
-    --query 'length(Versions)'
-
-# 非現行バージョンのストレージ使用量を確認
-aws cloudwatch get-metric-statistics \
-    --namespace AWS/S3 \
-    --metric-name BucketSizeBytes \
-    --dimensions Name=BucketName,Value=my-bucket Name=StorageType,Value=StandardStorage \
-    --start-time 2025-01-01T00:00:00Z \
-    --end-time 2025-01-22T00:00:00Z \
-    --period 86400 \
-    --statistics Average
-
-# ライフサイクルポリシーで古いバージョンを削除（対策済み）
-```
-
-### 2. リクエストコストの見落とし
+### 1. リクエストコストの見落とし
 
 **症状**: 大量の小さなファイルでコストが高い
 
@@ -926,7 +723,7 @@ aws s3api put-object \
 - 1,000,000ファイル × $0.0004/1000 GET = $400/月
 - CloudFrontキャッシュヒット率90% → $40/月
 
-### 3. クロスリージョン転送コストの見落とし
+### 2. クロスリージョン転送コストの見落とし
 
 **症状**: 予想外のデータ転送料金
 
@@ -945,10 +742,10 @@ aws s3api put-bucket-replication \
 ```
 
 **コスト比較**:
-- クロスリージョン転送: $0.02/GB
+- クロスリージョン転送: $0.02/GB（毎回）
 - レプリケーション: $0.02/GB（1回のみ）+ 各リージョンでのストレージコスト
 
-### 4. Glacier取り出しコストの予期しない高騰
+### 3. Glacier取り出しコストの予期しない高騰
 
 **症状**: Glacierからの大量取り出しで高額請求
 
@@ -967,6 +764,11 @@ aws s3api restore-object \
             "Tier": "Bulk"
         }
     }'
+
+# 取り出しジョブの状態確認
+aws s3api head-object \
+    --bucket my-archive-bucket \
+    --key archived-file.zip
 ```
 
 **コスト比較（1TB取り出し）**:
@@ -974,38 +776,30 @@ aws s3api restore-object \
 - Standard: $10 + $0.01/GB = $20.48
 - Bulk: $2.50 + $0.0025/GB = $5.06
 
-### 5. 不完全なマルチパートアップロードの蓄積
+### 4. レプリケーションの帯域幅制限
 
-**症状**: ストレージコストが予想より高い
+**症状**: レプリケーションが遅延
 
-**原因**: 失敗したマルチパートアップロードが削除されていない
+**原因**: デフォルトの帯域幅制限
 
-**検出と対策**:
+**対策**:
 
 ```bash
-# 不完全なマルチパートアップロードを確認
-aws s3api list-multipart-uploads --bucket my-bucket
+# Replication Time Control（RTC）を有効化
+# replication-config.jsonに追加（前述の例を参照）
+# "ReplicationTime": { "Status": "Enabled", "Time": { "Minutes": 15 } }
 
-# 手動削除
-aws s3api abort-multipart-upload \
-    --bucket my-bucket \
-    --key large-file.zip \
-    --upload-id UPLOAD_ID
-
-# ライフサイクルポリシーで自動削除（推奨、既出）
+# レプリケーション優先度を設定
+# 複数ルールがある場合、高優先度を優先
 ```
 
 ## 判断ポイント
 
-### ストレージクラス選択マトリクス（2025年版）
+### 高度なストレージクラス選択マトリクス
 
 | アクセス頻度 | 取り出し時間 | 可用性要件 | 推奨ストレージクラス | コスト（GB/月） |
 |------------|------------|----------|------------------|----------------|
-| 不明・変動 | 即座 | 高 | **Intelligent-Tiering** | $0.023-0.0025 |
 | 頻繁 | 1桁ms | 高 | **Express One Zone** | $0.16 |
-| 頻繁 | 即座 | 高 | **Standard** | $0.023 |
-| 月1回程度 | 即座 | 高 | **Standard-IA** | $0.0125 |
-| 月1回程度 | 即座 | 低 | **One Zone-IA** | $0.01 |
 | 四半期1回 | 即座 | 高 | **Glacier Instant Retrieval** | $0.004 |
 | 年1回 | 3-5時間 | 高 | **Glacier Flexible Retrieval** | $0.0036 |
 | 7年保管 | 12時間 | 高 | **Glacier Deep Archive** | $0.00099 |
@@ -1073,21 +867,7 @@ print(f"推奨レプリケーション戦略: {strategies}")
 
 ## 検証ポイント
 
-### 1. ストレージコストの分析
-
-```bash
-# S3 Storage Lensでバケットごとのコストを確認
-aws s3control get-storage-lens-configuration \
-    --account-id 123456789012 \
-    --config-id default-dashboard
-
-# コスト最適化の機会を特定
-# - 利用率の低いStandardストレージ → Intelligent-Tiering
-# - 古い非現行バージョン → Glacier/削除
-# - 不完全なマルチパートアップロード → 削除
-```
-
-### 2. パフォーマンステスト
+### 1. パフォーマンステスト
 
 ```python
 """
@@ -1149,27 +929,7 @@ def benchmark_s3_operations(bucket, num_objects=100):
 benchmark_s3_operations('my-benchmark-bucket', num_objects=1000)
 ```
 
-### 3. セキュリティ監査
-
-```bash
-# S3バケットのセキュリティ設定を確認
-aws s3api get-bucket-encryption --bucket my-bucket
-aws s3api get-bucket-versioning --bucket my-bucket
-aws s3api get-public-access-block --bucket my-bucket
-aws s3api get-bucket-policy --bucket my-bucket
-
-# アクセスログの有効化確認
-aws s3api get-bucket-logging --bucket my-bucket
-
-# 期待値:
-# - 暗号化: 有効（AES256またはKMS）
-# - バージョニング: 有効
-# - パブリックアクセスブロック: すべて有効
-# - バケットポリシー: 最小権限
-# - アクセスログ: 有効
-```
-
-### 4. レプリケーション状態の確認
+### 2. レプリケーション状態の確認
 
 ```bash
 # レプリケーションメトリクスを確認
@@ -1184,18 +944,42 @@ aws cloudwatch get-metric-statistics \
 
 # 期待値（RTC有効時）:
 # - 95%以上のオブジェクトが15分以内に複製
+
+# レプリケーション設定の確認
+aws s3api get-bucket-replication --bucket source-bucket
+
+# レプリケーション失敗の確認
+aws s3api list-objects-v2 \
+    --bucket source-bucket \
+    --prefix "" \
+    --query 'Contents[?ReplicationStatus==`FAILED`]'
+```
+
+### 3. Access Pointの監視
+
+```bash
+# Access Pointのメトリクスを確認
+aws cloudwatch get-metric-statistics \
+    --namespace AWS/S3 \
+    --metric-name AllRequests \
+    --dimensions Name=AccessPointName,Value=analytics-team-ap \
+    --start-time 2025-01-21T00:00:00Z \
+    --end-time 2025-01-22T00:00:00Z \
+    --period 3600 \
+    --statistics Sum
+
+# Access Pointの設定確認
+aws s3control get-access-point \
+    --account-id 123456789012 \
+    --name analytics-team-ap
+
+# Access Pointポリシーの確認
+aws s3control get-access-point-policy \
+    --account-id 123456789012 \
+    --name analytics-team-ap
 ```
 
 ## 他のスキルとの統合
-
-### CloudFrontスキルとの統合
-
-```bash
-# S3 + CloudFrontでグローバルコンテンツ配信
-# CloudFrontディストリビューション作成（詳細はCloudFrontスキル参照）
-
-# S3バケットポリシーでCloudFrontのみ許可（既出）
-```
 
 ### Lambdaスキルとの統合
 
@@ -1263,7 +1047,57 @@ EOF
 # パーティション追加
 aws athena start-query-execution \
     --query-string "MSCK REPAIR TABLE logs" \
-    --result-configuration "OutputLocation=s3://athena-results/"
+    --result-configuration "OutputLocation=s3://athena-results/" \
+    --query-execution-context "Database=analytics"
+
+# クエリ実行
+aws athena start-query-execution \
+    --query-string "SELECT user_id, COUNT(*) as actions FROM logs WHERE year=2025 AND month=1 GROUP BY user_id LIMIT 10" \
+    --result-configuration "OutputLocation=s3://athena-results/" \
+    --query-execution-context "Database=analytics"
+```
+
+### Glueスキルとの統合
+
+```bash
+# S3データ→Glueクローラー→Glue Data Catalog
+aws glue create-crawler \
+    --name s3-data-crawler \
+    --role arn:aws:iam::123456789012:role/GlueCrawlerRole \
+    --database-name analytics \
+    --targets '{
+        "S3Targets": [
+            {
+                "Path": "s3://company-datalake/raw/"
+            }
+        ]
+    }' \
+    --schedule "cron(0 2 * * ? *)"
+
+# クローラー実行
+aws glue start-crawler --name s3-data-crawler
+```
+
+## 関連スキル
+
+### s3-fundamentals
+
+S3の基本を学ぶには、**s3-fundamentals**スキルを参照してください：
+
+- S3の基本概念とバケット管理
+- 基本的なストレージクラス（Standard、IA、One Zone-IA）
+- S3 Intelligent-Tiering
+- 静的サイトホスティング
+- 基本的なセキュリティ（バケットポリシー、IAM）
+- 基本的なライフサイクルポリシー
+- バージョニングの基礎
+
+```bash
+# s3-fundamentalsスキルは以下の基本機能をカバー
+# - バケットの作成と基本設定
+# - 基本的な暗号化（SSE-S3）
+# - パブリックアクセスブロック
+# - 基本的なバージョニング
 ```
 
 ## リソース
@@ -1271,15 +1105,15 @@ aws athena start-query-execution \
 ### 公式ドキュメント
 
 - [Amazon S3 Documentation](https://docs.aws.amazon.com/s3/)
-- [S3 Storage Classes](https://aws.amazon.com/s3/storage-classes/)
-- [S3 Intelligent-Tiering](https://aws.amazon.com/s3/storage-classes/intelligent-tiering/)
-- [S3 Lifecycle](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html)
 - [S3 Replication](https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html)
+- [S3 Storage Lens](https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html)
+- [S3 Access Points](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html)
+- [S3 Object Lock](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html)
+- [S3 Batch Operations](https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html)
 
 ### ベストプラクティス
 
-- [S3 Best Practices](https://docs.aws.amazon.com/AmazonS3/latest/userguide/best-practices.html)
-- [S3 Security Best Practices](https://docs.aws.amazon.com/AmazonS3/latest/userguide/security-best-practices.html)
+- [S3 Performance Best Practices](https://docs.aws.amazon.com/AmazonS3/latest/userguide/optimizing-performance.html)
 - [Cost Optimization Best Practices](https://aws.amazon.com/s3/cost-optimization/)
 
 ### ツールとライブラリ
