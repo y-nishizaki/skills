@@ -15,8 +15,8 @@
     <meta name="theme-color" content="#94a3b8">
 
     <!-- Vis.js for network visualization -->
-    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
-    <link href="https://unpkg.com/vis-network/styles/vis-network.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+    <link href="https://unpkg.com/vis-network@9.1.9/styles/vis-network.min.css" rel="stylesheet" type="text/css" />
 
     <!-- PWA用のメタタグ -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -1001,35 +1001,67 @@
 
         // ネットワーク図を表示
         function showNetworkVisualization() {
-            const modal = document.getElementById('networkModal');
-            modal.classList.add('active');
+            try {
+                if (!window.vis) {
+                    console.error('vis.js ライブラリが読み込まれていません。ページを再読み込みしてください。');
+                    alert('ネットワーク図を表示するためのライブラリが読み込まれていません。ページを再読み込みしてください。');
+                    return;
+                }
 
-            // カテゴリフィルターを初期化
-            const categorySelect = document.getElementById('categoryFilter');
-            const categories = [...new Set(allSkills.map(s => s.category))].sort();
-            categorySelect.innerHTML = '<option value="all">すべて</option>';
-            categories.forEach(cat => {
-                const displayName = categoryNames[cat] || cat;
-                const option = document.createElement('option');
-                option.value = cat;
-                option.textContent = displayName;
-                categorySelect.appendChild(option);
-            });
+                if (!allSkills || allSkills.length === 0) {
+                    console.error('スキルデータが読み込まれていません');
+                    alert('スキルデータが読み込まれていません。ページを再読み込みしてください。');
+                    return;
+                }
 
-            // ネットワーク図を描画
-            updateNetwork();
+                const modal = document.getElementById('networkModal');
+                if (!modal) {
+                    console.error('ネットワークモーダルが見つかりません');
+                    return;
+                }
+                modal.classList.add('active');
+
+                // カテゴリフィルターを初期化
+                const categorySelect = document.getElementById('categoryFilter');
+                const categories = [...new Set(allSkills.map(s => s.category))].sort();
+                categorySelect.innerHTML = '<option value="all">すべて</option>';
+                categories.forEach(cat => {
+                    const displayName = categoryNames[cat] || cat;
+                    const option = document.createElement('option');
+                    option.value = cat;
+                    option.textContent = displayName;
+                    categorySelect.appendChild(option);
+                });
+
+                // ネットワーク図を描画
+                updateNetwork();
+            } catch (error) {
+                console.error('ネットワーク図の表示準備中にエラーが発生しました:', error);
+                alert('ネットワーク図の表示準備中にエラーが発生しました。詳細はコンソールを確認してください。');
+            }
         }
 
         // ネットワーク図を更新
         function updateNetwork() {
-            const minCommonWords = parseInt(document.getElementById('minCommonWords').value);
-            const categoryFilter = document.getElementById('categoryFilter').value;
+            try {
+                const minCommonWords = parseInt(document.getElementById('minCommonWords').value);
+                const categoryFilter = document.getElementById('categoryFilter').value;
 
-            document.getElementById('minCommonWordsValue').textContent = minCommonWords;
+                document.getElementById('minCommonWordsValue').textContent = minCommonWords;
 
-            networkData = generateNetworkData(minCommonWords, categoryFilter);
+                networkData = generateNetworkData(minCommonWords, categoryFilter);
 
-            const container = document.getElementById('networkViz');
+                const container = document.getElementById('networkViz');
+
+                if (!container) {
+                    console.error('ネットワーク表示用のコンテナが見つかりません');
+                    return;
+                }
+
+                if (!window.vis) {
+                    console.error('vis.js ライブラリが読み込まれていません');
+                    return;
+                }
 
             // カテゴリごとの色を定義
             const categoryColors = {
@@ -1098,23 +1130,40 @@
                 }
             };
 
-            // カテゴリごとのグループ設定
-            Object.entries(categoryColors).forEach(([category, color]) => {
-                options.groups[category] = { color: { background: color, border: color } };
-            });
+                // カテゴリごとのグループ設定
+                Object.entries(categoryColors).forEach(([category, color]) => {
+                    options.groups[category] = { color: { background: color, border: color } };
+                });
 
-            network = new vis.Network(container, networkData, options);
+                // DataSetを使用してデータを作成
+                const nodes = new vis.DataSet(networkData.nodes);
+                const edges = new vis.DataSet(networkData.edges);
+                const data = { nodes: nodes, edges: edges };
 
-            // ノードクリック時の処理
-            network.on('click', function(params) {
-                if (params.nodes.length > 0) {
-                    const nodeId = params.nodes[0];
-                    const skill = allSkills.find(s => s.id === nodeId);
-                    if (skill) {
-                        window.open(`https://github.com/y-nishizaki/skills/tree/main/${skill.path}`, '_blank');
-                    }
+                // 既存のネットワークを破棄
+                if (network) {
+                    network.destroy();
+                    network = null;
                 }
-            });
+
+                network = new vis.Network(container, data, options);
+
+                // ノードクリック時の処理
+                network.on('click', function(params) {
+                    if (params.nodes.length > 0) {
+                        const nodeId = params.nodes[0];
+                        const skill = allSkills.find(s => s.id === nodeId);
+                        if (skill) {
+                            window.open(`https://github.com/y-nishizaki/skills/tree/main/${skill.path}`, '_blank');
+                        }
+                    }
+                });
+
+                console.log(`ネットワーク図を表示しました: ${networkData.nodes.length} ノード, ${networkData.edges.length} エッジ`);
+            } catch (error) {
+                console.error('ネットワーク図の表示中にエラーが発生しました:', error);
+                alert('ネットワーク図の表示中にエラーが発生しました。詳細はコンソールを確認してください。');
+            }
         }
 
         // ネットワーク図を閉じる
