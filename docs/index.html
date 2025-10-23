@@ -15,8 +15,11 @@
     <meta name="theme-color" content="#94a3b8">
 
     <!-- Vis.js for network visualization -->
-    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
-    <link href="https://unpkg.com/vis-network/styles/vis-network.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+    <link href="https://unpkg.com/vis-network@9.1.9/styles/vis-network.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Network visualization functions -->
+    <script type="text/javascript" src="network-visualization.js"></script>
 
     <!-- PWA用のメタタグ -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -885,151 +888,72 @@
         // ページ読み込み時にスキルを読み込む
         loadSkills();
 
-        // ネットワーク図関連の変数
-        let network = null;
-        let networkData = null;
-
-        // 日本語テキストから単語を抽出（簡易版）
-        function extractKeywords(text) {
-            // ストップワードリスト（除外する単語）
-            const stopWords = new Set([
-                'の', 'は', 'を', 'に', 'が', 'で', 'と', 'する', 'から', 'まで',
-                'や', 'も', 'として', 'により', 'について', 'における', 'ため',
-                'こと', 'もの', 'れる', 'られる', 'させる', 'せる', 'できる',
-                '等', 'など', 'さらに', 'また', 'および', 'または', 'ただし',
-                'これ', 'それ', 'あれ', 'この', 'その', 'あの', 'どの',
-                'ある', 'いる', 'なる', 'です', 'ます', 'だ', 'である',
-                'に関する', 'に対する', 'による', 'によって', '使用', '活用'
-            ]);
-
-            // テキストを2-5文字の単語に分割（簡易的な方法）
-            const words = new Set();
-            const cleanText = text.replace(/[、。！？\s\-_]/g, '');
-
-            // カタカナ・ひらがな・漢字の連続を抽出
-            const patterns = [
-                /[ァ-ヶー]{2,}/g,  // カタカナ
-                /[ぁ-ん]{2,}/g,    // ひらがな
-                /[一-龯]{2,}/g     // 漢字
-            ];
-
-            patterns.forEach(pattern => {
-                const matches = text.match(pattern);
-                if (matches) {
-                    matches.forEach(word => {
-                        if (word.length >= 2 && word.length <= 6 && !stopWords.has(word)) {
-                            words.add(word);
-                        }
-                    });
-                }
-            });
-
-            // 英数字の単語も抽出
-            const engWords = text.match(/[A-Za-z]{3,}/g);
-            if (engWords) {
-                engWords.forEach(word => {
-                    const lower = word.toLowerCase();
-                    if (lower.length >= 3 && lower.length <= 15) {
-                        words.add(lower);
-                    }
-                });
-            }
-
-            return Array.from(words);
-        }
-
-        // スキルから単語を抽出
-        function analyzeSkills() {
-            return allSkills.map(skill => {
-                const text = `${skill.name} ${skill.description} ${skill.category}`;
-                const keywords = extractKeywords(text);
-                return {
-                    ...skill,
-                    keywords: keywords
-                };
-            });
-        }
-
-        // ネットワークデータを生成
-        function generateNetworkData(minCommonWords = 2, categoryFilter = 'all') {
-            const analyzedSkills = analyzeSkills();
-
-            // カテゴリでフィルタリング
-            const filteredSkills = categoryFilter === 'all'
-                ? analyzedSkills
-                : analyzedSkills.filter(s => s.category === categoryFilter);
-
-            // ノードを作成
-            const nodes = filteredSkills.map(skill => ({
-                id: skill.id,
-                label: skill.name,
-                title: `${skill.name}\n${skill.description}`,
-                group: skill.category,
-                keywords: skill.keywords
-            }));
-
-            // エッジを作成（共通する単語を持つスキル同士を繋ぐ）
-            const edges = [];
-            const edgeMap = new Map();
-
-            for (let i = 0; i < nodes.length; i++) {
-                for (let j = i + 1; j < nodes.length; j++) {
-                    const node1 = nodes[i];
-                    const node2 = nodes[j];
-
-                    // 共通する単語を見つける
-                    const commonWords = node1.keywords.filter(word =>
-                        node2.keywords.includes(word)
-                    );
-
-                    if (commonWords.length >= minCommonWords) {
-                        const edgeId = `${node1.id}-${node2.id}`;
-                        edges.push({
-                            id: edgeId,
-                            from: node1.id,
-                            to: node2.id,
-                            value: commonWords.length,
-                            title: `共通単語: ${commonWords.join(', ')}`,
-                            commonWords: commonWords
-                        });
-                    }
-                }
-            }
-
-            return { nodes, edges };
-        }
+        // ネットワーク図関連の変数（network-visualization.jsで定義済み）
+        // extractKeywords, analyzeSkills, generateNetworkData は外部ファイルから読み込まれます
 
         // ネットワーク図を表示
         function showNetworkVisualization() {
-            const modal = document.getElementById('networkModal');
-            modal.classList.add('active');
+            try {
+                if (!window.vis) {
+                    console.error('vis.js ライブラリが読み込まれていません。ページを再読み込みしてください。');
+                    alert('ネットワーク図を表示するためのライブラリが読み込まれていません。ページを再読み込みしてください。');
+                    return;
+                }
 
-            // カテゴリフィルターを初期化
-            const categorySelect = document.getElementById('categoryFilter');
-            const categories = [...new Set(allSkills.map(s => s.category))].sort();
-            categorySelect.innerHTML = '<option value="all">すべて</option>';
-            categories.forEach(cat => {
-                const displayName = categoryNames[cat] || cat;
-                const option = document.createElement('option');
-                option.value = cat;
-                option.textContent = displayName;
-                categorySelect.appendChild(option);
-            });
+                if (!allSkills || allSkills.length === 0) {
+                    console.error('スキルデータが読み込まれていません');
+                    alert('スキルデータが読み込まれていません。ページを再読み込みしてください。');
+                    return;
+                }
 
-            // ネットワーク図を描画
-            updateNetwork();
+                const modal = document.getElementById('networkModal');
+                if (!modal) {
+                    console.error('ネットワークモーダルが見つかりません');
+                    return;
+                }
+                modal.classList.add('active');
+
+                // カテゴリフィルターを初期化
+                const categorySelect = document.getElementById('categoryFilter');
+                const categories = [...new Set(allSkills.map(s => s.category))].sort();
+                categorySelect.innerHTML = '<option value="all">すべて</option>';
+                categories.forEach(cat => {
+                    const displayName = categoryNames[cat] || cat;
+                    const option = document.createElement('option');
+                    option.value = cat;
+                    option.textContent = displayName;
+                    categorySelect.appendChild(option);
+                });
+
+                // ネットワーク図を描画
+                updateNetwork();
+            } catch (error) {
+                console.error('ネットワーク図の表示準備中にエラーが発生しました:', error);
+                alert('ネットワーク図の表示準備中にエラーが発生しました。詳細はコンソールを確認してください。');
+            }
         }
 
         // ネットワーク図を更新
         function updateNetwork() {
-            const minCommonWords = parseInt(document.getElementById('minCommonWords').value);
-            const categoryFilter = document.getElementById('categoryFilter').value;
+            try {
+                const minCommonWords = parseInt(document.getElementById('minCommonWords').value);
+                const categoryFilter = document.getElementById('categoryFilter').value;
 
-            document.getElementById('minCommonWordsValue').textContent = minCommonWords;
+                document.getElementById('minCommonWordsValue').textContent = minCommonWords;
 
-            networkData = generateNetworkData(minCommonWords, categoryFilter);
+                networkData = generateNetworkData(allSkills, minCommonWords, categoryFilter);
 
-            const container = document.getElementById('networkViz');
+                const container = document.getElementById('networkViz');
+
+                if (!container) {
+                    console.error('ネットワーク表示用のコンテナが見つかりません');
+                    return;
+                }
+
+                if (!window.vis) {
+                    console.error('vis.js ライブラリが読み込まれていません');
+                    return;
+                }
 
             // カテゴリごとの色を定義
             const categoryColors = {
@@ -1098,23 +1022,40 @@
                 }
             };
 
-            // カテゴリごとのグループ設定
-            Object.entries(categoryColors).forEach(([category, color]) => {
-                options.groups[category] = { color: { background: color, border: color } };
-            });
+                // カテゴリごとのグループ設定
+                Object.entries(categoryColors).forEach(([category, color]) => {
+                    options.groups[category] = { color: { background: color, border: color } };
+                });
 
-            network = new vis.Network(container, networkData, options);
+                // DataSetを使用してデータを作成
+                const nodes = new vis.DataSet(networkData.nodes);
+                const edges = new vis.DataSet(networkData.edges);
+                const data = { nodes: nodes, edges: edges };
 
-            // ノードクリック時の処理
-            network.on('click', function(params) {
-                if (params.nodes.length > 0) {
-                    const nodeId = params.nodes[0];
-                    const skill = allSkills.find(s => s.id === nodeId);
-                    if (skill) {
-                        window.open(`https://github.com/y-nishizaki/skills/tree/main/${skill.path}`, '_blank');
-                    }
+                // 既存のネットワークを破棄
+                if (network) {
+                    network.destroy();
+                    network = null;
                 }
-            });
+
+                network = new vis.Network(container, data, options);
+
+                // ノードクリック時の処理
+                network.on('click', function(params) {
+                    if (params.nodes.length > 0) {
+                        const nodeId = params.nodes[0];
+                        const skill = allSkills.find(s => s.id === nodeId);
+                        if (skill) {
+                            window.open(`https://github.com/y-nishizaki/skills/tree/main/${skill.path}`, '_blank');
+                        }
+                    }
+                });
+
+                console.log(`ネットワーク図を表示しました: ${networkData.nodes.length} ノード, ${networkData.edges.length} エッジ`);
+            } catch (error) {
+                console.error('ネットワーク図の表示中にエラーが発生しました:', error);
+                alert('ネットワーク図の表示中にエラーが発生しました。詳細はコンソールを確認してください。');
+            }
         }
 
         // ネットワーク図を閉じる
