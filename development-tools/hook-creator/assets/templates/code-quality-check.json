@@ -1,0 +1,24 @@
+{
+  "hooks": [
+    {
+      "matcher": "Edit|Write",
+      "hooks": [
+        {
+          "hookEventName": "PostToolUse",
+          "command": "jq -r '.tool_input.file_path | select(test(\"\\\\.tsx?$\"))' | xargs -r sh -c 'npx eslint --fix \"$1\" && npx prettier --write \"$1\"' sh",
+          "timeout": 45
+        },
+        {
+          "hookEventName": "PostToolUse",
+          "command": "jq -r '.tool_input.file_path | select(test(\"\\\\.py$\"))' | xargs -r sh -c 'black \"$1\" && isort \"$1\" && flake8 \"$1\" || true' sh",
+          "timeout": 30
+        },
+        {
+          "hookEventName": "PostToolUse",
+          "command": "jq -r '.tool_input.file_path | select(test(\"\\\\.go$\"))' | xargs -r sh -c 'gofmt -w \"$1\" && go vet \"$1\" 2>&1 || true' sh",
+          "timeout": 30
+        }
+      ]
+    }
+  ]
+}

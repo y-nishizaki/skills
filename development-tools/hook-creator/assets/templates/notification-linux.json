@@ -1,0 +1,14 @@
+{
+  "hooks": [
+    {
+      "matcher": "*",
+      "hooks": [
+        {
+          "hookEventName": "Notification",
+          "command": "notify-send -i dialog-information 'Claude Code' 'Task complete - waiting for input'",
+          "timeout": 5
+        }
+      ]
+    }
+  ]
+}

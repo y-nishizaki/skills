@@ -1,0 +1,14 @@
+{
+  "hooks": [
+    {
+      "matcher": "*",
+      "hooks": [
+        {
+          "hookEventName": "Notification",
+          "command": "osascript -e 'display notification \"I have completed your task and am waiting for input\" with title \"Claude Code\"'",
+          "timeout": 5
+        }
+      ]
+    }
+  ]
+}

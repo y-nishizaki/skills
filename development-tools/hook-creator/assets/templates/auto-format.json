@@ -1,0 +1,14 @@
+{
+  "hooks": [
+    {
+      "matcher": "Edit|Write",
+      "hooks": [
+        {
+          "hookEventName": "PostToolUse",
+          "command": "jq -r '.tool_input.file_path' | xargs -I {} sh -c 'case \"{}\" in *.py) black \"{}\" && isort \"{}\" ;; *.ts|*.tsx|*.js|*.jsx) npx prettier --write \"{}\" ;; *.go) gofmt -w \"{}\" ;; *.rs) rustfmt \"{}\" ;; *.java) google-java-format -i \"{}\" ;; *.css|*.scss) npx prettier --write \"{}\" ;; *.json|*.md|*.yaml|*.yml) npx prettier --write \"{}\" ;; esac'",
+          "timeout": 30
+        }
+      ]
+    }
+  ]
+}
