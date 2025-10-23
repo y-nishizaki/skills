@@ -5,6 +5,15 @@ description: 商品開発プロジェクトを計画し、リソースを配分�
 
 # プロジェクトマネジメント
 
+## このスキルについて
+
+**このスキルは、プロジェクトマネジメントの基礎スキルです。**
+
+業界特化の応用については、以下を参照してください：
+- **Eコマース**: `ecommerce/ec-project-management/SKILL.md`
+- **マーケティング**: `marketing/marketing-project-management/SKILL.md`
+- **サプライチェーン**: `supply-chain/supply-chain-project-management/SKILL.md`
+
 ## 目的
 
 プロジェクトマネジメントは、商品開発という複雑で不確実性の高い取り組みを、計画的かつ効率的に進めるための体系的なスキルです。優れた商品アイデアやデザインも、適切なプロジェクト管理がなければ、期限遅れ、予算超過、品質低下につながります。

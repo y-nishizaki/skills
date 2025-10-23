@@ -1,9 +1,9 @@
 ---
-name: "Databricks Delta Lake形式"
-description: "Databricks Delta Lake形式の完全ガイド。ACIDトランザクション、タイムトラベル、MERGE/UPDATE/DELETE操作、最適化、データガバナンスに対応。Lakehouseアーキテクチャの中核技術"
+name: "Databricks Delta Lake基礎"
+description: "Delta Lakeの基本概念と操作。ACIDトランザクション、読み書き、UPDATE/DELETE/MERGE、タイムトラベル、スキーマエボリューションをカバー。運用・最適化は別スキル参照"
 ---
 
-# Databricks Delta Lake形式: トランザクショナルデータレイク
+# Databricks Delta Lake基礎
 
 ## このスキルを使う場面
 
@@ -11,10 +11,16 @@ description: "Databricks Delta Lake形式の完全ガイド。ACIDトランザ�
 - データの更新・削除が頻繁に発生する
 - UPSERT（MERGE）操作が必要
 - タイムトラベル・データバージョン管理が必要
-- データ品質保証が重要
-- ストリーミングとバッチの統合が必要
 - スキーマエボリューションが必要
+- ストリーミングとバッチの統合が必要
 - Lakehouseアーキテクチャを構築したい
+
+**このスキルでカバーする範囲:**
+- Delta Lakeの概念と基本操作
+- データの読み書き、更新、削除
+
+**運用・最適化については:**
+`databricks/data-engineering/delta-lake-operations/SKILL.md` を参照
 
 ## Delta Lakeの概要
 
@@ -359,126 +365,6 @@ df.write.format("delta") \
 - データ型の不一致検出
 - nullability の変更検出
 
-## 最適化とメンテナンス
-
-### OPTIMIZE（ファイル結合）
-
-Small file problemを解決：
-
-```python
-# OPTIMIZE コマンド
-spark.sql("OPTIMIZE my_table")
-
-# パス指定
-spark.sql("OPTIMIZE delta.`/path/to/delta-table`")
-
-# パーティション指定
-spark.sql("OPTIMIZE my_table WHERE date = '2025-01-01'")
-
-# Z-ORDERによる最適化（データスキッピング向上）
-spark.sql("OPTIMIZE my_table ZORDER BY (user_id, timestamp)")
-```
-
-**OPTIMIZE の効果:**
-- 小さなファイルを大きなファイルに結合
-- 読み込みパフォーマンス向上
-- データスキッピング効率向上
-- クエリ時間短縮
-
-### Z-ORDER クラスタリング
-
-頻繁にフィルタされる列でデータをクラスタリング：
-
-```python
-# Z-ORDERで最適化（複数列）
-spark.sql("""
-    OPTIMIZE my_table
-    ZORDER BY (customer_id, order_date)
-""")
-```
-
-**Z-ORDER のメリット:**
-- 複数列でのデータスキッピング向上
-- フィルタクエリの高速化
-- I/O削減
-
-**使用推奨:**
-- カーディナリティの高い列
-- WHERE句で頻繁に使われる列
-- 結合キー
-
-### VACUUM（古いファイルの削除）
-
-タイムトラベルで不要になった古いデータファイルを削除：
-
-```python
-# 7日より古いファイルを削除（デフォルト保持期間）
-spark.sql("VACUUM my_table")
-
-# 保持期間を指定（時間単位）
-spark.sql("VACUUM my_table RETAIN 168 HOURS")  # 7日
-
-# DRY RUN（削除対象を確認）
-spark.sql("VACUUM my_table DRY RUN")
-
-# Python API
-from delta.tables import DeltaTable
-delta_table = DeltaTable.forPath(spark, "/path/to/delta-table")
-delta_table.vacuum(168)  # 168時間（7日）
-```
-
-**注意:**
-- VACUUM後は削除されたバージョンにアクセス不可
-- 保持期間は慎重に設定（コンプライアンス要件を考慮）
-- ストレージコスト削減とタイムトラベルのトレードオフ
-
-### ANALYZE TABLE（統計収集）
-
-テーブル統計を収集してクエリ最適化：
-
-```python
-# テーブル統計を収集
-spark.sql("ANALYZE TABLE my_table COMPUTE STATISTICS")
-
-# 列統計も収集
-spark.sql("ANALYZE TABLE my_table COMPUTE STATISTICS FOR ALL COLUMNS")
-
-# 特定列のみ
-spark.sql("ANALYZE TABLE my_table COMPUTE STATISTICS FOR COLUMNS id, name, age")
-```
-
-## データスキッピング
-
-### 自動統計収集
-
-Delta Lakeは最初の32列について自動的に統計を収集：
-
-- 最小値（min）
-- 最大値（max）
-- NULL数（nullCount）
-- レコード数（count）
-
-```python
-# 統計は自動的に収集される（設定不要）
-# クエリ時に自動的にデータスキッピング
-
-# 統計情報を確認
-spark.sql("DESCRIBE DETAIL my_table").show()
-```
-
-### データスキッピングの効果確認
-
-```python
-# クエリ実行前にメトリクスを有効化
-spark.conf.set("spark.databricks.delta.stats.skipping", "true")
-
-# クエリ実行
-df = spark.sql("SELECT * FROM my_table WHERE user_id = 12345")
-
-# スキップされたファイル数を確認
-# Spark UIでメトリクスを確認
-```
-
 ## トランザクション管理
 
 ### 分離レベル
@@ -518,19 +404,23 @@ with ThreadPoolExecutor(max_workers=5) as executor:
     executor.map(merge_data, range(10))
 ```
 
-### トランザクションログ
-
-トランザクションログの確認：
+### トランザクションコンフリクトへの対処
 
 ```python
-# _delta_logディレクトリのファイルを確認
-log_files = dbutils.fs.ls("/path/to/delta-table/_delta_log/")
-for file in log_files:
-    print(file.path)
+# リトライロジックを実装
+from delta.exceptions import ConcurrentWriteException
+import time
 
-# JSONログを読み込み
-log_df = spark.read.json("/path/to/delta-table/_delta_log/00000000000000000000.json")
-log_df.show()
+max_retries = 3
+for attempt in range(max_retries):
+    try:
+        delta_table.merge(...).execute()
+        break
+    except ConcurrentWriteException:
+        if attempt < max_retries - 1:
+            time.sleep(2 ** attempt)  # Exponential backoff
+        else:
+            raise
 ```
 
 ## ストリーミングとの統合
@@ -610,9 +500,7 @@ spark.sql("""
     SET TBLPROPERTIES (
         'delta.logRetentionDuration' = '30 days',
         'delta.deletedFileRetentionDuration' = '7 days',
-        'delta.enableChangeDataFeed' = 'true',
-        'delta.autoOptimize.optimizeWrite' = 'true',
-        'delta.autoOptimize.autoCompact' = 'true'
+        'delta.enableChangeDataFeed' = 'true'
     )
 """)
 
@@ -665,61 +553,6 @@ spark.sql("GRANT SELECT ON TABLE main.my_schema.my_table TO `user@example.com`")
 # 監査ログは自動的に記録される
 ```
 
-## ベストプラクティス
-
-### テーブル設計
-
-1. **パーティション戦略**
-   - パーティション数は数千以下
-   - 1パーティションあたり1GB以上のデータ
-   - 時系列データは日付でパーティション分割
-
-2. **Z-ORDER最適化**
-   - 高カーディナリティの列を選択
-   - 最大4列程度を推奨
-   - 定期的に実行（週次・月次）
-
-3. **スキーマ設計**
-   - 可能な限りスキーマを事前定義
-   - nullableフィールドを適切に設定
-   - データ型を明示的に指定
-
-### 運用
-
-1. **定期的なメンテナンス**
-   ```python
-   # 日次: OPTIMIZE
-   spark.sql("OPTIMIZE my_table")
-
-   # 週次: OPTIMIZE + Z-ORDER
-   spark.sql("OPTIMIZE my_table ZORDER BY (key_column)")
-
-   # 月次: VACUUM
-   spark.sql("VACUUM my_table RETAIN 168 HOURS")
-   ```
-
-2. **モニタリング**
-   - ファイル数を監視（`DESCRIBE DETAIL`）
-   - バージョン数を監視（`DESCRIBE HISTORY`）
-   - テーブルサイズを監視
-
-3. **パフォーマンスチューニング**
-   - Auto Optimize を有効化
-   - Photon エンジンを活用
-   - クエリパターンに基づく最適化
-
-### コスト最適化
-
-1. **ストレージ最適化**
-   - 定期的なVACUUM実行
-   - 圧縮設定の最適化
-   - 不要なパーティションの削除
-
-2. **コンピュート最適化**
-   - OPTIMIZEでファイル数削減
-   - Z-ORDERでI/O削減
-   - キャッシングの活用
-
 ## 他形式からの移行
 
 ### ParquetからDelta Lakeへ
@@ -755,74 +588,22 @@ df_stream.writeStream \
     .start("/path/to/delta-table")
 ```
 
-## よくある課題と解決策
+## ベストプラクティス
 
-### 課題1: Small File Problem
+### テーブル設計
 
-**問題:**
-頻繁な小さな書き込みで多数のファイルが生成される
+1. **パーティション戦略**
+   - パーティション数は数千以下
+   - 1パーティションあたり1GB以上のデータ
+   - 時系列データは日付でパーティション分割
 
-**解決策:**
-```python
-# Auto Optimizeを有効化
-spark.sql("""
-    ALTER TABLE my_table
-    SET TBLPROPERTIES (
-        'delta.autoOptimize.optimizeWrite' = 'true',
-        'delta.autoOptimize.autoCompact' = 'true'
-    )
-""")
+2. **スキーマ設計**
+   - 可能な限りスキーマを事前定義
+   - nullableフィールドを適切に設定
+   - データ型を明示的に指定
 
-# 定期的なOPTIMIZE
-spark.sql("OPTIMIZE my_table")
-```
+### スキーマエボリューションの対処
 
-### 課題2: トランザクションコンフリクト
-
-**問題:**
-同時書き込みでコンフリクトが発生
-
-**解決策:**
-```python
-# リトライロジックを実装
-from delta.exceptions import ConcurrentWriteException
-import time
-
-max_retries = 3
-for attempt in range(max_retries):
-    try:
-        delta_table.merge(...).execute()
-        break
-    except ConcurrentWriteException:
-        if attempt < max_retries - 1:
-            time.sleep(2 ** attempt)  # Exponential backoff
-        else:
-            raise
-```
-
-### 課題3: メタデータの肥大化
-
-**問題:**
-トランザクションログが大きくなりすぎる
-
-**解決策:**
-```python
-# チェックポイントを手動作成
-spark.sql("ALTER TABLE my_table CREATE CHECKPOINT")
-
-# ログ保持期間を短縮（注意: タイムトラベルに影響）
-spark.sql("""
-    ALTER TABLE my_table
-    SET TBLPROPERTIES ('delta.logRetentionDuration' = '7 days')
-""")
-```
-
-### 課題4: スキーマエボリューションの失敗
-
-**問題:**
-互換性のないスキーマ変更でエラー
-
-**解決策:**
 ```python
 # スキーママージを有効化（新しい列の追加を許可）
 df.write.format("delta") \
@@ -846,18 +627,24 @@ df.write.format("delta") \
 - [ ] タイムトラベルが機能するか確認した
 - [ ] スキーマエボリューションをテストした
 
-### パフォーマンス検証
-
-- [ ] OPTIMIZEの効果を測定した
-- [ ] Z-ORDERの効果を測定した
-- [ ] データスキッピングが機能しているか確認した
-- [ ] クエリ時間を測定した
-
 ### データ品質検証
 
 - [ ] 制約が正しく適用されているか確認した
 - [ ] トランザクション履歴を確認した
 - [ ] データ整合性を検証した
+
+## 次のステップ
+
+基本操作を習得したら、運用・最適化スキルに進んでください：
+
+**→ `databricks/data-engineering/delta-lake-operations/SKILL.md`**
+
+以下のトピックをカバー：
+- OPTIMIZE（ファイル圧縮）
+- VACUUM（古いファイル削除）
+- Z-ORDER（データクラスタリング）
+- パフォーマンス監視
+- 定期メンテナンス
 
 ## まとめ
 
