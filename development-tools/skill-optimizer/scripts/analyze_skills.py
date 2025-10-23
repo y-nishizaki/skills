@@ -23,6 +23,45 @@ class SkillCollector:
         self.base_path = Path(base_path)
         self.skills: List[Dict] = []
 
+    def _is_text_file(self, file_path: Path) -> bool:
+        """ファイルがテキストファイルかどうか判定"""
+        text_extensions = {'.py', '.md', '.txt', '.json', '.yaml', '.yml', '.sh', '.bash', '.js', '.ts', '.html', '.css', '.xml'}
+        return file_path.suffix.lower() in text_extensions
+
+    def _read_text_file(self, file_path: Path, max_chars: int = 1000) -> str:
+        """テキストファイルを読み込み（プレビュー）"""
+        try:
+            with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read(max_chars)
+                if len(content) == max_chars:
+                    content += '...[truncated]'
+                return content
+        except Exception as e:
+            return f'[読み込みエラー: {e}]'
+
+    def _collect_resource_files(self, resource_dir: Path) -> List[Dict]:
+        """リソースディレクトリ内のファイルを収集（中身も含む）"""
+        resources = []
+        for file_path in resource_dir.iterdir():
+            if not file_path.is_file():
+                continue
+
+            file_info = {
+                'name': file_path.name,
+                'size': file_path.stat().st_size,
+                'type': 'text' if self._is_text_file(file_path) else 'binary'
+            }
+
+            # テキストファイルの場合は中身を読む
+            if file_info['type'] == 'text':
+                file_info['content'] = self._read_text_file(file_path, max_chars=1000)
+            else:
+                file_info['content'] = None
+
+            resources.append(file_info)
+
+        return resources
+
     def find_skill_files(self) -> List[Path]:
         """すべてのSKILL.mdファイルを検索"""
         skill_files = []
@@ -75,7 +114,7 @@ class SkillCollector:
         # セクションヘッダーを抽出
         headers = re.findall(r'^#+\s+(.+)$', markdown_content, re.MULTILINE)
 
-        # バンドルリソースの確認
+        # バンドルリソースの確認（中身も収集）
         skill_dir = file_path.parent
         resources = {
             'scripts': [],
@@ -88,11 +127,19 @@ class SkillCollector:
         for resource_type in resources.keys():
             resource_dir = skill_dir / resource_type
             if resource_dir.exists() and resource_dir.is_dir():
-                resources[resource_type] = [f.name for f in resource_dir.iterdir() if f.is_file()]
+                resources[resource_type] = self._collect_resource_files(resource_dir)
 
-        # examples.md や reference.md の存在確認
-        has_examples_md = (skill_dir / 'examples.md').exists()
-        has_reference_md = (skill_dir / 'reference.md').exists()
+        # examples.md や reference.md の収集
+        examples_md_content = None
+        reference_md_content = None
+
+        examples_md_path = skill_dir / 'examples.md'
+        if examples_md_path.exists():
+            examples_md_content = self._read_text_file(examples_md_path, max_chars=1000)
+
+        reference_md_path = skill_dir / 'reference.md'
+        if reference_md_path.exists():
+            reference_md_content = self._read_text_file(reference_md_path, max_chars=1000)
 
         return {
             'path': str(file_path),
@@ -104,8 +151,8 @@ class SkillCollector:
             'headers': headers[:10],  # 最大10個のヘッダー
             'word_count': len(markdown_content.split()),
             'resources': resources,
-            'has_examples_md': has_examples_md,
-            'has_reference_md': has_reference_md,
+            'examples_md': examples_md_content,
+            'reference_md': reference_md_content,
             'error': None
         }
 
