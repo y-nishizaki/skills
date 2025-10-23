@@ -47,19 +47,25 @@ repos:
     hooks:
       - id: validate-skill-structure
         name: スキル構造の検証
-        entry: bash -c 'for dir in */; do
-          if [ "$dir" = ".github/" ]; then continue; fi;
-          if [ ! -f "${dir}SKILL.md" ]; then
-            echo "Error: ${dir}SKILL.md not found (required)";
-            exit 1;
+        entry: bash -c 'find src -type d -mindepth 2 -maxdepth 3 | while read -r dir; do
+          dirname=$(basename "$dir");
+          if [ "$dirname" = "templates" ] || [ "$dirname" = "scripts" ] || [ "$dirname" = "references" ] || [ "$dirname" = "assets" ]; then
+            continue;
           fi;
-          if ! grep -q "^name:" "${dir}SKILL.md"; then
-            echo "Error: ${dir}SKILL.md missing name field";
-            exit 1;
-          fi;
-          if ! grep -q "^description:" "${dir}SKILL.md"; then
-            echo "Error: ${dir}SKILL.md missing description field";
-            exit 1;
+          subdir_count=$(find "$dir" -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l);
+          if [ "$subdir_count" -eq 0 ]; then
+            if [ ! -f "${dir}/SKILL.md" ]; then
+              echo "Error: ${dir}/SKILL.md not found (required for leaf directory)";
+              exit 1;
+            fi;
+            if ! grep -q "^name:" "${dir}/SKILL.md"; then
+              echo "Error: ${dir}/SKILL.md missing name field";
+              exit 1;
+            fi;
+            if ! grep -q "^description:" "${dir}/SKILL.md"; then
+              echo "Error: ${dir}/SKILL.md missing description field";
+              exit 1;
+            fi;
           fi;
           done'
         language: system

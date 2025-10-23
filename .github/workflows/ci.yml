@@ -105,10 +105,10 @@ jobs:
           # A leaf directory is one that has no subdirectories
           # Exclude resource directories: templates, scripts, references, assets
 
-          # Find all directories excluding .git, .github, and docs
-          find . -type d -not -path '*/\.*' -not -path './docs*' | while read -r dir; do
-            # Skip root directory
-            if [ "$dir" = "." ]; then
+          # Find all directories excluding .git, .github, docs, and tests
+          find . -type d -not -path '*/\.*' -not -path './docs*' -not -path './tests*' | while read -r dir; do
+            # Skip root directory and src directory
+            if [ "$dir" = "." ] || [ "$dir" = "./src" ]; then
               continue
             fi
 

@@ -3,1925 +3,1925 @@
     "id": "ai-tools",
     "name": "AI・生成系ツール活用",
     "description": "ChatGPT、Midjourney、Notion AI等の生成AIツールを活用し、マーケティング業務を効率化・高度化するスキル。コンテンツ生成、アイデア創出、業務自動化に使用",
-    "path": "marketing/ai-tools",
+    "path": "src/marketing/ai-tools",
     "category": "マーケティング"
   },
   {
     "id": "ai-automation-adaptation",
     "name": "AI・自動化への適応力",
     "description": "小売業におけるAI・自動化適応スキル。新技術の理解と活用、セルフレジ・無人店舗対応、AIツール活用、デジタル変革への対応方法を提供",
-    "path": "retail/ai-automation-adaptation",
+    "path": "src/retail/ai-automation-adaptation",
     "category": "小売"
   },
   {
     "id": "api-design",
     "name": "API設計",
     "description": "RESTful API設計とGraphQL設計。API、エンドポイント、REST、GraphQL、API設計に関する依頼に対応",
-    "path": "design/api-design",
+    "path": "src/design/api-design",
     "category": "設計"
   },
   {
     "id": "aws-cli-sdk",
     "name": "AWS CLI / SDK",
     "description": "AWS CLIとSDKを使ったAWSリソースの管理と自動化。インストール、設定、基本コマンド、プログラマティックアクセス、ベストプラクティス、CI/CD統合に関する思考プロセスを提供",
-    "path": "cloud-platforms/aws/fundamentals/aws-cli-sdk",
+    "path": "src/cloud-platforms/aws/fundamentals/aws-cli-sdk",
     "category": "AWS基礎"
   },
   {
     "id": "ec2",
     "name": "AWS EC2 (Elastic Compute Cloud)",
     "description": "AWSの仮想サーバーサービス。インスタンスタイプ選択、EBS、AMI、セキュリティグループ、キーペア、スケーリング、コスト最適化に関する思考プロセスを提供",
-    "path": "cloud-platforms/aws/compute/ec2",
+    "path": "src/cloud-platforms/aws/compute/ec2",
     "category": "AWSコンピューティング"
   },
   {
     "id": "ecs-eks",
     "name": "AWS ECS / EKS (コンテナオーケストレーション)",
     "description": "AWSのコンテナ管理サービス。ECS（Elastic Container Service）、EKS（Elastic Kubernetes Service）、Fargate、コンテナデプロイ、サービス管理、ベストプラクティスに関する思考プロセスを提供",
-    "path": "cloud-platforms/aws/compute/ecs-eks",
+    "path": "src/cloud-platforms/aws/compute/ecs-eks",
     "category": "AWSコンピューティング"
   },
   {
     "id": "iam",
     "name": "AWS IAM (Identity and Access Management)",
     "description": "AWSリソースへのアクセス管理とセキュリティ。ユーザー、グループ、ロール、ポリシー、MFA、最小権限の原則、ベストプラクティスに基づいたIAM設計の思考プロセスを提供",
-    "path": "cloud-platforms/aws/fundamentals/iam",
+    "path": "src/cloud-platforms/aws/fundamentals/iam",
     "category": "AWS基礎"
   },
   {
     "id": "lambda",
     "name": "AWS Lambda",
     "description": "サーバーレスコンピューティング。イベント駆動アーキテクチャ、関数の作成・デプロイ、トリガー設定、パフォーマンス最適化、コスト管理、ベストプラクティスに関する思考プロセスを提供",
-    "path": "cloud-platforms/aws/compute/lambda",
+    "path": "src/cloud-platforms/aws/compute/lambda",
     "category": "AWSコンピューティング"
   },
   {
     "id": "cloud-computing-basics",
     "name": "AWS クラウドコンピューティング基礎",
     "description": "クラウドコンピューティングの基本概念とAWSの基礎知識。IaaS/PaaS/SaaS、デプロイメントモデル、スケーリング、高可用性などの基礎概念を理解し、AWSを使い始める際の思考プロセスを提供",
-    "path": "cloud-platforms/aws/fundamentals/cloud-computing-basics",
+    "path": "src/cloud-platforms/aws/fundamentals/cloud-computing-basics",
     "category": "AWS基礎"
   },
   {
     "id": "cost-optimization",
     "name": "AWS コスト最適化基礎",
     "description": "AWSコストの理解と最適化戦略。Savings Plans、Reserved Instances、オンデマンド料金、コスト管理ツール、ベストプラクティスに基づいたコスト最適化の思考プロセスを提供",
-    "path": "cloud-platforms/aws/fundamentals/cost-optimization",
+    "path": "src/cloud-platforms/aws/fundamentals/cost-optimization",
     "category": "AWS基礎"
   },
   {
     "id": "regions-az",
     "name": "AWS リージョンとアベイラビリティゾーン",
     "description": "AWSグローバルインフラストラクチャ（リージョン、AZ、エッジロケーション）の理解と設計。リージョン選択、マルチAZ構成、高可用性設計、レイテンシ最適化に関する思考プロセスを提供",
-    "path": "cloud-platforms/aws/fundamentals/regions-az",
+    "path": "src/cloud-platforms/aws/fundamentals/regions-az",
     "category": "AWS基礎"
   },
   {
     "id": "business-continuity-planning",
     "name": "BCP(事業継続計画)",
     "description": "供給途絶時の代替ルート設計、在庫戦略、復旧計画により事業継続性を確保。災害・パンデミック等の緊急事態に対応",
-    "path": "supply-chain/business-continuity-planning",
+    "path": "src/supply-chain/business-continuity-planning",
     "category": "サプライチェーン"
   },
   {
     "id": "ci-cd-setup",
     "name": "CI/CD設定",
     "description": "CI/CDパイプラインの設定と自動化。CI/CD、パイプライン、GitHub Actions、GitLab CI、自動デプロイに関する依頼に対応",
-    "path": "devops/ci-cd-setup",
+    "path": "src/devops/ci-cd-setup",
     "category": "DevOps"
   },
   {
     "id": "apache-spark",
     "name": "Databricks Apache Spark基礎",
     "description": "DatabricksにおけるApache Sparkの基礎理解。RDD、DataFrame、Dataset API、Spark SQL、遅延評価、カタリストオプティマイザの理解と実践的な使用方法",
-    "path": "databricks/fundamentals/apache-spark",
+    "path": "src/databricks/fundamentals/apache-spark",
     "category": "Databricks基礎"
   },
   {
     "id": "automl",
     "name": "Databricks AutoML実装",
     "description": "Databricks AutoMLとNotebooksによるML実装。自動モデル選択、ハイパーパラメーターチューニング、コード生成、カスタマイズ",
-    "path": "databricks/ml-data-science/automl",
+    "path": "src/databricks/ml-data-science/automl",
     "category": "Databricks機械学習・データサイエンス"
   },
   {
     "id": "bi-integration",
     "name": "Databricks BIツール統合",
     "description": "Power BI、Tableau、Looker等のBIツール統合。JDBC/ODBC接続、パフォーマンス最適化、セキュリティ設定",
-    "path": "databricks/bi-analytics/bi-integration",
+    "path": "src/databricks/bi-analytics/bi-integration",
     "category": "DatabricksBI・分析"
   },
   {
     "id": "cicd",
     "name": "Databricks CI/CDパイプライン",
     "description": "Databricks向けCI/CD構築。Git統合、自動テスト、デプロイメント、環境管理、GitHub Actions/Azure DevOps",
-    "path": "databricks/architecture-devops/cicd",
+    "path": "src/databricks/architecture-devops/cicd",
     "category": "Databricksアーキテクチャ・DevOps"
   },
   {
     "id": "delta-lake-basics",
     "name": "Databricks Delta Lake基礎",
     "description": "Delta Lakeの基本概念と操作。ACIDトランザクション、読み書き、UPDATE/DELETE/MERGE、タイムトラベル、スキーマエボリューションをカバー。運用・最適化は別スキル参照",
-    "path": "databricks/fundamentals/delta-lake-basics",
+    "path": "src/databricks/fundamentals/delta-lake-basics",
     "category": "Databricks基礎"
   },
   {
     "id": "delta-lake-operations",
     "name": "Databricks Delta Lake運用",
     "description": "Delta Lakeの運用・最適化。OPTIMIZE、VACUUM、Z-ORDER、統計収集、パフォーマンス監視、メンテナンスベストプラクティス。基本操作は別スキル参照",
-    "path": "databricks/data-engineering/delta-lake-operations",
+    "path": "src/databricks/data-engineering/delta-lake-operations",
     "category": "Databricksデータエンジニアリング"
   },
   {
     "id": "etl-pipeline",
     "name": "Databricks ETLパイプライン構築",
     "description": "DatabricksでのETLパイプライン構築。Delta Live Tables、メダリオンアーキテクチャ、バッチ/ストリーミング処理、データ品質チェック",
-    "path": "databricks/data-engineering/etl-pipeline",
+    "path": "src/databricks/data-engineering/etl-pipeline",
     "category": "Databricksデータエンジニアリング"
   },
   {
     "id": "feature-store",
     "name": "Databricks Feature Store活用",
     "description": "Feature Storeによる特徴量管理。特徴量定義、オンライン/オフライン利用、バージョン管理、再利用性向上",
-    "path": "databricks/ml-data-science/feature-store",
+    "path": "src/databricks/ml-data-science/feature-store",
     "category": "Databricks機械学習・データサイエンス"
   },
   {
     "id": "iac",
     "name": "Databricks Infrastructure as Code",
     "description": "Terraformによるインフラ自動化。ワークスペース、クラスター、ジョブ、権限設定の自動プロビジョニング",
-    "path": "databricks/architecture-devops/iac",
+    "path": "src/databricks/architecture-devops/iac",
     "category": "Databricksアーキテクチャ・DevOps"
   },
   {
     "id": "json-format",
     "name": "Databricks JSON形式",
     "description": "Databricks環境でのJSON形式データの読み込み、処理、最適化に関する実践的なガイド。PySpark、スキーマ定義、ネストされたJSONの処理、パフォーマンス最適化に対応",
-    "path": "databricks/file-formats/json-format",
+    "path": "src/databricks/file-formats/json-format",
     "category": "Databricksファイルフォーマット"
   },
   {
     "id": "lakehouse",
     "name": "Databricks Lakehouseアーキテクチャ",
     "description": "Lakehouseアーキテクチャの理解。データレイク+ウェアハウス統合、メダリオンアーキテクチャ、Delta Lake、Unity Catalog",
-    "path": "databricks/architecture-devops/lakehouse",
+    "path": "src/databricks/architecture-devops/lakehouse",
     "category": "Databricksアーキテクチャ・DevOps"
   },
   {
     "id": "mlflow",
     "name": "Databricks MLflow活用",
     "description": "MLflowによる機械学習ライフサイクル管理。実験追跡、モデル登録、デプロイメント、バージョン管理、Unity Catalog統合",
-    "path": "databricks/ml-data-science/mlflow",
+    "path": "src/databricks/ml-data-science/mlflow",
     "category": "Databricks機械学習・データサイエンス"
   },
   {
     "id": "parquet-format",
     "name": "Databricks Parquet形式",
     "description": "Databricks環境でのParquet形式データの読み込み、書き込み、パフォーマンス最適化に関する実践的なガイド。カラムナストレージ、圧縮、パーティショニング、述語プッシュダウンに対応",
-    "path": "databricks/file-formats/parquet-format",
+    "path": "src/databricks/file-formats/parquet-format",
     "category": "Databricksファイルフォーマット"
   },
   {
     "id": "pyspark-sql",
     "name": "Databricks PySpark/SQL習熟",
     "description": "DatabricksにおけるPySparkとSQLの効率的な使用方法。データ操作、関数、最適化、SQLとの統合、実践的なデータ処理パターン",
-    "path": "databricks/fundamentals/pyspark-sql",
+    "path": "src/databricks/fundamentals/pyspark-sql",
     "category": "Databricks基礎"
   },
   {
     "id": "api-cli",
     "name": "Databricks REST API & CLI",
     "description": "Databricks REST APIとCLIの活用。自動化、スクリプト、統合、ジョブ管理、クラスター操作",
-    "path": "databricks/utilities/api-cli",
+    "path": "src/databricks/utilities/api-cli",
     "category": "Databricksユーティリティ"
   },
   {
     "id": "databricks-sql",
     "name": "Databricks SQL",
     "description": "Databricks SQLによるデータ分析。SQLウェアハウス、クエリエディター、ダッシュボード、アラート、Photon最適化",
-    "path": "databricks/bi-analytics/databricks-sql",
+    "path": "src/databricks/bi-analytics/databricks-sql",
     "category": "DatabricksBI・分析"
   },
   {
     "id": "unity-catalog",
     "name": "Databricks Unity Catalog",
     "description": "Unity Catalogによる統合データガバナンス。RBAC、アクセス制御、メタデータ管理、リネージ追跡、監査ログ",
-    "path": "databricks/governance-security/unity-catalog",
+    "path": "src/databricks/governance-security/unity-catalog",
     "category": "Databricksガバナンス・セキュリティ"
   },
   {
     "id": "job-scheduling",
     "name": "Databricks Workflows ジョブスケジューリング",
     "description": "Databricks Workflowsによるジョブスケジューリング。タスク依存関係、条件分岐、トリガー設定、エラーハンドリング、運用監視",
-    "path": "databricks/data-engineering/job-scheduling",
+    "path": "src/databricks/data-engineering/job-scheduling",
     "category": "Databricksデータエンジニアリング"
   },
   {
     "id": "cache-partitioning",
     "name": "Databricksキャッシュ・パーティショニング戦略",
     "description": "キャッシングとパーティショニングの最適化戦略。Disk/Memory caching、パーティション設計、データスキッピング、Z-ORDER",
-    "path": "databricks/operations/cache-partitioning",
+    "path": "src/databricks/operations/cache-partitioning",
     "category": "Databricks運用"
   },
   {
     "id": "cloud-platforms",
     "name": "Databricksクラウドプラットフォーム連携",
     "description": "AWS、Azure、GCP上でのDatabricks統合。ストレージ、IAM、ネットワーク、サービス連携の理解と実践的な設定方法",
-    "path": "databricks/fundamentals/cloud-platforms",
+    "path": "src/databricks/fundamentals/cloud-platforms",
     "category": "Databricks基礎"
   },
   {
     "id": "cluster-cost",
     "name": "Databricksクラスター構成とコスト最適化",
     "description": "クラスター構成とコスト最適化。クラスタータイプ、自動スケーリング、Photon、Spot/Graviton、コスト追跡",
-    "path": "databricks/operations/cluster-cost",
+    "path": "src/databricks/operations/cluster-cost",
     "category": "Databricks運用"
   },
   {
     "id": "data-quality",
     "name": "Databricksデータ品質管理",
     "description": "データ品質管理の実践。Expectations、データ検証、異常検知、品質メトリクス、モニタリング、自動アラート",
-    "path": "databricks/data-engineering/data-quality",
+    "path": "src/databricks/data-engineering/data-quality",
     "category": "Databricksデータエンジニアリング"
   },
   {
     "id": "audit-access",
     "name": "Databricks監査ログ・アクセス権限設計",
     "description": "監査ログ分析とアクセス権限設計。システムテーブル、セキュリティベストプラクティス、コンプライアンス、権限レビュー",
-    "path": "databricks/governance-security/audit-access",
+    "path": "src/databricks/governance-security/audit-access",
     "category": "Databricksガバナンス・セキュリティ"
   },
   {
     "id": "monitoring",
     "name": "Databricks監視・トラブルシューティング",
     "description": "クラスター監視、ジョブ監視、パフォーマンス分析、エラー調査、Spark UI活用、ログ分析",
-    "path": "databricks/operations/monitoring",
+    "path": "src/databricks/operations/monitoring",
     "category": "Databricks運用"
   },
   {
     "id": "erp-mrp-systems",
     "name": "ERP・MRPシステム",
     "description": "SAP、Oracle、Dynamics等の基幹システムの活用。資材所要量計画(MRP)、生産計画、在庫管理を統合的に運用",
-    "path": "supply-chain/erp-mrp-systems",
+    "path": "src/supply-chain/erp-mrp-systems",
     "category": "サプライチェーン"
   },
   {
     "id": "excel-data-skills",
     "name": "Excel・データ集計スキル",
     "description": "小売業におけるExcel・データ集計スキル。売上データの効率的な集計・分析、ピボットテーブル、グラフ作成、業務効率化の方法を提供",
-    "path": "retail/excel-data-skills",
+    "path": "src/retail/excel-data-skills",
     "category": "小売"
   },
   {
     "id": "github-pages",
     "name": "GitHub Pages",
     "description": "GitHub Pagesを使用した静的サイトホスティングの設定と管理。静的サイト、ドキュメントサイト、ポートフォリオ、プロジェクトページ、Jekyll、カスタムドメイン、GitHub Actions連携に関する依頼に対応",
-    "path": "devops/github-pages",
+    "path": "src/devops/github-pages",
     "category": "DevOps"
   },
   {
     "id": "iot-blockchain",
     "name": "IoT・ブロックチェーン活用",
     "description": "IoTセンサーによるリアルタイムトラッキング、ブロックチェーンでのトレーサビリティとスマートコントラクトによる次世代SCM",
-    "path": "supply-chain/iot-blockchain",
+    "path": "src/supply-chain/iot-blockchain",
     "category": "サプライチェーン"
   },
   {
     "id": "kpi-management",
     "name": "KPI管理",
     "description": "サプライチェーンの主要業績評価指標を設定・測定・改善。リードタイム、在庫回転率、OTIF等の指標を管理し、パフォーマンスを可視化",
-    "path": "supply-chain/kpi-management",
+    "path": "src/supply-chain/kpi-management",
     "category": "サプライチェーン"
   },
   {
     "id": "mlops",
     "name": "MLOps",
     "description": "機械学習モデルの運用自動化。CI/CD、モニタリング、再学習",
-    "path": "analysis/data-science/advanced/mlops",
+    "path": "src/analysis/data-science/advanced/mlops",
     "category": "データサイエンス発展"
   },
   {
     "id": "pos-crm-systems",
     "name": "POS・CRMシステムの理解",
     "description": "小売業におけるPOS・CRMシステム理解スキル。システムの基本機能、データ活用、効率的な運用方法を提供",
-    "path": "retail/pos-crm-systems",
+    "path": "src/retail/pos-crm-systems",
     "category": "小売"
   },
   {
     "id": "seo-content",
     "name": "SEO・コンテンツマーケティング",
     "description": "検索意図を理解し、SEO最適化とコンテンツ戦略で継続的なトラフィックを生み出すスキル。オーガニック検索での上位表示とユーザーエンゲージメント向上に使用",
-    "path": "marketing/seo-content",
+    "path": "src/marketing/seo-content",
     "category": "マーケティング"
   },
   {
     "id": "sns-content-engagement",
     "name": "SNSコンテンツ・エンゲージメント",
     "description": "SNSでの効果的なコンテンツ制作、投稿戦略、コミュニティ運営、インフルエンサー活用により、エンゲージメントを最大化するスキル",
-    "path": "marketing/sns-content-engagement",
+    "path": "src/marketing/sns-content-engagement",
     "category": "マーケティング"
   },
   {
     "id": "sns-analytics-management",
     "name": "SNS分析・危機管理",
     "description": "SNSのパフォーマンスを測定・分析し、データドリブンな改善を行うとともに、炎上リスクを適切に管理するスキル",
-    "path": "marketing/sns-analytics-management",
+    "path": "src/marketing/sns-analytics-management",
     "category": "マーケティング"
   },
   {
     "id": "sns-strategy-platforms",
     "name": "SNS戦略・プラットフォーム選定",
     "description": "各SNSプラットフォームの特性とアルゴリズムを理解し、ターゲットに最適なプラットフォームを選定・戦略立案するスキル",
-    "path": "marketing/sns-strategy-platforms",
+    "path": "src/marketing/sns-strategy-platforms",
     "category": "マーケティング"
   },
   {
     "id": "sql-fundamentals",
     "name": "SQL基礎",
     "description": "データベースからのデータ抽出・加工。SELECT、JOIN、GROUP BY、サブクエリなど",
-    "path": "analysis/data-science/fundamentals/sql-fundamentals",
+    "path": "src/analysis/data-science/fundamentals/sql-fundamentals",
     "category": "データサイエンス基礎"
   },
   {
     "id": "ux-ui-understanding",
     "name": "UX/UI理解",
     "description": "顧客体験全体を設計する感覚を養い、使いやすさと心地よさを追求するスキル。CVR向上、顧客満足度改善、プロダクトとマーケティングの一体化に使用",
-    "path": "marketing/ux-ui-understanding",
+    "path": "src/marketing/ux-ui-understanding",
     "category": "マーケティング"
   },
   {
     "id": "agile-thinking",
     "name": "agile-thinking",
     "description": "変化に柔軟に対応し、反復的アプローチで継続的に改善する思考法。デュアルトラックアジャイルで発見と開発を並行し、市場の変化や新たな学びに適応する際に使用。",
-    "path": "product-development/testing-improvement/agile-thinking",
+    "path": "src/product-development/testing-improvement/agile-thinking",
     "category": "製品開発：テスト・改善"
   },
   {
     "id": "ai-ml-security",
     "name": "ai-ml-security",
     "description": "AI/MLセキュリティの実践を支援します。モデル盗用、データ汚染攻撃（Data Poisoning）、 敵対的サンプル（Adversarial Examples）、モデル反転攻撃、プライバシー保護機械学習、 AIシステムのセキュアな設計など、AI/MLの脅威と対策に使用します。 キーワード - AI セキュリティ、ML セキュリティ、敵対的機械学習、モデル盗用、 データポイズニング、プライバシー保護。",
-    "path": "security/ai-ml-security",
+    "path": "src/security/ai-ml-security",
     "category": "セキュリティ"
   },
   {
     "id": "authentication-access-control",
     "name": "authentication-access-control",
     "description": "認証とアクセス制御の実装を支援します。多要素認証（MFA）、OAuth2.0、SAML、Zero Trust、 RBAC、ABAC、セッション管理、認証プロトコルなど、ID管理とアクセス制御の設計・実装に使用します。 キーワード - 認証、アクセス制御、MFA、OAuth、SAML、Zero Trust、RBAC、ABAC、セッション、 パスワードレス。",
-    "path": "security/authentication-access-control",
+    "path": "src/security/authentication-access-control",
     "category": "セキュリティ"
   },
   {
     "id": "api-gateway",
     "name": "aws-api-gateway",
     "description": "AWS API Gatewayを使用してREST、HTTP、WebSocket APIを構築し、Lambda統合、認証、スロットリング、カスタムドメインで本番APIを運用する方法",
-    "path": "cloud-platforms/aws/developer-tools/api-gateway",
+    "path": "src/cloud-platforms/aws/developer-tools/api-gateway",
     "category": "AWS開発者ツール"
   },
   {
     "id": "athena",
     "name": "aws-athena",
     "description": "AWS Athenaを使用してS3データレイクに対してSQLクエリを実行し、Parquet最適化、パーティション、クエリチューニングでコストとパフォーマンスを改善する方法",
-    "path": "cloud-platforms/aws/data-analytics-ml/athena",
+    "path": "src/cloud-platforms/aws/data-analytics-ml/athena",
     "category": "AWSデータ分析・機械学習"
   },
   {
     "id": "auto-scaling",
     "name": "aws-auto-scaling",
     "description": "AWS Auto Scalingを使用して、需要の変動に応じて自動的にEC2インスタンスやその他のリソースをスケーリングする方法",
-    "path": "cloud-platforms/aws/compute/auto-scaling",
+    "path": "src/cloud-platforms/aws/compute/auto-scaling",
     "category": "AWSコンピューティング"
   },
   {
     "id": "cdk",
     "name": "aws-cdk",
     "description": "AWS CDK（Cloud Development Kit）を使用してTypeScript/Pythonでインフラをコード化し、高レベルコンストラクトで効率的にAWSリソースを定義する方法",
-    "path": "cloud-platforms/aws/infrastructure-automation/cdk",
+    "path": "src/cloud-platforms/aws/infrastructure-automation/cdk",
     "category": "AWSインフラ自動化"
   },
   {
     "id": "cloudformation",
     "name": "aws-cloudformation",
     "description": "AWS CloudFormationを使用してInfrastructure as Code（IaC）を実装し、スタック管理、ドリフト検出、ChangeSetで安全にインフラをプロビジョニングする方法",
-    "path": "cloud-platforms/aws/infrastructure-automation/cloudformation",
+    "path": "src/cloud-platforms/aws/infrastructure-automation/cloudformation",
     "category": "AWSインフラ自動化"
   },
   {
     "id": "cloudfront",
     "name": "aws-cloudfront",
     "description": "AWS CloudFrontを使用してグローバルCDNを構築し、Origin Shield、キャッシュ動作、Lambda@Edgeを活用してコンテンツ配信を最適化する方法",
-    "path": "cloud-platforms/aws/networking/cloudfront",
+    "path": "src/cloud-platforms/aws/networking/cloudfront",
     "category": "AWSネットワーキング"
   },
   {
     "id": "cloudtrail",
     "name": "aws-cloudtrail",
     "description": "AWS CloudTrailを使用してAPI呼び出しを監査し、ガバナンス、コンプライアンス、リスク監査を実現する方法",
-    "path": "cloud-platforms/aws/security-monitoring/cloudtrail",
+    "path": "src/cloud-platforms/aws/security-monitoring/cloudtrail",
     "category": "AWSセキュリティ・監視"
   },
   {
     "id": "cloudwatch",
     "name": "aws-cloudwatch",
     "description": "AWS CloudWatchを使用してメトリクス、ログ、アラーム、ダッシュボードでAWSリソースを監視し、CloudWatch InsightsとApplication Signalsで詳細分析を行う方法",
-    "path": "cloud-platforms/aws/security-monitoring/cloudwatch",
+    "path": "src/cloud-platforms/aws/security-monitoring/cloudwatch",
     "category": "AWSセキュリティ・監視"
   },
   {
     "id": "codepipeline",
     "name": "aws-codepipeline",
     "description": "AWS CodePipelineを使用してCI/CDパイプラインを構築し、CodeCommit、CodeBuild、CodeDeployと統合して自動デプロイメントを実現する方法",
-    "path": "cloud-platforms/aws/developer-tools/codepipeline",
+    "path": "src/cloud-platforms/aws/developer-tools/codepipeline",
     "category": "AWS開発者ツール"
   },
   {
     "id": "cognito",
     "name": "aws-cognito",
     "description": "AWS Cognitoを使用してユーザー認証とアクセス管理を実装し、User Pools、Identity Pools、ソーシャルログイン、MFAでセキュアなアプリケーションを構築する方法",
-    "path": "cloud-platforms/aws/developer-tools/cognito",
+    "path": "src/cloud-platforms/aws/developer-tools/cognito",
     "category": "AWS開発者ツール"
   },
   {
     "id": "cost-optimization-advanced",
     "name": "aws-cost-optimization-advanced",
     "description": "FinOpsプラクティスを実践し、Savings Plans、Reserved Instances、Spot Instances、リソースライトサイジング、タグ戦略で30-40%のコスト削減を実現する方法",
-    "path": "cloud-platforms/aws/architecture/cost-optimization-advanced",
+    "path": "src/cloud-platforms/aws/architecture/cost-optimization-advanced",
     "category": "AWSアーキテクチャ"
   },
   {
     "id": "direct-connect-vpn",
     "name": "aws-direct-connect-vpn",
     "description": "AWS Direct ConnectとVPNを使用してオンプレミスとAWSを接続し、Site-to-Site VPN、Client VPN、ハイブリッド接続を実装する方法",
-    "path": "cloud-platforms/aws/networking/direct-connect-vpn",
+    "path": "src/cloud-platforms/aws/networking/direct-connect-vpn",
     "category": "AWSネットワーキング"
   },
   {
     "id": "dynamodb",
     "name": "aws-dynamodb",
     "description": "AWS DynamoDBを使用してスケーラブルなNoSQLデータベースを構築し、Single-Tableデザイン、パーティションキー設計、DAXキャッシングを活用する方法",
-    "path": "cloud-platforms/aws/storage-database/dynamodb",
+    "path": "src/cloud-platforms/aws/storage-database/dynamodb",
     "category": "AWSストレージ・データベース"
   },
   {
     "id": "ebs-efs",
     "name": "aws-ebs-efs",
     "description": "AWS EBS（Elastic Block Store）とEFS（Elastic File System）を使用してEC2インスタンス用のブロックストレージとファイルシステムを管理する方法",
-    "path": "cloud-platforms/aws/storage-database/ebs-efs",
+    "path": "src/cloud-platforms/aws/storage-database/ebs-efs",
     "category": "AWSストレージ・データベース"
   },
   {
     "id": "elastic-beanstalk",
     "name": "aws-elastic-beanstalk",
     "description": "AWS Elastic Beanstalkを使用してWebアプリケーションを簡単にデプロイし、Blue/Green、Immutable、Rolling deploymentで本番環境を運用する方法",
-    "path": "cloud-platforms/aws/developer-tools/elastic-beanstalk",
+    "path": "src/cloud-platforms/aws/developer-tools/elastic-beanstalk",
     "category": "AWS開発者ツール"
   },
   {
     "id": "glue",
     "name": "aws-glue",
     "description": "AWS Glueを使用してサーバーレスETLを実行し、Data Catalog、Glue Studio、生成AI機能でデータ統合と変換を自動化する方法",
-    "path": "cloud-platforms/aws/data-analytics-ml/glue",
+    "path": "src/cloud-platforms/aws/data-analytics-ml/glue",
     "category": "AWSデータ分析・機械学習"
   },
   {
     "id": "high-availability",
     "name": "aws-high-availability",
     "description": "AWSで高可用性とディザスタリカバリを実装し、Multi-AZ、Multi-Region、RTO/RPO、フェイルオーバー戦略で事業継続性を確保する方法",
-    "path": "cloud-platforms/aws/architecture/high-availability",
+    "path": "src/cloud-platforms/aws/architecture/high-availability",
     "category": "AWSアーキテクチャ"
   },
   {
     "id": "kinesis",
     "name": "aws-kinesis",
     "description": "AWS Kinesisを使用してリアルタイムストリーミングデータを収集・処理し、Data Streams、Firehose、Analytics、Enhanced Fan-Outでスケーラブルなデータパイプラインを構築する方法",
-    "path": "cloud-platforms/aws/data-analytics-ml/kinesis",
+    "path": "src/cloud-platforms/aws/data-analytics-ml/kinesis",
     "category": "AWSデータ分析・機械学習"
   },
   {
     "id": "kms-secrets",
     "name": "aws-kms-secrets",
     "description": "AWS KMSとSecrets Managerを使用して暗号化キー管理、シークレットローテーション、アプリケーションの機密情報保護を実現する方法",
-    "path": "cloud-platforms/aws/security-monitoring/kms-secrets",
+    "path": "src/cloud-platforms/aws/security-monitoring/kms-secrets",
     "category": "AWSセキュリティ・監視"
   },
   {
     "id": "microservices",
     "name": "aws-microservices",
     "description": "AWSでマイクロサービスアーキテクチャを実装し、EventBridge、SNS/SQS、API Gateway、サービスメッシュでイベント駆動の分散システムを構築する方法",
-    "path": "cloud-platforms/aws/architecture/microservices",
+    "path": "src/cloud-platforms/aws/architecture/microservices",
     "category": "AWSアーキテクチャ"
   },
   {
     "id": "multi-account",
     "name": "aws-multi-account",
     "description": "AWS Organizationsを使用してマルチアカウント戦略を実装し、Control Tower、SCPs、アカウント分離でガバナンス、セキュリティ、コスト管理を強化する方法",
-    "path": "cloud-platforms/aws/architecture/multi-account",
+    "path": "src/cloud-platforms/aws/architecture/multi-account",
     "category": "AWSアーキテクチャ"
   },
   {
     "id": "quicksight",
     "name": "aws-quicksight",
     "description": "AWS QuickSightを使用してBIダッシュボードを作成し、SPICE、インクリメンタルリフレッシュ、組み込み分析で高速なデータ可視化を実現する方法",
-    "path": "cloud-platforms/aws/data-analytics-ml/quicksight",
+    "path": "src/cloud-platforms/aws/data-analytics-ml/quicksight",
     "category": "AWSデータ分析・機械学習"
   },
   {
     "id": "rds-aurora",
     "name": "aws-rds-aurora",
     "description": "AWS RDS（Relational Database Service）とAuroraを使用してマネージドリレーショナルデータベースを構築し、高可用性、パフォーマンス、スケーラビリティを実現する方法",
-    "path": "cloud-platforms/aws/storage-database/rds-aurora",
+    "path": "src/cloud-platforms/aws/storage-database/rds-aurora",
     "category": "AWSストレージ・データベース"
   },
   {
     "id": "redshift",
     "name": "aws-redshift",
     "description": "AWS Redshiftを使用してペタバイト級のデータウェアハウスを構築し、Serverless、RA3ノード、Spectrumを活用してコスト効率良く分析する方法",
-    "path": "cloud-platforms/aws/storage-database/redshift",
+    "path": "src/cloud-platforms/aws/storage-database/redshift",
     "category": "AWSストレージ・データベース"
   },
   {
     "id": "route53",
     "name": "aws-route53",
     "description": "AWS Route 53を使用してDNS管理、ルーティングポリシー、ヘルスチェック、フェイルオーバーを実装し、高可用性なアプリケーションを構築する方法",
-    "path": "cloud-platforms/aws/networking/route53",
+    "path": "src/cloud-platforms/aws/networking/route53",
     "category": "AWSネットワーキング"
   },
   {
     "id": "sagemaker",
     "name": "aws-sagemaker",
     "description": "AWS SageMakerを使用して機械学習モデルの構築、トレーニング、デプロイを実行し、Serverless Inference、Multi-Model Endpoint、A/Bテストで本番運用する方法",
-    "path": "cloud-platforms/aws/data-analytics-ml/sagemaker",
+    "path": "src/cloud-platforms/aws/data-analytics-ml/sagemaker",
     "category": "AWSデータ分析・機械学習"
   },
   {
     "id": "security-groups",
     "name": "aws-security-groups",
     "description": "AWS Security GroupsとNetwork ACLsを使用してステートフル/ステートレスなファイアウォールルールを設定し、VPCリソースへのトラフィックを制御する方法",
-    "path": "cloud-platforms/aws/networking/security-groups",
+    "path": "src/cloud-platforms/aws/networking/security-groups",
     "category": "AWSネットワーキング"
   },
   {
     "id": "systems-manager",
     "name": "aws-systems-manager",
     "description": "AWS Systems Managerを使用してParameter Store、Session Manager、パッチ管理、Run Commandでインフラ運用を自動化する方法",
-    "path": "cloud-platforms/aws/infrastructure-automation/systems-manager",
+    "path": "src/cloud-platforms/aws/infrastructure-automation/systems-manager",
     "category": "AWSインフラ自動化"
   },
   {
     "id": "terraform",
     "name": "aws-terraform",
     "description": "Terraformを使用してマルチクラウド対応のInfrastructure as Codeを実装し、state管理、モジュール、workspaceでインフラをバージョン管理する方法",
-    "path": "cloud-platforms/aws/infrastructure-automation/terraform",
+    "path": "src/cloud-platforms/aws/infrastructure-automation/terraform",
     "category": "AWSインフラ自動化"
   },
   {
     "id": "vpc",
     "name": "aws-vpc",
     "description": "AWS VPC（Virtual Private Cloud）を使用してプライベートネットワークを構築し、サブネット、ルートテーブル、NAT Gateway、Transit Gatewayを活用してセキュアでスケーラブルなネットワークを設計する方法",
-    "path": "cloud-platforms/aws/networking/vpc",
+    "path": "src/cloud-platforms/aws/networking/vpc",
     "category": "AWSネットワーキング"
   },
   {
     "id": "well-architected",
     "name": "aws-well-architected",
     "description": "AWS Well-Architected Frameworkの6つの柱（運用上の優秀性、セキュリティ、信頼性、パフォーマンス効率、コスト最適化、持続可能性）を理解し、ベストプラクティスを適用する方法",
-    "path": "cloud-platforms/aws/security-monitoring/well-architected",
+    "path": "src/cloud-platforms/aws/security-monitoring/well-architected",
     "category": "AWSセキュリティ・監視"
   },
   {
     "id": "brand-strategy",
     "name": "brand-strategy",
     "description": "ブランドのポジショニング、USP（独自の売り）、ターゲット顧客を明確にし、長期的なブランド価値を構築する力。市場での差別化と顧客ロイヤルティを確立する際に使用。",
-    "path": "product-development/sales-deployment/brand-strategy",
+    "path": "src/product-development/sales-deployment/brand-strategy",
     "category": "製品開発：営業・展開"
   },
   {
     "id": "cloud-security",
     "name": "cloud-security",
     "description": "クラウドセキュリティの実践を支援します。AWS、Azure、GCPのセキュリティサービス、 IAM、ネットワークセキュリティ、データ保護、コンテナセキュリティ、CSPM、CWPP、 クラウドネイティブセキュリティなど、マルチクラウド環境のセキュリティ確保に使用します。 キーワード - クラウドセキュリティ、AWS、Azure、GCP、IAM、CSPM、CWPP、 コンテナセキュリティ、Zero Trust。",
-    "path": "security/cloud-security",
+    "path": "src/security/cloud-security",
     "category": "セキュリティ"
   },
   {
     "id": "community-management",
     "name": "community-management",
     "description": "Provides best practices and guidance for effectively managing and growing open source project communities. Supports onboarding new contributors, building leadership, implementing engagement strategies, and establishing governance models.",
-    "path": "community-tools/community-management",
+    "path": "src/community-tools/community-management",
     "category": "コミュニティツール"
   },
   {
     "id": "concept-making",
     "name": "concept-making",
     "description": "商品の「なぜ存在するのか（why）」と「どのように価値を届けるのか（how）」を明確化し、一貫性のあるコンセプトを構築する力。アイデアを具体的な商品コンセプトに落とし込む際に使用。",
-    "path": "product-development/concept-design/concept-making",
+    "path": "src/product-development/concept-design/concept-making",
     "category": "製品開発：コンセプト・デザイン"
   },
   {
     "id": "cost-management",
     "name": "cost-management",
     "description": "商品開発のコストを計画し、管理し、最適化する力。Design to Costの考え方で目標価格から逆算し、予算内で最大の価値を実現する際に使用。",
-    "path": "product-development/development/cost-management",
+    "path": "src/product-development/development/cost-management",
     "category": "製品開発：開発"
   },
   {
     "id": "creativity",
     "name": "creativity",
     "description": "既存の枠組みを超えた新しい価値を創出し、イノベーションを生み出す力。固定観念に縛られず、多角的な視点で問題を解決し、独創的なアイデアを形にする際に使用。",
-    "path": "product-development/soft-skills/creativity",
+    "path": "src/product-development/soft-skills/creativity",
     "category": "製品開発：ソフトスキル"
   },
   {
     "id": "cryptography",
     "name": "cryptography",
     "description": "暗号技術の基礎と実践を支援します。対称・非対称暗号、ハッシュ関数、デジタル署名、SSL/TLS、 公開鍵基盤（PKI）、証明書管理など、暗号化技術の実装と分析、セキュアな通信設計に使用します。 キーワード - 暗号、暗号化、復号化、ハッシュ、デジタル署名、SSL、TLS、PKI、証明書、 AES、RSA、ECC。",
-    "path": "security/cryptography",
+    "path": "src/security/cryptography",
     "category": "セキュリティ"
   },
   {
     "id": "design-thinking",
     "name": "design-thinking",
     "description": "人間中心のアプローチで問題を解決する思考法。共感、定義、アイデア、プロトタイプ、テストの5ステップで革新的なソリューションを創出する際に使用。",
-    "path": "product-development/development/design-thinking",
+    "path": "src/product-development/development/design-thinking",
     "category": "製品開発：開発"
   },
   {
     "id": "devsecops",
     "name": "devsecops",
     "description": "DevSecOpsの実践を支援します。セキュリティをCI/CDパイプラインに統合、SAST、DAST、SCA、 IaCスキャン、コンテナセキュリティ、シフトレフト、セキュリティゲート設計など、 開発ライフサイクル全体のセキュリティ統合に使用します。 キーワード - DevSecOps、SAST、DAST、SCA、CI/CD、シフトレフト、セキュリティゲート。",
-    "path": "security/devsecops",
+    "path": "src/security/devsecops",
     "category": "セキュリティ"
   },
   {
     "id": "digital-forensics",
     "name": "digital-forensics",
     "description": "デジタルフォレンジックの実施を支援します。メモリダンプ解析、タイムライン分析、証拠保全手順、 ディスクイメージング、ファイルカービング、アーティファクト分析など、インシデント調査と 法的証拠収集に使用します。 キーワード - フォレンジック、証拠保全、メモリ解析、ディスクイメージ、タイムライン、 アーティファクト。",
-    "path": "security/digital-forensics",
+    "path": "src/security/digital-forensics",
     "category": "セキュリティ"
   },
   {
     "id": "ec-data-automation",
     "name": "ec-data-automation",
     "description": "ECサイトのデータ分析基盤構築と業務自動化を支援するスキル。RPA、Python/スクリプト自動化、ETL/データパイプライン、BigQuery等のデータ基盤、レコメンドアルゴリズム、機械学習、AIエージェント（2025年）に使用される。",
-    "path": "ecommerce/ec-data-automation",
+    "path": "src/ecommerce/ec-data-automation",
     "category": "EC"
   },
   {
     "id": "ec-development",
     "name": "ec-development",
     "description": "ECサイトの開発に必要な技術スキルを提供するスキル。フロントエンド（React/Next.js/Vue.js）、バックエンド（PHP/Python/Node.js）、ECプラットフォーム（Shopify/Magento/WooCommerce）、API連携、決済ゲートウェイ統合、セキュリティ対策などの開発業務に使用される。",
-    "path": "ecommerce/ec-development",
+    "path": "src/ecommerce/ec-development",
     "category": "EC"
   },
   {
     "id": "ec-marketing-analytics",
     "name": "ec-marketing-analytics",
     "description": "ECサイトのマーケティング戦略とデータ分析を支援するスキル。SEO、SNS広告運用（Google Ads/Meta Ads/TikTok Ads）、メールマーケティング、CRM、Google Analytics（GA4）分析、リターゲティング、AIマーケティング（2025年）に使用される。",
-    "path": "ecommerce/ec-marketing-analytics",
+    "path": "src/ecommerce/ec-marketing-analytics",
     "category": "EC"
   },
   {
     "id": "ec-operations-logistics",
     "name": "ec-operations-logistics",
     "description": "ECサイトの運営業務と物流管理を支援するスキル。在庫管理、受発注管理、WMS（倉庫管理システム）、配送管理、カスタマーサポート、レビュー・口コミ運用など、ECサイトの日常運営業務に使用される。",
-    "path": "ecommerce/ec-operations-logistics",
+    "path": "src/ecommerce/ec-operations-logistics",
     "category": "EC"
   },
   {
     "id": "ec-project-management",
     "name": "ec-project-management",
     "description": "ECサイトのプロジェクト管理を支援するスキル。アジャイル開発（スクラム）、要件定義、ベンダー管理、予算・スケジュール管理、ステークホルダー管理など、ECプロジェクトの計画・実行・監視に使用される。",
-    "path": "ecommerce/ec-project-management",
+    "path": "src/ecommerce/ec-project-management",
     "category": "EC"
   },
   {
     "id": "ec-strategy-planning",
     "name": "ec-strategy-planning",
     "description": "ECサイトのビジネス戦略立案と企画を支援するスキル。B2C、B2B、D2Cなどのビジネスモデル設計、マーケットリサーチ、カスタマージャーニー設計、KPI・LTV分析などの戦略的意思決定に使用される。",
-    "path": "ecommerce/ec-strategy-planning",
+    "path": "src/ecommerce/ec-strategy-planning",
     "category": "EC"
   },
   {
     "id": "ec-ui-ux-design",
     "name": "ec-ui-ux-design",
     "description": "ECサイトのUIデザインとUX最適化を支援するスキル。商品ページ設計、レスポンシブデザイン、ヒートマップ分析、A/Bテスト、コンバージョン率最適化（CRO）、2025年のデザイントレンド（AI活用、3Dグラフィック等）に使用される。",
-    "path": "ecommerce/ec-ui-ux-design",
+    "path": "src/ecommerce/ec-ui-ux-design",
     "category": "EC"
   },
   {
     "id": "generic-subagent",
     "name": "generic-subagent",
     "description": "任意のタスクを別セッションで実行し、メインセッションのコンテキストウィンドウを節約します。 別セッション実行、コンテキスト節約、サブエージェント実行、タスク委任、セッション分離が必要な時に使用します。 キーワード - 別セッション、コンテキスト節約、独立実行、タスク分離、サブエージェント。",
-    "path": "development-tools/generic-subagent",
+    "path": "src/development-tools/generic-subagent",
     "category": "開発ツール"
   },
   {
     "id": "hook-creator",
     "name": "hook-creator",
     "description": "Claude Codeのフック（hooks）を作成・設定するためのガイド。ユーザーがClaude Codeのライフサイクルイベント（ツール実行前後、プロンプト送信時、セッション開始/終了時など）に応じて自動実行されるシェルコマンドを設定したい場合に使用される。自動フォーマット、通知、ログ記録、ファイル保護などのユースケースに対応。",
-    "path": "development-tools/hook-creator",
+    "path": "src/development-tools/hook-creator",
     "category": "開発ツール"
   },
   {
     "id": "idea-generation",
     "name": "idea-generation",
     "description": "多角的な発想で新しい価値提案を生み出す力。商品企画の初期段階で、市場のニーズや課題に対する革新的なソリューションを創出する際に使用。",
-    "path": "product-development/planning-research/idea-generation",
+    "path": "src/product-development/planning-research/idea-generation",
     "category": "製品開発：計画・調査"
   },
   {
     "id": "incident-response",
     "name": "incident-response",
     "description": "インシデント対応計画の策定と実施を支援します。検知・分析・封じ込め・根絶・回復・教訓化の インシデント対応ライフサイクル、CSIRT運用、報告フロー設計、プレイブック作成など、 セキュリティインシデントの効果的な管理に使用します。 キーワード - インシデント対応、CSIRT、プレイブック、封じ込め、根絶、事後分析。",
-    "path": "security/incident-response",
+    "path": "src/security/incident-response",
     "category": "セキュリティ"
   },
   {
     "id": "insight-discovery",
     "name": "insight-discovery",
     "description": "商品開発のための顧客インサイトを発掘する。消費者自身も気づいていない潜在的なニーズや購買動機を発見し、イノベーティブな商品開発につなげる際に使用される。",
-    "path": "product-development/planning-research/insight-discovery",
+    "path": "src/product-development/planning-research/insight-discovery",
     "category": "製品開発：計画・調査"
   },
   {
     "id": "leadership",
     "name": "leadership",
     "description": "ビジョンを示し、チームを導き、意思決定を行う力。商品開発プロジェクトにおいて、多様なメンバーをまとめ、困難を乗り越え、成功に導く際に使用。",
-    "path": "product-development/soft-skills/leadership",
+    "path": "src/product-development/soft-skills/leadership",
     "category": "製品開発：ソフトスキル"
   },
   {
     "id": "learning-agility",
     "name": "learning-agility",
     "description": "新しい技術、トレンド、知識を素早く習得し、継続的に改善する力。変化の激しい商品開発環境で、常にアップデートし、適応し続ける際に使用。",
-    "path": "product-development/soft-skills/learning-agility",
+    "path": "src/product-development/soft-skills/learning-agility",
     "category": "製品開発：ソフトスキル"
   },
   {
     "id": "malware-analysis",
     "name": "malware-analysis",
     "description": "マルウェア解析の技術を支援します。静的解析・動的解析、Sandbox環境構築、逆アセンブル、 デバッギング、IoC抽出、マルウェアファミリーの識別など、マルウェアの調査と対策に使用します。 キーワード - マルウェア、解析、静的解析、動的解析、逆アセンブル、Sandbox、デバッガ、 IoC。",
-    "path": "security/malware-analysis",
+    "path": "src/security/malware-analysis",
     "category": "セキュリティ"
   },
   {
     "id": "market-research",
     "name": "market-research",
     "description": "商品開発のための市場調査を実施する。消費者ニーズ、競合状況、市場トレンドを分析し、新商品のアイデア発掘に必要なデータを収集・分析する際に使用される。",
-    "path": "product-development/planning-research/market-research",
+    "path": "src/product-development/planning-research/market-research",
     "category": "製品開発：計画・調査"
   },
   {
     "id": "marketing-fundamentals",
     "name": "marketing-fundamentals",
     "description": "マーケティングの基本原則と4Pフレームワーク（Product, Price, Place, Promotion）を理解し、商品を市場に適切に位置づける力。商品戦略の立案と実行に使用。",
-    "path": "product-development/concept-design/marketing-fundamentals",
+    "path": "src/product-development/concept-design/marketing-fundamentals",
     "category": "製品開発：コンセプト・デザイン"
   },
   {
     "id": "network-fundamentals",
     "name": "network-fundamentals",
     "description": "ネットワークセキュリティの基礎知識を提供します。TCP/IP、DNS、HTTP/HTTPS、VPN、Firewall、Proxy、 OSI参照モデルの各層でのセキュリティ脆弱性の理解と分析、ネットワークプロトコルのセキュリティ設計を 支援する際に使用します。 キーワード - ネットワーク、TCP/IP、DNS、HTTP、HTTPS、VPN、ファイアウォール、プロキシ、OSI、 プロトコル、セキュリティ。",
-    "path": "security/network-fundamentals",
+    "path": "src/security/network-fundamentals",
     "category": "セキュリティ"
   },
   {
     "id": "os-security",
     "name": "os-security",
     "description": "オペレーティングシステムのセキュリティ管理を支援します。Linux/Windowsの権限管理、ログ監査、 セキュリティ設定、Active Directoryのセキュリティ、カーネルセキュリティ、プロセス管理など、 OSレベルでのセキュリティ対策の実装と分析に使用します。 キーワード - OS、Linux、Windows、権限管理、ログ、Active Directory、セキュリティ設定、 カーネル、プロセス。",
-    "path": "security/os-security",
+    "path": "src/security/os-security",
     "category": "セキュリティ"
   },
   {
     "id": "penetration-testing",
     "name": "penetration-testing",
     "description": "ペネトレーションテストの実施を支援します。Nmap、Metasploit、Burp Suite、Kali Linux等の ツール使用、Webアプリ脆弱性検査（SQLi、XSS、CSRF、IDOR等）、ネットワーク侵入テスト、 報告書作成など、倫理的ハッキングと脆弱性評価に使用します。 キーワード - ペネトレーションテスト、倫理的ハッキング、Metasploit、Burp Suite、脆弱性診断、 SQLインジェクション、XSS。",
-    "path": "security/penetration-testing",
+    "path": "src/security/penetration-testing",
     "category": "セキュリティ"
   },
   {
     "id": "project-management",
     "name": "project-management",
     "description": "商品開発プロジェクトを計画し、リソースを配分し、進捗を管理し、ステークホルダーと調整する力。複雑なプロジェクトを期限内・予算内で完遂する際に使用。",
-    "path": "product-development/development/project-management",
+    "path": "src/product-development/development/project-management",
     "category": "製品開発：開発"
   },
   {
     "id": "promotion-strategy",
     "name": "promotion-strategy",
     "description": "商品やサービスの認知度を高め、購買を促進するプロモーション戦略を立案・実行する力。インフルエンサーマーケティング、SNS、SEO、広告などを効果的に組み合わせる際に使用。",
-    "path": "product-development/sales-deployment/promotion-strategy",
+    "path": "src/product-development/sales-deployment/promotion-strategy",
     "category": "製品開発：営業・展開"
   },
   {
     "id": "quantum-cryptography",
     "name": "quantum-cryptography",
     "description": "量子暗号とポスト量子暗号の理解を支援します。量子計算機がもたらす暗号崩壊のリスク、 耐量子暗号アルゴリズム（NIST標準化）、量子鍵配送（QKD）、量子耐性への移行戦略など、 量子時代の暗号技術に使用します。 キーワード - 量子暗号、ポスト量子暗号、量子コンピュータ、耐量子性、QKD、 NIST PQC、暗号移行。",
-    "path": "security/quantum-cryptography",
+    "path": "src/security/quantum-cryptography",
     "category": "セキュリティ"
   },
   {
     "id": "research",
     "name": "research",
     "description": "体系的な方法論を使用して徹底的なリサーチを実施します。トピックの調査、情報収集、主題の調査、 事実確認、または包括的な分析を実行する際に使用します。 キーワード - リサーチ、調査、分析、情報収集、ファクトチェック、検証、研究。",
-    "path": "analysis/research",
+    "path": "src/analysis/research",
     "category": "分析"
   },
   {
     "id": "reverse-engineering",
     "name": "reverse-engineering",
     "description": "リバースエンジニアリングの技術を支援します。Assemblyの基礎、バイナリ解析、 デバッガ（Ghidra、IDA、OllyDbg）の使用、難読化解除、コードフロー分析、 プロトコルリバースエンジニアリングなど、バイナリ解析に使用します。 キーワード - リバースエンジニアリング、バイナリ解析、逆アセンブル、デバッガ、 Ghidra、IDA、Assembly。",
-    "path": "security/reverse-engineering",
+    "path": "src/security/reverse-engineering",
     "category": "セキュリティ"
   },
   {
     "id": "s3-advanced",
     "name": "s3-advanced",
     "description": "S3の高度な機能を習得：データレイク、高度なストレージクラス（Glacier、Deep Archive）、レプリケーション、イベント通知、Access Points、パフォーマンス最適化、Object Lock",
-    "path": "cloud-platforms/aws/storage-database/s3-advanced",
+    "path": "src/cloud-platforms/aws/storage-database/s3-advanced",
     "category": "AWSストレージ・データベース"
   },
   {
     "id": "s3-fundamentals",
     "name": "s3-fundamentals",
     "description": "S3の基本概念、バケット管理、基本的なストレージクラス、Intelligent-Tiering、静的サイトホスティング、基本的なセキュリティとライフサイクル管理を学ぶ",
-    "path": "cloud-platforms/aws/storage-database/s3-fundamentals",
+    "path": "src/cloud-platforms/aws/storage-database/s3-fundamentals",
     "category": "AWSストレージ・データベース"
   },
   {
     "id": "sales-channel-strategy",
     "name": "sales-channel-strategy",
     "description": "商品を顧客に届けるための最適な販売チャネル（EC、実店舗、代理店など）を選択し、管理する力。顧客の購買行動に合わせたオムニチャネル戦略を構築する際に使用。",
-    "path": "product-development/sales-deployment/sales-channel-strategy",
+    "path": "src/product-development/sales-deployment/sales-channel-strategy",
     "category": "製品開発：営業・展開"
   },
   {
     "id": "security-monitoring",
     "name": "security-monitoring",
     "description": "セキュリティ監視（SOC/Blue Team）の実装を支援します。SIEM（Splunk、ELK、QRadar）のログ分析、 インシデント検知・対応、攻撃チェーン（Cyber Kill Chain、MITRE ATT&CK）の理解、 脅威ハンティング、アラートチューニングなど、防御側のセキュリティ運用に使用します。 キーワード - SOC、Blue Team、SIEM、ログ分析、インシデント検知、MITRE ATT&CK、脅威ハンティング。",
-    "path": "security/security-monitoring",
+    "path": "src/security/security-monitoring",
     "category": "セキュリティ"
   },
   {
     "id": "security-policy",
     "name": "security-policy",
     "description": "セキュリティポリシー策定を支援します。ISO/IEC 27001、NIST SP 800シリーズ、CIS Controls、 ガバナンス・リスク・コンプライアンス（GRC）、リスク評価、ポリシー文書作成など、 組織のセキュリティガバナンス構築に使用します。 キーワード - ポリシー、ISO 27001、NIST、CIS、GRC、リスク評価、コンプライアンス。",
-    "path": "security/security-policy",
+    "path": "src/security/security-policy",
     "category": "セキュリティ"
   },
   {
     "id": "skill-creator",
     "name": "skill-creator",
     "description": "効果的なスキルを作成するためのガイド。ユーザーがClaudeの機能を専門知識、ワークフロー、またはツール統合で拡張する新しいスキルを作成（または既存スキルを更新）したい場合に使用されます。",
-    "path": "development-tools/skill-creator",
+    "path": "src/development-tools/skill-creator",
     "category": "開発ツール"
   },
   {
     "id": "skill-optimizer",
     "name": "skill-optimizer",
     "description": "スキルの重複検出、統合、分割を行い、スキルリポジトリを最適化する。既存スキルの分析、重複の特定、統合・分割の提案、品質チェックを実施したい場合に使用。Taskエージェントを活用して意味的な類似性を判断。",
-    "path": "development-tools/skill-optimizer",
+    "path": "src/development-tools/skill-optimizer",
     "category": "開発ツール"
   },
   {
     "id": "social-engineering",
     "name": "social-engineering",
     "description": "ソーシャルエンジニアリングの理解と防御を支援します。フィッシング、心理的誘導、 プリテキスティング、組織防御対策、セキュリティ意識向上トレーニング、 ソーシャルエンジニアリング攻撃の検出など、人的要素のセキュリティに使用します。 キーワード - ソーシャルエンジニアリング、フィッシング、心理操作、セキュリティ意識、 プリテキスティング。",
-    "path": "security/social-engineering",
+    "path": "src/security/social-engineering",
     "category": "セキュリティ"
   },
   {
     "id": "storytelling",
     "name": "storytelling",
     "description": "商品やブランドの価値を物語として伝える力。顧客をヒーローに位置づけ、「show, don't tell」の原則で感情に訴えかける。商品の魅力を効果的に伝える際に使用。",
-    "path": "product-development/concept-design/storytelling",
+    "path": "src/product-development/concept-design/storytelling",
     "category": "製品開発：コンセプト・デザイン"
   },
   {
     "id": "subagent-creator",
     "name": "subagent-creator",
     "description": "Taskツールを使用して汎用的なサブエージェントを作成し、複雑なタスクを別セッションで実行します。 サブエージェント作成、タスク委任、並列実行、バックグラウンド処理、効率的なタスク分割を依頼された時に使用します。 キーワード - サブエージェント作成、Task実行、並列処理、タスク委任、マルチエージェント。",
-    "path": "development-tools/subagent-creator",
+    "path": "src/development-tools/subagent-creator",
     "category": "開発ツール"
   },
   {
     "id": "supply-chain-security",
     "name": "supply-chain-security",
     "description": "サプライチェーンセキュリティの実践を支援します。SBOM（Software Bill of Materials）、 署名付きビルド、依存関係監査、サプライチェーン攻撃対策、ベンダーリスク管理、 ゼロトラストサプライチェーンなど、ソフトウェアサプライチェーン全体のセキュリティ確保に使用します。 キーワード - サプライチェーン、SBOM、依存関係、署名、Sigstore、SLSA、ベンダーリスク。",
-    "path": "security/supply-chain-security",
+    "path": "src/security/supply-chain-security",
     "category": "セキュリティ"
   },
   {
     "id": "technical-understanding",
     "name": "technical-understanding",
     "description": "製造方法、素材、品質基準、技術的制約を理解する力。実現可能で高品質な商品を設計し、エンジニアやサプライヤーと効果的にコミュニケーションする際に使用。",
-    "path": "product-development/development/technical-understanding",
+    "path": "src/product-development/development/technical-understanding",
     "category": "製品開発：開発"
   },
   {
     "id": "user-testing",
     "name": "user-testing",
     "description": "実際のユーザーに商品やプロトタイプを試してもらい、フィードバックを収集・分析する力。早期検証で問題を発見し、改善につなげる際に使用。5人のテストで80%の問題を発見可能。",
-    "path": "product-development/testing-improvement/user-testing",
+    "path": "src/product-development/testing-improvement/user-testing",
     "category": "製品開発：テスト・改善"
   },
   {
     "id": "vulnerability-management",
     "name": "vulnerability-management",
     "description": "脆弱性管理プロセスを支援します。CVE、NVD、OWASP Top 10の把握と評価、脆弱性スキャン（Nessus、 OpenVAS、Qualys）、脆弱性評価、パッチ管理、リスク評価など、脆弱性ライフサイクル全体の管理に使用します。 キーワード - 脆弱性、CVE、NVD、OWASP、スキャナー、パッチ、リスク評価、脆弱性診断。",
-    "path": "security/vulnerability-management",
+    "path": "src/security/vulnerability-management",
     "category": "セキュリティ"
   },
   {
     "id": "active-listening",
     "name": "アクティブリスニング",
     "description": "傾聴スキル。相手の言葉だけでなく感情や意図も理解し、適切な応答を通じて対人関係を構築する。対話、ミーティング、要件収集で使用",
-    "path": "interpersonal-skills/communication/active-listening",
+    "path": "src/interpersonal-skills/communication/active-listening",
     "category": "対人スキル：コミュニケーション"
   },
   {
     "id": "abductive-reasoning",
     "name": "アブダクション推論",
     "description": "限られた情報から最も妥当な仮説を構築するスキル。観察→仮説→検証のサイクルで未知の事象を説明し、創発的な理解を促進",
-    "path": "thinking-skills/abductive-reasoning",
+    "path": "src/thinking-skills/abductive-reasoning",
     "category": "思考スキル"
   },
   {
     "id": "innovation-mindset",
     "name": "イノベーションマインド",
     "description": "失敗を学びに変え、実験を通じて継続的に改善する思考法。失敗許容の文化醸成、小さな実験の積み重ね、変革への挑戦に使用",
-    "path": "thinking-skills/innovation-mindset",
+    "path": "src/thinking-skills/innovation-mindset",
     "category": "思考スキル"
   },
   {
     "id": "error-handling",
     "name": "エラーハンドリング改善",
     "description": "エラー処理とエラーハンドリングの改善。エラー処理、例外処理、エラーハンドリング、リトライ、ログに関する依頼に対応",
-    "path": "code-quality/error-handling",
+    "path": "src/code-quality/error-handling",
     "category": "コード品質"
   },
   {
     "id": "ecommerce-integration",
     "name": "オンライン販売との連携知識",
     "description": "小売業におけるオンライン販売連携スキル。オムニチャネル戦略、EC在庫連携、BOPIS（Buy Online Pick-up In Store）などの実践方法を提供",
-    "path": "retail/ecommerce-integration",
+    "path": "src/retail/ecommerce-integration",
     "category": "小売"
   },
   {
     "id": "complaint-handling",
     "name": "クレーム対応力",
     "description": "小売業におけるクレーム対応スキル。トラブルを冷静に処理し、信頼を回復するための効果的な対応方法と サービスリカバリー技術を提供",
-    "path": "retail/complaint-handling",
+    "path": "src/retail/complaint-handling",
     "category": "小売"
   },
   {
     "id": "cross-functional-communication",
     "name": "クロスファンクショナルコミュニケーション",
     "description": "営業・生産・経営層との効果的な連携。部門間の壁を超え、情報共有と協働でサプライチェーン全体最適を実現",
-    "path": "supply-chain/cross-functional-communication",
+    "path": "src/supply-chain/cross-functional-communication",
     "category": "サプライチェーン"
   },
   {
     "id": "cost-analysis",
     "name": "コスト分析",
     "description": "原材料費、輸送費、人件費などサプライチェーンコスト構造を可視化・分析。コストドライバーを特定し、削減機会を発見",
-    "path": "supply-chain/cost-analysis",
+    "path": "src/supply-chain/cost-analysis",
     "category": "サプライチェーン"
   },
   {
     "id": "copywriting",
     "name": "コピーライティング",
     "description": "短く強く、人の心を動かし行動を促す言葉を設計するスキル。広告、LP、メール等あらゆるマーケティング資料で顧客の感情と行動を喚起するために使用",
-    "path": "marketing/copywriting",
+    "path": "src/marketing/copywriting",
     "category": "マーケティング"
   },
   {
     "id": "communication-skills",
     "name": "コミュニケーション力",
     "description": "小売業におけるコミュニケーション力スキル。店舗内外の円滑な連携、チームワーク、効果的な情報共有の方法を提供",
-    "path": "retail/communication-skills",
+    "path": "src/retail/communication-skills",
     "category": "小売"
   },
   {
     "id": "conflict-management",
     "name": "コンフリクト・マネジメント",
     "description": "対立や意見の相違を建設的に解決し、成長の機会に変えるスキル。問題の本質を理解し、Win-Winの解決策を見つけ、関係を強化する",
-    "path": "interpersonal-skills/collaboration-negotiation/conflict-management",
+    "path": "src/interpersonal-skills/collaboration-negotiation/conflict-management",
     "category": "対人スキル：協働・交渉"
   },
   {
     "id": "code-review",
     "name": "コードレビュー",
     "description": "コードレビュー時の思考プロセス。レビュー、確認、評価、品質チェックに関する依頼に対応",
-    "path": "code-quality/code-review",
+    "path": "src/code-quality/code-review",
     "category": "コード品質"
   },
   {
     "id": "code-creation",
     "name": "コード作成",
     "description": "新規コード作成時の思考プロセス。新規、作成、実装、機能追加、開発に関する依頼に対応",
-    "path": "code-generation/code-creation",
+    "path": "src/code-generation/code-creation",
     "category": "コード生成"
   },
   {
     "id": "sustainability-practices",
     "name": "サステナビリティ対応",
     "description": "小売業におけるサステナビリティ対応スキル。環境配慮、SDGs実践、フードロス削減、エシカル消費への対応方法を提供",
-    "path": "retail/sustainability-practices",
+    "path": "src/retail/sustainability-practices",
     "category": "小売"
   },
   {
     "id": "sustainable-procurement",
     "name": "サステナブル調達",
     "description": "環境・倫理・コンプライアンスを考慮した調達戦略。ESG基準、サーキュラーエコノミー、人権配慮で持続可能なサプライチェーンを実現",
-    "path": "supply-chain/sustainable-procurement",
+    "path": "src/supply-chain/sustainable-procurement",
     "category": "サプライチェーン"
   },
   {
     "id": "supply-chain-data-analytics",
     "name": "サプライチェーンデータ分析",
     "description": "Excel、SQL、Python、Power BIを活用した高度なデータ分析。サプライチェーンの洞察を導き、データドリブンな意思決定を実現",
-    "path": "supply-chain/supply-chain-data-analytics",
+    "path": "src/supply-chain/supply-chain-data-analytics",
     "category": "サプライチェーン"
   },
   {
     "id": "supply-chain-project-management",
     "name": "サプライチェーンプロジェクトマネジメント",
     "description": "SCM改善プロジェクトの計画・実行・管理。進捗管理、リスク管理、PDCA運用により、変革を成功に導く",
-    "path": "supply-chain/supply-chain-project-management",
+    "path": "src/supply-chain/supply-chain-project-management",
     "category": "サプライチェーン"
   },
   {
     "id": "scm-overview",
     "name": "サプライチェーンマネジメント概要",
     "description": "サプライチェーン全体の理解と最適化。需要予測から調達・生産・在庫・配送までの一貫した流れを把握し、効率的なSCM戦略を立案",
-    "path": "supply-chain/scm-overview",
+    "path": "src/supply-chain/scm-overview",
     "category": "サプライチェーン"
   },
   {
     "id": "supply-chain-analytics-ai",
     "name": "サプライチェーン・アナリティクスAI",
     "description": "AI/機械学習によるサプライチェーンの高度な分析と最適化。予測モデル、最適化アルゴリズム、自動化で競争優位を確立",
-    "path": "supply-chain/supply-chain-analytics-ai",
+    "path": "src/supply-chain/supply-chain-analytics-ai",
     "category": "サプライチェーン"
   },
   {
     "id": "supply-chain-optimization",
     "name": "サプライチェーン最適化",
     "description": "数理最適化、線形計画法、シミュレーションを活用。複雑な制約下で最適な生産計画、配送計画、ネットワーク設計を実現",
-    "path": "supply-chain/supply-chain-optimization",
+    "path": "src/supply-chain/supply-chain-optimization",
     "category": "サプライチェーン"
   },
   {
     "id": "circular-economy-design",
     "name": "サーキュラーエコノミー設計",
     "description": "リサイクル・リユースを含む循環型サプライチェーンの構築。環境負荷を低減し、資源効率を最大化する持続可能なビジネスモデルを設計",
-    "path": "supply-chain/circular-economy-design",
+    "path": "src/supply-chain/circular-economy-design",
     "category": "サプライチェーン"
   },
   {
     "id": "system-design",
     "name": "システム設計",
     "description": "システム・アーキテクチャ設計時の思考プロセス。設計、アーキテクチャ、システム、構成に関する依頼に対応",
-    "path": "design/system-design",
+    "path": "src/design/system-design",
     "category": "設計"
   },
   {
     "id": "shift-management",
     "name": "シフト管理",
     "description": "小売業におけるシフト管理スキル。人員配置・勤怠調整の最適化、効率的なシフト作成と管理の方法を提供",
-    "path": "retail/shift-management",
+    "path": "src/retail/shift-management",
     "category": "小売"
   },
   {
     "id": "staff-training",
     "name": "スタッフ教育",
     "description": "小売業におけるスタッフ教育スキル。新人研修、接客指導、ロールプレイング、OJTの実践方法を提供",
-    "path": "retail/staff-training",
+    "path": "src/retail/staff-training",
     "category": "小売"
   },
   {
     "id": "stress-management",
     "name": "ストレスマネジメント",
     "description": "ストレス要因を可視化し、呼吸法・瞑想・軽運動を通じて効果的にストレスを管理するスキル。ストレス日記の記録、リラクゼーション技法の習慣化、期待値の調整に使用",
-    "path": "self-management/stress-management",
+    "path": "src/self-management/stress-management",
     "category": "自己管理"
   },
   {
     "id": "security-audit",
     "name": "セキュリティ監査",
     "description": "セキュリティ監査と脆弱性評価。セキュリティ、脆弱性、セキュアコーディング、セキュリティチェック、監査に関する依頼に対応",
-    "path": "code-quality/security-audit",
+    "path": "src/code-quality/security-audit",
     "category": "コード品質"
   },
   {
     "id": "teamwork",
     "name": "チームワーク",
     "description": "共通の目標に向けて協力し、メンバーの強みを活かして成果を最大化するスキル。役割分担、情報共有、相互支援で効果的なチーム協働を実現",
-    "path": "interpersonal-skills/collaboration-negotiation/teamwork",
+    "path": "src/interpersonal-skills/collaboration-negotiation/teamwork",
     "category": "対人スキル：協働・交渉"
   },
   {
     "id": "test-automation",
     "name": "テスト自動化",
     "description": "テスト自動化の戦略と実装。テスト、ユニットテスト、統合テスト、E2Eテスト、テストカバレッジに関する依頼に対応",
-    "path": "testing/test-automation",
+    "path": "src/testing/test-automation",
     "category": "テスト"
   },
   {
     "id": "design-thinking",
     "name": "デザイン思考",
     "description": "ユーザー中心の課題発見と解決のフレームワーク。共感による潜在ニーズの発見、迅速なプロトタイピング、反復的な改善に使用",
-    "path": "thinking-skills/design-thinking",
+    "path": "src/thinking-skills/design-thinking",
     "category": "思考スキル"
   },
   {
     "id": "digital-twin",
     "name": "デジタルツイン",
     "description": "仮想空間上でのサプライチェーン再現とシミュレーション。リアルタイムデータと予測モデルで、最適な意思決定を支援",
-    "path": "supply-chain/digital-twin",
+    "path": "src/supply-chain/digital-twin",
     "category": "サプライチェーン"
   },
   {
     "id": "digital-marketing",
     "name": "デジタルマーケティング",
     "description": "小売業におけるデジタルマーケティングスキル。SNS運用、ECサイト連携、オンライン販促の実践方法を提供",
-    "path": "retail/digital-marketing",
+    "path": "src/retail/digital-marketing",
     "category": "小売"
   },
   {
     "id": "advertising",
     "name": "デジタル広告運用",
     "description": "Google Ads、Meta広告等のデジタル広告を効果的に運用し、ROIを最大化するスキル。ターゲティング、入札戦略、クリエイティブ最適化に使用",
-    "path": "marketing/advertising",
+    "path": "src/marketing/advertising",
     "category": "マーケティング"
   },
   {
     "id": "debugging",
     "name": "デバッグ",
     "description": "バグ修正・問題解決時の思考プロセス。エラー、バグ、問題、修正、デバッグに関する依頼に対応",
-    "path": "code-quality/debugging",
+    "path": "src/code-quality/debugging",
     "category": "コード品質"
   },
   {
     "id": "data-driven-thinking",
     "name": "データドリブン思考",
     "description": "小売業におけるデータドリブン思考スキル。データに基づく意思決定、KPI活用、仮説検証、PDCAサイクルの実践方法を提供",
-    "path": "retail/data-driven-thinking",
+    "path": "src/retail/data-driven-thinking",
     "category": "小売"
   },
   {
     "id": "data-visualization",
     "name": "データビジュアライゼーション",
     "description": "Tableau、Looker、Google Data Studio等を活用し、データを視覚的にわかりやすく伝えるスキル。意思決定を支援するダッシュボードとレポート作成に使用",
-    "path": "marketing/data-visualization",
+    "path": "src/marketing/data-visualization",
     "category": "マーケティング"
   },
   {
     "id": "database-design",
     "name": "データベース設計",
     "description": "データベース設計とスキーマ最適化。データベース、スキーマ、DB設計、マイグレーション、インデックスに関する依頼に対応",
-    "path": "design/database-design",
+    "path": "src/design/database-design",
     "category": "設計"
   },
   {
     "id": "data-literacy",
     "name": "データリテラシー",
     "description": "データの型、欠損値の扱い方、データ品質の理解などデータ分析の基礎知識",
-    "path": "analysis/data-science/fundamentals/data-literacy",
+    "path": "src/analysis/data-science/fundamentals/data-literacy",
     "category": "データサイエンス基礎"
   },
   {
     "id": "data-analysis",
     "name": "データ分析",
     "description": "データ分析・探索時の思考プロセス。データ、分析、探索、可視化、統計に関する依頼に対応",
-    "path": "analysis/data-analysis",
+    "path": "src/analysis/data-analysis",
     "category": "分析"
   },
   {
     "id": "data-preprocessing",
     "name": "データ前処理",
     "description": "欠損値補完、異常値処理、特徴量エンジニアリング。クリーンで分析可能なデータを作成",
-    "path": "analysis/data-science/modeling/data-preprocessing",
+    "path": "src/analysis/data-science/modeling/data-preprocessing",
     "category": "データサイエンスモデリング"
   },
   {
     "id": "data-visualization",
     "name": "データ可視化・ストーリーテリング",
     "description": "効果的な可視化とストーリー構築。インサイトを伝える技術",
-    "path": "analysis/data-science/business-application/data-visualization",
+    "path": "src/analysis/data-science/business-application/data-visualization",
     "category": "データサイエンスビジネス応用"
   },
   {
     "id": "documentation",
     "name": "ドキュメント作成",
     "description": "ドキュメント作成時の思考プロセス。ドキュメント、説明、README、API 仕様書作成に関する依頼に対応",
-    "path": "analysis/documentation",
+    "path": "src/analysis/documentation",
     "category": "分析"
   },
   {
     "id": "domain-knowledge",
     "name": "ドメイン知識",
     "description": "業界特有のデータ構造・指標の理解。専門的な洞察の獲得",
-    "path": "analysis/data-science/business-application/domain-knowledge",
+    "path": "src/analysis/data-science/business-application/domain-knowledge",
     "category": "データサイエンスビジネス応用"
   },
   {
     "id": "performance-optimization",
     "name": "パフォーマンス最適化",
     "description": "パフォーマンス改善時の思考プロセス。最適化、高速化、パフォーマンス、速度改善に関する依頼に対応",
-    "path": "code-quality/performance-optimization",
+    "path": "src/code-quality/performance-optimization",
     "category": "コード品質"
   },
   {
     "id": "receiving-feedback",
     "name": "フィードバックの受け止め方",
     "description": "他者からの意見を建設的に受け入れ、成長の機会として活用するスキル。防衛的にならず、冷静に理解し、改善に繋げる。レビュー、評価、コーチングで使用",
-    "path": "interpersonal-skills/growth-improvement/receiving-feedback",
+    "path": "src/interpersonal-skills/growth-improvement/receiving-feedback",
     "category": "対人スキル：成長・改善"
   },
   {
     "id": "followership",
     "name": "フォロワーシップ",
     "description": "リーダーを支え、チームの成功に貢献するスキル。主体的に行動し、建設的なフィードバックを提供し、組織の目標達成をサポート",
-    "path": "interpersonal-skills/collaboration-negotiation/followership",
+    "path": "src/interpersonal-skills/collaboration-negotiation/followership",
     "category": "対人スキル：協働・交渉"
   },
   {
     "id": "brand-building",
     "name": "ブランド構築",
     "description": "ブランドアイデンティティ、トーン＆マナー、ストーリーテリングを通じて、顧客との感情的な結びつきを創るスキル。長期的なブランド価値と顧客ロイヤルティの構築に使用",
-    "path": "marketing/brand-building",
+    "path": "src/marketing/brand-building",
     "category": "マーケティング"
   },
   {
     "id": "presentation-mastery",
     "name": "プレゼンテーション・マスタリー",
     "description": "効果的なプレゼンテーションを設計・実行するスキル。ストーリーテリング、構成設計、データビジュアライゼーション、話し方のテクニックを活用して聴衆を動かすプレゼンを実現",
-    "path": "thinking-skills/presentation-mastery",
+    "path": "src/thinking-skills/presentation-mastery",
     "category": "思考スキル"
   },
   {
     "id": "presentation-skills",
     "name": "プレゼンテーション・報告スキル",
     "description": "分析結果を非技術者に伝える。効果的なコミュニケーション",
-    "path": "analysis/data-science/business-application/presentation-skills",
+    "path": "src/analysis/data-science/business-application/presentation-skills",
     "category": "データサイエンスビジネス応用"
   },
   {
     "id": "programming-fundamentals",
     "name": "プログラミング基礎",
     "description": "Python/Rでのデータ操作。pandas、NumPy、matplotlib、seabornなどの必須ライブラリ",
-    "path": "analysis/data-science/fundamentals/programming-fundamentals",
+    "path": "src/analysis/data-science/fundamentals/programming-fundamentals",
     "category": "データサイエンス基礎"
   },
   {
     "id": "process-mapping",
     "name": "プロセスマッピング",
     "description": "業務フローや物流経路の可視化と最適化。プロセスを図示し、ボトルネック、非付加価値活動、改善機会を特定してプロセス改善を推進",
-    "path": "supply-chain/process-mapping",
+    "path": "src/supply-chain/process-mapping",
     "category": "サプライチェーン"
   },
   {
     "id": "vendor-management",
     "name": "ベンダー管理",
     "description": "サプライヤーの選定、評価、育成、関係管理。価格交渉、契約管理、リスク評価により、安定した調達と戦略的パートナーシップを構築",
-    "path": "supply-chain/vendor-management",
+    "path": "src/supply-chain/vendor-management",
     "category": "サプライチェーン"
   },
   {
     "id": "migration-assistant",
     "name": "マイグレーション支援",
     "description": "技術スタックの移行支援。migration、移行、アップグレード、マイグレーション、技術スタック変更に関する依頼に対応",
-    "path": "devops/migration-assistant",
+    "path": "src/devops/migration-assistant",
     "category": "DevOps"
   },
   {
     "id": "marketing-automation",
     "name": "マーケティングオートメーション",
     "description": "HubSpot、Salesforce、Marketo等のMAツールを活用し、リード育成とマーケティング業務を自動化・効率化するスキル。スケーラブルな顧客獲得とナーチャリングに使用",
-    "path": "marketing/marketing-automation",
+    "path": "src/marketing/marketing-automation",
     "category": "マーケティング"
   },
   {
     "id": "marketing-analytics",
     "name": "マーケティングデータ分析",
     "description": "KPI設計、A/Bテスト、Google Analytics、SQL等を活用してマーケティング施策を数値で評価し改善するスキル。データドリブンな意思決定とPDCAサイクルの高速化に使用",
-    "path": "marketing/marketing-analytics",
+    "path": "src/marketing/marketing-analytics",
     "category": "マーケティング"
   },
   {
     "id": "marketing-project-management",
     "name": "マーケティングプロジェクトマネジメント",
     "description": "マーケティングキャンペーンやプロジェクトを計画・実行・管理するスキル。KPI管理、タスク分解、チーム連携を通じて、施策を確実に成果につなげるために使用",
-    "path": "marketing/marketing-project-management",
+    "path": "src/marketing/marketing-project-management",
     "category": "マーケティング"
   },
   {
     "id": "marketing-strategy-stp",
     "name": "マーケティング戦略立案（STP分析）",
     "description": "市場のセグメンテーション・ターゲティング・ポジショニングを通じて、効果的なマーケティング戦略を設計するスキル。顧客を理解し、狙うべき市場と差別化戦略を明確にする際に使用",
-    "path": "marketing/marketing-strategy-stp",
+    "path": "src/marketing/marketing-strategy-stp",
     "category": "マーケティング"
   },
   {
     "id": "metacognition",
     "name": "メタ認知",
     "description": "自分の思考・理解・判断を客観視し、学習過程を計画・監視・評価するスキル。理解度の可視化、思考戦略の改善、継続的学習の質向上に使用",
-    "path": "thinking-skills/metacognition",
+    "path": "src/thinking-skills/metacognition",
     "category": "思考スキル"
   },
   {
     "id": "email-marketing-crm",
     "name": "メールマーケティング・CRM",
     "description": "顧客データを活用し、パーソナライズされたメールキャンペーンで顧客との関係を構築・育成するスキル。リード育成、顧客ロイヤルティ向上に使用",
-    "path": "marketing/email-marketing-crm",
+    "path": "src/marketing/email-marketing-crm",
     "category": "マーケティング"
   },
   {
     "id": "model-evaluation",
     "name": "モデル評価",
     "description": "精度、再現率、AUC等の指標理解。モデル性能の適切な評価と改善",
-    "path": "analysis/data-science/modeling/model-evaluation",
+    "path": "src/analysis/data-science/modeling/model-evaluation",
     "category": "データサイエンスモデリング"
   },
   {
     "id": "mobile-app-usage",
     "name": "モバイル端末・アプリの活用",
     "description": "小売業におけるモバイル端末・アプリ活用スキル。業務用アプリの使い方、在庫確認、顧客対応、情報共有の効率化方法を提供",
-    "path": "retail/mobile-app-usage",
+    "path": "src/retail/mobile-app-usage",
     "category": "小売"
   },
   {
     "id": "rapport-building",
     "name": "ラポール形成",
     "description": "心理的な親近感と調和を築くスキル。共通点を見つけ、相手のペースに合わせ、安心感を提供することで良好な関係の土台を作る",
-    "path": "interpersonal-skills/relationship-building/rapport-building",
+    "path": "src/interpersonal-skills/relationship-building/rapport-building",
     "category": "対人スキル：関係構築"
   },
   {
     "id": "risk-assessment",
     "name": "リスクアセスメント",
     "description": "地政学リスク、サプライヤー依存、自然災害などサプライチェーンリスクを特定・評価・軽減する体系的アプローチ",
-    "path": "supply-chain/risk-assessment",
+    "path": "src/supply-chain/risk-assessment",
     "category": "サプライチェーン"
   },
   {
     "id": "refactoring",
     "name": "リファクタリング",
     "description": "既存コード改善時の思考プロセス。リファクタリング、改善、整理、クリーンアップに関する依頼に対応",
-    "path": "code-quality/refactoring",
+    "path": "src/code-quality/refactoring",
     "category": "コード品質"
   },
   {
     "id": "leadership",
     "name": "リーダーシップ",
     "description": "ビジョンを示し、チームを鼓舞し、目標達成に向けて導くスキル。方向性の提示、意思決定、メンバーの育成を通じて組織を成長させる",
-    "path": "interpersonal-skills/collaboration-negotiation/leadership",
+    "path": "src/interpersonal-skills/collaboration-negotiation/leadership",
     "category": "対人スキル：協働・交渉"
   },
   {
     "id": "resilience-building",
     "name": "レジリエンス構築",
     "description": "多元調達、ローカル化、柔軟生産体制により供給網の強靭性を高め、ショックからの回復力と適応力を構築",
-    "path": "supply-chain/resilience-building",
+    "path": "src/supply-chain/resilience-building",
     "category": "サプライチェーン"
   },
   {
     "id": "pos-operations",
     "name": "レジ操作・会計処理",
     "description": "小売業におけるPOSレジ操作と会計処理スキル。POSシステム操作、金銭管理、正確な会計処理の方法とトレーニング手法を提供",
-    "path": "retail/pos-operations",
+    "path": "src/retail/pos-operations",
     "category": "小売"
   },
   {
     "id": "logistics-cost-optimization",
     "name": "ロジスティクスコスト最適化",
     "description": "輸送費・在庫コスト・リードタイムのトレードオフを分析・最適化。総物流費削減とサービスレベル向上を両立",
-    "path": "supply-chain/logistics-cost-optimization",
+    "path": "src/supply-chain/logistics-cost-optimization",
     "category": "サプライチェーン"
   },
   {
     "id": "negotiation",
     "name": "交渉",
     "description": "双方にとって利益のある合意を導くスキル。利害を理解し、創造的な解決策を見つけ、Win-Winの関係を構築する",
-    "path": "interpersonal-skills/collaboration-negotiation/negotiation",
+    "path": "src/interpersonal-skills/collaboration-negotiation/negotiation",
     "category": "対人スキル：協働・交渉"
   },
   {
     "id": "negotiation-coordination",
     "name": "交渉・調整力",
     "description": "価格交渉、納期調整、サプライヤーとの信頼構築。Win-Winの関係を築き、持続可能なパートナーシップで競争優位を確立",
-    "path": "supply-chain/negotiation-coordination",
+    "path": "src/supply-chain/negotiation-coordination",
     "category": "サプライチェーン"
   },
   {
     "id": "hypothesis-building",
     "name": "仮説構築",
     "description": "限られた情報から最も可能性の高い仮説を立て、検証可能な形で定義するスキル。データ分析や問題解決で仮説ドリブンに進めたい場合に使用",
-    "path": "thinking-skills/hypothesis-building",
+    "path": "src/thinking-skills/hypothesis-building",
     "category": "思考スキル"
   },
   {
     "id": "dependency-management",
     "name": "依存関係管理",
     "description": "パッケージ依存関係の管理と更新。依存関係、パッケージ、npm、pip、更新、脆弱性に関する依頼に対応",
-    "path": "devops/dependency-management",
+    "path": "src/devops/dependency-management",
     "category": "DevOps"
   },
   {
     "id": "commitment-belief",
     "name": "信念とコミットメント",
     "description": "仮説が未検証でも暫定的に信じて前進する意思のスキル。信念の保持と柔軟な修正力のバランスを取り、長期的プロジェクト遂行と不確実性下での意思決定に使用",
-    "path": "thinking-skills/commitment-belief",
+    "path": "src/thinking-skills/commitment-belief",
     "category": "思考スキル"
   },
   {
     "id": "trust-building",
     "name": "信頼構築",
     "description": "一貫性と誠実さによって相手の信頼を得るスキル。約束を守り、透明性を保ち、誠実に行動することで長期的な信頼関係を構築する",
-    "path": "interpersonal-skills/relationship-building/trust-building",
+    "path": "src/interpersonal-skills/relationship-building/trust-building",
     "category": "対人スキル：関係構築"
   },
   {
     "id": "warehouse-management",
     "name": "倉庫管理",
     "description": "効率的な入出庫、保管、ピッキング作業。WMSの活用、レイアウト最適化、在庫精度向上で倉庫オペレーションを改善",
-    "path": "supply-chain/warehouse-management",
+    "path": "src/supply-chain/warehouse-management",
     "category": "サプライチェーン"
   },
   {
     "id": "ethics-privacy",
     "name": "倫理・プライバシー意識",
     "description": "データ利用の法的・倫理的ルール。責任あるAIの実践",
-    "path": "analysis/data-science/business-application/ethics-privacy",
+    "path": "src/analysis/data-science/business-application/ethics-privacy",
     "category": "データサイエンスビジネス応用"
   },
   {
     "id": "ethical-judgment",
     "name": "倫理的判断",
     "description": "誠実で公正な行動を選ぶスキル。道徳的・倫理的な観点から状況を分析し、関係者への影響を考慮して正しい判断と行動をとる。意思決定、リーダーシップで使用",
-    "path": "interpersonal-skills/social-awareness/ethical-judgment",
+    "path": "src/interpersonal-skills/social-awareness/ethical-judgment",
     "category": "対人スキル：社会的認識"
   },
   {
     "id": "listening-skills",
     "name": "傾聴力",
     "description": "アクティブ・リスニングのスキル。相手の発言内容を正確に理解し、復唱・要約で確認し、非言語情報を読み取り、相手の真の意図を推察する質問を通じて信頼関係を構築する",
-    "path": "thinking-skills/listening-skills",
+    "path": "src/thinking-skills/listening-skills",
     "category": "思考スキル"
   },
   {
     "id": "priority-management",
     "name": "優先順位設定",
     "description": "Eisenhowerマトリクス、逆算思考、ToDoの棚卸しを活用して、重要なタスクに集中し、不要なタスクを排除するスキル。タスクの優先順位を明確にし、目標達成に向けた効率的な時間配分を実現する",
-    "path": "time-management/priority-management",
+    "path": "src/time-management/priority-management",
     "category": "時間管理"
   },
   {
     "id": "empathy",
     "name": "共感",
     "description": "相手の立場に立って気持ちを理解するスキル。相手の感情を認識し、受け止め、適切に応答することで信頼関係を構築する。対話、サポート、チーム協働で使用",
-    "path": "interpersonal-skills/emotional-empathy/empathy",
+    "path": "src/interpersonal-skills/emotional-empathy/empathy",
     "category": "対人スキル：感情・共感"
   },
   {
     "id": "shared-practices",
     "name": "共通プラクティス",
     "description": "全スキル共通の思考習慣。前提条件、検証、エラー回復、コミュニケーションの原則を提供",
-    "path": "shared/shared-practices",
+    "path": "src/shared/shared-practices",
     "category": "共通"
   },
   {
     "id": "reproducibility",
     "name": "再現性・透明性の意識",
     "description": "誰が見ても理解できるコードとレポート。科学的なデータ分析の実践",
-    "path": "analysis/data-science/mindset/reproducibility",
+    "path": "src/analysis/data-science/mindset/reproducibility",
     "category": "データサイエンスマインドセット"
   },
   {
     "id": "assumption-verification",
     "name": "前提検証",
     "description": "主張や判断の土台となる前提・仮定を洗い出し、その妥当性を系統的に検証するスキル。「そもそもそれは本当か？」を問い、情報源の信頼性確認や反例探索を通じて、より確実な意思決定の基盤を構築する際に使用",
-    "path": "thinking-skills/assumption-verification",
+    "path": "src/thinking-skills/assumption-verification",
     "category": "思考スキル"
   },
   {
     "id": "creative-problem-solving",
     "name": "創造的問題解決",
     "description": "制約条件下で最適解を設計するスキル。既存構造の再利用、段階的改善、小さな成功の累積による大規模成果の実現に使用",
-    "path": "thinking-skills/creative-problem-solving",
+    "path": "src/thinking-skills/creative-problem-solving",
     "category": "思考スキル"
   },
   {
     "id": "creative-ideation",
     "name": "創造的発想力",
     "description": "SCAMPER法などの発想技法を活用して革新的なアイデアを生み出すスキル。既存の枠を超えた発想、アイデアの量産、非常識な仮説からの実現に使用",
-    "path": "thinking-skills/creative-ideation",
+    "path": "src/thinking-skills/creative-ideation",
     "category": "思考スキル"
   },
   {
     "id": "video-design",
     "name": "動画・デザイン制作",
     "description": "Premiere Pro、Canva、Figma等のツールを活用し、視覚的に訴求力の高いコンテンツを制作するスキル。SNS、広告、LPでの視覚的コミュニケーションに使用",
-    "path": "marketing/video-design",
+    "path": "src/marketing/video-design",
     "category": "マーケティング"
   },
   {
     "id": "product-knowledge",
     "name": "商品知識",
     "description": "小売業における商品知識の習得と活用スキル。自社商品の特徴や比較ポイントを効果的に説明し、顧客に最適な提案をするための体系的な知識習得方法を提供",
-    "path": "retail/product-knowledge",
+    "path": "src/retail/product-knowledge",
     "category": "小売"
   },
   {
     "id": "causal-inference",
     "name": "因果推論・実験設計",
     "description": "A/Bテスト、介入効果分析。因果関係の特定",
-    "path": "analysis/data-science/advanced/causal-inference",
+    "path": "src/analysis/data-science/advanced/causal-inference",
     "category": "データサイエンス発展"
   },
   {
     "id": "inventory-management",
     "name": "在庫管理",
-    "description": "小売業における在庫管理スキル。発注・棚卸・ロス削減を通じた適正在庫の維持と、効率的な在庫コントロールの方法を提供",
-    "path": "retail/inventory-management",
-    "category": "小売"
+    "description": "安全在庫、発注点、ABC分析などの理論と実践。適正在庫の維持、欠品防止とコスト削減のバランスを実現する在庫最適化",
+    "path": "src/supply-chain/inventory-management",
+    "category": "サプライチェーン"
   },
   {
     "id": "inventory-management",
     "name": "在庫管理",
-    "description": "安全在庫、発注点、ABC分析などの理論と実践。適正在庫の維持、欠品防止とコスト削減のバランスを実現する在庫最適化",
-    "path": "supply-chain/inventory-management",
-    "category": "サプライチェーン"
+    "description": "小売業における在庫管理スキル。発注・棚卸・ロス削減を通じた適正在庫の維持と、効率的な在庫コントロールの方法を提供",
+    "path": "src/retail/inventory-management",
+    "category": "小売"
   },
   {
     "id": "horenso",
     "name": "報連相",
     "description": "ビジネスにおける報告・連絡・相談のスキル。事実・判断・希望を分けて伝え、適切なタイミング（事前・中間・結果）で情報共有し、上司や同僚の情報ニーズを先読みして円滑なコミュニケーションを実現する",
-    "path": "thinking-skills/horenso",
+    "path": "src/thinking-skills/horenso",
     "category": "思考スキル"
   },
   {
     "id": "social-awareness-skill",
     "name": "場の空気を読む力",
     "description": "状況に応じた適切なふるまいをするスキル。集団の雰囲気、暗黙のルール、期待を察知し、TPOに合わせた言動をとる。会議、交渉、チーム協働で使用",
-    "path": "interpersonal-skills/social-awareness/social-awareness-skill",
+    "path": "src/interpersonal-skills/social-awareness/social-awareness-skill",
     "category": "対人スキル：社会的認識"
   },
   {
     "id": "sales-analysis",
     "name": "売上分析",
     "description": "小売業における売上分析スキル。日次・週次・月次データの読み解き方、販売傾向の把握、売上向上のためのデータ活用方法を提供",
-    "path": "retail/sales-analysis",
+    "path": "src/retail/sales-analysis",
     "category": "小売"
   },
   {
     "id": "multi-perspective-thinking",
     "name": "多角的視点",
     "description": "単一の視点に固執せず、複数のステークホルダーや異なる立場から物事を見ることで、盲点の発見と包括的な理解を実現するスキル。顧客・上司・競合などの視点での再評価、デビルズアドボケイト（反論役）による批判的検証に使用",
-    "path": "thinking-skills/multi-perspective-thinking",
+    "path": "src/thinking-skills/multi-perspective-thinking",
     "category": "思考スキル"
   },
   {
     "id": "multilingual-support",
     "name": "多言語対応",
     "description": "小売業における多言語対応スキル。外国人顧客への接客、翻訳ツール活用、異文化理解、インバウンド対応の実践方法を提供",
-    "path": "retail/multilingual-support",
+    "path": "src/retail/multilingual-support",
     "category": "小売"
   },
   {
     "id": "curiosity-hypothesis",
     "name": "好奇心と仮説思考",
     "description": "「なぜ？」を問い続ける姿勢。データから洞察を引き出す探求心",
-    "path": "analysis/data-science/mindset/curiosity-hypothesis",
+    "path": "src/analysis/data-science/mindset/curiosity-hypothesis",
     "category": "データサイエンスマインドセット"
   },
   {
     "id": "learning-ability",
     "name": "学習力",
     "description": "毎月1テーマを深掘りし、アウトプット前提でインプットを行い、人に教えることで知識を定着させる効果的な学習スキル。インプット・アウトプットバランス、深掘り学習、教える学習法に使用",
-    "path": "self-management/learning-ability",
+    "path": "src/self-management/learning-ability",
     "category": "自己管理"
   },
   {
     "id": "market-research",
     "name": "市場調査・競合分析",
     "description": "一次データと二次データを活用して市場を深く理解し、競合を分析するスキル。市場機会の発見、顧客インサイトの獲得、競争戦略の立案に使用",
-    "path": "marketing/market-research",
+    "path": "src/marketing/market-research",
     "category": "マーケティング"
   },
   {
     "id": "decision-making",
     "name": "意思決定",
     "description": "定量・定性データを組み合わせ、影響範囲・リスク・実現性を評価してファクトベースで判断するスキル。重要な選択を客観的に行いたい場合に使用",
-    "path": "thinking-skills/decision-making",
+    "path": "src/thinking-skills/decision-making",
     "category": "思考スキル"
   },
   {
     "id": "emotional-regulation",
     "name": "感情コントロール",
     "description": "怒り・不安などを冷静に処理するスキル。感情を認識し、適切に管理し、建設的に表現することで、プロフェッショナルな対応を維持する。ストレス状況、コンフリクトで使用",
-    "path": "interpersonal-skills/emotional-empathy/emotional-regulation",
+    "path": "src/interpersonal-skills/emotional-empathy/emotional-regulation",
     "category": "対人スキル：感情・共感"
   },
   {
     "id": "emotional-intelligence",
     "name": "感情知性（EQ）",
     "description": "自分と他人の感情を識別し、関係に活かす能力。感情を認識・理解・管理・活用することで、効果的な対人関係を築く。リーダーシップ、チーム協働で使用",
-    "path": "interpersonal-skills/emotional-empathy/emotional-intelligence",
+    "path": "src/interpersonal-skills/emotional-empathy/emotional-intelligence",
     "category": "対人スキル：感情・共感"
   },
   {
     "id": "critical-thinking",
     "name": "批判的思考",
     "description": "前提・仮定・実装・結論を疑問視し、論理構造を検証するスキル。「なぜ？」「本当にそうか？」と問い、根本原因の発見や誤謬の検出に使用",
-    "path": "thinking-skills/critical-thinking",
+    "path": "src/thinking-skills/critical-thinking",
     "category": "思考スキル"
   },
   {
     "id": "reflection-practice",
     "name": "振り返り習慣",
     "description": "1日の終わりに成功と改善点を記録し、PDCAサイクルを回して継続的な自己改善を実現するスキル。4行日記、KPTフレームワーク、思考の癖のレビューに使用",
-    "path": "self-management/reflection-practice",
+    "path": "src/self-management/reflection-practice",
     "category": "自己管理"
   },
   {
     "id": "exploratory-data-analysis",
     "name": "探索的データ分析（EDA）",
     "description": "データの傾向を可視化して洞察を得る。パターン発見とデータ理解",
-    "path": "analysis/data-science/modeling/exploratory-data-analysis",
+    "path": "src/analysis/data-science/modeling/exploratory-data-analysis",
     "category": "データサイエンスモデリング"
   },
   {
     "id": "sales-proposals",
     "name": "提案力",
     "description": "小売業における提案力向上スキル。お客様のニーズを読み取り、最適な商品を勧めるためのヒアリング技術とコンサルタティブセリングの方法を提供",
-    "path": "retail/sales-proposals",
+    "path": "src/retail/sales-proposals",
     "category": "小売"
   },
   {
     "id": "respect-courtesy",
     "name": "敬意・礼儀",
     "description": "相手を尊重する態度と礼儀正しい振る舞いのスキル。丁寧な言葉遣い、時間の尊重、感謝の表現を通じて良好な人間関係を築く",
-    "path": "interpersonal-skills/relationship-building/respect-courtesy",
+    "path": "src/interpersonal-skills/relationship-building/respect-courtesy",
     "category": "対人スキル：関係構築"
   },
   {
     "id": "mathematical-thinking",
     "name": "数学的思考力",
     "description": "データサイエンスに必要な数学の基礎理解。確率、線形代数、微分積分などのモデル理解の土台",
-    "path": "analysis/data-science/fundamentals/mathematical-thinking",
+    "path": "src/analysis/data-science/fundamentals/mathematical-thinking",
     "category": "データサイエンス基礎"
   },
   {
     "id": "cultural-sensitivity",
     "name": "文化的感受性",
     "description": "異文化への理解と尊重のスキル。多様な文化的背景、価値観、コミュニケーションスタイルを認識し、適切に対応する。国際協働、多様なチームで使用",
-    "path": "interpersonal-skills/social-awareness/cultural-sensitivity",
+    "path": "src/interpersonal-skills/social-awareness/cultural-sensitivity",
     "category": "対人スキル：社会的認識"
   },
   {
     "id": "contextual-empathy",
     "name": "文脈的共感",
     "description": "他者の立場・背景・目的を文脈的に理解し、共感的に判断するスキル。「なぜそう考えるのか」を掘り下げ、認知の多様性を受け止める。チーム協働や要件理解に使用",
-    "path": "thinking-skills/contextual-empathy",
+    "path": "src/thinking-skills/contextual-empathy",
     "category": "思考スキル"
   },
   {
     "id": "clarity-of-expression",
     "name": "明確な表現力",
     "description": "簡潔でわかりやすく話す・書くスキル。曖昧さを排除し、相手が正確に理解できるメッセージを伝える。ドキュメント作成、プレゼンテーション、コミュニケーションで使用",
-    "path": "interpersonal-skills/communication/clarity-of-expression",
+    "path": "src/interpersonal-skills/communication/clarity-of-expression",
     "category": "対人スキル：コミュニケーション"
   },
   {
     "id": "time-management",
     "name": "時間管理",
     "description": "小売業における時間管理スキル。効率的なタスク管理、優先順位付け、デッドライン遵守、生産性向上の実践方法を提供",
-    "path": "retail/time-management",
+    "path": "src/retail/time-management",
     "category": "小売"
   },
   {
     "id": "flexibility",
     "name": "柔軟性",
     "description": "相手や状況に応じて対応を変えるスキル。固定観念にとらわれず、変化を受け入れ、多様なアプローチで効果的にコミュニケーションする",
-    "path": "interpersonal-skills/relationship-building/flexibility",
+    "path": "src/interpersonal-skills/relationship-building/flexibility",
     "category": "対人スキル：関係構築"
   },
   {
     "id": "flexibility-adaptability",
     "name": "柔軟性・適応力",
     "description": "小売業における柔軟性・適応力スキル。状況変化への対応、優先順位の調整、マルチタスク、臨機応変な判断力を身につける方法を提供",
-    "path": "retail/flexibility-adaptability",
+    "path": "src/retail/flexibility-adaptability",
     "category": "小売"
   },
   {
     "id": "verification-culture",
     "name": "検証文化",
     "description": "思い込みを捨ててデータで確かめる習慣。証拠に基づく意思決定",
-    "path": "analysis/data-science/mindset/verification-culture",
+    "path": "src/analysis/data-science/mindset/verification-culture",
     "category": "データサイエンスマインドセット"
   },
   {
     "id": "structured-thinking",
     "name": "構造化思考",
     "description": "複雑な問題をMECE（重複なく漏れなく）分解し、ロジックツリーで因果関係を整理するスキル。問題の全体像を可視化し、構造的に理解したい場合に使用",
-    "path": "thinking-skills/structured-thinking",
+    "path": "src/thinking-skills/structured-thinking",
     "category": "思考スキル"
   },
   {
     "id": "machine-learning",
     "name": "機械学習",
     "description": "回帰、分類、クラスタリング。予測モデルの構築とチューニング",
-    "path": "analysis/data-science/modeling/machine-learning",
+    "path": "src/analysis/data-science/modeling/machine-learning",
     "category": "データサイエンスモデリング"
   },
   {
     "id": "consumer-psychology",
     "name": "消費者心理理解",
     "description": "行動経済学や認知バイアスを理解し、購買意思決定のメカニズムを把握するスキル。顧客の深層心理に基づいたマーケティング施策の設計に使用",
-    "path": "marketing/consumer-psychology",
+    "path": "src/marketing/consumer-psychology",
     "category": "マーケティング"
   },
   {
     "id": "logistics-understanding",
     "name": "物流理解",
     "description": "小売業における物流理解スキル。納品スケジュール、仕入・配送管理、サプライチェーンの基本を理解し、効率的な物流オペレーションを実現",
-    "path": "retail/logistics-understanding",
+    "path": "src/retail/logistics-understanding",
     "category": "小売"
   },
   {
     "id": "specialized-ml",
     "name": "特化型機械学習（NLP/CV）",
     "description": "自然言語処理と画像認識。専門分野での応用",
-    "path": "analysis/data-science/advanced/specialized-ml",
+    "path": "src/analysis/data-science/advanced/specialized-ml",
     "category": "データサイエンス発展"
   },
   {
     "id": "goal-management",
     "name": "目標管理",
     "description": "小売業における目標管理スキル。KPI設定と進捗フォロー、目標達成のためのマネジメント手法を提供",
-    "path": "retail/goal-management",
+    "path": "src/retail/goal-management",
     "category": "小売"
   },
   {
     "id": "social-perception",
     "name": "社会的知覚",
     "description": "相手の感情や意図を察知するスキル。言語・非言語サインから心理状態を読み取り、適切な対応を行う。対人関係構築、交渉、チーム協働で使用",
-    "path": "interpersonal-skills/social-awareness/social-perception",
+    "path": "src/interpersonal-skills/social-awareness/social-perception",
     "category": "対人スキル：社会的認識"
   },
   {
     "id": "statistics-fundamentals",
     "name": "統計学の基礎",
     "description": "データサイエンスの基盤となる統計学の基礎概念。平均、分散、標準偏差、相関、回帰分析、仮説検定などの理解と応用",
-    "path": "analysis/data-science/fundamentals/statistics-fundamentals",
+    "path": "src/analysis/data-science/fundamentals/statistics-fundamentals",
     "category": "データサイエンス基礎"
   },
   {
     "id": "statistical-inference",
     "name": "統計的推論",
     "description": "仮説検定、信頼区間、因果推論。データに基づく結論の導出",
-    "path": "analysis/data-science/modeling/statistical-inference",
+    "path": "src/analysis/data-science/modeling/statistical-inference",
     "category": "データサイエンスモデリング"
   },
   {
     "id": "continuous-improvement",
     "name": "継続的改善",
     "description": "学びを次に活かし、少しずつ成長し続ける姿勢とスキル。PDCAサイクルで小さな改善を積み重ね、長期的な成長を実現。振り返り、計画、実行で使用",
-    "path": "interpersonal-skills/growth-improvement/continuous-improvement",
+    "path": "src/interpersonal-skills/growth-improvement/continuous-improvement",
     "category": "対人スキル：成長・改善"
   },
   {
     "id": "self-reflection",
     "name": "自己反省",
     "description": "自分の行動や判断を客観的に見直し、学びを得るスキル。感情に流されず、事実を分析し、改善点を見出す。振り返り、評価、レトロスペクティブで使用",
-    "path": "interpersonal-skills/growth-improvement/self-reflection",
+    "path": "src/interpersonal-skills/growth-improvement/self-reflection",
     "category": "対人スキル：成長・改善"
   },
   {
     "id": "self-disclosure",
     "name": "自己開示",
     "description": "適度に自分の感情や経験を共有するスキル。信頼関係を構築し、相手も open になりやすくする。ただし、適切な境界を保つ。チーム協働、関係構築で使用",
-    "path": "interpersonal-skills/emotional-empathy/self-disclosure",
+    "path": "src/interpersonal-skills/emotional-empathy/self-disclosure",
     "category": "対人スキル：感情・共感"
   },
   {
     "id": "expression-skills",
     "name": "表現力",
     "description": "ビジネスコミュニケーションにおける効果的な表現スキル。ピラミッド構造やPREP法を活用し、1分で要点を明確に伝え、聞き手のレベルに合わせた言葉選びで説得力のあるコミュニケーションを実現する",
-    "path": "thinking-skills/expression-skills",
+    "path": "src/thinking-skills/expression-skills",
     "category": "思考スキル"
   },
   {
     "id": "summarizing-paraphrasing",
     "name": "要約・確認",
     "description": "相手の発言を整理して理解を確認するスキル。復唱、言い換え、要約を通じて、誤解を防ぎ、共通理解を構築する。会議、ヒアリング、対話で使用",
-    "path": "interpersonal-skills/communication/summarizing-paraphrasing",
+    "path": "src/interpersonal-skills/communication/summarizing-paraphrasing",
     "category": "対人スキル：コミュニケーション"
   },
   {
     "id": "observation-empathy",
     "name": "観察力・共感力",
     "description": "小売業における観察力・共感力スキル。顧客の非言語サインを読み取り、ニーズを理解し、心に響く接客を実現する方法を提供",
-    "path": "retail/observation-empathy",
+    "path": "src/retail/observation-empathy",
     "category": "小売"
   },
   {
     "id": "planning-scheduling",
     "name": "計画・スケジューリング",
     "description": "時間予算表、バッファ確保、タスクの粒度分解を活用して、現実的で実行可能なスケジュールを作成するスキル。時間を可視化し、余裕を持った計画で生産性を最大化する",
-    "path": "time-management/planning-scheduling",
+    "path": "src/time-management/planning-scheduling",
     "category": "時間管理"
   },
   {
     "id": "integrity-responsibility",
     "name": "誠実さ・責任感",
     "description": "小売業における誠実さ・責任感スキル。信頼される行動、約束の遵守、正直な対応、プロフェッショナルな姿勢を身につける方法を提供",
-    "path": "retail/integrity-responsibility",
+    "path": "src/retail/integrity-responsibility",
     "category": "小売"
   },
   {
     "id": "problem-definition",
     "name": "課題設定力",
     "description": "ビジネス課題をデータで定義できる力。適切な問題設定とKPI設計",
-    "path": "analysis/data-science/business-application/problem-definition",
+    "path": "src/analysis/data-science/business-application/problem-definition",
     "category": "データサイエンスビジネス応用"
   },
   {
     "id": "promotional-planning",
     "name": "販促企画",
     "description": "小売業における販促企画スキル。セール・キャンペーンの立案と効果測定、プロモーション戦略の実行方法を提供",
-    "path": "retail/promotional-planning",
+    "path": "src/retail/promotional-planning",
     "category": "小売"
   },
   {
     "id": "questioning",
     "name": "質問力",
     "description": "相手の考えを引き出すための的確な質問をするスキル。オープン・クローズド質問を使い分け、深掘りし、真のニーズを発見する。要件定義、ヒアリング、対話で使用",
-    "path": "interpersonal-skills/communication/questioning",
+    "path": "src/interpersonal-skills/communication/questioning",
     "category": "対人スキル：コミュニケーション"
   },
   {
     "id": "embodied-learning",
     "name": "身体化された学習",
     "description": "体験を通じて知識を身体的・感覚的に統合するスキル。抽象的理解を「感じる知」に変換し、直感的判断を磨く。経験の蓄積と違和感の活用に使用",
-    "path": "thinking-skills/embodied-learning",
+    "path": "src/thinking-skills/embodied-learning",
     "category": "思考スキル"
   },
   {
     "id": "transportation-management",
     "name": "輸送管理",
     "description": "モーダルミックス、配送計画、ルート最適化による効率的な輸送オペレーション。コスト削減とサービスレベル向上を両立",
-    "path": "supply-chain/transportation-management",
+    "path": "src/supply-chain/transportation-management",
     "category": "サプライチェーン"
   },
   {
     "id": "relationship-maintenance",
     "name": "関係維持",
     "description": "長期的な人間関係を大切にするスキル。定期的なコミュニケーション、継続的な配慮、困難な時期のサポートで関係性を保ち続ける",
-    "path": "interpersonal-skills/relationship-building/relationship-maintenance",
+    "path": "src/interpersonal-skills/relationship-building/relationship-maintenance",
     "category": "対人スキル：関係構築"
   },
   {
     "id": "merchandising-display",
     "name": "陳列・ディスプレイ",
     "description": "小売業における陳列・ディスプレイスキル。VMD（ビジュアルマーチャンダイジング）による効果的な売場づくり、季節感・視覚的訴求の方法を提供",
-    "path": "retail/merchandising-display",
+    "path": "src/retail/merchandising-display",
     "category": "小売"
   },
   {
     "id": "focus-rest",
     "name": "集中と休息",
     "description": "Pomodoro法、環境要因の最適化、エネルギー管理を活用して、高い集中力を維持し、効果的な休息で生産性を最大化するスキル。25分の集中と5分の休憩のサイクルで、持続可能な生産性を実現する",
-    "path": "time-management/focus-rest",
+    "path": "src/time-management/focus-rest",
     "category": "時間管理"
   },
   {
     "id": "demand-forecasting",
     "name": "需要予測",
     "description": "統計手法や機械学習を活用した需要予測。過去データ、トレンド、季節性を分析し、精度の高い予測で在庫最適化と欠品防止を実現",
-    "path": "supply-chain/demand-forecasting",
+    "path": "src/supply-chain/demand-forecasting",
     "category": "サプライチェーン"
   },
   {
     "id": "nonverbal-communication",
     "name": "非言語コミュニケーション",
     "description": "表情、視線、ジェスチャー、姿勢などを適切に使うスキル。言葉以外の手段で感情や意図を伝え、相手の非言語メッセージを読み取る。対面コミュニケーション、プレゼンテーションで使用",
-    "path": "interpersonal-skills/communication/nonverbal-communication",
+    "path": "src/interpersonal-skills/communication/nonverbal-communication",
     "category": "対人スキル：コミュニケーション"
   },
   {
     "id": "customer-analysis",
     "name": "顧客分析",
     "description": "小売業における顧客分析スキル。購買履歴や客層をもとにした販促企画、RFM分析による顧客セグメンテーション、顧客理解を深める方法を提供",
-    "path": "retail/customer-analysis",
+    "path": "src/retail/customer-analysis",
     "category": "小売"
   },
   {
     "id": "customer-relations",
     "name": "顧客対応力",
     "description": "小売業における顧客対応力向上のためのスキル。笑顔・言葉遣い・丁寧な態度で顧客満足を高める接客の基本原則とトレーニング方法を提供",
-    "path": "retail/customer-relations",
+    "path": "src/retail/customer-relations",
     "category": "小売"
   }
 ]

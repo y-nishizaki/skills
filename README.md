@@ -24,35 +24,38 @@
 skills/
 ├── README.md
 ├── LICENSE
-├── development-tools/     # 開発ツール・メタ
-│   ├── skill-creator/
-│   ├── subagent-creator/
-│   └── generic-subagent/
-├── code-quality/          # コード品質
-│   ├── code-review/
-│   ├── refactoring/
-│   ├── debugging/
-│   ├── error-handling/
-│   ├── security-audit/
-│   └── performance-optimization/
-├── design/                # 設計
-│   ├── system-design/
-│   ├── api-design/
-│   └── database-design/
-├── devops/                # 開発運用
-│   ├── ci-cd-setup/
-│   ├── dependency-management/
-│   └── migration-assistant/
-├── testing/               # テスト
-│   └── test-automation/
-├── code-generation/       # コード生成
-│   └── code-creation/
-├── analysis/              # 分析・調査
-│   ├── data-analysis/
-│   ├── research/
-│   └── documentation/
-└── shared/                # 共通
-    └── shared-practices/
+├── src/                   # スキルのソースコード
+│   ├── development-tools/     # 開発ツール・メタ
+│   │   ├── skill-creator/
+│   │   ├── subagent-creator/
+│   │   └── generic-subagent/
+│   ├── code-quality/          # コード品質
+│   │   ├── code-review/
+│   │   ├── refactoring/
+│   │   ├── debugging/
+│   │   ├── error-handling/
+│   │   ├── security-audit/
+│   │   └── performance-optimization/
+│   ├── design/                # 設計
+│   │   ├── system-design/
+│   │   ├── api-design/
+│   │   └── database-design/
+│   ├── devops/                # 開発運用
+│   │   ├── ci-cd-setup/
+│   │   ├── dependency-management/
+│   │   └── migration-assistant/
+│   ├── testing/               # テスト
+│   │   └── test-automation/
+│   ├── code-generation/       # コード生成
+│   │   └── code-creation/
+│   ├── analysis/              # 分析・調査
+│   │   ├── data-analysis/
+│   │   ├── research/
+│   │   └── documentation/
+│   └── shared/                # 共通
+│       └── shared-practices/
+├── docs/                  # ドキュメント
+└── tests/                 # テスト
 
 各スキルの構造:
 [スキル名]/
@@ -82,10 +85,10 @@ git clone https://github.com/y-nishizaki/skills.git
 cd skills
 
 # 個別のスキルをコピー
-cp -r [カテゴリ]/[スキル名] ~/.claude/skills/
+cp -r src/[カテゴリ]/[スキル名] ~/.claude/skills/
 
 # 例: スキル作成ツールをインストール
-cp -r development-tools/skill-creator ~/.claude/skills/
+cp -r src/development-tools/skill-creator ~/.claude/skills/
 ```
 
 #### チーム/プロジェクト用
@@ -98,7 +101,7 @@ mkdir -p .claude/skills
 cd .claude/skills
 git clone https://github.com/y-nishizaki/skills.git
 # 必要なスキルを .claude/skills/ にコピー
-cp -r skills/[カテゴリ]/[スキル名] .
+cp -r skills/src/[カテゴリ]/[スキル名] .
 ```
 
 `.claude/skills/` ディレクトリをリポジトリにコミットします。チームメンバーは変更をプルした後、自動的にアクセスできるようになります。
@@ -330,14 +333,14 @@ Claude Code自体を拡張するためのメタツール。
 
 ### 使用例: Skill Creator
 
-**場所**: `development-tools/skill-creator/`
+**場所**: `src/development-tools/skill-creator/`
 
 最も基本的なスキルとして、新しいスキルの作成を支援します。
 
 **インストール**:
 
 ```bash
-cp -r development-tools/skill-creator ~/.claude/skills/
+cp -r src/development-tools/skill-creator ~/.claude/skills/
 ```
 
 **使用方法**:
