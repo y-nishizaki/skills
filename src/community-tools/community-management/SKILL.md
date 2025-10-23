@@ -1,200 +1,210 @@
 ---
 name: community-management
-description: Provides best practices and guidance for effectively managing and growing open source project communities. Supports onboarding new contributors, building leadership, implementing engagement strategies, and establishing governance models.
-license: See LICENSE.txt for full terms
+description: オープンソースプロジェクトのコミュニティを効果的に管理・成長させるためのベストプラクティスとガイダンスを提供します。新しいコントリビューターのオンボーディング、リーダーシップの構築、エンゲージメント戦略の実装、ガバナンスモデルの確立をサポートします。
+license: 全条件については LICENSE.txt を参照してください
 ---
 
-# Community Management for Open Source Projects
+# オープンソースプロジェクトのコミュニティ管理
 
-This skill provides structured guidance for building, managing, and growing healthy open source communities based on industry best practices from organizations like Red Hat, the Linux Foundation, and established open source projects.
+このスキルは、Red Hat、Linux Foundation、確立されたオープンソースプロジェクトなどの業界ベストプラクティスに基づいて、健全なオープンソースコミュニティの構築、管理、成長のための構造化されたガイダンスを提供します。
 
-## When to Use This Skill
+## このスキルを使用するタイミング
 
-This skill should be used when:
+このスキルは以下の場合に使用してください:
 
-- Setting up community governance structures for a new open source project
-- Developing contributor onboarding processes and documentation
-- Creating engagement strategies to grow and retain community members
-- Establishing leadership roles and succession planning
-- Resolving community conflicts or improving communication
-- Designing mentorship programs for new contributors
-- Evaluating community health and identifying improvement areas
-- Planning community events, meetings, or coordination strategies
+- 新しいオープンソースプロジェクトのコミュニティガバナンス構造を設定する
+- コントリビューターのオンボーディングプロセスとドキュメントを開発する
+- コミュニティメンバーを成長させ維持するためのエンゲージメント戦略を作成する
+- リーダーシップの役割と後継者計画を確立する
+- コミュニティの対立を解決するか、コミュニケーションを改善する
+- 新しいコントリビューター向けのメンターシッププログラムを設計する
+- コミュニティの健全性を評価し、改善領域を特定する
+- コミュニティイベント、会議、または調整戦略を計画する
 
-## Core Principles of Community Management
+## コミュニティ管理の基本原則
 
-Apply these ten guiding principles when managing open source communities:
+オープンソースコミュニティを管理する際には、以下の10の指針となる原則を適用してください:
 
-### 1. Cooperation
-Work transparently with colleagues and the broader community. Share understanding of responsibilities and duties to identify common goals. Embrace consensus-building while recognizing diverse objectives can coexist.
+### 1. 協力
 
-### 2. Commitment
-Recognize that leadership roles demand significant time investment. Board members typically contribute 15-20 days annually, while committee members contribute 10-15 days. Treat this as an honor requiring dedicated effort.
+同僚やより広いコミュニティと透明性をもって協力してください。責任と義務の理解を共有して、共通の目標を特定します。多様な目標が共存できることを認識しながら、コンセンサス構築を受け入れてください。
 
-### 3. Variety
-Handle diverse tasks including budgeting, legal matters, trademark management, and technical coordination. Cultivate willingness to learn across domains and maintain high frustration tolerance.
+### 2. コミットメント
 
-### 4. Delegation
-Distribute responsibilities among volunteers, staff, and professionals. Focus on strategy and mission oversight rather than micromanagement. Trust others to execute assigned tasks.
+リーダーシップの役割には大きな時間投資が必要であることを認識してください。理事会メンバーは通常、年間15〜20日を貢献し、委員会メンバーは10〜15日を貢献します。これを献身的な努力を必要とする名誉として扱ってください。
 
-### 5. Responsibility
-Maintain ultimate accountability for organizational oversight. Ensure all legal obligations are met and resources are properly managed. Accept that leadership faces first-line exposure when problems arise.
+### 3. 多様性
 
-### 6. Social Environment
-Foster positive work environments. Communicate frequently, provide recognition, and leverage mission-driven work to create meaningful engagement for both paid team members and volunteers.
+予算編成、法的問題、商標管理、技術的調整を含む多様なタスクを処理してください。ドメイン全体にわたって学ぶ意欲を培い、高いフラストレーション耐性を維持してください。
 
-### 7. Diversity
-Ensure representatives reflect community diversity—different genders, religions, languages, cultures, and backgrounds. Diversity strengthens decision-making considerably.
+### 4. 委任
 
-### 8. Coordination
-Navigate practical challenges like time zones and languages. Establish clear meeting protocols, use timezone-aware calendar tools, and create inclusive structures for global participation.
+ボランティア、スタッフ、専門家の間で責任を分散してください。マイクロマネジメントではなく、戦略とミッションの監視に焦点を当ててください。他の人が割り当てられたタスクを実行することを信頼してください。
 
-### 9. Trust
-Assume positive intentions in digital communications. Recognize confirmation bias risks. Trust intermediaries and translators bridging language and jurisdictional gaps.
+### 5. 責任
 
-### 10. Reward
-Recognize that community leadership enriches professional credentials and personal development. It offers opportunities to shape projects while building meaningful skills.
+組織の監視に対する最終的な説明責任を維持してください。すべての法的義務が満たされ、リソースが適切に管理されていることを確認してください。問題が発生したときにリーダーシップが最前線の露出に直面することを受け入れてください。
 
-## Building Leadership
+### 6. 社会環境
 
-### Shift Mindset from Corporate to Community
+前向きな作業環境を育成してください。頻繁にコミュニケーションを取り、認識を提供し、ミッション主導の仕事を活用して、有給チームメンバーとボランティアの両方にとって意味のあるエンゲージメントを作成してください。
 
-In open source, influence flows from contributions and community trust, not position or authority. Leadership must be earned within the community through:
+### 7. 多様性
 
-- Making substantial code contributions that benefit the entire ecosystem
-- Fixing bugs and addressing community needs
-- Demonstrating technical competence before seeking leadership roles
-- Building consensus rather than demanding compliance
+代表者がコミュニティの多様性を反映していることを確認してください—異なる性別、宗教、言語、文化、背景。多様性は意思決定を大幅に強化します。
 
-### Develop Multiple Leaders
+### 8. 調整
 
-Avoid single points of failure:
+タイムゾーンや言語などの実際的な課題をナビゲートしてください。明確な会議プロトコルを確立し、タイムゾーン対応のカレンダーツールを使用し、グローバルな参加のための包括的な構造を作成してください。
 
-- Develop multiple contributors from your organization
-- Distribute upstream responsibilities to reduce workload perception
-- Create succession planning for key roles
-- Ensure knowledge transfer across team members
+### 9. 信頼
 
-### Establish Clear Governance
+デジタルコミュニケーションにおいて前向きな意図を想定してください。確証バイアスのリスクを認識してください。言語と管轄区域のギャップを埋める仲介者や翻訳者を信頼してください。
 
-Implement standardized processes for:
+### 10. 報酬
 
-- Contributing upstream code
-- Creating internal open source projects
-- Consuming external open source software
-- Ensuring license compliance
+コミュニティリーダーシップが専門的な資格と個人的な成長を豊かにすることを認識してください。意味のあるスキルを構築しながらプロジェクトを形作る機会を提供します。
 
-This prevents fragmentation and maintains alignment with upstream projects.
+## リーダーシップの構築
 
-## Onboarding and Mentorship
+### 企業からコミュニティへのマインドセットの転換
 
-### Create Clear Contribution Paths
+オープンソースでは、影響力は貢献とコミュニティの信頼から流れ出るものであり、地位や権限からではありません。リーダーシップは、以下を通じてコミュニティ内で獲得する必要があります:
 
-Provide multiple entry points for new contributors:
+- エコシステム全体に利益をもたらす実質的なコード貢献を行う
+- バグを修正し、コミュニティのニーズに対処する
+- リーダーシップの役割を求める前に技術的な能力を実証する
+- コンプライアンスを要求するのではなく、コンセンサスを構築する
 
-- Set up mentorship programs pairing experienced contributors with newcomers
-- Document contribution workflows clearly
-- Create "good first issue" labels for easy entry points
-- Provide templates for issues and pull requests
+### 複数のリーダーを育成する
 
-### Support Non-Technical Contributions
+単一障害点を避ける:
 
-Recognize and value:
+- 組織から複数のコントリビューターを育成する
+- アップストリームの責任を分散して、ワークロードの認識を減らす
+- 主要な役割の後継者計画を作成する
+- チームメンバー間で知識の移転を確保する
 
-- Documentation improvements
-- Community management and advocacy
-- Education and outreach activities
-- Translation and localization efforts
+### 明確なガバナンスを確立する
 
-### Transfer Institutional Knowledge
+以下のための標準化されたプロセスを実装する:
 
-- Document tribal knowledge proactively
-- Record architectural decisions and their rationale
-- Maintain clear project roadmaps
-- Share context in public channels rather than private messages
+- アップストリームコードの貢献
+- 内部オープンソースプロジェクトの作成
+- 外部オープンソースソフトウェアの使用
+- ライセンスコンプライアンスの確保
 
-## Engagement Strategies
+これにより、断片化を防ぎ、アップストリームプロジェクトとの整合性を維持します。
 
-### Communication Norms
+## オンボーディングとメンターシップ
 
-Establish clear communication guidelines:
+### 明確な貢献パスを作成する
 
-- Define which channels serve which purposes (development, support, social)
-- Set expectations for response times
-- Document decision-making processes
-- Make discussions discoverable and searchable
+新しいコントリビューターのための複数のエントリーポイントを提供する:
 
-### Inclusive Practices
+- 経験豊富なコントリビューターと新参者をペアにするメンターシッププログラムを設定する
+- 貢献ワークフローを明確に文書化する
+- 簡単なエントリーポイントのための「good first issue」ラベルを作成する
+- イシューとプルリクエストのテンプレートを提供する
 
-Make the project welcoming:
+### 非技術的な貢献をサポートする
 
-- Enforce code of conduct consistently
-- Welcome questions from newcomers without judgment
-- Provide context for acronyms and project-specific terminology
-- Accommodate different time zones in meeting scheduling
+以下を認識し、価値を認める:
 
-### Recognition and Motivation
+- ドキュメントの改善
+- コミュニティ管理とアドボカシー
+- 教育とアウトリーチ活動
+- 翻訳とローカライゼーションの努力
 
-Motivate continued participation:
+### 組織的知識を移転する
 
-- Publicly acknowledge contributions (code and non-code)
-- Offer conference presentation opportunities
-- Provide visibility for contributors' work
-- Create pathways for growing influence through merit
+- 部族的知識を積極的に文書化する
+- アーキテクチャの決定とその根拠を記録する
+- 明確なプロジェクトロードマップを維持する
+- プライベートメッセージではなく、パブリックチャネルでコンテキストを共有する
 
-## Governance Models
+## エンゲージメント戦略
 
-### Meritocratic Governance
+### コミュニケーション規範
 
-Give more influence to contributors who demonstrate expertise and commitment over time:
+明確なコミュニケーションガイドラインを確立する:
 
-- Track contributions across code, reviews, and community support
-- Establish clear criteria for elevated privileges
-- Make governance decisions transparent
-- Document how decisions are made and by whom
+- どのチャネルがどの目的に役立つかを定義する（開発、サポート、ソーシャル）
+- 応答時間の期待を設定する
+- 意思決定プロセスを文書化する
+- ディスカッションを発見可能で検索可能にする
 
-### Distributed Decision-Making
+### 包括的なプラクティス
 
-Empower domain experts:
+プロジェクトを歓迎的にする:
 
-- Delegate authority to subsystem maintainers
-- Trust specialists in their areas of expertise
-- Escalate only when consensus cannot be reached
-- Document delegation boundaries clearly
+- 行動規範を一貫して実施する
+- 新参者からの質問を判断せずに歓迎する
+- 頭字語やプロジェクト固有の用語のコンテキストを提供する
+- 会議のスケジューリングで異なるタイムゾーンに対応する
 
-### Transparency
+### 認識と動機付け
 
-Build community trust through openness:
+継続的な参加を動機付ける:
 
-- Conduct discussions in public channels
-- Document meeting minutes and decisions
-- Explain the rationale behind major decisions
-- Make governance processes discoverable
+- 貢献（コードと非コード）を公に認める
+- カンファレンスのプレゼンテーション機会を提供する
+- コントリビューターの仕事の可視性を提供する
+- メリットを通じて影響力を高めるための道筋を作成する
 
-## Workflow for Community Initiatives
+## ガバナンスモデル
 
-When implementing community management initiatives:
+### メリトクラティックガバナンス
 
-1. **Assess Current State**: Review existing communication channels, contribution patterns, documentation, and governance structures
-2. **Identify Gaps**: Compare current state against best practices to identify improvement areas
-3. **Prioritize Actions**: Focus on high-impact, achievable improvements first
-4. **Document Changes**: Create clear documentation for any new processes or structures
-5. **Communicate Widely**: Announce changes through multiple channels to reach all community members
-6. **Gather Feedback**: Create mechanisms for community input on new initiatives
-7. **Iterate**: Refine approaches based on community feedback and observed outcomes
-8. **Measure Impact**: Track metrics like contributor retention, contribution frequency, and community satisfaction
+時間をかけて専門知識とコミットメントを実証するコントリビューターにより多くの影響力を与える:
 
-## References
+- コード、レビュー、コミュニティサポート全体で貢献を追跡する
+- 昇格された特権のための明確な基準を確立する
+- ガバナンス決定を透明にする
+- 誰がどのように決定を下すかを文書化する
 
-For detailed examples, templates, and additional context, refer to:
+### 分散された意思決定
 
-- `references/governance-models.md` - Detailed governance structures and decision-making frameworks
-- `references/onboarding-templates.md` - Templates for contributor guides and onboarding checklists
-- `references/metrics.md` - Community health metrics and measurement strategies
+ドメインエキスパートに権限を与える:
 
-## Notes
+- サブシステムメンテナーに権限を委任する
+- 専門分野の専門家を信頼する
+- コンセンサスに達することができない場合にのみエスカレートする
+- 委任の境界を明確に文書化する
 
-- Remember that community building is a long-term investment requiring patience and consistency
-- Different communities may require different approaches—adapt these practices to your context
-- Titles and positions are meaningless in open source; influence comes from contributions
-- Leadership resides with individuals, not companies—invest in people, not just projects
+### 透明性
+
+開放性を通じてコミュニティの信頼を構築する:
+
+- パブリックチャネルでディスカッションを行う
+- 会議の議事録と決定を文書化する
+- 主要な決定の背後にある根拠を説明する
+- ガバナンスプロセスを発見可能にする
+
+## コミュニティイニシアチブのワークフロー
+
+コミュニティ管理イニシアチブを実装する場合:
+
+1. **現状評価**: 既存のコミュニケーションチャネル、貢献パターン、ドキュメント、ガバナンス構造を確認する
+2. **ギャップの特定**: 現状とベストプラクティスを比較して改善領域を特定する
+3. **アクションの優先順位付け**: 影響が大きく、達成可能な改善を最初に重視する
+4. **変更を文書化**: 新しいプロセスや構造のための明確なドキュメントを作成する
+5. **広くコミュニケート**: すべてのコミュニティメンバーに到達するために複数のチャネルを通じて変更を発表する
+6. **フィードバックを収集**: 新しいイニシアチブに対するコミュニティの入力のメカニズムを作成する
+7. **反復**: コミュニティのフィードバックと観察された結果に基づいてアプローチを洗練する
+8. **影響を測定**: コントリビューターの維持、貢献頻度、コミュニティ満足度などのメトリクスを追跡する
+
+## 参照
+
+詳細な例、テンプレート、追加のコンテキストについては、以下を参照してください:
+
+- `references/governance-models.md` - 詳細なガバナンス構造と意思決定フレームワーク
+- `references/onboarding-templates.md` - コントリビューターガイドとオンボーディングチェックリストのテンプレート
+- `references/metrics.md` - コミュニティヘルスメトリクスと測定戦略
+
+## 注意事項
+
+- コミュニティ構築は忍耐と一貫性を必要とする長期的な投資であることを覚えておいてください
+- 異なるコミュニティは異なるアプローチを必要とする場合があります—これらのプラクティスをあなたのコンテキストに適応させてください
+- タイトルと地位はオープンソースでは無意味です。影響力は貢献から来ます
+- リーダーシップは企業ではなく、個人に存在します—プロジェクトだけでなく、人々に投資してください

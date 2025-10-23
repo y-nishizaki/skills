@@ -1,519 +1,519 @@
-# Onboarding Templates for Open Source Contributors
+# オープンソースコントリビューター向けオンボーディングテンプレート
 
-This reference provides templates and checklists for effectively onboarding new contributors to open source projects.
+このリファレンスは、オープンソースプロジェクトへの新しいコントリビューターを効果的にオンボーディングするためのテンプレートとチェックリストを提供します。
 
-## New Contributor Welcome Message Template
+## 新規コントリビューター歓迎メッセージテンプレート
 
 ```markdown
-Welcome to [PROJECT NAME]! 🎉
+[プロジェクト名]へようこそ!
 
-Thank you for your interest in contributing. We're excited to have you here!
+貢献に興味を持っていただきありがとうございます。ここにいてくれて嬉しいです!
 
-### Getting Started
+### はじめに
 
-1. **Read our documentation**:
-   - [Code of Conduct](link) - Our community standards
-   - [Contributing Guide](link) - How to contribute
-   - [Development Setup](link) - Get your environment ready
+1. **ドキュメントを読む**:
+   - [行動規範](link) - コミュニティの基準
+   - [貢献ガイド](link) - 貢献方法
+   - [開発セットアップ](link) - 環境の準備
 
-2. **Join the community**:
-   - [Chat/Slack/Discord](link) - Ask questions and connect
-   - [Forum/Mailing List](link) - Longer discussions
-   - [Community Meetings](link) - Weekly/monthly calls
+2. **コミュニティに参加**:
+   - [チャット/Slack/Discord](link) - 質問して交流
+   - [フォーラム/メーリングリスト](link) - より長いディスカッション
+   - [コミュニティミーティング](link) - 週次/月次の通話
 
-3. **Find your first contribution**:
-   - Browse [good first issues](link)
-   - Check [help wanted](link) labels
-   - Improve [documentation](link)
+3. **最初の貢献を見つける**:
+   - [good first issues](link)を参照
+   - [help wanted](link)ラベルを確認
+   - [ドキュメント](link)を改善
 
-### Need Help?
+### 助けが必要ですか?
 
-Don't hesitate to ask! You can:
-- Ask in [#newcomers channel](link)
-- Tag @mentors in discussions
-- Attend [new contributor office hours](link)
+遠慮なく質問してください! できることは:
+- [#newcomersチャネル](link)で質問
+- ディスカッションで@mentorsをタグ付け
+- [新規コントリビューター向けオフィスアワー](link)に参加
 
-We're here to help you succeed!
+あなたの成功をお手伝いします!
 
 ---
-*This message was automated. Reply with questions and a maintainer will assist.*
+*このメッセージは自動化されています。質問があれば返信してください。メンテナーがサポートします。*
 ```
 
-## CONTRIBUTING.md Template
+## CONTRIBUTING.md テンプレート
 
 ```markdown
-# Contributing to [PROJECT NAME]
+# [プロジェクト名]への貢献
 
-Thank you for considering contributing! This document guides you through the contribution process.
+貢献を検討していただきありがとうございます! このドキュメントは貢献プロセスをガイドします。
 
-## Code of Conduct
+## 行動規範
 
-This project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you agree to uphold this code.
+このプロジェクトは[行動規範](CODE_OF_CONDUCT.md)に従います。参加することで、このコードを守ることに同意したことになります。
 
-## How Can I Contribute?
+## どのように貢献できますか?
 
-### Reporting Bugs
+### バグの報告
 
-Before creating bug reports:
-- **Check the issue tracker** - Someone may have already reported it
-- **Verify the bug** - Can you reproduce it consistently?
-- **Check documentation** - Is this intended behavior?
+バグレポートを作成する前に:
+- **イシュートラッカーを確認** - すでに報告されているかもしれません
+- **バグを検証** - 一貫して再現できますか?
+- **ドキュメントを確認** - これは意図された動作ですか?
 
-**Good bug reports include**:
-- **Clear title** - Summarize the problem
-- **Steps to reproduce** - Detailed reproduction steps
-- **Expected vs. actual behavior** - What should happen vs. what does happen
-- **Environment** - OS, version, configuration
-- **Screenshots/logs** - Visual aids if applicable
+**良いバグレポートには以下が含まれます**:
+- **明確なタイトル** - 問題を要約
+- **再現手順** - 詳細な再現手順
+- **期待される動作vs実際の動作** - 何が起こるべきかvs何が起こるか
+- **環境** - OS、バージョン、設定
+- **スクリーンショット/ログ** - 該当する場合の視覚的補助
 
-Use our [bug report template](.github/ISSUE_TEMPLATE/bug_report.md).
+[バグレポートテンプレート](.github/ISSUE_TEMPLATE/bug_report.md)を使用してください。
 
-### Suggesting Features
+### 機能の提案
 
-Feature suggestions are welcome! Include:
-- **Use case** - What problem does this solve?
-- **Proposed solution** - How should it work?
-- **Alternatives** - Other approaches considered
-- **Impact** - Who benefits from this feature?
+機能の提案を歓迎します! 以下を含めてください:
+- **ユースケース** - これはどんな問題を解決しますか?
+- **提案されたソリューション** - どのように動作すべきですか?
+- **代替案** - 検討した他のアプローチ
+- **影響** - この機能から誰が利益を得ますか?
 
-Use our [feature request template](.github/ISSUE_TEMPLATE/feature_request.md).
+[機能リクエストテンプレート](.github/ISSUE_TEMPLATE/feature_request.md)を使用してください。
 
-### Contributing Code
+### コードの貢献
 
-#### Before You Start
+#### 開始する前に
 
-1. **Check existing issues** - Avoid duplicate work
-2. **Discuss significant changes** - Open an issue first for major features
-3. **Review the roadmap** - Ensure alignment with project direction
+1. **既存のイシューを確認** - 重複作業を避ける
+2. **重要な変更を議論** - 主要な機能については最初にイシューを開く
+3. **ロードマップをレビュー** - プロジェクトの方向性との整合性を確保
 
-#### Development Workflow
+#### 開発ワークフロー
 
-1. **Fork the repository** and clone your fork
-2. **Create a branch** - Use descriptive names: `fix/issue-123` or `feature/new-capability`
-3. **Set up development environment** - See [DEVELOPMENT.md](DEVELOPMENT.md)
-4. **Make your changes**:
-   - Follow [style guide](#style-guide)
-   - Write/update tests
-   - Update documentation
-5. **Test thoroughly** - Run full test suite
-6. **Commit your changes** - Use [clear commit messages](#commit-messages)
-7. **Push to your fork**
-8. **Open a Pull Request** - Use our [PR template](.github/PULL_REQUEST_TEMPLATE.md)
+1. **リポジトリをフォーク**してフォークをクローン
+2. **ブランチを作成** - 説明的な名前を使用: `fix/issue-123`または`feature/new-capability`
+3. **開発環境をセットアップ** - [DEVELOPMENT.md](DEVELOPMENT.md)を参照
+4. **変更を行う**:
+   - [スタイルガイド](#style-guide)に従う
+   - テストを書く/更新する
+   - ドキュメントを更新する
+5. **徹底的にテスト** - 完全なテストスイートを実行
+6. **変更をコミット** - [明確なコミットメッセージ](#commit-messages)を使用
+7. **フォークにプッシュ**
+8. **プルリクエストを開く** - [PRテンプレート](.github/PULL_REQUEST_TEMPLATE.md)を使用
 
-#### Style Guide
+#### スタイルガイド
 
-- **Code formatting**: Run `[formatter command]` before committing
-- **Linting**: Pass all linter checks (`[linter command]`)
-- **Naming conventions**: [Describe conventions]
-- **Comments**: Explain *why*, not *what*
-- **Documentation**: Update relevant docs with code changes
+- **コードフォーマット**: コミット前に`[formatter command]`を実行
+- **リンティング**: すべてのリンターチェックをパス（`[linter command]`）
+- **命名規則**: [規則を説明]
+- **コメント**: *なぜ*を説明し、*何*ではない
+- **ドキュメント**: コード変更とともに関連ドキュメントを更新
 
-#### Commit Messages
+#### コミットメッセージ
 
-Follow this format:
+次の形式に従ってください:
 
 ```
-type(scope): brief description
+type(scope): 簡潔な説明
 
-Detailed explanation of the change and its motivation.
+変更とその動機の詳細な説明。
 
 Fixes #123
 ```
 
-**Types**: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
+**タイプ**: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
 
-**Examples**:
+**例**:
 ```
-feat(api): add user authentication endpoint
+feat(api): ユーザー認証エンドポイントを追加
 
-Implements JWT-based authentication for API access.
-Includes token refresh mechanism.
+APIアクセスのためのJWTベースの認証を実装。
+トークンリフレッシュメカニズムを含む。
 
 Closes #456
 ```
 
-#### Testing
+#### テスト
 
-- Write tests for new features
-- Update tests for changed behavior
-- Ensure all tests pass: `[test command]`
-- Aim for [coverage target]% code coverage
+- 新機能のテストを書く
+- 変更された動作のテストを更新
+- すべてのテストがパスすることを確認: `[test command]`
+- [カバレッジ目標]%のコードカバレッジを目指す
 
-#### Pull Request Process
+#### プルリクエストプロセス
 
-1. **Update documentation** - README, API docs, etc.
-2. **Pass CI checks** - All automated tests must pass
-3. **Request review** - Tag relevant maintainers
-4. **Address feedback** - Respond to review comments
-5. **Squash commits** (if requested) - Clean up history before merge
-6. **Celebrate!** - Your contribution is merged 🎉
+1. **ドキュメントを更新** - README、APIドキュメントなど
+2. **CIチェックをパス** - すべての自動テストが通る必要がある
+3. **レビューをリクエスト** - 関連するメンテナーをタグ付け
+4. **フィードバックに対処** - レビューコメントに応答
+5. **コミットをスカッシュ**（要求された場合） - マージ前に履歴をクリーンアップ
+6. **祝う!** - あなたの貢献がマージされました
 
-**Pull Request Guidelines**:
-- One feature/fix per PR
-- Keep changes focused and minimal
-- Provide context in PR description
-- Link related issues
-- Update CHANGELOG.md (if applicable)
+**プルリクエストガイドライン**:
+- PRごとに1つの機能/修正
+- 変更を集中的かつ最小限に保つ
+- PR説明でコンテキストを提供
+- 関連するイシューをリンク
+- CHANGELOG.mdを更新（該当する場合）
 
-### Contributing Documentation
+### ドキュメントへの貢献
 
-Documentation improvements are highly valued!
+ドキュメントの改善は非常に価値があります!
 
-- Fix typos and clarify wording
-- Add examples and tutorials
-- Improve API documentation
-- Translate documentation
-- Create diagrams and visualizations
+- タイポを修正して言葉を明確にする
+- 例とチュートリアルを追加
+- APIドキュメントを改善
+- ドキュメントを翻訳
+- 図と視覚化を作成
 
-Documentation follows the same PR process as code.
+ドキュメントはコードと同じPRプロセスに従います。
 
-### Other Ways to Contribute
+### その他の貢献方法
 
-- **Triage issues** - Help categorize and prioritize
-- **Review pull requests** - Provide constructive feedback
-- **Answer questions** - Help others in chat/forums
-- **Write blog posts** - Share your experience
-- **Give talks** - Present at meetups/conferences
-- **Improve tooling** - CI, build systems, dev tools
+- **イシューのトリアージ** - カテゴリ化と優先順位付けを支援
+- **プルリクエストのレビュー** - 建設的なフィードバックを提供
+- **質問に答える** - チャット/フォーラムで他の人を助ける
+- **ブログ記事を書く** - あなたの経験を共有
+- **講演する** - ミートアップ/カンファレンスでプレゼン
+- **ツールの改善** - CI、ビルドシステム、開発ツール
 
-## Recognition
+## 認識
 
-Contributors are recognized through:
-- [CONTRIBUTORS.md](CONTRIBUTORS.md) listing
-- Release notes acknowledgments
-- Annual contributor highlights
-- Swag for significant contributions (if applicable)
-- Speaking opportunities at project events
+コントリビューターは以下を通じて認識されます:
+- [CONTRIBUTORS.md](CONTRIBUTORS.md)リスト
+- リリースノートでの謝辞
+- 年次コントリビューターハイライト
+- 重要な貢献へのグッズ（該当する場合）
+- プロジェクトイベントでの講演機会
 
-## Getting Help
+## 助けを得る
 
-Stuck? Reach out:
-- **Chat**: [Link to chat] - Fastest for quick questions
-- **Forum**: [Link] - For longer discussions
-- **Office Hours**: [Schedule] - Live help from maintainers
-- **Mentorship**: Tag @mentors for guidance
+困っていますか? 連絡してください:
+- **チャット**: [チャットへのリンク] - 簡単な質問に最速
+- **フォーラム**: [リンク] - より長いディスカッション用
+- **オフィスアワー**: [スケジュール] - メンテナーからのライブヘルプ
+- **メンターシップ**: ガイダンスのために@mentorsをタグ付け
 
-## License
+## ライセンス
 
-By contributing, you agree that your contributions will be licensed under the [PROJECT LICENSE].
+貢献することで、あなたの貢献が[プロジェクトライセンス]の下でライセンスされることに同意したことになります。
 ```
 
-## New Contributor Onboarding Checklist
+## 新規コントリビューターオンボーディングチェックリスト
 
-### For Project Maintainers
+### プロジェクトメンテナー向け
 
-When a new contributor appears:
+新しいコントリビューターが現れたとき:
 
-- [ ] Welcome them warmly (use template above)
-- [ ] Point to contributing guide and code of conduct
-- [ ] Suggest appropriate first issues based on their background
-- [ ] Introduce them to mentors or relevant team members
-- [ ] Add them to newcomer chat channel
-- [ ] Invite to next community meeting
-- [ ] Follow up after one week to check progress
-- [ ] Celebrate their first merged contribution publicly
+- [ ] 温かく歓迎する（上記のテンプレートを使用）
+- [ ] 貢献ガイドと行動規範を示す
+- [ ] バックグラウンドに基づいて適切な最初のイシューを提案
+- [ ] メンターまたは関連するチームメンバーに紹介
+- [ ] 新参者チャットチャネルに追加
+- [ ] 次のコミュニティミーティングに招待
+- [ ] 1週間後に進捗を確認するためにフォローアップ
+- [ ] 最初のマージされた貢献を公に祝う
 
-### For New Contributors
+### 新規コントリビューター向け
 
-- [ ] Read Code of Conduct
-- [ ] Review Contributing Guide
-- [ ] Set up development environment
-- [ ] Join community chat
-- [ ] Introduce yourself in newcomer channel
-- [ ] Attend community meeting (if available)
-- [ ] Pick a good first issue
-- [ ] Ask questions when stuck
-- [ ] Submit first pull request
-- [ ] Respond to code review feedback
-- [ ] Celebrate merged contribution!
+- [ ] 行動規範を読む
+- [ ] 貢献ガイドをレビュー
+- [ ] 開発環境をセットアップ
+- [ ] コミュニティチャットに参加
+- [ ] 新参者チャネルで自己紹介
+- [ ] コミュニティミーティングに参加（利用可能な場合）
+- [ ] good first issueを選ぶ
+- [ ] 行き詰まったら質問する
+- [ ] 最初のプルリクエストを送信
+- [ ] コードレビューフィードバックに応答
+- [ ] マージされた貢献を祝う!
 
-## Mentorship Program Template
+## メンターシッププログラムテンプレート
 
-### Program Structure
+### プログラム構造
 
-**Duration**: 3-6 months
+**期間**: 3〜6ヶ月
 
-**Commitment**:
-- **Mentor**: 2-4 hours per month
-- **Mentee**: 4-8 hours per month on project contributions
+**コミットメント**:
+- **メンター**: 月2〜4時間
+- **メンティー**: プロジェクト貢献に月4〜8時間
 
-**Pairing**:
-- Match based on interests and availability
-- Consider timezone compatibility
-- Prefer complementary skill sets
+**ペアリング**:
+- 興味と可用性に基づいてマッチング
+- タイムゾーンの互換性を考慮
+- 補完的なスキルセットを優先
 
-### Mentor Responsibilities
+### メンターの責任
 
-- Schedule regular check-ins (bi-weekly recommended)
-- Help mentee select appropriate issues/features
-- Review code and provide detailed, constructive feedback
-- Introduce mentee to community members
-- Share project context and tribal knowledge
-- Advocate for mentee's contributions
-- Help navigate project processes
+- 定期的なチェックインをスケジュール（隔週推奨）
+- メンティーが適切なイシュー/機能を選択するのを助ける
+- コードをレビューし、詳細で建設的なフィードバックを提供
+- メンティーをコミュニティメンバーに紹介
+- プロジェクトのコンテキストと部族的知識を共有
+- メンティーの貢献を支持
+- プロジェクトプロセスをナビゲートするのを助ける
 
-### Mentee Expectations
+### メンティーの期待
 
-- Commit to regular contributions
-- Communicate proactively with mentor
-- Ask questions and seek feedback
-- Attend community meetings when possible
-- Document learning and share with community
-- Help future newcomers once proficient
+- 定期的な貢献にコミット
+- メンターと積極的にコミュニケーション
+- 質問してフィードバックを求める
+- 可能な限りコミュニティミーティングに出席
+- 学習を文書化してコミュニティと共有
+- 熟練したら将来の新参者を助ける
 
-### Success Metrics
+### 成功メトリクス
 
-Track mentee progress:
-- [ ] Completed development environment setup
-- [ ] First issue/PR merged
-- [ ] Three contributions merged
-- [ ] Attended community meeting
-- [ ] Helped another newcomer
-- [ ] Considered for committer/maintainer role
+メンティーの進捗を追跡:
+- [ ] 開発環境のセットアップを完了
+- [ ] 最初のイシュー/PRがマージされた
+- [ ] 3つの貢献がマージされた
+- [ ] コミュニティミーティングに出席した
+- [ ] 別の新参者を助けた
+- [ ] コミッター/メンテナーの役割を検討された
 
-### Monthly Check-in Template
+### 月次チェックインテンプレート
 
 ```markdown
-# Mentorship Check-in - [Month Year]
+# メンターシップチェックイン - [月 年]
 
-**Mentor**: [Name]
-**Mentee**: [Name]
+**メンター**: [名前]
+**メンティー**: [名前]
 
-## Progress This Month
-- Contributions: [List PRs/issues]
-- Skills developed: [List]
-- Challenges encountered: [List]
+## 今月の進捗
+- 貢献: [PR/イシューをリスト]
+- 開発されたスキル: [リスト]
+- 遭遇した課題: [リスト]
 
-## Goals for Next Month
-- [ ] [Specific goal 1]
-- [ ] [Specific goal 2]
-- [ ] [Specific goal 3]
+## 来月の目標
+- [ ] [具体的な目標1]
+- [ ] [具体的な目標2]
+- [ ] [具体的な目標3]
 
-## Questions/Discussion Topics
-- [Topic 1]
-- [Topic 2]
+## 質問/ディスカッショントピック
+- [トピック1]
+- [トピック2]
 
-## Action Items
-- [ ] Mentor: [Action]
-- [ ] Mentee: [Action]
+## アクションアイテム
+- [ ] メンター: [アクション]
+- [ ] メンティー: [アクション]
 ```
 
-## Good First Issue Template
+## Good First Issue テンプレート
 
-Label issues appropriately for newcomers:
+新参者向けにイシューに適切にラベル付け:
 
 ```markdown
-**Description**
-[Clear description of what needs to be done]
+**説明**
+[何をする必要があるかの明確な説明]
 
-**Context**
-[Why is this needed? How does it fit into the project?]
+**コンテキスト**
+[なぜこれが必要か? プロジェクトにどのように適合するか?]
 
-**Proposed Solution**
-[Suggestion for how to approach this, if applicable]
+**提案されたソリューション**
+[該当する場合、これにアプローチする方法の提案]
 
-**Acceptance Criteria**
-- [ ] [Specific requirement 1]
-- [ ] [Specific requirement 2]
-- [ ] Tests added/updated
-- [ ] Documentation updated
+**受け入れ基準**
+- [ ] [具体的な要件1]
+- [ ] [具体的な要件2]
+- [ ] テストを追加/更新
+- [ ] ドキュメントを更新
 
-**Getting Started**
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
+**はじめに**
+1. [ステップ1]
+2. [ステップ2]
+3. [ステップ3]
 
-**Resources**
-- Relevant code: [Link to file/function]
-- Related issues: #123, #456
-- Documentation: [Link]
+**リソース**
+- 関連コード: [ファイル/関数へのリンク]
+- 関連イシュー: #123, #456
+- ドキュメント: [リンク]
 
-**Estimated Difficulty**: [Easy/Medium]
-**Estimated Time**: [Hours/Days]
+**推定難易度**: [簡単/中程度]
+**推定時間**: [時間/日]
 
-**Mentorship Available**: Yes - tag @mentor-name with questions
+**メンターシップ利用可能**: はい - 質問には@mentor-nameをタグ付け
 
 ---
-*This is marked as a good first issue. New contributors are encouraged to take this on!*
+*これはgood first issueとしてマークされています。新しいコントリビューターはこれに取り組むことをお勧めします!*
 ```
 
-## First PR Congratulations Template
+## 最初のPR おめでとうテンプレート
 
 ```markdown
-🎉 Congratulations on your first merged contribution to [PROJECT NAME], @username!
+[プロジェクト名]への最初のマージされた貢献、おめでとうございます、@username!
 
-This is an exciting milestone. Thank you for:
-- [Specific positive aspect of their contribution]
-- [Another positive aspect]
+これはエキサイティングなマイルストーンです。以下に感謝します:
+- [貢献の具体的な肯定的側面]
+- [別の肯定的側面]
 
-### What's Next?
+### 次は何ですか?
 
-Now that you're a contributor:
-- ⭐ Star the repo if you haven't already
-- 📢 Share your contribution on social media (tag us!)
-- 🔍 Find your next contribution: [Link to issues]
-- 👥 Join us at the next community meeting: [Link]
-- 📝 Add yourself to CONTRIBUTORS.md: [Link]
+あなたは今コントリビューターです:
+- ⭐ まだの場合はリポジトリにスター
+- 📢 ソーシャルメディアであなたの貢献を共有（私たちをタグ付け!）
+- 🔍 次の貢献を見つける: [イシューへのリンク]
+- 👥 次のコミュニティミーティングに参加: [リンク]
+- 📝 CONTRIBUTORS.mdに自分を追加: [リンク]
 
-We're excited to see your continued involvement!
+あなたの継続的な関与を楽しみにしています!
 
 ---
-*Want to help more newcomers? Join our mentorship program: [Link]*
+*より多くの新参者を助けたいですか? メンターシッププログラムに参加: [リンク]*
 ```
 
-## Development Environment Setup Guide Template
+## 開発環境セットアップガイドテンプレート
 
 ```markdown
-# Development Environment Setup
+# 開発環境のセットアップ
 
-This guide helps you set up [PROJECT NAME] for local development.
+このガイドは、ローカル開発のために[プロジェクト名]をセットアップするのに役立ちます。
 
-## Prerequisites
+## 前提条件
 
-Install these before starting:
-- [Tool 1] - version X.Y or higher - [Installation link]
-- [Tool 2] - version X.Y or higher - [Installation link]
-- [Tool 3] - version X.Y or higher - [Installation link]
+開始前にこれらをインストール:
+- [ツール1] - バージョンX.Y以上 - [インストールリンク]
+- [ツール2] - バージョンX.Y以上 - [インストールリンク]
+- [ツール3] - バージョンX.Y以上 - [インストールリンク]
 
-**Verify installation**:
+**インストールを確認**:
 ```bash
 [tool1] --version
 [tool2] --version
 ```
 
-## Clone the Repository
+## リポジトリをクローン
 
 ```bash
 git clone https://github.com/[org]/[project].git
 cd [project]
 ```
 
-## Set Up Development Environment
+## 開発環境をセットアップ
 
-### Option 1: Using [Tool/Script]
+### オプション1: [ツール/スクリプト]を使用
 
 ```bash
 ./scripts/setup-dev-env.sh
 ```
 
-This script will:
-- Install dependencies
-- Set up configuration
-- Initialize database (if applicable)
-- Run initial tests
+このスクリプトは:
+- 依存関係をインストール
+- 設定をセットアップ
+- データベースを初期化（該当する場合）
+- 初期テストを実行
 
-### Option 2: Manual Setup
+### オプション2: 手動セットアップ
 
-1. **Install dependencies**:
+1. **依存関係をインストール**:
    ```bash
    [package manager command]
    ```
 
-2. **Configure environment**:
+2. **環境を設定**:
    ```bash
    cp .env.example .env
-   # Edit .env with your settings
+   # 設定で.envを編集
    ```
 
-3. **Initialize database** (if applicable):
+3. **データベースを初期化**（該当する場合）:
    ```bash
    [database setup commands]
    ```
 
-4. **Verify setup**:
+4. **セットアップを確認**:
    ```bash
    [test command]
    ```
 
-## Running the Project
+## プロジェクトを実行
 
-**Development mode**:
+**開発モード**:
 ```bash
 [dev command]
 ```
 
-Access at: http://localhost:[port]
+アクセス先: http://localhost:[port]
 
-**Run tests**:
+**テストを実行**:
 ```bash
 [test command]
 ```
 
-**Run linter**:
+**リンターを実行**:
 ```bash
 [lint command]
 ```
 
-**Format code**:
+**コードをフォーマット**:
 ```bash
 [format command]
 ```
 
-## Common Issues
+## 一般的な問題
 
-### Issue 1: [Common problem]
-**Error**: [Error message]
-**Solution**: [How to fix]
+### 問題1: [一般的な問題]
+**エラー**: [エラーメッセージ]
+**解決策**: [修正方法]
 
-### Issue 2: [Common problem]
-**Error**: [Error message]
-**Solution**: [How to fix]
+### 問題2: [一般的な問題]
+**エラー**: [エラーメッセージ]
+**解決策**: [修正方法]
 
-## Next Steps
+## 次のステップ
 
-- Read [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines
-- Browse [good first issues](link)
-- Join [community chat](link)
+- 貢献ガイドラインのために[CONTRIBUTING.md](CONTRIBUTING.md)を読む
+- [good first issues](link)を参照
+- [コミュニティチャット](link)に参加
 
-## Getting Help
+## 助けを得る
 
-If you encounter issues:
-1. Check [troubleshooting docs](link)
-2. Search [existing issues](link)
-3. Ask in [chat channel](link)
-4. Open a new issue with full details
+問題に遭遇した場合:
+1. [トラブルシューティングドキュメント](link)を確認
+2. [既存のイシュー](link)を検索
+3. [チャットチャネル](link)で質問
+4. 完全な詳細で新しいイシューを開く
 ```
 
-## Contribution Recognition System
+## 貢献認識システム
 
-### Levels of Recognition
+### 認識レベル
 
-**1. First Contribution**
-- Public thanks in PR
-- Add to CONTRIBUTORS.md
-- Welcome badge in chat (if applicable)
+**1. 最初の貢献**
+- PRでの公開感謝
+- CONTRIBUTORS.mdに追加
+- チャットでの歓迎バッジ（該当する場合）
 
-**2. Regular Contributor (3+ merged PRs)**
-- Mention in release notes
-- Invitation to contributors-only channels
-- "Contributor" badge
+**2. 定期的なコントリビューター（3つ以上のマージされたPR）**
+- リリースノートでの言及
+- コントリビューター専用チャネルへの招待
+- 「コントリビューター」バッジ
 
-**3. Sustained Contribution (6+ months active)**
-- Featured in blog post/newsletter
-- Invitation to contributor calls
-- Project swag (if available)
-- Potential committer nomination
+**3. 持続的な貢献（6ヶ月以上アクティブ）**
+- ブログ投稿/ニュースレターで特集
+- コントリビューター通話への招待
+- プロジェクトグッズ（利用可能な場合）
+- 潜在的なコミッター指名
 
-**4. Committer/Maintainer**
-- Listed in MAINTAINERS.md
-- Write access to repository
-- Voice in governance decisions
-- Speaking opportunities
+**4. コミッター/メンテナー**
+- MAINTAINERS.mdにリスト
+- リポジトリへの書き込みアクセス
+- ガバナンス決定での発言権
+- 講演機会
 
-### Recognition Ceremonies
+### 認識式典
 
-**Monthly Recognition**:
-- Highlight top contributors in newsletter
-- Social media shoutouts
-- Community meeting acknowledgments
+**月次認識**:
+- ニュースレターでトップコントリビューターをハイライト
+- ソーシャルメディアでの叫び
+- コミュニティミーティングでの謝辞
 
-**Annual Recognition**:
-- Year-end contributor report
-- Special thanks in major releases
-- Contributor awards (if applicable)
+**年次認識**:
+- 年末コントリビューターレポート
+- 主要リリースでの特別な感謝
+- コントリビューターアワード（該当する場合）
 
-## Resources
+## リソース
 
-- Mozilla's Contribution Ladder: https://wiki.mozilla.org/Commit_Access_Policy
-- GitHub's Open Source Guides: https://opensource.guide/
+- Mozillaのコントリビューションラダー: https://wiki.mozilla.org/Commit_Access_Policy
+- GitHubのオープンソースガイド: https://opensource.guide/
 - Google Season of Docs: https://developers.google.com/season-of-docs

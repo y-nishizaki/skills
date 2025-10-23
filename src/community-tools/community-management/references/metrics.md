@@ -1,472 +1,472 @@
-# Community Health Metrics and Measurement Strategies
+# コミュニティヘルスメトリクスと測定戦略
 
-This reference provides frameworks and metrics for assessing and improving open source community health.
+このリファレンスは、オープンソースコミュニティの健全性を評価し改善するためのフレームワークとメトリクスを提供します。
 
-## Overview
+## 概要
 
-Community health metrics help answer critical questions:
-- Is the community growing or declining?
-- Are new contributors becoming sustained contributors?
-- Is the project healthy and sustainable?
-- Where should we focus improvement efforts?
+コミュニティヘルスメトリクスは、重要な質問に答えるのに役立ちます:
+- コミュニティは成長していますか、それとも衰退していますか?
+- 新しいコントリビューターは持続的なコントリビューターになっていますか?
+- プロジェクトは健全で持続可能ですか?
+- 改善努力をどこに集中させるべきですか?
 
-## Core Metric Categories
+## コアメトリクスカテゴリー
 
-### 1. Contribution Metrics
+### 1. 貢献メトリクス
 
-**New Contributors**
-- **Definition**: Unique individuals making their first contribution in a time period
-- **Measurement**: Count distinct authors of merged PRs who have no prior contributions
-- **Target**: Steady or increasing trend
-- **Signals**:
-  - Increasing: Project is attracting newcomers
-  - Decreasing: Onboarding barriers may exist
-  - Stable: Healthy replacement rate
+**新規コントリビューター**
+- **定義**: 一定期間に初めて貢献を行ったユニークな個人
+- **測定**: マージされたPRの異なる著者のうち、以前の貢献がない人をカウント
+- **目標**: 安定または増加傾向
+- **シグナル**:
+  - 増加: プロジェクトが新参者を引き付けている
+  - 減少: オンボーディングの障壁が存在する可能性
+  - 安定: 健全な補充率
 
-**Contribution Frequency**
-- **Definition**: How often contributions occur
-- **Measurement**:
-  - Commits per week/month
-  - PRs opened per week/month
-  - Issues created per week/month
-- **Breakdowns**: By contributor type (new, occasional, regular, core)
-- **Healthy Pattern**: Consistent activity without extreme spikes or valleys
+**貢献頻度**
+- **定義**: 貢献がどのくらいの頻度で発生するか
+- **測定**:
+  - 週/月あたりのコミット数
+  - 週/月あたりに開かれたPR数
+  - 週/月あたりに作成されたイシュー数
+- **内訳**: コントリビュータータイプ別（新規、時々、定期的、コア）
+- **健全なパターン**: 極端なスパイクや谷がない一貫した活動
 
-**Contribution Distribution**
-- **Definition**: How contributions are distributed across contributors
-- **Measurement**:
-  - Percentage of contributions from top 10 contributors
-  - Gini coefficient of contribution distribution
-- **Signals**:
-  - High concentration (>80% from top 10): Bus factor risk
-  - Broad distribution: Healthy, diverse community
-- **Target**: <70% of contributions from top 20% of contributors
+**貢献分布**
+- **定義**: コントリビューター間で貢献がどのように分散しているか
+- **測定**:
+  - 上位10人のコントリビューターからの貢献の割合
+  - 貢献分布のジニ係数
+- **シグナル**:
+  - 高い集中度（上位10人から80%以上）: バスファクターリスク
+  - 広い分布: 健全で多様なコミュニティ
+- **目標**: 上位20%のコントリビューターからの貢献が70%未満
 
-**Types of Contributions**
-Track beyond code:
-- Code contributions (commits, PRs)
-- Issue triage and management
-- Documentation improvements
-- Code reviews performed
-- Community support (forum answers, chat help)
-- Event organization
-- Marketing and advocacy
+**貢献のタイプ**
+コード以外も追跡する:
+- コード貢献（コミット、PR）
+- イシューのトリアージと管理
+- ドキュメントの改善
+- 実施されたコードレビュー
+- コミュニティサポート（フォーラムの回答、チャットヘルプ）
+- イベントの開催
+- マーケティングとアドボカシー
 
-### 2. Engagement Metrics
+### 2. エンゲージメントメトリクス
 
-**Contributor Retention**
-- **Definition**: Percentage of contributors who continue contributing over time
-- **Measurement**:
-  - % of new contributors who make 2nd contribution within 90 days
-  - % of contributors active in current period who were active in previous period
-- **Cohort Analysis**: Track cohorts of contributors over time
-- **Healthy Ranges**:
-  - 30-50% of newcomers make 2nd contribution
-  - 60-80% of regular contributors remain active quarter-over-quarter
+**コントリビューターの維持**
+- **定義**: 時間の経過とともに貢献を続けるコントリビューターの割合
+- **測定**:
+  - 90日以内に2回目の貢献を行う新規コントリビューターの%
+  - 前の期間にアクティブだった現在の期間にアクティブなコントリビューターの%
+- **コホート分析**: 時間の経過とともにコントリビューターのコホートを追跡
+- **健全な範囲**:
+  - 新参者の30〜50%が2回目の貢献を行う
+  - 定期的なコントリビューターの60〜80%が四半期ごとにアクティブのまま
 
-**Response Times**
-- **Issue Response Time**: Time from issue creation to first response
-  - Target: <48 hours for 80% of issues
-- **PR Response Time**: Time from PR submission to first review
-  - Target: <72 hours for 80% of PRs
-- **Resolution Time**: Time from issue/PR creation to closure
-  - Varies by complexity; track by label/category
+**応答時間**
+- **イシュー応答時間**: イシュー作成から最初の応答までの時間
+  - 目標: イシューの80%に対して48時間未満
+- **PR応答時間**: PR提出から最初のレビューまでの時間
+  - 目標: PRの80%に対して72時間未満
+- **解決時間**: イシュー/PR作成からクローズまでの時間
+  - 複雑さによって異なる。ラベル/カテゴリー別に追跡
 
-**Community Activity**
-- Forum/chat messages per week
-- Meeting attendance
-- Event participation
-- Documentation views
+**コミュニティ活動**
+- 週あたりのフォーラム/チャットメッセージ
+- 会議の出席
+- イベント参加
+- ドキュメントの閲覧数
 
-**Engagement Depth**
-- Single-contribution vs. multi-contribution authors
-- Progression through contribution ladder
-- Time to second, fifth, tenth contribution
+**エンゲージメントの深さ**
+- 単一貢献vs.複数貢献の著者
+- 貢献ラダーを通じた進行
+- 2回目、5回目、10回目の貢献までの時間
 
-### 3. Diversity and Inclusion Metrics
+### 3. 多様性と包括性メトリクス
 
-**Geographic Diversity**
-- Contributors by country/timezone
-- Event attendance by region
-- Language diversity in communications
+**地理的多様性**
+- 国/タイムゾーン別のコントリビューター
+- 地域別のイベント出席
+- コミュニケーションにおける言語の多様性
 
-**Organizational Diversity**
-- Contributors by employer/affiliation
-- Company concentration risk
-- Independent contributor percentage
+**組織の多様性**
+- 雇用主/所属別のコントリビューター
+- 企業の集中リスク
+- 独立したコントリビューターの割合
 
-**Demographic Diversity** (if data available)
-- Self-reported gender, race/ethnicity
-- Career stage (student, early career, experienced, retired)
-- Professional background
+**人口統計学的多様性**（データが利用可能な場合）
+- 自己申告の性別、人種/民族
+- キャリアステージ（学生、キャリア初期、経験豊富、退職）
+- 専門的背景
 
-**Inclusion Indicators**
-- Code of Conduct reports and resolution times
-- Sentiment in community channels
-- Newcomer welcome rate (% of new contributors who receive welcoming response)
-- Participation in governance by diverse groups
+**包括性の指標**
+- 行動規範レポートと解決時間
+- コミュニティチャネルでの感情
+- 新参者の歓迎率（歓迎の応答を受け取る新規コントリビューターの%）
+- 多様なグループによるガバナンスへの参加
 
-### 4. Project Health Metrics
+### 4. プロジェクト健全性メトリクス
 
-**Issue Management**
-- Open issue count and trend
-- Issue age distribution
-- Issues closed per month
-- Issue close rate (closed / opened ratio)
-- Ratio of bugs to feature requests
-- Healthy Patterns:
-  - Stable or decreasing backlog
-  - >80% of issues receive response within 1 week
-  - Close rate matches or exceeds open rate
+**イシュー管理**
+- オープンなイシュー数と傾向
+- イシューの年齢分布
+- 月あたりにクローズされたイシュー
+- イシュークローズ率（クローズ/オープンの比率）
+- バグ対機能リクエストの比率
+- 健全なパターン:
+  - 安定または減少するバックログ
+  - イシューの80%以上が1週間以内に応答を受け取る
+  - クローズ率がオープン率と一致または上回る
 
-**Pull Request Health**
-- PR merge rate (% of PRs ultimately merged)
-- PR rejection rate and reasons
-- Time to merge
-- Abandoned PR rate (no activity for 30+ days)
-- Healthy Patterns:
-  - >60% merge rate
-  - <20% abandoned rate
-  - Decreasing time to merge
+**プルリクエストの健全性**
+- PRマージ率（最終的にマージされたPRの%）
+- PR拒否率と理由
+- マージまでの時間
+- 放棄されたPR率（30日以上活動がない）
+- 健全なパターン:
+  - 60%以上のマージ率
+  - 20%未満の放棄率
+  - マージまでの時間の減少
 
-**Code Quality**
-- Test coverage percentage
-- Linter violation trends
-- Technical debt metrics
-- Security vulnerability reports and fix times
-- Documentation coverage
+**コード品質**
+- テストカバレッジの割合
+- リンター違反の傾向
+- 技術的負債のメトリクス
+- セキュリティ脆弱性レポートと修正時間
+- ドキュメントのカバレッジ
 
-**Release Cadence**
-- Time between releases
-- Release planning transparency
-- Breaking change frequency
-- Healthy Pattern: Predictable, regular release schedule
+**リリースケーデンス**
+- リリース間の時間
+- リリース計画の透明性
+- 破壊的変更の頻度
+- 健全なパターン: 予測可能で定期的なリリーススケジュール
 
-### 5. Sustainability Metrics
+### 5. 持続可能性メトリクス
 
-**Bus Factor**
-- **Definition**: Number of contributors who could leave before project is at risk
-- **Measurement**: Minimum number of contributors accounting for 50% of contributions
-- **Target**: >3 (ideally >5)
-- **Mitigation**: Knowledge sharing, documentation, distributed ownership
+**バスファクター**
+- **定義**: プロジェクトがリスクにさらされる前に離れることができるコントリビューターの数
+- **測定**: 貢献の50%を占める最小のコントリビューター数
+- **目標**: 3以上（理想的には5以上）
+- **軽減**: 知識共有、ドキュメント化、分散所有権
 
-**Contributor Pipeline**
-Track movement through contributor ladder:
-- Users → First-time contributors: Conversion rate
-- First-time → Occasional: Retention rate
-- Occasional → Regular: Progression rate
-- Regular → Committer: Promotion rate
+**コントリビューターパイプライン**
+コントリビューターラダーを通じた移動を追跡:
+- ユーザー→初回コントリビューター: 変換率
+- 初回→時々: 維持率
+- 時々→定期的: 進行率
+- 定期的→コミッター: 昇格率
 
-**Financial Sustainability** (if applicable)
-- Sponsorship/donation trends
-- Grant funding secured
-- Commercial support revenue
-- Runway (months of funding remaining)
+**財務的持続可能性**（該当する場合）
+- スポンサーシップ/寄付の傾向
+- 確保された助成金資金
+- 商業サポート収入
+- ランウェイ（残りの資金の月数）
 
-**Organizational Health**
-- Number of active maintainers
-- Maintainer workload distribution
-- Succession planning status
-- Documented project knowledge
+**組織の健全性**
+- アクティブなメンテナーの数
+- メンテナーのワークロード分布
+- 後継者計画の状況
+- 文書化されたプロジェクト知識
 
-## Measurement Tools and Platforms
+## 測定ツールとプラットフォーム
 
 ### GitHub/GitLab Analytics
 
-**Built-in Metrics**:
-- Insights → Contributors: Contribution graphs
-- Insights → Community: Community profile checklist
-- Pulse: Recent activity summary
-- Traffic: Repository traffic and clones
+**組み込みメトリクス**:
+- Insights → Contributors: 貢献グラフ
+- Insights → Community: コミュニティプロファイルチェックリスト
+- Pulse: 最近の活動の概要
+- Traffic: リポジトリのトラフィックとクローン
 
-**Limitations**: Limited historical data, basic metrics only
+**制限事項**: 限られた履歴データ、基本的なメトリクスのみ
 
 ### CHAOSS Metrics
 
-**CHAOSS Project** (Community Health Analytics Open Source Software)
-- Provides standard metric definitions
-- Open source measurement tools
-- Focus areas: Growth, Maturity, Decline, Diversity, Risk
+**CHAOSSプロジェクト**（Community Health Analytics Open Source Software）
+- 標準的なメトリクス定義を提供
+- オープンソースの測定ツール
+- フォーカスエリア: 成長、成熟、衰退、多様性、リスク
 
-**Key CHAOSS Metrics**:
-- Change Requests: PR/MR activity and efficiency
-- Code Development: Commits, lines changed, reviews
-- Issue Resolution: Issue lifecycle and resolution
-- Community Growth: New contributors, retention
-- Organizational Diversity: Company participation distribution
+**主要なCHAOSSメトリクス**:
+- 変更リクエスト: PR/MR活動と効率
+- コード開発: コミット、変更された行、レビュー
+- イシュー解決: イシューのライフサイクルと解決
+- コミュニティ成長: 新規コントリビューター、維持
+- 組織の多様性: 企業参加の分布
 
-**Tools**: GrimoireLab, Augur
+**ツール**: GrimoireLab、Augur
 
-### Open Source Dashboards
+### オープンソースダッシュボード
 
-**LFX Insights** (Linux Foundation)
-- Comprehensive metrics dashboard
-- Email domain analysis for organizational diversity
-- Geographic diversity tracking
-- Time-series analysis
+**LFX Insights**（Linux Foundation）
+- 包括的なメトリクスダッシュボード
+- 組織の多様性のためのメールドメイン分析
+- 地理的多様性追跡
+- 時系列分析
 
-**Orbit** (Community Platform)
-- Activity tracking across platforms
-- Member profiles and contribution history
-- Engagement scoring
+**Orbit**（コミュニティプラットフォーム）
+- プラットフォーム間の活動追跡
+- メンバープロファイルと貢献履歴
+- エンゲージメントスコアリング
 
 **Bitergia Analytics**
-- Based on CHAOSS metrics
-- Custom dashboards
-- Cross-platform aggregation
+- CHAOSSメトリクスに基づく
+- カスタムダッシュボード
+- クロスプラットフォームの集約
 
-### Custom Analytics
+### カスタムアナリティクス
 
-**Data Sources**:
-- Git history: `git log` analysis
-- GitHub/GitLab API: Issues, PRs, comments
-- Chat platforms: Slack/Discord APIs
-- Forum: Discourse API
-- Mailing lists: Archive analysis
+**データソース**:
+- Git履歴: `git log`分析
+- GitHub/GitLab API: イシュー、PR、コメント
+- チャットプラットフォーム: Slack/Discord API
+- フォーラム: Discourse API
+- メーリングリスト: アーカイブ分析
 
-**Analysis Tools**:
-- Python: pandas, matplotlib for custom analysis
-- SQL: Query structured data
-- Jupyter notebooks: Interactive exploration
+**分析ツール**:
+- Python: pandas、matplotlibでカスタム分析
+- SQL: 構造化データのクエリ
+- Jupyterノートブック: インタラクティブな探索
 
-## Setting Up Metrics Collection
+## メトリクス収集の設定
 
-### 1. Define Goals
+### 1. 目標を定義する
 
-What do you want to improve?
-- Growing contributor base
-- Improving retention
-- Reducing response times
-- Increasing diversity
-- Ensuring sustainability
+何を改善したいですか?
+- コントリビューターベースの成長
+- 維持率の向上
+- 応答時間の短縮
+- 多様性の増加
+- 持続可能性の確保
 
-### 2. Select Metrics
+### 2. メトリクスを選択する
 
-Choose 5-10 key metrics aligned with goals:
-- Leading indicators (predict future state)
-- Lagging indicators (measure past performance)
-- Mix of quantitative and qualitative
+目標に合わせて5〜10の主要メトリクスを選択:
+- 先行指標（将来の状態を予測）
+- 遅行指標（過去のパフォーマンスを測定）
+- 定量的と定性的の組み合わせ
 
-### 3. Establish Baselines
+### 3. ベースラインを確立する
 
-Measure current state:
-- Historical trends (if data available)
-- Current snapshot
-- Industry benchmarks (if available)
+現状を測定:
+- 履歴トレンド（データが利用可能な場合）
+- 現在のスナップショット
+- 業界ベンチマーク（利用可能な場合）
 
-### 4. Set Targets
+### 4. 目標を設定する
 
-Define success:
-- Absolute targets (e.g., 50 new contributors per quarter)
-- Relative targets (e.g., 20% increase in retention)
-- Maintain targets (e.g., keep bus factor >3)
+成功を定義:
+- 絶対目標（例: 四半期あたり50人の新規コントリビューター）
+- 相対目標（例: 維持率を20%増加）
+- 維持目標（例: バスファクターを3以上に保つ）
 
-### 5. Implement Collection
+### 5. 収集を実装する
 
-Automate where possible:
-- Scheduled scripts to gather data
-- Dashboard tools for visualization
-- Regular export and archival
+可能な限り自動化:
+- データを収集するためのスケジュールされたスクリプト
+- 可視化のためのダッシュボードツール
+- 定期的なエクスポートとアーカイブ
 
-### 6. Regular Review
+### 6. 定期的なレビュー
 
-Establish rhythm:
-- Weekly: Operational metrics (response times, PR queue)
-- Monthly: Contribution and engagement trends
-- Quarterly: Strategic metrics (retention, diversity, sustainability)
-- Annually: Comprehensive health assessment
+リズムを確立:
+- 毎週: 運用メトリクス（応答時間、PRキュー）
+- 毎月: 貢献とエンゲージメントの傾向
+- 四半期ごと: 戦略的メトリクス（維持、多様性、持続可能性）
+- 年次: 包括的な健全性評価
 
-## Interpreting Metrics
+## メトリクスの解釈
 
-### Context Matters
+### コンテキストが重要
 
-Consider external factors:
-- **Seasonality**: Holidays, academic calendars, conference schedules
-- **Project Lifecycle**: Maturity stage affects expected patterns
-- **Major Events**: Releases, security issues, leadership changes
-- **Industry Trends**: General shifts in technology adoption
+外部要因を考慮する:
+- **季節性**: 休暇、学年カレンダー、カンファレンススケジュール
+- **プロジェクトライフサイクル**: 成熟段階は期待されるパターンに影響する
+- **主要なイベント**: リリース、セキュリティ問題、リーダーシップの変更
+- **業界トレンド**: テクノロジー採用の一般的なシフト
 
-### Correlated Metrics
+### 相関メトリクス
 
-Look for relationships:
-- Decreased PR merge rate + increased response time = reviewer bottleneck
-- Increased new contributors + decreased retention = onboarding issues
-- Concentrated contributions + low bus factor = sustainability risk
+関係性を探す:
+- PRマージ率の低下 + 応答時間の増加 = レビュアーのボトルネック
+- 新規コントリビューターの増加 + 維持率の低下 = オンボーディングの問題
+- 集中した貢献 + 低いバスファクター = 持続可能性リスク
 
-### Qualitative Context
+### 定性的コンテキスト
 
-Numbers don't tell the whole story:
-- Conduct periodic surveys
-- Hold listening sessions
-- Monitor sentiment in discussions
-- Gather contributor stories
+数字だけでは全体像を語りません:
+- 定期的な調査を実施する
+- リスニングセッションを開催する
+- ディスカッションでの感情を監視する
+- コントリビューターのストーリーを収集する
 
-## Acting on Metrics
+## メトリクスに基づく行動
 
-### Response Times Too High
+### 応答時間が高すぎる
 
-**Actions**:
-- Recruit more reviewers/triagers
-- Implement PR size limits
-- Create triage guidelines
-- Set up automated labeling
-- Establish response time SLAs
+**アクション**:
+- より多くのレビュアー/トリアージャーを募集する
+- PRサイズ制限を実装する
+- トリアージガイドラインを作成する
+- 自動ラベリングを設定する
+- 応答時間SLAを確立する
 
-### Low Contributor Retention
+### コントリビューターの維持率が低い
 
-**Actions**:
-- Improve first-time contributor experience
-- Implement mentorship program
-- Create "good first issue" pipeline
-- Gather exit feedback from departed contributors
-- Recognize contributions publicly
+**アクション**:
+- 初回コントリビューター体験を改善する
+- メンターシッププログラムを実装する
+- 「good first issue」パイプラインを作成する
+- 去ったコントリビューターから退出フィードバックを収集する
+- 貢献を公に認識する
 
-### High Contribution Concentration
+### 貢献の集中度が高い
 
-**Actions**:
-- Identify domain experts to elevate
-- Document tribal knowledge
-- Distribute subsystem ownership
-- Implement succession planning
-- Recruit in underserved areas
+**アクション**:
+- 昇格させるドメインエキスパートを特定する
+- 部族的知識を文書化する
+- サブシステムの所有権を分散する
+- 後継者計画を実装する
+- 不足している領域で募集する
 
-### Declining Contributor Growth
+### コントリビューター成長の減少
 
-**Actions**:
-- Marketing and outreach campaigns
-- Conference presence
-- Improve documentation
-- Reduce barriers to entry
-- Showcase compelling use cases
+**アクション**:
+- マーケティングとアウトリーチキャンペーン
+- カンファレンスでの存在感
+- ドキュメントを改善する
+- 参入障壁を減らす
+- 説得力のあるユースケースを紹介する
 
-### Diversity Gaps
+### 多様性のギャップ
 
-**Actions**:
-- Partner with diversity-focused organizations
-- Sponsor underrepresented contributors
-- Review language and imagery for inclusivity
-- Implement blind review processes
-- Ensure accessible communication tools
+**アクション**:
+- 多様性重視の組織とパートナーシップを組む
+- 過小評価されているコントリビューターをスポンサーする
+- 包括性のために言語と画像をレビューする
+- ブラインドレビュープロセスを実装する
+- アクセス可能なコミュニケーションツールを確保する
 
-## Metric Pitfalls to Avoid
+## 避けるべきメトリクスの落とし穴
 
-### Vanity Metrics
+### 虚栄メトリクス
 
-**Avoid Focusing On**:
-- Total stars/forks (popularity ≠ health)
-- Total download count (usage ≠ community)
-- Commit count alone (quantity ≠ quality)
+**焦点を避けるべき対象**:
+- 総スター数/フォーク数（人気≠健全性）
+- 総ダウンロード数（使用≠コミュニティ）
+- コミット数のみ（量≠質）
 
-**Instead Focus On**:
-- Contributor retention and growth
-- Contribution quality and impact
-- Community engagement depth
+**代わりに焦点を当てるべき対象**:
+- コントリビューターの維持と成長
+- 貢献の質と影響
+- コミュニティエンゲージメントの深さ
 
-### Gaming Metrics
+### メトリクスのゲーミング
 
-When metrics become targets, people optimize for the metric rather than the goal:
-- **Problem**: Counting commits leads to commit spam
-- **Solution**: Measure meaningful changes, not commit count
+メトリクスが目標になると、人々は目標ではなくメトリクスを最適化します:
+- **問題**: コミットをカウントするとコミットスパムが発生
+- **解決策**: コミット数ではなく、意味のある変更を測定
 
-- **Problem**: Rewarding issue closure leads to premature closes
-- **Solution**: Measure issue resolution quality, gather feedback
+- **問題**: イシュークローズを報酬にすると早期クローズが発生
+- **解決策**: イシュー解決の質を測定し、フィードバックを収集
 
-### Metric Obsession
+### メトリクスへの執着
 
-Remember:
-- Metrics are indicators, not goals
-- Qualitative feedback matters
-- Community health is multifaceted
-- Some important factors resist quantification
+覚えておいてください:
+- メトリクスは目標ではなく指標
+- 定性的フィードバックが重要
+- コミュニティの健全性は多面的
+- 一部の重要な要素は定量化に抵抗する
 
-## Reporting and Transparency
+## レポートと透明性
 
-### Public Health Reports
+### 公開健全性レポート
 
-Share metrics with community:
-- Monthly/quarterly blog posts
-- Annual state of the community report
-- Real-time dashboards (where appropriate)
+コミュニティとメトリクスを共有:
+- 月次/四半期ブログ投稿
+- 年次コミュニティの状態レポート
+- リアルタイムダッシュボード（適切な場合）
 
-**Benefits**:
-- Transparency builds trust
-- Attracts contributors who value health
-- Enables community-driven improvements
-- Demonstrates commitment to sustainability
+**メリット**:
+- 透明性が信頼を構築
+- 健全性を重視するコントリビューターを引き付ける
+- コミュニティ主導の改善を可能にする
+- 持続可能性へのコミットメントを実証
 
-### Private Analysis
+### プライベート分析
 
-Some metrics remain internal:
-- Individual contributor performance (avoid public ranking)
-- Sensitive organizational data
-- Pre-decision strategic planning
+一部のメトリクスは内部に保つ:
+- 個々のコントリビューターのパフォーマンス（公開ランキングを避ける）
+- 機密の組織データ
+- 意思決定前の戦略的計画
 
-## Example Metrics Dashboard
+## メトリクスダッシュボードの例
 
-### Weekly Operational View
-
-```
-Community Health - Week of [Date]
-
-🚀 Contributions
-- PRs opened: 45 (↑ 12% vs. last week)
-- PRs merged: 38 (↓ 5% vs. last week)
-- Issues opened: 23 (→ same as last week)
-- Issues closed: 27 (↑ 17% vs. last week)
-
-⏱️ Response Times
-- Issue first response: 18 hours median (target: <24h) ✅
-- PR first review: 36 hours median (target: <48h) ✅
-- PR merge time: 5.2 days median
-
-👥 Contributors
-- Active contributors: 67
-- First-time contributors: 8 (👏)
-- Returning contributors: 12
-
-⚠️ Attention Needed
-- 15 PRs awaiting review >5 days
-- 8 issues with no response >48 hours
-- Reviewer @alice approaching burnout (20 reviews this week)
-```
-
-### Quarterly Strategic View
+### 週次運用ビュー
 
 ```
-Q2 2025 Community Health Report
+コミュニティヘルス - [日付]の週
 
-📈 Growth
-- New contributors: 89 (+15% vs. Q1)
-- Retention (2+ contributions): 42% (target: 40%) ✅
-- Total active contributors: 234 (+8% vs. Q1)
+🚀 貢献
+- 開かれたPR: 45（先週比 ↑ 12%）
+- マージされたPR: 38（先週比 ↓ 5%）
+- 開かれたイシュー: 23（先週と同じ →）
+- クローズされたイシュー: 27（先週比 ↑ 17%）
 
-🌍 Diversity
-- Geographic: 42 countries represented
-- Organizational: 78 organizations (+12 vs. Q1)
-- Top company contribution: 35% (target: <40%) ✅
+⏱️ 応答時間
+- イシューの最初の応答: 中央値18時間（目標: <24時間）✅
+- PRの最初のレビュー: 中央値36時間（目標: <48時間）✅
+- PRマージ時間: 中央値5.2日
 
-💪 Sustainability
-- Bus factor: 7 (target: >5) ✅
-- Maintainer count: 12 (stable)
-- Avg maintainer tenure: 2.3 years
+👥 コントリビューター
+- アクティブなコントリビューター: 67
+- 初回コントリビューター: 8 (👏)
+- 戻ってきたコントリビューター: 12
 
-📊 Project Health
-- Issue close rate: 1.2 (closing more than opening) ✅
-- PR merge rate: 73% (target: >70%) ✅
-- Test coverage: 82% (+3% vs. Q1)
-- Avg response time: 24 hours (target: <48h) ✅
-
-🎯 Goals for Q3
-1. Increase newcomer retention to 50%
-2. Launch mentorship program
-3. Improve documentation coverage to 90%
-4. Reduce PR merge time to <4 days
+⚠️ 注意が必要
+- 5日以上レビュー待ちのPRが15件
+- 48時間以上応答がないイシューが8件
+- レビュアー@aliceが燃え尽き症候群に近づいている（今週20件のレビュー）
 ```
 
-## Resources
+### 四半期戦略ビュー
+
+```
+2025年Q2コミュニティヘルスレポート
+
+📈 成長
+- 新規コントリビューター: 89（Q1比 +15%）
+- 維持（2回以上の貢献）: 42%（目標: 40%）✅
+- 総アクティブコントリビューター: 234（Q1比 +8%）
+
+🌍 多様性
+- 地理的: 42カ国が代表
+- 組織: 78組織（Q1比 +12）
+- トップ企業の貢献: 35%（目標: <40%）✅
+
+💪 持続可能性
+- バスファクター: 7（目標: >5）✅
+- メンテナー数: 12（安定）
+- 平均メンテナー在任期間: 2.3年
+
+📊 プロジェクト健全性
+- イシュークローズ率: 1.2（開かれるより多くクローズ）✅
+- PRマージ率: 73%（目標: >70%）✅
+- テストカバレッジ: 82%（Q1比 +3%）
+- 平均応答時間: 24時間（目標: <48時間）✅
+
+🎯 Q3の目標
+1. 新参者の維持率を50%に増加
+2. メンターシッププログラムを開始
+3. ドキュメントカバレッジを90%に改善
+4. PRマージ時間を4日未満に短縮
+```
+
+## リソース
 
 - CHAOSS Metrics: https://chaoss.community/metrics/
 - LFX Insights: https://insights.lfx.linuxfoundation.org/
 - GitHub Community Insights: https://docs.github.com/en/communities
-- "Measuring Open Source Community Health" (O'Reilly): https://www.oreilly.com/library/view/measuring-open-source/
-- Mozilla's Open Source Archetypes: https://blog.mozilla.org/opendesign/open-source-archetypes/
+- 「Measuring Open Source Community Health」(O'Reilly): https://www.oreilly.com/library/view/measuring-open-source/
+- Mozillaのオープンソースアーキタイプ: https://blog.mozilla.org/opendesign/open-source-archetypes/
