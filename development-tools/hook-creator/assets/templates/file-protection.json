@@ -1,0 +1,24 @@
+{
+  "hooks": [
+    {
+      "matcher": "Edit|Write",
+      "hooks": [
+        {
+          "hookEventName": "PreToolUse",
+          "command": "jq -r '.tool_input.file_path | select(test(\"^(production/|prod/|dist/|build/)\"))' | grep -q . && echo '🚫 Error: Cannot modify production/build files. Please modify source files instead.' >&2 && exit 2 || exit 0",
+          "timeout": 5
+        },
+        {
+          "hookEventName": "PreToolUse",
+          "command": "jq -r '.tool_input.file_path | select(test(\"\\\\.env$|credentials|secrets|private-key|secret\"))' | grep -q . && echo '🔒 Error: Cannot modify sensitive files. Please update manually for security.' >&2 && exit 2 || exit 0",
+          "timeout": 5
+        },
+        {
+          "hookEventName": "PreToolUse",
+          "command": "jq -r '.tool_input.file_path | select(test(\"node_modules/|vendor/|venv/|__pycache__/\"))' | grep -q . && echo '⚠️  Error: Cannot modify dependency directories. Please update package manager files instead.' >&2 && exit 2 || exit 0",
+          "timeout": 5
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "hooks": [
+    {
+      "matcher": "*",
+      "hooks": [
+        {
+          "hookEventName": "PostToolUse",
+          "command": "jq -c '{timestamp: now | strftime(\"%Y-%m-%d %H:%M:%S\"), session: .session_id, tool: .tool_name, input: .tool_input}' >> ~/.claude/audit.log",
+          "timeout": 5
+        },
+        {
+          "hookEventName": "SessionStart",
+          "command": "echo \"[$(date '+%Y-%m-%d %H:%M:%S')] Session started: $(jq -r '.session_id') in $(jq -r '.cwd')\" >> ~/.claude/sessions.log",
+          "timeout": 5
+        },
+        {
+          "hookEventName": "SessionEnd",
+          "command": "echo \"[$(date '+%Y-%m-%d %H:%M:%S')] Session ended: $(jq -r '.session_id')\" >> ~/.claude/sessions.log",
+          "timeout": 5
+        }
+      ]
+    }
+  ]
+}

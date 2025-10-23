@@ -1,0 +1,14 @@
+{
+  "hooks": [
+    {
+      "matcher": "*",
+      "hooks": [
+        {
+          "hookEventName": "UserPromptSubmit",
+          "command": "echo \"📍 Current Git Branch: $(git branch --show-current 2>/dev/null || echo 'N/A')\" && echo \"📝 Recent Commits:\" && git log -3 --oneline 2>/dev/null || echo 'No git repository'",
+          "timeout": 10
+        }
+      ]
+    }
+  ]
+}
