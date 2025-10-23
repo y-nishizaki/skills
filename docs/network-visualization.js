@@ -3,10 +3,6 @@
  * Extracts keywords from skills and generates network visualization data
  */
 
-// ネットワーク図関連の変数
-let network = null;
-let networkData = null;
-
 /**
  * 日本語テキストから単語を抽出（簡易版）
  * @param {string} text - 抽出元のテキスト
