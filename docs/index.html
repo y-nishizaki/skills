@@ -14,6 +14,10 @@
     <!-- テーマカラー -->
     <meta name="theme-color" content="#94a3b8">
 
+    <!-- Vis.js for network visualization -->
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link href="https://unpkg.com/vis-network/styles/vis-network.min.css" rel="stylesheet" type="text/css" />
+
     <!-- PWA用のメタタグ -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -410,6 +414,155 @@
                 padding: 16px;
             }
         }
+
+        /* ネットワーク図のスタイル */
+        #networkModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        #networkModal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .network-container {
+            background: white;
+            border-radius: 16px;
+            width: 95%;
+            height: 90%;
+            max-width: 1400px;
+            max-height: 900px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .network-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .network-header h2 {
+            font-size: 1.5em;
+            color: #1e293b;
+            margin: 0;
+        }
+
+        .close-btn {
+            background: #475569;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 1em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: #334155;
+        }
+
+        .network-controls {
+            padding: 16px 24px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .network-controls label {
+            font-weight: 500;
+            color: #475569;
+        }
+
+        .network-controls input[type="range"] {
+            width: 150px;
+        }
+
+        .network-controls select {
+            padding: 6px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 0.95em;
+        }
+
+        #networkViz {
+            flex: 1;
+            position: relative;
+            background: #f8fafc;
+        }
+
+        .network-toggle-btn {
+            background: white;
+            border: 2px solid #475569;
+            color: #475569;
+            min-height: 44px;
+            padding: 10px 20px;
+            border-radius: 22px;
+            font-size: 1em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            outline: none;
+            white-space: nowrap;
+            margin-bottom: 16px;
+        }
+
+        .network-toggle-btn:hover {
+            background: #475569;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .network-info {
+            padding: 12px 24px;
+            background: #f1f5f9;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.9em;
+            color: #64748b;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .network-container {
+                width: 100%;
+                height: 100%;
+                border-radius: 0;
+            }
+
+            .network-header {
+                padding: 16px;
+            }
+
+            .network-header h2 {
+                font-size: 1.2em;
+            }
+
+            .network-controls {
+                padding: 12px 16px;
+                font-size: 0.9em;
+            }
+
+            .network-controls input[type="range"] {
+                width: 100px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -425,6 +578,12 @@
 
         <div class="stats">
             <span id="skillCount">0</span> 個のスキルが利用可能
+        </div>
+
+        <div style="text-align: center; margin-bottom: 24px;">
+            <button class="network-toggle-btn" onclick="showNetworkVisualization()">
+                スキルネットワーク図を表示
+            </button>
         </div>
 
         <div class="category-filters-wrapper">
@@ -459,6 +618,33 @@
                 Anthropic の Claude Code 向けに構築
             </p>
         </footer>
+    </div>
+
+    <!-- ネットワーク図モーダル -->
+    <div id="networkModal">
+        <div class="network-container">
+            <div class="network-header">
+                <h2>スキルネットワーク図</h2>
+                <button class="close-btn" onclick="closeNetworkVisualization()">閉じる</button>
+            </div>
+            <div class="network-controls">
+                <label>
+                    最小共通単語数:
+                    <input type="range" id="minCommonWords" min="1" max="5" value="2" oninput="updateNetwork()">
+                    <span id="minCommonWordsValue">2</span>
+                </label>
+                <label>
+                    表示カテゴリ:
+                    <select id="categoryFilter" onchange="updateNetwork()">
+                        <option value="all">すべて</option>
+                    </select>
+                </label>
+            </div>
+            <div id="networkViz"></div>
+            <div class="network-info">
+                ノードをクリックするとスキルの詳細が表示されます。共通する単語を持つスキル同士が線で繋がっています。
+            </div>
+        </div>
     </div>
 
     <script>
@@ -698,6 +884,257 @@
 
         // ページ読み込み時にスキルを読み込む
         loadSkills();
+
+        // ネットワーク図関連の変数
+        let network = null;
+        let networkData = null;
+
+        // 日本語テキストから単語を抽出（簡易版）
+        function extractKeywords(text) {
+            // ストップワードリスト（除外する単語）
+            const stopWords = new Set([
+                'の', 'は', 'を', 'に', 'が', 'で', 'と', 'する', 'から', 'まで',
+                'や', 'も', 'として', 'により', 'について', 'における', 'ため',
+                'こと', 'もの', 'れる', 'られる', 'させる', 'せる', 'できる',
+                '等', 'など', 'さらに', 'また', 'および', 'または', 'ただし',
+                'これ', 'それ', 'あれ', 'この', 'その', 'あの', 'どの',
+                'ある', 'いる', 'なる', 'です', 'ます', 'だ', 'である',
+                'に関する', 'に対する', 'による', 'によって', '使用', '活用'
+            ]);
+
+            // テキストを2-5文字の単語に分割（簡易的な方法）
+            const words = new Set();
+            const cleanText = text.replace(/[、。！？\s\-_]/g, '');
+
+            // カタカナ・ひらがな・漢字の連続を抽出
+            const patterns = [
+                /[ァ-ヶー]{2,}/g,  // カタカナ
+                /[ぁ-ん]{2,}/g,    // ひらがな
+                /[一-龯]{2,}/g     // 漢字
+            ];
+
+            patterns.forEach(pattern => {
+                const matches = text.match(pattern);
+                if (matches) {
+                    matches.forEach(word => {
+                        if (word.length >= 2 && word.length <= 6 && !stopWords.has(word)) {
+                            words.add(word);
+                        }
+                    });
+                }
+            });
+
+            // 英数字の単語も抽出
+            const engWords = text.match(/[A-Za-z]{3,}/g);
+            if (engWords) {
+                engWords.forEach(word => {
+                    const lower = word.toLowerCase();
+                    if (lower.length >= 3 && lower.length <= 15) {
+                        words.add(lower);
+                    }
+                });
+            }
+
+            return Array.from(words);
+        }
+
+        // スキルから単語を抽出
+        function analyzeSkills() {
+            return allSkills.map(skill => {
+                const text = `${skill.name} ${skill.description} ${skill.category}`;
+                const keywords = extractKeywords(text);
+                return {
+                    ...skill,
+                    keywords: keywords
+                };
+            });
+        }
+
+        // ネットワークデータを生成
+        function generateNetworkData(minCommonWords = 2, categoryFilter = 'all') {
+            const analyzedSkills = analyzeSkills();
+
+            // カテゴリでフィルタリング
+            const filteredSkills = categoryFilter === 'all'
+                ? analyzedSkills
+                : analyzedSkills.filter(s => s.category === categoryFilter);
+
+            // ノードを作成
+            const nodes = filteredSkills.map(skill => ({
+                id: skill.id,
+                label: skill.name,
+                title: `${skill.name}\n${skill.description}`,
+                group: skill.category,
+                keywords: skill.keywords
+            }));
+
+            // エッジを作成（共通する単語を持つスキル同士を繋ぐ）
+            const edges = [];
+            const edgeMap = new Map();
+
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const node1 = nodes[i];
+                    const node2 = nodes[j];
+
+                    // 共通する単語を見つける
+                    const commonWords = node1.keywords.filter(word =>
+                        node2.keywords.includes(word)
+                    );
+
+                    if (commonWords.length >= minCommonWords) {
+                        const edgeId = `${node1.id}-${node2.id}`;
+                        edges.push({
+                            id: edgeId,
+                            from: node1.id,
+                            to: node2.id,
+                            value: commonWords.length,
+                            title: `共通単語: ${commonWords.join(', ')}`,
+                            commonWords: commonWords
+                        });
+                    }
+                }
+            }
+
+            return { nodes, edges };
+        }
+
+        // ネットワーク図を表示
+        function showNetworkVisualization() {
+            const modal = document.getElementById('networkModal');
+            modal.classList.add('active');
+
+            // カテゴリフィルターを初期化
+            const categorySelect = document.getElementById('categoryFilter');
+            const categories = [...new Set(allSkills.map(s => s.category))].sort();
+            categorySelect.innerHTML = '<option value="all">すべて</option>';
+            categories.forEach(cat => {
+                const displayName = categoryNames[cat] || cat;
+                const option = document.createElement('option');
+                option.value = cat;
+                option.textContent = displayName;
+                categorySelect.appendChild(option);
+            });
+
+            // ネットワーク図を描画
+            updateNetwork();
+        }
+
+        // ネットワーク図を更新
+        function updateNetwork() {
+            const minCommonWords = parseInt(document.getElementById('minCommonWords').value);
+            const categoryFilter = document.getElementById('categoryFilter').value;
+
+            document.getElementById('minCommonWordsValue').textContent = minCommonWords;
+
+            networkData = generateNetworkData(minCommonWords, categoryFilter);
+
+            const container = document.getElementById('networkViz');
+
+            // カテゴリごとの色を定義
+            const categoryColors = {
+                'マーケティング': '#ef4444',
+                '小売': '#f59e0b',
+                '設計': '#10b981',
+                'AWS基礎': '#3b82f6',
+                'AWSコンピューティング': '#6366f1',
+                'DevOps': '#8b5cf6',
+                'Databricks基礎': '#ec4899',
+                'サプライチェーン': '#14b8a6',
+                '分析': '#06b6d4',
+                'コード生成': '#84cc16',
+                'コード品質': '#22c55e',
+                '開発ツール': '#0ea5e9',
+                '共通': '#64748b',
+                'テスト': '#f97316',
+                '思考スキル': '#a855f7'
+            };
+
+            const options = {
+                nodes: {
+                    shape: 'dot',
+                    size: 16,
+                    font: {
+                        size: 14,
+                        face: 'Arial, sans-serif'
+                    },
+                    borderWidth: 2,
+                    shadow: true
+                },
+                edges: {
+                    width: 1,
+                    color: { inherit: 'from' },
+                    smooth: {
+                        type: 'continuous'
+                    },
+                    arrows: {
+                        to: false
+                    }
+                },
+                groups: {},
+                physics: {
+                    forceAtlas2Based: {
+                        gravitationalConstant: -50,
+                        centralGravity: 0.01,
+                        springLength: 100,
+                        springConstant: 0.08,
+                        damping: 0.4,
+                        avoidOverlap: 0.5
+                    },
+                    maxVelocity: 50,
+                    solver: 'forceAtlas2Based',
+                    timestep: 0.35,
+                    stabilization: {
+                        enabled: true,
+                        iterations: 150,
+                        updateInterval: 25
+                    }
+                },
+                interaction: {
+                    hover: true,
+                    tooltipDelay: 100,
+                    navigationButtons: true,
+                    keyboard: true
+                }
+            };
+
+            // カテゴリごとのグループ設定
+            Object.entries(categoryColors).forEach(([category, color]) => {
+                options.groups[category] = { color: { background: color, border: color } };
+            });
+
+            network = new vis.Network(container, networkData, options);
+
+            // ノードクリック時の処理
+            network.on('click', function(params) {
+                if (params.nodes.length > 0) {
+                    const nodeId = params.nodes[0];
+                    const skill = allSkills.find(s => s.id === nodeId);
+                    if (skill) {
+                        window.open(`https://github.com/y-nishizaki/skills/tree/main/${skill.path}`, '_blank');
+                    }
+                }
+            });
+        }
+
+        // ネットワーク図を閉じる
+        function closeNetworkVisualization() {
+            const modal = document.getElementById('networkModal');
+            modal.classList.remove('active');
+
+            // ネットワークを破棄
+            if (network) {
+                network.destroy();
+                network = null;
+            }
+        }
+
+        // ESCキーでモーダルを閉じる
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeNetworkVisualization();
+            }
+        });
     </script>
 </body>
 </html>
