@@ -117,6 +117,9 @@ python3 scripts/check_quality.py <path-to-skills-directory>
    - YAMLフロントマターの存在と形式
    - 必須フィールド（name、description）の確認
    - ディレクトリ構造の標準への準拠
+     - 標準的なディレクトリ: `scripts/`, `references/`, `assets/`, `templates/`, `examples/`
+     - 標準的なファイル: `examples.md`, `reference.md`
+     - すべてのリソースはオプションだが、存在する場合は標準的な名前を使用
 
 2. **ドキュメントの品質**:
    - 説明の明確性と具体性

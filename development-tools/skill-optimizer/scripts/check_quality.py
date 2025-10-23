@@ -92,7 +92,7 @@ class QualityChecker:
             issues.append(f'ディレクトリ名がケバブケースではありません: {dir_name}')
 
         # 不要なファイル・ディレクトリの確認
-        allowed_items = {'SKILL.md', 'scripts', 'references', 'assets', 'examples.md', 'reference.md'}
+        allowed_items = {'SKILL.md', 'scripts', 'references', 'assets', 'examples.md', 'reference.md', 'templates', 'examples'}
         for item in skill_dir.iterdir():
             if item.name not in allowed_items and not item.name.startswith('.'):
                 issues.append(f'標準外のファイル/ディレクトリ: {item.name}')
