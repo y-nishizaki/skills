@@ -315,6 +315,15 @@ Claude Code自体を拡張するためのメタツール。
 
 - **code-creation** - 新規コード作成
 
+### ドキュメント処理 (document-processing/)
+
+ビジネスドキュメントの作成、編集、分析。
+
+- **word-documents** - Word文書の作成・編集・分析
+- **pdf-documents** - PDFの作成・編集・抽出
+- **presentations** - PowerPointプレゼンテーションの作成・編集
+- **spreadsheets** - Excelスプレッドシートの作成・編集・分析
+
 ### 分析・調査 (analysis/)
 
 データ分析、リサーチ、ドキュメント作成。
