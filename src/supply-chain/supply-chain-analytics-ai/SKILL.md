@@ -607,6 +607,14 @@ AI人材の育成：
 
 ## 他スキルとの連携
 
+### 前提スキル: supply-chain-data-analytics
+
+このスキルの前に以下を習得することを推奨：
+
+1. supply-chain-data-analytics でデータ分析の基礎を学ぶ
+2. EDA、可視化、基本的な統計分析を習得
+3. その後、このスキルで高度なAI/機械学習に進む
+
 ### supply-chain-analytics-ai → demand-forecasting
 
 AIで需要予測を高度化：

@@ -10,7 +10,7 @@ description: 商品開発プロジェクトを計画し、リソースを配分�
 **このスキルは、プロジェクトマネジメントの基礎スキルです。**
 
 業界特化の応用については、以下を参照してください：
-- **Eコマース**: `ecommerce/ec-project-management/SKILL.md`
+- **Eコマース**: `e-commerce/ec-project-management/SKILL.md`
 - **マーケティング**: `marketing/marketing-project-management/SKILL.md`
 - **サプライチェーン**: `supply-chain/supply-chain-project-management/SKILL.md`
 

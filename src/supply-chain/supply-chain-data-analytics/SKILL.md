@@ -288,6 +288,11 @@ Power BI / Tableau:
 
 ## 他スキルとの連携
 
+### supply-chain-data-analytics → supply-chain-analytics-ai
+1. このスキルでデータ分析の基礎を習得
+2. supply-chain-analytics-ai で高度なAI/機械学習に進む
+3. MLOps、デプロイ、組織への定着まで実現
+
 ### supply-chain-data-analytics → demand-forecasting
 1. このスキルでデータ分析基盤構築
 2. 需要予測に特化した分析

@@ -661,49 +661,49 @@
     "id": "ec-data-automation",
     "name": "ec-data-automation",
     "description": "ECサイトのデータ分析基盤構築と業務自動化を支援するスキル。RPA、Python/スクリプト自動化、ETL/データパイプライン、BigQuery等のデータ基盤、レコメンドアルゴリズム、機械学習、AIエージェント（2025年）に使用される。",
-    "path": "src/ecommerce/ec-data-automation",
+    "path": "src/e-commerce/ec-data-automation",
     "category": "EC"
   },
   {
     "id": "ec-development",
     "name": "ec-development",
     "description": "ECサイトの開発に必要な技術スキルを提供するスキル。フロントエンド（React/Next.js/Vue.js）、バックエンド（PHP/Python/Node.js）、ECプラットフォーム（Shopify/Magento/WooCommerce）、API連携、決済ゲートウェイ統合、セキュリティ対策などの開発業務に使用される。",
-    "path": "src/ecommerce/ec-development",
+    "path": "src/e-commerce/ec-development",
     "category": "EC"
   },
   {
     "id": "ec-marketing-analytics",
     "name": "ec-marketing-analytics",
     "description": "ECサイトのマーケティング戦略とデータ分析を支援するスキル。SEO、SNS広告運用（Google Ads/Meta Ads/TikTok Ads）、メールマーケティング、CRM、Google Analytics（GA4）分析、リターゲティング、AIマーケティング（2025年）に使用される。",
-    "path": "src/ecommerce/ec-marketing-analytics",
+    "path": "src/e-commerce/ec-marketing-analytics",
     "category": "EC"
   },
   {
     "id": "ec-operations-logistics",
     "name": "ec-operations-logistics",
     "description": "ECサイトの運営業務と物流管理を支援するスキル。在庫管理、受発注管理、WMS（倉庫管理システム）、配送管理、カスタマーサポート、レビュー・口コミ運用など、ECサイトの日常運営業務に使用される。",
-    "path": "src/ecommerce/ec-operations-logistics",
+    "path": "src/e-commerce/ec-operations-logistics",
     "category": "EC"
   },
   {
     "id": "ec-project-management",
     "name": "ec-project-management",
     "description": "ECサイトのプロジェクト管理を支援するスキル。アジャイル開発（スクラム）、要件定義、ベンダー管理、予算・スケジュール管理、ステークホルダー管理など、ECプロジェクトの計画・実行・監視に使用される。",
-    "path": "src/ecommerce/ec-project-management",
+    "path": "src/e-commerce/ec-project-management",
     "category": "EC"
   },
   {
     "id": "ec-strategy-planning",
     "name": "ec-strategy-planning",
     "description": "ECサイトのビジネス戦略立案と企画を支援するスキル。B2C、B2B、D2Cなどのビジネスモデル設計、マーケットリサーチ、カスタマージャーニー設計、KPI・LTV分析などの戦略的意思決定に使用される。",
-    "path": "src/ecommerce/ec-strategy-planning",
+    "path": "src/e-commerce/ec-strategy-planning",
     "category": "EC"
   },
   {
     "id": "ec-ui-ux-design",
     "name": "ec-ui-ux-design",
     "description": "ECサイトのUIデザインとUX最適化を支援するスキル。商品ページ設計、レスポンシブデザイン、ヒートマップ分析、A/Bテスト、コンバージョン率最適化（CRO）、2025年のデザイントレンド（AI活用、3Dグラフィック等）に使用される。",
-    "path": "src/ecommerce/ec-ui-ux-design",
+    "path": "src/e-commerce/ec-ui-ux-design",
     "category": "EC"
   },
   {
@@ -962,7 +962,7 @@
     "id": "ecommerce-integration",
     "name": "オンライン販売との連携知識",
     "description": "小売業におけるオンライン販売連携スキル。オムニチャネル戦略、EC在庫連携、BOPIS（Buy Online Pick-up In Store）などの実践方法を提供",
-    "path": "src/retail/ecommerce-integration",
+    "path": "src/retail/e-commerce-integration",
     "category": "小売"
   },
   {
