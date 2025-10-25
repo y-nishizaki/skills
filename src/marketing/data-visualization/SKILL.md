@@ -853,13 +853,37 @@ Webダッシュボード       JavaScript (D3.js), Plotly
 
 ## 他スキルとの連携
 
-### data-visualization → marketing-analytics
+### data-visualization ↔ marketing-analytics
 
-マーケティング分析結果の可視化：
+マーケティング分析結果の可視化（双方向連携）：
 
-1. marketing-analytics でデータを分析
-2. このスキルで分析結果をダッシュボード化
-3. ステークホルダーへの定期レポート自動化
+**marketing-analytics → data-visualization:**
+
+1. [`marketing-analytics`](/src/marketing/marketing-analytics/SKILL.md) でKPI設計、A/Bテスト、Google Analytics分析を実施
+2. このスキルで分析結果を効果的なダッシュボードに変換
+3. ステークホルダーへの説得力ある定期レポート作成
+
+**data-visualization → marketing-analytics:**
+
+1. このスキルでダッシュボードを構築し、パターンを発見
+2. marketing-analytics スキルで統計的検証とROI分析
+3. データドリブンな施策改善サイクルを実現
+
+### data-visualization ↔ data-analysis
+
+データ分析と可視化の統合（双方向連携）：
+
+**data-analysis → data-visualization:**
+
+1. [`data-analysis`](/src/analysis/data-analysis/SKILL.md) で探索的データ分析、仮説検証を実施
+2. このスキルで分析結果を視覚的に伝えるストーリーを構築
+3. 洞察を効果的にプレゼンテーション
+
+**data-visualization → data-analysis:**
+
+1. このスキルでダッシュボードから異常値や傾向を発見
+2. data-analysis スキルで統計的分析と仮説検証を深掘り
+3. 継続的な分析と改善のサイクルを構築
 
 ### data-visualization → marketing-strategy-stp
 
