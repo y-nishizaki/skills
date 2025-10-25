@@ -1,6 +1,6 @@
 # 商品開発スキル（Product Development Skills）
 
-商品開発に必要な包括的なスキルセットを提供します。企画・リサーチから販売・展開まで、商品開発のライフサイクル全体をカバーする18のスキルが含まれています。
+商品開発に必要な包括的なスキルセットを提供します。企画・リサーチから販売・展開まで、商品開発のライフサイクル全体をカバーする13のスキルが含まれています。
 
 ## 概要
 
@@ -8,13 +8,13 @@
 
 ## スキルの構成
 
-商品開発のフェーズごとに整理された18のスキル：
+商品開発のフェーズごとに整理された13のスキル（一部のスキルは他カテゴリを参照）：
 
 ### 1. 企画・リサーチ段階（Planning & Research）
 
 商品開発の起点となる重要なフェーズ。市場を理解し、顧客インサイトを発掘し、新しいアイデアを創出する。
 
-- **[market-research](planning-research/market-research/)** - 市場調査
+- **market-research** - 市場調査 → [marketing/market-research](../marketing/market-research/)を参照
   - 消費者ニーズ、競合状況、市場トレンドを体系的に分析
   - マーケットインのアプローチで「売れる確率の高い」商品を開発
   - 定量調査と定性調査を組み合わせた多角的な市場理解
@@ -57,7 +57,7 @@
   - スコープ、時間、コスト、品質のバランス
   - リスク管理とステークホルダーコミュニケーション
 
-- **[design-thinking](development/design-thinking/)** - デザイン思考
+- **design-thinking** - デザイン思考 → [thinking-skills/design-thinking](../thinking-skills/design-thinking/)を参照
   - ユーザー中心で課題を定義し、解決策を形にする
   - 5ステップ：共感→定義→アイデア→プロトタイプ→テスト
   - 反復的なプロセスで素早く改善
@@ -109,7 +109,7 @@
 
 全フェーズで共通して必要となる、商品開発を成功に導く人間力。
 
-- **[leadership](soft-skills/leadership/)** - リーダーシップ
+- **leadership** - リーダーシップ → [interpersonal-skills/collaboration-negotiation/leadership](../interpersonal-skills/collaboration-negotiation/leadership/)を参照
   - ビジョンを示し、多様なメンバーを導く
   - 意思決定と優先順位付けの明確化
   - チームのモチベーションと成長を促進
@@ -119,7 +119,7 @@
   - 経験から学び、知識を応用する能力
   - 変化を機会と捉える成長マインドセット
 
-- **[creativity](soft-skills/creativity/)** - 創造性
+- **creativity** - 創造性 → [thinking-skills/creative-ideation](../thinking-skills/creative-ideation/)を参照
   - 既存の枠組みを超えて新しい価値を生み出す
   - 多様な視点を組み合わせて独創的なアイデアを創出
   - 制約をイノベーションの機会に変える
