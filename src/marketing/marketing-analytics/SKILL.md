@@ -422,52 +422,38 @@ correlation = df[['pageviews', 'session_duration', 'conversion_rate']].corr()
   → コンテンツの質を高めて滞在時間を延ばす施策が有効
 ```
 
-### フェーズ5: ダッシュボード構築
+### フェーズ5: レポーティングとダッシュボード
 
-**ステップ1: ダッシュボード設計**
+> **📊 詳細なダッシュボード設計・可視化について:**
+> 高度な可視化ツール（Tableau、Looker、Power BI等）の選択、
+> ダッシュボード設計原則、デザインベストプラクティス、ストーリーテリングなど、
+> 詳細な可視化戦略については [`marketing/data-visualization`](/src/marketing/data-visualization/SKILL.md) スキルを参照してください。
+>
+> ここではマーケティング分析に必要な**基本的なレポーティング**のみを扱います。
+
+**ステップ1: 報告内容の設計**
 
 誰が、何を、いつ見るかを決定:
 
 ```
 経営層向け（週次レビュー）:
-- 売上
-- 顧客獲得数
-- ROI
+- 売上、顧客獲得数、ROI
 
 マーケティング担当（日次モニタリング）:
-- トラフィック
-- コンバージョン率
-- 主要チャネルのパフォーマンス
+- トラフィック、コンバージョン率、主要チャネルのパフォーマンス
 
 施策担当（リアルタイム）:
-- 広告クリック数
-- CPC（クリック単価）
-- CVR
+- 広告クリック数、CPC（クリック単価）、CVR
 ```
 
-**ステップ2: 可視化ツールの選択**
+**ステップ2: 基本的なレポート作成**
 
-- **Google Data Studio（Looker Studio）**: 無料、GA4連携が簡単
-- **Tableau**: 高度な分析、インタラクティブ
-- **Power BI**: Microsoft製品との親和性
-- **Metabase**: オープンソース、SQL直接実行
+**主要指標のトラッキング:**
 
-**ステップ3: 効果的な可視化**
-
-**グラフの選択:**
-
-- **トレンド分析**: 折れ線グラフ
-- **割合・構成比**: 円グラフ、帯グラフ
-- **比較**: 棒グラフ
-- **分布**: ヒストグラム
-- **相関**: 散布図
-
-**ダッシュボードの原則:**
-
-- [ ] 最重要指標を上部に配置
-- [ ] 色は3色以内（見やすさ）
-- [ ] 前年同期比、目標値を併記
-- [ ] アラート（目標未達時に赤表示）
+- [ ] KPIの現在値と目標値
+- [ ] 前年同期比、前月比
+- [ ] トレンド（折れ線グラフ）
+- [ ] チャネル別内訳（棒グラフ）
 
 ## 検証ポイント
 
@@ -596,6 +582,38 @@ ORDER BY ROAS DESC;
 
 ## 他スキルとの連携
 
+### marketing-analytics ↔ data-visualization
+
+マーケティング分析と可視化の統合（双方向連携）：
+
+**marketing-analytics → data-visualization:**
+
+1. このスキルでKPI設計、A/Bテスト、Google Analytics分析を実施
+2. [`data-visualization`](/src/marketing/data-visualization/SKILL.md) スキルで分析結果を効果的なダッシュボードに変換
+3. ステークホルダーへの説得力ある定期レポート作成
+
+**data-visualization → marketing-analytics:**
+
+1. data-visualization スキルでダッシュボードを構築し、パターンを発見
+2. このスキルで統計的検証とROI分析を深掘り
+3. データドリブンな施策改善サイクルを実現
+
+### marketing-analytics ↔ data-analysis
+
+マーケティング分析と汎用データ分析の統合：
+
+**marketing-analytics → data-analysis:**
+
+1. このスキルでマーケティングKPIと基本的な集計を実施
+2. [`data-analysis`](/src/analysis/data-analysis/SKILL.md) スキルで高度な統計分析や予測モデルを構築
+3. より深い洞察とマーケティング最適化を実現
+
+**data-analysis → marketing-analytics:**
+
+1. data-analysis スキルでデータの探索的分析と仮説検証
+2. このスキルでマーケティング特化のKPI設計とA/Bテスト実施
+3. 統計的根拠に基づくマーケティング戦略の策定
+
 ### marketing-analytics → market-research
 
 定量データと定性データの統合:
@@ -603,11 +621,3 @@ ORDER BY ROAS DESC;
 1. このスキルで数値データを分析
 2. market-research スキルで「なぜ」を深掘り
 3. 数字とインサイトの両面から理解
-
-### marketing-analytics + data-analysis
-
-高度な分析手法の適用:
-
-1. このスキルで基本的な集計・分析
-2. data-analysis スキルで機械学習や予測モデル
-3. より高度なマーケティング最適化
